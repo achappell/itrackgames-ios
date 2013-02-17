@@ -7,13 +7,18 @@
 //
 
 #import "TGAppDelegate.h"
-
 #import "TGViewController.h"
+#import <RestKit/RestKit.h>
+#import "TGPlatform.h"
 
 @implementation TGAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
+    [self initializeRestKit];
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
@@ -51,6 +56,29 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void) initializeRestKit
+{
+    NSURL *baseURL = [NSURL URLWithString:@"http://icheckgames.herokuapp.com"];
+    AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:baseURL];
+    
+    [client setDefaultHeader:@"Accept" value:RKMIMETypeJSON];
+    
+    RKObjectManager *objectManager = [[RKObjectManager alloc] initWithHTTPClient:client];
+    
+    RKObjectMapping *platformMapping = [RKObjectMapping mappingForClass:[TGPlatform class]];
+    [platformMapping addAttributeMappingsFromDictionary:@{
+        @"developer": @"developer",
+        @"id": @"platformID",
+        @"name": @"name",
+        @"overview": @"overview",
+        @"rating": @"rating"
+     }];
+    
+    RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:platformMapping pathPattern:@"/platforms.json" keyPath:nil statusCodes:[NSIndexSet indexSetWithIndex:200]];
+    
+    [objectManager addResponseDescriptor:responseDescriptor];
 }
 
 @end
