@@ -7,158 +7,158 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C8DCC35016C85EC0005BC972 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8DCC34F16C85EC0005BC972 /* UIKit.framework */; };
-		C8DCC35216C85EC0005BC972 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8DCC35116C85EC0005BC972 /* Foundation.framework */; };
-		C8DCC35416C85EC0005BC972 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8DCC35316C85EC0005BC972 /* CoreGraphics.framework */; };
-		C8DCC35A16C85EC0005BC972 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C8DCC35816C85EC0005BC972 /* InfoPlist.strings */; };
-		C8DCC35C16C85EC0005BC972 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DCC35B16C85EC0005BC972 /* main.m */; };
-		C8DCC36016C85EC0005BC972 /* TGAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DCC35F16C85EC0005BC972 /* TGAppDelegate.m */; };
-		C8DCC36216C85EC0005BC972 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = C8DCC36116C85EC0005BC972 /* Default.png */; };
-		C8DCC36416C85EC0005BC972 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C8DCC36316C85EC0005BC972 /* Default@2x.png */; };
-		C8DCC36616C85EC0005BC972 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C8DCC36516C85EC0005BC972 /* Default-568h@2x.png */; };
-		C8DCC36916C85EC0005BC972 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8DCC36716C85EC0005BC972 /* MainStoryboard_iPhone.storyboard */; };
-		C8DCC36C16C85EC0005BC972 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8DCC36A16C85EC0005BC972 /* MainStoryboard_iPad.storyboard */; };
-		C8DCC36F16C85EC0005BC972 /* TGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DCC36E16C85EC0005BC972 /* TGViewController.m */; };
-		C8DCC37716C85EC0005BC972 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8DCC37616C85EC0005BC972 /* SenTestingKit.framework */; };
-		C8DCC37816C85EC0005BC972 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8DCC34F16C85EC0005BC972 /* UIKit.framework */; };
-		C8DCC37916C85EC0005BC972 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8DCC35116C85EC0005BC972 /* Foundation.framework */; };
-		C8DCC38116C85EC0005BC972 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C8DCC37F16C85EC0005BC972 /* InfoPlist.strings */; };
-		C8DCC38416C85EC0005BC972 /* iTrackGamesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C8DCC38316C85EC0005BC972 /* iTrackGamesTests.m */; };
+		E0DAA60A16D180420066C7D2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0DAA60916D180420066C7D2 /* UIKit.framework */; };
+		E0DAA60C16D180420066C7D2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0DAA60B16D180420066C7D2 /* Foundation.framework */; };
+		E0DAA60E16D180420066C7D2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0DAA60D16D180420066C7D2 /* CoreGraphics.framework */; };
+		E0DAA61416D180420066C7D2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E0DAA61216D180420066C7D2 /* InfoPlist.strings */; };
+		E0DAA61616D180420066C7D2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E0DAA61516D180420066C7D2 /* main.m */; };
+		E0DAA61A16D180420066C7D2 /* TGAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E0DAA61916D180420066C7D2 /* TGAppDelegate.m */; };
+		E0DAA61C16D180420066C7D2 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = E0DAA61B16D180420066C7D2 /* Default.png */; };
+		E0DAA61E16D180420066C7D2 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0DAA61D16D180420066C7D2 /* Default@2x.png */; };
+		E0DAA62016D180420066C7D2 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0DAA61F16D180420066C7D2 /* Default-568h@2x.png */; };
+		E0DAA62316D180420066C7D2 /* TGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0DAA62216D180420066C7D2 /* TGViewController.m */; };
+		E0DAA62616D180420066C7D2 /* TGViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0DAA62416D180420066C7D2 /* TGViewController_iPhone.xib */; };
+		E0DAA62916D180420066C7D2 /* TGViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0DAA62716D180420066C7D2 /* TGViewController_iPad.xib */; };
+		E0DAA63116D180430066C7D2 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0DAA63016D180430066C7D2 /* SenTestingKit.framework */; };
+		E0DAA63216D180430066C7D2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0DAA60916D180420066C7D2 /* UIKit.framework */; };
+		E0DAA63316D180430066C7D2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0DAA60B16D180420066C7D2 /* Foundation.framework */; };
+		E0DAA63B16D180430066C7D2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E0DAA63916D180430066C7D2 /* InfoPlist.strings */; };
+		E0DAA63E16D180430066C7D2 /* iTrackGamesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E0DAA63D16D180430066C7D2 /* iTrackGamesTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		C8DCC37A16C85EC0005BC972 /* PBXContainerItemProxy */ = {
+		E0DAA63416D180430066C7D2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = C8DCC34416C85EC0005BC972 /* Project object */;
+			containerPortal = E0DAA5FE16D180420066C7D2 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = C8DCC34B16C85EC0005BC972;
+			remoteGlobalIDString = E0DAA60516D180420066C7D2;
 			remoteInfo = iTrackGames;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		C8DCC34C16C85EC0005BC972 /* iTrackGames.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTrackGames.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		C8DCC34F16C85EC0005BC972 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		C8DCC35116C85EC0005BC972 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		C8DCC35316C85EC0005BC972 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		C8DCC35716C85EC0005BC972 /* iTrackGames-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iTrackGames-Info.plist"; sourceTree = "<group>"; };
-		C8DCC35916C85EC0005BC972 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		C8DCC35B16C85EC0005BC972 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		C8DCC35D16C85EC0005BC972 /* iTrackGames-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iTrackGames-Prefix.pch"; sourceTree = "<group>"; };
-		C8DCC35E16C85EC0005BC972 /* TGAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TGAppDelegate.h; sourceTree = "<group>"; };
-		C8DCC35F16C85EC0005BC972 /* TGAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TGAppDelegate.m; sourceTree = "<group>"; };
-		C8DCC36116C85EC0005BC972 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		C8DCC36316C85EC0005BC972 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		C8DCC36516C85EC0005BC972 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		C8DCC36816C85EC0005BC972 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
-		C8DCC36B16C85EC0005BC972 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		C8DCC36D16C85EC0005BC972 /* TGViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TGViewController.h; sourceTree = "<group>"; };
-		C8DCC36E16C85EC0005BC972 /* TGViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TGViewController.m; sourceTree = "<group>"; };
-		C8DCC37516C85EC0005BC972 /* iTrackGamesTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iTrackGamesTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C8DCC37616C85EC0005BC972 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		C8DCC37E16C85EC0005BC972 /* iTrackGamesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iTrackGamesTests-Info.plist"; sourceTree = "<group>"; };
-		C8DCC38016C85EC0005BC972 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		C8DCC38216C85EC0005BC972 /* iTrackGamesTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iTrackGamesTests.h; sourceTree = "<group>"; };
-		C8DCC38316C85EC0005BC972 /* iTrackGamesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iTrackGamesTests.m; sourceTree = "<group>"; };
+		E0DAA60616D180420066C7D2 /* iTrackGames.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTrackGames.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0DAA60916D180420066C7D2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		E0DAA60B16D180420066C7D2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		E0DAA60D16D180420066C7D2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		E0DAA61116D180420066C7D2 /* iTrackGames-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iTrackGames-Info.plist"; sourceTree = "<group>"; };
+		E0DAA61316D180420066C7D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E0DAA61516D180420066C7D2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E0DAA61716D180420066C7D2 /* iTrackGames-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iTrackGames-Prefix.pch"; sourceTree = "<group>"; };
+		E0DAA61816D180420066C7D2 /* TGAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TGAppDelegate.h; sourceTree = "<group>"; };
+		E0DAA61916D180420066C7D2 /* TGAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TGAppDelegate.m; sourceTree = "<group>"; };
+		E0DAA61B16D180420066C7D2 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		E0DAA61D16D180420066C7D2 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		E0DAA61F16D180420066C7D2 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		E0DAA62116D180420066C7D2 /* TGViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TGViewController.h; sourceTree = "<group>"; };
+		E0DAA62216D180420066C7D2 /* TGViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TGViewController.m; sourceTree = "<group>"; };
+		E0DAA62516D180420066C7D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/TGViewController_iPhone.xib; sourceTree = "<group>"; };
+		E0DAA62816D180420066C7D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/TGViewController_iPad.xib; sourceTree = "<group>"; };
+		E0DAA62F16D180430066C7D2 /* iTrackGamesTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iTrackGamesTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0DAA63016D180430066C7D2 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		E0DAA63816D180430066C7D2 /* iTrackGamesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iTrackGamesTests-Info.plist"; sourceTree = "<group>"; };
+		E0DAA63A16D180430066C7D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E0DAA63C16D180430066C7D2 /* iTrackGamesTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iTrackGamesTests.h; sourceTree = "<group>"; };
+		E0DAA63D16D180430066C7D2 /* iTrackGamesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iTrackGamesTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		C8DCC34916C85EC0005BC972 /* Frameworks */ = {
+		E0DAA60316D180420066C7D2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C8DCC35016C85EC0005BC972 /* UIKit.framework in Frameworks */,
-				C8DCC35216C85EC0005BC972 /* Foundation.framework in Frameworks */,
-				C8DCC35416C85EC0005BC972 /* CoreGraphics.framework in Frameworks */,
+				E0DAA60A16D180420066C7D2 /* UIKit.framework in Frameworks */,
+				E0DAA60C16D180420066C7D2 /* Foundation.framework in Frameworks */,
+				E0DAA60E16D180420066C7D2 /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C8DCC37116C85EC0005BC972 /* Frameworks */ = {
+		E0DAA62B16D180430066C7D2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C8DCC37716C85EC0005BC972 /* SenTestingKit.framework in Frameworks */,
-				C8DCC37816C85EC0005BC972 /* UIKit.framework in Frameworks */,
-				C8DCC37916C85EC0005BC972 /* Foundation.framework in Frameworks */,
+				E0DAA63116D180430066C7D2 /* SenTestingKit.framework in Frameworks */,
+				E0DAA63216D180430066C7D2 /* UIKit.framework in Frameworks */,
+				E0DAA63316D180430066C7D2 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C8DCC34316C85EC0005BC972 = {
+		E0DAA5FD16D180420066C7D2 = {
 			isa = PBXGroup;
 			children = (
-				C8DCC35516C85EC0005BC972 /* iTrackGames */,
-				C8DCC37C16C85EC0005BC972 /* iTrackGamesTests */,
-				C8DCC34E16C85EC0005BC972 /* Frameworks */,
-				C8DCC34D16C85EC0005BC972 /* Products */,
+				E0DAA60F16D180420066C7D2 /* iTrackGames */,
+				E0DAA63616D180430066C7D2 /* iTrackGamesTests */,
+				E0DAA60816D180420066C7D2 /* Frameworks */,
+				E0DAA60716D180420066C7D2 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		C8DCC34D16C85EC0005BC972 /* Products */ = {
+		E0DAA60716D180420066C7D2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C8DCC34C16C85EC0005BC972 /* iTrackGames.app */,
-				C8DCC37516C85EC0005BC972 /* iTrackGamesTests.octest */,
+				E0DAA60616D180420066C7D2 /* iTrackGames.app */,
+				E0DAA62F16D180430066C7D2 /* iTrackGamesTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C8DCC34E16C85EC0005BC972 /* Frameworks */ = {
+		E0DAA60816D180420066C7D2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C8DCC34F16C85EC0005BC972 /* UIKit.framework */,
-				C8DCC35116C85EC0005BC972 /* Foundation.framework */,
-				C8DCC35316C85EC0005BC972 /* CoreGraphics.framework */,
-				C8DCC37616C85EC0005BC972 /* SenTestingKit.framework */,
+				E0DAA60916D180420066C7D2 /* UIKit.framework */,
+				E0DAA60B16D180420066C7D2 /* Foundation.framework */,
+				E0DAA60D16D180420066C7D2 /* CoreGraphics.framework */,
+				E0DAA63016D180430066C7D2 /* SenTestingKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		C8DCC35516C85EC0005BC972 /* iTrackGames */ = {
+		E0DAA60F16D180420066C7D2 /* iTrackGames */ = {
 			isa = PBXGroup;
 			children = (
-				C8DCC35E16C85EC0005BC972 /* TGAppDelegate.h */,
-				C8DCC35F16C85EC0005BC972 /* TGAppDelegate.m */,
-				C8DCC36716C85EC0005BC972 /* MainStoryboard_iPhone.storyboard */,
-				C8DCC36A16C85EC0005BC972 /* MainStoryboard_iPad.storyboard */,
-				C8DCC36D16C85EC0005BC972 /* TGViewController.h */,
-				C8DCC36E16C85EC0005BC972 /* TGViewController.m */,
-				C8DCC35616C85EC0005BC972 /* Supporting Files */,
+				E0DAA61816D180420066C7D2 /* TGAppDelegate.h */,
+				E0DAA61916D180420066C7D2 /* TGAppDelegate.m */,
+				E0DAA62116D180420066C7D2 /* TGViewController.h */,
+				E0DAA62216D180420066C7D2 /* TGViewController.m */,
+				E0DAA62416D180420066C7D2 /* TGViewController_iPhone.xib */,
+				E0DAA62716D180420066C7D2 /* TGViewController_iPad.xib */,
+				E0DAA61016D180420066C7D2 /* Supporting Files */,
 			);
 			path = iTrackGames;
 			sourceTree = "<group>";
 		};
-		C8DCC35616C85EC0005BC972 /* Supporting Files */ = {
+		E0DAA61016D180420066C7D2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				C8DCC35716C85EC0005BC972 /* iTrackGames-Info.plist */,
-				C8DCC35816C85EC0005BC972 /* InfoPlist.strings */,
-				C8DCC35B16C85EC0005BC972 /* main.m */,
-				C8DCC35D16C85EC0005BC972 /* iTrackGames-Prefix.pch */,
-				C8DCC36116C85EC0005BC972 /* Default.png */,
-				C8DCC36316C85EC0005BC972 /* Default@2x.png */,
-				C8DCC36516C85EC0005BC972 /* Default-568h@2x.png */,
+				E0DAA61116D180420066C7D2 /* iTrackGames-Info.plist */,
+				E0DAA61216D180420066C7D2 /* InfoPlist.strings */,
+				E0DAA61516D180420066C7D2 /* main.m */,
+				E0DAA61716D180420066C7D2 /* iTrackGames-Prefix.pch */,
+				E0DAA61B16D180420066C7D2 /* Default.png */,
+				E0DAA61D16D180420066C7D2 /* Default@2x.png */,
+				E0DAA61F16D180420066C7D2 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		C8DCC37C16C85EC0005BC972 /* iTrackGamesTests */ = {
+		E0DAA63616D180430066C7D2 /* iTrackGamesTests */ = {
 			isa = PBXGroup;
 			children = (
-				C8DCC38216C85EC0005BC972 /* iTrackGamesTests.h */,
-				C8DCC38316C85EC0005BC972 /* iTrackGamesTests.m */,
-				C8DCC37D16C85EC0005BC972 /* Supporting Files */,
+				E0DAA63C16D180430066C7D2 /* iTrackGamesTests.h */,
+				E0DAA63D16D180430066C7D2 /* iTrackGamesTests.m */,
+				E0DAA63716D180430066C7D2 /* Supporting Files */,
 			);
 			path = iTrackGamesTests;
 			sourceTree = "<group>";
 		};
-		C8DCC37D16C85EC0005BC972 /* Supporting Files */ = {
+		E0DAA63716D180430066C7D2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				C8DCC37E16C85EC0005BC972 /* iTrackGamesTests-Info.plist */,
-				C8DCC37F16C85EC0005BC972 /* InfoPlist.strings */,
+				E0DAA63816D180430066C7D2 /* iTrackGamesTests-Info.plist */,
+				E0DAA63916D180430066C7D2 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -166,13 +166,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C8DCC34B16C85EC0005BC972 /* iTrackGames */ = {
+		E0DAA60516D180420066C7D2 /* iTrackGames */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C8DCC38716C85EC0005BC972 /* Build configuration list for PBXNativeTarget "iTrackGames" */;
+			buildConfigurationList = E0DAA64116D180430066C7D2 /* Build configuration list for PBXNativeTarget "iTrackGames" */;
 			buildPhases = (
-				C8DCC34816C85EC0005BC972 /* Sources */,
-				C8DCC34916C85EC0005BC972 /* Frameworks */,
-				C8DCC34A16C85EC0005BC972 /* Resources */,
+				E0DAA60216D180420066C7D2 /* Sources */,
+				E0DAA60316D180420066C7D2 /* Frameworks */,
+				E0DAA60416D180420066C7D2 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -180,82 +180,82 @@
 			);
 			name = iTrackGames;
 			productName = iTrackGames;
-			productReference = C8DCC34C16C85EC0005BC972 /* iTrackGames.app */;
+			productReference = E0DAA60616D180420066C7D2 /* iTrackGames.app */;
 			productType = "com.apple.product-type.application";
 		};
-		C8DCC37416C85EC0005BC972 /* iTrackGamesTests */ = {
+		E0DAA62E16D180430066C7D2 /* iTrackGamesTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C8DCC38A16C85EC0005BC972 /* Build configuration list for PBXNativeTarget "iTrackGamesTests" */;
+			buildConfigurationList = E0DAA64416D180430066C7D2 /* Build configuration list for PBXNativeTarget "iTrackGamesTests" */;
 			buildPhases = (
-				C8DCC37016C85EC0005BC972 /* Sources */,
-				C8DCC37116C85EC0005BC972 /* Frameworks */,
-				C8DCC37216C85EC0005BC972 /* Resources */,
-				C8DCC37316C85EC0005BC972 /* ShellScript */,
+				E0DAA62A16D180430066C7D2 /* Sources */,
+				E0DAA62B16D180430066C7D2 /* Frameworks */,
+				E0DAA62C16D180430066C7D2 /* Resources */,
+				E0DAA62D16D180430066C7D2 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				C8DCC37B16C85EC0005BC972 /* PBXTargetDependency */,
+				E0DAA63516D180430066C7D2 /* PBXTargetDependency */,
 			);
 			name = iTrackGamesTests;
 			productName = iTrackGamesTests;
-			productReference = C8DCC37516C85EC0005BC972 /* iTrackGamesTests.octest */;
+			productReference = E0DAA62F16D180430066C7D2 /* iTrackGamesTests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		C8DCC34416C85EC0005BC972 /* Project object */ = {
+		E0DAA5FE16D180420066C7D2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = TG;
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Amanda Chappell";
 			};
-			buildConfigurationList = C8DCC34716C85EC0005BC972 /* Build configuration list for PBXProject "iTrackGames" */;
+			buildConfigurationList = E0DAA60116D180420066C7D2 /* Build configuration list for PBXProject "iTrackGames" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = C8DCC34316C85EC0005BC972;
-			productRefGroup = C8DCC34D16C85EC0005BC972 /* Products */;
+			mainGroup = E0DAA5FD16D180420066C7D2;
+			productRefGroup = E0DAA60716D180420066C7D2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C8DCC34B16C85EC0005BC972 /* iTrackGames */,
-				C8DCC37416C85EC0005BC972 /* iTrackGamesTests */,
+				E0DAA60516D180420066C7D2 /* iTrackGames */,
+				E0DAA62E16D180430066C7D2 /* iTrackGamesTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		C8DCC34A16C85EC0005BC972 /* Resources */ = {
+		E0DAA60416D180420066C7D2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C8DCC35A16C85EC0005BC972 /* InfoPlist.strings in Resources */,
-				C8DCC36216C85EC0005BC972 /* Default.png in Resources */,
-				C8DCC36416C85EC0005BC972 /* Default@2x.png in Resources */,
-				C8DCC36616C85EC0005BC972 /* Default-568h@2x.png in Resources */,
-				C8DCC36916C85EC0005BC972 /* MainStoryboard_iPhone.storyboard in Resources */,
-				C8DCC36C16C85EC0005BC972 /* MainStoryboard_iPad.storyboard in Resources */,
+				E0DAA61416D180420066C7D2 /* InfoPlist.strings in Resources */,
+				E0DAA61C16D180420066C7D2 /* Default.png in Resources */,
+				E0DAA61E16D180420066C7D2 /* Default@2x.png in Resources */,
+				E0DAA62016D180420066C7D2 /* Default-568h@2x.png in Resources */,
+				E0DAA62616D180420066C7D2 /* TGViewController_iPhone.xib in Resources */,
+				E0DAA62916D180420066C7D2 /* TGViewController_iPad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C8DCC37216C85EC0005BC972 /* Resources */ = {
+		E0DAA62C16D180430066C7D2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C8DCC38116C85EC0005BC972 /* InfoPlist.strings in Resources */,
+				E0DAA63B16D180430066C7D2 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		C8DCC37316C85EC0005BC972 /* ShellScript */ = {
+		E0DAA62D16D180430066C7D2 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -271,63 +271,63 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		C8DCC34816C85EC0005BC972 /* Sources */ = {
+		E0DAA60216D180420066C7D2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C8DCC35C16C85EC0005BC972 /* main.m in Sources */,
-				C8DCC36016C85EC0005BC972 /* TGAppDelegate.m in Sources */,
-				C8DCC36F16C85EC0005BC972 /* TGViewController.m in Sources */,
+				E0DAA61616D180420066C7D2 /* main.m in Sources */,
+				E0DAA61A16D180420066C7D2 /* TGAppDelegate.m in Sources */,
+				E0DAA62316D180420066C7D2 /* TGViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C8DCC37016C85EC0005BC972 /* Sources */ = {
+		E0DAA62A16D180430066C7D2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C8DCC38416C85EC0005BC972 /* iTrackGamesTests.m in Sources */,
+				E0DAA63E16D180430066C7D2 /* iTrackGamesTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		C8DCC37B16C85EC0005BC972 /* PBXTargetDependency */ = {
+		E0DAA63516D180430066C7D2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = C8DCC34B16C85EC0005BC972 /* iTrackGames */;
-			targetProxy = C8DCC37A16C85EC0005BC972 /* PBXContainerItemProxy */;
+			target = E0DAA60516D180420066C7D2 /* iTrackGames */;
+			targetProxy = E0DAA63416D180430066C7D2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		C8DCC35816C85EC0005BC972 /* InfoPlist.strings */ = {
+		E0DAA61216D180420066C7D2 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				C8DCC35916C85EC0005BC972 /* en */,
+				E0DAA61316D180420066C7D2 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		C8DCC36716C85EC0005BC972 /* MainStoryboard_iPhone.storyboard */ = {
+		E0DAA62416D180420066C7D2 /* TGViewController_iPhone.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				C8DCC36816C85EC0005BC972 /* en */,
+				E0DAA62516D180420066C7D2 /* en */,
 			);
-			name = MainStoryboard_iPhone.storyboard;
+			name = TGViewController_iPhone.xib;
 			sourceTree = "<group>";
 		};
-		C8DCC36A16C85EC0005BC972 /* MainStoryboard_iPad.storyboard */ = {
+		E0DAA62716D180420066C7D2 /* TGViewController_iPad.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				C8DCC36B16C85EC0005BC972 /* en */,
+				E0DAA62816D180420066C7D2 /* en */,
 			);
-			name = MainStoryboard_iPad.storyboard;
+			name = TGViewController_iPad.xib;
 			sourceTree = "<group>";
 		};
-		C8DCC37F16C85EC0005BC972 /* InfoPlist.strings */ = {
+		E0DAA63916D180430066C7D2 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				C8DCC38016C85EC0005BC972 /* en */,
+				E0DAA63A16D180430066C7D2 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -335,7 +335,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		C8DCC38516C85EC0005BC972 /* Debug */ = {
+		E0DAA63F16D180430066C7D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -367,7 +367,7 @@
 			};
 			name = Debug;
 		};
-		C8DCC38616C85EC0005BC972 /* Release */ = {
+		E0DAA64016D180430066C7D2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -393,7 +393,7 @@
 			};
 			name = Release;
 		};
-		C8DCC38816C85EC0005BC972 /* Debug */ = {
+		E0DAA64216D180430066C7D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -404,7 +404,7 @@
 			};
 			name = Debug;
 		};
-		C8DCC38916C85EC0005BC972 /* Release */ = {
+		E0DAA64316D180430066C7D2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -415,7 +415,7 @@
 			};
 			name = Release;
 		};
-		C8DCC38B16C85EC0005BC972 /* Debug */ = {
+		E0DAA64516D180430066C7D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/iTrackGames.app/iTrackGames";
@@ -432,7 +432,7 @@
 			};
 			name = Debug;
 		};
-		C8DCC38C16C85EC0005BC972 /* Release */ = {
+		E0DAA64616D180430066C7D2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/iTrackGames.app/iTrackGames";
@@ -452,32 +452,32 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C8DCC34716C85EC0005BC972 /* Build configuration list for PBXProject "iTrackGames" */ = {
+		E0DAA60116D180420066C7D2 /* Build configuration list for PBXProject "iTrackGames" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C8DCC38516C85EC0005BC972 /* Debug */,
-				C8DCC38616C85EC0005BC972 /* Release */,
+				E0DAA63F16D180430066C7D2 /* Debug */,
+				E0DAA64016D180430066C7D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C8DCC38716C85EC0005BC972 /* Build configuration list for PBXNativeTarget "iTrackGames" */ = {
+		E0DAA64116D180430066C7D2 /* Build configuration list for PBXNativeTarget "iTrackGames" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C8DCC38816C85EC0005BC972 /* Debug */,
-				C8DCC38916C85EC0005BC972 /* Release */,
+				E0DAA64216D180430066C7D2 /* Debug */,
+				E0DAA64316D180430066C7D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
-		C8DCC38A16C85EC0005BC972 /* Build configuration list for PBXNativeTarget "iTrackGamesTests" */ = {
+		E0DAA64416D180430066C7D2 /* Build configuration list for PBXNativeTarget "iTrackGamesTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C8DCC38B16C85EC0005BC972 /* Debug */,
-				C8DCC38C16C85EC0005BC972 /* Release */,
+				E0DAA64516D180430066C7D2 /* Debug */,
+				E0DAA64616D180430066C7D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = C8DCC34416C85EC0005BC972 /* Project object */;
+	rootObject = E0DAA5FE16D180420066C7D2 /* Project object */;
 }
