@@ -1,25 +1,34 @@
 //
-//  TGViewController.m
+//  TGViewControllerGameList.m
 //  iTrackGames
 //
-//  Created by Amanda Chappell on 2/17/13.
+//  Created by Toni White on 2/17/13.
 //  Copyright (c) 2013 Amanda Chappell. All rights reserved.
 //
 
-#import "TGViewController.h"
+#import "TGGameTableViewController.h"
 #import <RestKit/RestKit.h>
-#import "TGPlatform.h"
+#import "TGGames.h"
 
-@interface TGViewController ()
+@interface TGGameTableViewController ()
 
 @end
 
-@implementation TGViewController
+@implementation TGGameTableViewController
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    // Do any additional setup after loading the view from its nib.
     [self fetchData];
 }
 
@@ -27,18 +36,19 @@
 {
     RKObjectManager *objectManager = [RKObjectManager sharedManager];
     
-    [objectManager getObjectsAtPath:@"/platforms.json" parameters:nil success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-        NSArray *platforms = [mappingResult array];
-        NSLog(@"Loaded platforms: %@", platforms);
-        self.platforms = platforms;
+    [objectManager getObjectsAtPath:@"/games.json" parameters:@{@"platform_id": self.platform.platformID} success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+        NSArray *games = [mappingResult array];
+        NSLog(@"Loaded games: %@", games);
+        self.games = games;
         [self.tableView reloadData];
     } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+        NSLog(@"Failed in fetchData.");
     }];
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.platforms.count;
+    return self.games.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -49,8 +59,8 @@
     {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier];
     }
-    TGPlatform *platform = [_platforms objectAtIndex:indexPath.row];
-    cell.textLabel.text = platform.name;
+    TGGames *game = [_games objectAtIndex:indexPath.row];
+    cell.textLabel.text = game.title;
     
     return cell;
 }

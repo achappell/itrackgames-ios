@@ -7,9 +7,10 @@
 //
 
 #import "TGAppDelegate.h"
-#import "TGViewController.h"
+#import "TGPlatformTableViewController.h"
 #import <RestKit/RestKit.h>
 #import "TGPlatform.h"
+#import "TGGames.h"
 
 @implementation TGAppDelegate
 
@@ -21,12 +22,17 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        self.viewController = [[TGViewController alloc] initWithNibName:@"TGViewController_iPhone" bundle:nil];
-    } else {
-        self.viewController = [[TGViewController alloc] initWithNibName:@"TGViewController_iPad" bundle:nil];
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
+    {
+        self.viewController = [[TGPlatformTableViewController alloc] initWithNibName:@"TGViewController_iPhone" bundle:nil];
+    } else
+    {
+        self.viewController = [[TGPlatformTableViewController alloc] initWithNibName:@"TGViewController_iPad" bundle:nil];
     }
-    self.window.rootViewController = self.viewController;
+    
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:self.viewController];
+    
+    self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];
     return YES;
 }
@@ -76,9 +82,18 @@
         @"rating": @"rating"
      }];
     
-    RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:platformMapping pathPattern:@"/platforms.json" keyPath:nil statusCodes:[NSIndexSet indexSetWithIndex:200]];
+    RKObjectMapping *gameMapping = [RKObjectMapping mappingForClass:[TGGames class]];
+    [gameMapping addAttributeMappingsFromDictionary:@{
+     @"title": @"title"
+     }];
     
-    [objectManager addResponseDescriptor:responseDescriptor];
+    RKResponseDescriptor *responseDescriptorPlatform = [RKResponseDescriptor responseDescriptorWithMapping:platformMapping pathPattern:@"/platforms.json" keyPath:nil statusCodes:[NSIndexSet indexSetWithIndex:200]];
+    
+    RKResponseDescriptor *responseDescriptorGame = [RKResponseDescriptor responseDescriptorWithMapping:gameMapping pathPattern:@"/games.json" keyPath:nil statusCodes:[NSIndexSet indexSetWithIndex:200]];
+    
+    [objectManager addResponseDescriptor:responseDescriptorPlatform];
+    
+    [objectManager addResponseDescriptor:responseDescriptorGame];
 }
 
 @end
