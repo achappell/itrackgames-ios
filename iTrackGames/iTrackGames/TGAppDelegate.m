@@ -10,7 +10,7 @@
 #import "TGPlatformTableViewController.h"
 #import <RestKit/RestKit.h>
 #import "TGPlatform.h"
-#import "TGGames.h"
+#import "TGGame.h"
 
 @implementation TGAppDelegate
 
@@ -76,24 +76,32 @@
     RKObjectMapping *platformMapping = [RKObjectMapping mappingForClass:[TGPlatform class]];
     [platformMapping addAttributeMappingsFromDictionary:@{
         @"developer": @"developer",
-        @"id": @"platformID",
+        @"id": @"platform_id",
         @"name": @"name",
         @"overview": @"overview",
         @"rating": @"rating"
      }];
     
-    RKObjectMapping *gameMapping = [RKObjectMapping mappingForClass:[TGGames class]];
+    RKObjectMapping *gameMapping = [RKObjectMapping mappingForClass:[TGGame class]];
     [gameMapping addAttributeMappingsFromDictionary:@{
-     @"title": @"title"
+     @"id": @"game_id",
+     @"title": @"title",
+     @"developer": @"developer",
+     @"publisher": @"publisher",
+     @"overview": @"overview"
      }];
     
     RKResponseDescriptor *responseDescriptorPlatform = [RKResponseDescriptor responseDescriptorWithMapping:platformMapping pathPattern:@"/platforms.json" keyPath:nil statusCodes:[NSIndexSet indexSetWithIndex:200]];
     
     RKResponseDescriptor *responseDescriptorGame = [RKResponseDescriptor responseDescriptorWithMapping:gameMapping pathPattern:@"/games.json" keyPath:nil statusCodes:[NSIndexSet indexSetWithIndex:200]];
     
+    RKResponseDescriptor *responseDescriptorIndivGame = [RKResponseDescriptor responseDescriptorWithMapping:gameMapping pathPattern:@"/games/:game_id.json" keyPath:nil statusCodes:[NSIndexSet indexSetWithIndex:200]];
+    
     [objectManager addResponseDescriptor:responseDescriptorPlatform];
     
     [objectManager addResponseDescriptor:responseDescriptorGame];
+    
+    [objectManager addResponseDescriptor:responseDescriptorIndivGame];
 }
 
 @end

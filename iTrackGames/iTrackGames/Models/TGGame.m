@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 Amanda Chappell. All rights reserved.
 //
 
-#import "TGGames.h"
+#import "TGGame.h"
 
-@implementation TGGames
+@implementation TGGame
 -(NSString *)description
 {
     return self.title;

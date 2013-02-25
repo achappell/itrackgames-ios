@@ -8,7 +8,8 @@
 
 #import "TGGameTableViewController.h"
 #import <RestKit/RestKit.h>
-#import "TGGames.h"
+#import "TGGame.h"
+#import "TGGameViewController.h"
 
 @interface TGGameTableViewController ()
 
@@ -36,7 +37,7 @@
 {
     RKObjectManager *objectManager = [RKObjectManager sharedManager];
     
-    [objectManager getObjectsAtPath:@"/games.json" parameters:@{@"platform_id": self.platform.platformID} success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+    [objectManager getObjectsAtPath:@"/games.json" parameters:@{@"platform_id": self.platform.platform_id} success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
         NSArray *games = [mappingResult array];
         NSLog(@"Loaded games: %@", games);
         self.games = games;
@@ -59,10 +60,21 @@
     {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier];
     }
-    TGGames *game = [_games objectAtIndex:indexPath.row];
+    TGGame *game = [_games objectAtIndex:indexPath.row];
     cell.textLabel.text = game.title;
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    TGGameViewController *viewController = [[TGGameViewController alloc] initWithNibName:@"TGGameViewController" bundle:nil];
+    
+    viewController.game = [self.games objectAtIndex:indexPath.row];
+    
+    [self.navigationController pushViewController:viewController animated:YES];
 }
 
 - (void)didReceiveMemoryWarning

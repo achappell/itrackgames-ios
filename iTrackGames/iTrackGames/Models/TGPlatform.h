@@ -10,7 +10,7 @@
 
 @interface TGPlatform : NSObject
     @property (nonatomic, copy) NSString *developer;
-    @property (nonatomic, copy) NSNumber *platformID;
+    @property (nonatomic, copy) NSNumber *platform_id;
     @property (nonatomic, copy) NSString *name;
     @property (nonatomic, copy) NSString *overview;
     @property (nonatomic, copy) NSString *rating;

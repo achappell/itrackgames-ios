@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@interface TGGames : NSObject
+@interface TGGame : NSObject
 @property (nonatomic, copy) NSString *title;
+@property (nonatomic, copy) NSString *developer;
+@property (nonatomic, copy) NSString *publisher;
+@property (nonatomic, copy) NSString *overview;
+@property (nonatomic, copy) NSNumber *game_id;
 @end
