@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TGViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface TGPlatformTableViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSArray *platforms;

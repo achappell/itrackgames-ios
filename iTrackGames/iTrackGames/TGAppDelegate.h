@@ -8,12 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@class TGViewController;
+@class TGPlatformTableViewController;
 
 @interface TGAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
-@property (strong, nonatomic) TGViewController *viewController;
+@property (strong, nonatomic) TGPlatformTableViewController *viewController;
 
 @end

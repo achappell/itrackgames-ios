@@ -6,15 +6,16 @@
 //  Copyright (c) 2013 Amanda Chappell. All rights reserved.
 //
 
-#import "TGViewController.h"
+#import "TGPlatformTableViewController.h"
 #import <RestKit/RestKit.h>
 #import "TGPlatform.h"
+#import "TGGameTableViewController.h"
 
-@interface TGViewController ()
+@interface TGPlatformTableViewController ()
 
 @end
 
-@implementation TGViewController
+@implementation TGPlatformTableViewController
 
 - (void)viewDidLoad
 {
@@ -53,6 +54,17 @@
     cell.textLabel.text = platform.name;
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    TGGameTableViewController *viewController = [[TGGameTableViewController alloc] initWithNibName:@"TGGameTableViewController" bundle:nil];
+    
+    viewController.platform = [self.platforms objectAtIndex:indexPath.row];
+    
+    [self.navigationController pushViewController:viewController animated:YES];
 }
 
 - (void)didReceiveMemoryWarning
