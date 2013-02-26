@@ -24,10 +24,10 @@
     // Override point for customization after application launch.
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
     {
-        self.viewController = [[TGPlatformTableViewController alloc] initWithNibName:@"TGViewController_iPhone" bundle:nil];
+        self.viewController = [[TGPlatformTableViewController alloc] initWithNibName:@"TGPlatformTableViewController_iPhone" bundle:nil];
     } else
     {
-        self.viewController = [[TGPlatformTableViewController alloc] initWithNibName:@"TGViewController_iPad" bundle:nil];
+        self.viewController = [[TGPlatformTableViewController alloc] initWithNibName:@"TGPlatformTableViewController_iPad" bundle:nil];
     }
     
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:self.viewController];
