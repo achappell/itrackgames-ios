@@ -11,11 +11,13 @@
 #import <RestKit/RestKit.h>
 #import "TGPlatform.h"
 #import "TGGame.h"
+#import "TestFlight.h"
 
 @implementation TGAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [TestFlight takeOff:@"53f379ff801a985db4f1ec8144086158_MTkxNzkwMjAxMy0wMi0yNiAxNDozOTo1Ny4wNzk2NzQ"];
     
     [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
     [self initializeRestKit];
