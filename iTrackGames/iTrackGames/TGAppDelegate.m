@@ -11,11 +11,13 @@
 #import <RestKit/RestKit.h>
 #import "TGPlatform.h"
 #import "TGGame.h"
+#import "TestFlight.h"
 
 @implementation TGAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [TestFlight takeOff:@"53f379ff801a985db4f1ec8144086158_MTkxNzkwMjAxMy0wMi0yNiAxNDozOTo1Ny4wNzk2NzQ"];
     
     [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
     [self initializeRestKit];
@@ -24,10 +26,10 @@
     // Override point for customization after application launch.
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
     {
-        self.viewController = [[TGPlatformTableViewController alloc] initWithNibName:@"TGViewController_iPhone" bundle:nil];
+        self.viewController = [[TGPlatformTableViewController alloc] initWithNibName:@"TGPlatformTableViewController_iPhone" bundle:nil];
     } else
     {
-        self.viewController = [[TGPlatformTableViewController alloc] initWithNibName:@"TGViewController_iPad" bundle:nil];
+        self.viewController = [[TGPlatformTableViewController alloc] initWithNibName:@"TGPlatformTableViewController_iPad" bundle:nil];
     }
     
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:self.viewController];
