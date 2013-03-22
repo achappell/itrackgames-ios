@@ -52,6 +52,7 @@
     [[TGUserManager sharedManager] loginWithUsername:@"achappell@me.com" andPassword:@"testtest" withCompletion:^(NSError *error) {
         
         STAssertNotNil([TGUserManager sharedManager].currentUserToken, @"No Current User Token");
+        STAssertEquals([TGUserManager sharedManager].currentUserToken, @"sdfoiwe40823", @"Current User Token doesn't match");
         
     }];
 }
