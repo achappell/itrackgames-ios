@@ -24,6 +24,7 @@
 		C89229FC16DD46B7003B6A3C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = C89229F816DD46B7003B6A3C /* README.md */; };
 		C89229FD16DD46B7003B6A3C /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = C89229F916DD46B7003B6A3C /* release_notes.md */; };
 		C89229FF16DD485A003B6A3C /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C89229FE16DD485A003B6A3C /* libz.dylib */; };
+		E0668A9B16FC7ED400B52855 /* TGPlatform.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C29A37E16D18D83009524BE /* TGPlatform.m */; };
 		E0DAA60A16D180420066C7D2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0DAA60916D180420066C7D2 /* UIKit.framework */; };
 		E0DAA60C16D180420066C7D2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0DAA60B16D180420066C7D2 /* Foundation.framework */; };
 		E0DAA60E16D180420066C7D2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0DAA60D16D180420066C7D2 /* CoreGraphics.framework */; };
@@ -293,7 +294,6 @@
 				E0DAA60316D180420066C7D2 /* Frameworks */,
 				E0DAA60416D180420066C7D2 /* Resources */,
 				A5D829948E794351B2013124 /* Copy Pods Resources */,
-				E0DF2ABD16FC76E3002C0291 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -312,6 +312,7 @@
 				E0DAA62B16D180430066C7D2 /* Frameworks */,
 				E0DAA62C16D180430066C7D2 /* Resources */,
 				E0DAA62D16D180430066C7D2 /* ShellScript */,
+				E0D97EFC16FC82AA008ABE8A /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -395,6 +396,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
 		};
+		E0D97EFC16FC82AA008ABE8A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = XcodeCoverage/exportenv.sh;
+		};
 		E0DAA62D16D180430066C7D2 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -407,19 +421,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
-		};
-		E0DF2ABD16FC76E3002C0291 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = XcodeCoverage/exportenv.sh;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -447,6 +448,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0DAA63E16D180430066C7D2 /* iTrackGamesTests.m in Sources */,
+				E0668A9B16FC7ED400B52855 /* TGPlatform.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -509,6 +511,10 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = (
+					"-ftest-coverage",
+					"-fprofile-arcs",
+				);
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -7,6 +7,7 @@
 //
 
 #import "iTrackGamesTests.h"
+#import "TGPlatform.h"
 
 @implementation iTrackGamesTests
 
@@ -24,9 +25,12 @@
     [super tearDown];
 }
 
-- (void)testExample
+- (void)testPlatform
 {
-    STFail(@"Unit tests are not implemented yet in iTrackGamesTests");
+    TGPlatform *platform = [[TGPlatform alloc] init];
+    platform.name = @"Name";
+    
+    [platform description];
 }
 
 @end
