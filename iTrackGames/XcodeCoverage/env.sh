@@ -1,0 +1,5 @@
+export BUILT_PRODUCTS_DIR="/Users/achappell/Library/Developer/Xcode/DerivedData/iTrackGames-crcsnnygpcqfgqaqjuyfteqrirqm/Build/Products/Debug-iphonesimulator"
+export CURRENT_ARCH="i386"
+export OBJECT_FILE_DIR_normal="/Users/achappell/Library/Developer/Xcode/DerivedData/iTrackGames-crcsnnygpcqfgqaqjuyfteqrirqm/Build/Intermediates/iTrackGames.build/Debug-iphonesimulator/iTrackGamesTests.build/Objects-normal"
+export OBJROOT="/Users/achappell/Library/Developer/Xcode/DerivedData/iTrackGames-crcsnnygpcqfgqaqjuyfteqrirqm/Build/Intermediates"
+export SRCROOT="/Users/achappell/Documents/Development/itrackgames-ios/iTrackGames"

@@ -7,6 +7,7 @@
 //
 
 #import "iTrackGamesTests.h"
+#import "TGPlatform.h"
 
 @implementation iTrackGamesTests
 
