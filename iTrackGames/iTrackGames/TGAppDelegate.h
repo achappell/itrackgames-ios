@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TGLoginViewController.h"
 
 @class TGPlatformTableViewController;
 
@@ -14,6 +15,6 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
-@property (strong, nonatomic) TGPlatformTableViewController *viewController;
+@property (strong, nonatomic) TGLoginViewController *viewController;
 
 @end

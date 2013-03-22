@@ -11,6 +11,13 @@
 		1C29A38716D1A6F6009524BE /* TGGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C29A38616D1A6F6009524BE /* TGGame.m */; };
 		1C29A38B16D1A766009524BE /* TGGameTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C29A38916D1A766009524BE /* TGGameTableViewController.m */; };
 		1C29A38C16D1A766009524BE /* TGGameTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C29A38A16D1A766009524BE /* TGGameTableViewController.xib */; };
+		1C52A1C616E40C7B0027979A /* TGLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C52A1C416E40C7B0027979A /* TGLoginViewController.m */; };
+		1C52A1C716E40C7B0027979A /* TGLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C52A1C516E40C7B0027979A /* TGLoginViewController.xib */; };
+		1C52A1CA16E40DC90027979A /* TGPlatformTableViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C52A1C816E40DC90027979A /* TGPlatformTableViewController_iPad.xib */; };
+		1C52A1CB16E40DC90027979A /* TGPlatformTableViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C52A1C916E40DC90027979A /* TGPlatformTableViewController_iPhone.xib */; };
+		1C52A1CE16E41AFA0027979A /* TGUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C52A1CD16E41AFA0027979A /* TGUserManager.m */; };
+		1C52A1D116E41B130027979A /* TGUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C52A1D016E41B130027979A /* TGUser.m */; };
+		1C52A1D416E431F30027979A /* TGDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C52A1D316E431F30027979A /* TGDataManager.m */; };
 		1C8235BA16DAD32500843D6A /* TGGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C8235B816DAD32500843D6A /* TGGameViewController.m */; };
 		1C8235BB16DAD32500843D6A /* TGGameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C8235B916DAD32500843D6A /* TGGameViewController.xib */; };
 		C89229FB16DD46B7003B6A3C /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C89229F716DD46B7003B6A3C /* libTestFlight.a */; };
@@ -27,8 +34,6 @@
 		E0DAA61E16D180420066C7D2 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0DAA61D16D180420066C7D2 /* Default@2x.png */; };
 		E0DAA62016D180420066C7D2 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0DAA61F16D180420066C7D2 /* Default-568h@2x.png */; };
 		E0DAA62316D180420066C7D2 /* TGPlatformTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0DAA62216D180420066C7D2 /* TGPlatformTableViewController.m */; };
-		E0DAA62616D180420066C7D2 /* TGPlatformTableViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0DAA62416D180420066C7D2 /* TGPlatformTableViewController_iPhone.xib */; };
-		E0DAA62916D180420066C7D2 /* TGPlatformTableViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0DAA62716D180420066C7D2 /* TGPlatformTableViewController_iPad.xib */; };
 		E0DAA63116D180430066C7D2 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0DAA63016D180430066C7D2 /* SenTestingKit.framework */; };
 		E0DAA63216D180430066C7D2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0DAA60916D180420066C7D2 /* UIKit.framework */; };
 		E0DAA63316D180430066C7D2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0DAA60B16D180420066C7D2 /* Foundation.framework */; };
@@ -55,6 +60,17 @@
 		1C29A38816D1A766009524BE /* TGGameTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGGameTableViewController.h; sourceTree = "<group>"; };
 		1C29A38916D1A766009524BE /* TGGameTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGGameTableViewController.m; sourceTree = "<group>"; };
 		1C29A38A16D1A766009524BE /* TGGameTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TGGameTableViewController.xib; sourceTree = "<group>"; };
+		1C52A1C316E40C7B0027979A /* TGLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGLoginViewController.h; sourceTree = "<group>"; };
+		1C52A1C416E40C7B0027979A /* TGLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGLoginViewController.m; sourceTree = "<group>"; };
+		1C52A1C516E40C7B0027979A /* TGLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TGLoginViewController.xib; sourceTree = "<group>"; };
+		1C52A1C816E40DC90027979A /* TGPlatformTableViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TGPlatformTableViewController_iPad.xib; sourceTree = "<group>"; };
+		1C52A1C916E40DC90027979A /* TGPlatformTableViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TGPlatformTableViewController_iPhone.xib; sourceTree = "<group>"; };
+		1C52A1CC16E41AFA0027979A /* TGUserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGUserManager.h; sourceTree = "<group>"; };
+		1C52A1CD16E41AFA0027979A /* TGUserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGUserManager.m; sourceTree = "<group>"; };
+		1C52A1CF16E41B130027979A /* TGUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGUser.h; sourceTree = "<group>"; };
+		1C52A1D016E41B130027979A /* TGUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGUser.m; sourceTree = "<group>"; };
+		1C52A1D216E431F30027979A /* TGDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGDataManager.h; sourceTree = "<group>"; };
+		1C52A1D316E431F30027979A /* TGDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGDataManager.m; sourceTree = "<group>"; };
 		1C8235B716DAD32500843D6A /* TGGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGGameViewController.h; sourceTree = "<group>"; };
 		1C8235B816DAD32500843D6A /* TGGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGGameViewController.m; sourceTree = "<group>"; };
 		1C8235B916DAD32500843D6A /* TGGameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TGGameViewController.xib; sourceTree = "<group>"; };
@@ -80,8 +96,6 @@
 		E0DAA61F16D180420066C7D2 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		E0DAA62116D180420066C7D2 /* TGPlatformTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TGPlatformTableViewController.h; sourceTree = "<group>"; };
 		E0DAA62216D180420066C7D2 /* TGPlatformTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TGPlatformTableViewController.m; sourceTree = "<group>"; };
-		E0DAA62516D180420066C7D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/TGPlatformTableViewController_iPhone.xib; sourceTree = "<group>"; };
-		E0DAA62816D180420066C7D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/TGPlatformTableViewController_iPad.xib; sourceTree = "<group>"; };
 		E0DAA62F16D180430066C7D2 /* iTrackGamesTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iTrackGamesTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0DAA63016D180430066C7D2 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		E0DAA63816D180430066C7D2 /* iTrackGamesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iTrackGamesTests-Info.plist"; sourceTree = "<group>"; };
@@ -124,6 +138,8 @@
 				1C29A37E16D18D83009524BE /* TGPlatform.m */,
 				1C29A38516D1A6F6009524BE /* TGGame.h */,
 				1C29A38616D1A6F6009524BE /* TGGame.m */,
+				1C52A1CF16E41B130027979A /* TGUser.h */,
+				1C52A1D016E41B130027979A /* TGUser.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -144,13 +160,16 @@
 				1C29A38A16D1A766009524BE /* TGGameTableViewController.xib */,
 				E0DAA62116D180420066C7D2 /* TGPlatformTableViewController.h */,
 				E0DAA62216D180420066C7D2 /* TGPlatformTableViewController.m */,
-				E0DAA62416D180420066C7D2 /* TGPlatformTableViewController_iPhone.xib */,
-				E0DAA62716D180420066C7D2 /* TGPlatformTableViewController_iPad.xib */,
+				1C52A1C816E40DC90027979A /* TGPlatformTableViewController_iPad.xib */,
+				1C52A1C916E40DC90027979A /* TGPlatformTableViewController_iPhone.xib */,
 				1C8235B716DAD32500843D6A /* TGGameViewController.h */,
 				1C8235B816DAD32500843D6A /* TGGameViewController.m */,
 				1C8235B916DAD32500843D6A /* TGGameViewController.xib */,
+				1C52A1C316E40C7B0027979A /* TGLoginViewController.h */,
+				1C52A1C416E40C7B0027979A /* TGLoginViewController.m */,
+				1C52A1C516E40C7B0027979A /* TGLoginViewController.xib */,
 			);
-			name = Controllers;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		C89229F416DD4686003B6A3C /* Views */ = {
@@ -163,8 +182,12 @@
 		C89229F516DD4689003B6A3C /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				1C52A1CC16E41AFA0027979A /* TGUserManager.h */,
+				1C52A1CD16E41AFA0027979A /* TGUserManager.m */,
+				1C52A1D216E431F30027979A /* TGDataManager.h */,
+				1C52A1D316E431F30027979A /* TGDataManager.m */,
 			);
-			name = Managers;
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		C89229F616DD46B7003B6A3C /* TestFlightSDK */ = {
@@ -337,12 +360,13 @@
 				E0DAA61C16D180420066C7D2 /* Default.png in Resources */,
 				E0DAA61E16D180420066C7D2 /* Default@2x.png in Resources */,
 				E0DAA62016D180420066C7D2 /* Default-568h@2x.png in Resources */,
-				E0DAA62616D180420066C7D2 /* TGPlatformTableViewController_iPhone.xib in Resources */,
-				E0DAA62916D180420066C7D2 /* TGPlatformTableViewController_iPad.xib in Resources */,
 				1C29A38C16D1A766009524BE /* TGGameTableViewController.xib in Resources */,
 				1C8235BB16DAD32500843D6A /* TGGameViewController.xib in Resources */,
 				C89229FC16DD46B7003B6A3C /* README.md in Resources */,
 				C89229FD16DD46B7003B6A3C /* release_notes.md in Resources */,
+				1C52A1C716E40C7B0027979A /* TGLoginViewController.xib in Resources */,
+				1C52A1CA16E40DC90027979A /* TGPlatformTableViewController_iPad.xib in Resources */,
+				1C52A1CB16E40DC90027979A /* TGPlatformTableViewController_iPhone.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,6 +435,10 @@
 				1C29A38716D1A6F6009524BE /* TGGame.m in Sources */,
 				1C29A38B16D1A766009524BE /* TGGameTableViewController.m in Sources */,
 				1C8235BA16DAD32500843D6A /* TGGameViewController.m in Sources */,
+				1C52A1C616E40C7B0027979A /* TGLoginViewController.m in Sources */,
+				1C52A1CE16E41AFA0027979A /* TGUserManager.m in Sources */,
+				1C52A1D116E41B130027979A /* TGUser.m in Sources */,
+				1C52A1D416E431F30027979A /* TGDataManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,22 +467,6 @@
 				E0DAA61316D180420066C7D2 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		E0DAA62416D180420066C7D2 /* TGPlatformTableViewController_iPhone.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E0DAA62516D180420066C7D2 /* en */,
-			);
-			name = TGPlatformTableViewController_iPhone.xib;
-			sourceTree = "<group>";
-		};
-		E0DAA62716D180420066C7D2 /* TGPlatformTableViewController_iPad.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E0DAA62816D180420066C7D2 /* en */,
-			);
-			name = TGPlatformTableViewController_iPad.xib;
 			sourceTree = "<group>";
 		};
 		E0DAA63916D180430066C7D2 /* InfoPlist.strings */ = {

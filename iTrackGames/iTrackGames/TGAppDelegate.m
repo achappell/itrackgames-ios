@@ -12,6 +12,7 @@
 #import "TGPlatform.h"
 #import "TGGame.h"
 #import "TestFlight.h"
+#import "TGLoginViewController.h"
 
 @implementation TGAppDelegate
 
@@ -26,10 +27,10 @@
     // Override point for customization after application launch.
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
     {
-        self.viewController = [[TGPlatformTableViewController alloc] initWithNibName:@"TGPlatformTableViewController_iPhone" bundle:nil];
+        self.viewController = [[TGLoginViewController alloc] initWithNibName:@"TGLoginViewController" bundle:nil];
     } else
     {
-        self.viewController = [[TGPlatformTableViewController alloc] initWithNibName:@"TGPlatformTableViewController_iPad" bundle:nil];
+        self.viewController = [[TGLoginViewController alloc] initWithNibName:@"TGLoginViewController" bundle:nil];
     }
     
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:self.viewController];
