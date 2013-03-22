@@ -39,22 +39,21 @@
 
 -(void)loginButtonTapped:(id)sender
 {
-    NSString *username, *password;
+    self.username = self.usernameTextField.text;
+    self.password = self.passwordTextField.text;
     
-    username = self.usernameTextField.text;
-    password = self.passwordTextField.text;
+    NSLog(@"%@ %@", self.username, self.password);
     
-    NSLog(@"%@ %@", username, password);
-    
-    [[TGUserManager sharedManager] loginWithUsername:username andPassword:password withCompletion:^(NSError *error) {
+    [self loginUser];
+}
+
+- (void)loginUser
+{
+    [[TGUserManager sharedManager] loginWithUsername:self.username andPassword:self.password withCompletion:^(NSError *error) {
         TGPlatformTableViewController *viewController = [[TGPlatformTableViewController alloc] initWithNibName:@"TGPlatformTableViewController_iPhone" bundle:nil];
         
         [self.navigationController pushViewController:viewController animated:YES];
     }];
-     
-    
-    
-    
 }
 
 #pragma mark - UITextFieldDelegateMethods

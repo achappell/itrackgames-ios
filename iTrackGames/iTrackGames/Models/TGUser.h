@@ -9,5 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface TGUser : NSObject
+
 @property (nonatomic, strong) NSString *token;
+
 @end

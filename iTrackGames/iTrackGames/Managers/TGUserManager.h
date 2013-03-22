@@ -13,4 +13,7 @@ typedef void(^TGUserManagerCompletionBlockType)(NSError *error);
 @interface TGUserManager : NSObject
 +(TGUserManager *) sharedManager;
 -(void) loginWithUsername: (NSString *) username andPassword: (NSString *) password withCompletion: (TGUserManagerCompletionBlockType) completionBlock;
+
++(void)setSharedManager:(TGUserManager *)sharedManager;
+- (NSString *)currentUserToken;
 @end

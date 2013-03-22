@@ -35,6 +35,16 @@ static TGUserManager *_sharedManager;
     
 }
 
+- (NSString *)currentUserToken
+{
+    return self.currentUser.token;
+}
+
++(void)setSharedManager:(TGUserManager *)sharedManager
+{
+    _sharedManager = sharedManager;
+}
+
 -(void) loginWithUsername: (NSString *) username andPassword: (NSString *) password withCompletion:(TGUserManagerCompletionBlockType) completionBlock
 {
      [[TGDataManager sharedManager] fetchUserTokenWithUsername:username andPassword:password withCompletion:^(id data, NSError *error) {

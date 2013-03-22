@@ -9,10 +9,14 @@
 #import <UIKit/UIKit.h>
 
 @interface TGLoginViewController : UIViewController <UITextFieldDelegate>
+
 @property (nonatomic, weak) IBOutlet UITextField *usernameTextField;
 @property (nonatomic, weak) IBOutlet UITextField *passwordTextField;
 @property (nonatomic, weak) IBOutlet UIButton *loginButton;
+@property (nonatomic, strong) NSString *username;
+@property (nonatomic, strong) NSString *password;
 
 -(IBAction)loginButtonTapped:(id)sender;
+- (void)loginUser;
 
 @end

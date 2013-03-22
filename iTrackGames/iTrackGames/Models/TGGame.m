@@ -9,8 +9,10 @@
 #import "TGGame.h"
 
 @implementation TGGame
+
 -(NSString *)description
 {
     return self.title;
 }
+
 @end
