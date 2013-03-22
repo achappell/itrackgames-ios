@@ -49,4 +49,11 @@
     STAssertEqualObjects(platform.rating, copy.rating, @"Rating wasn't copied");
 }
 
+- (void)testThatDescriptionIsCorrect
+{
+    NSString *description = [platform description];
+    
+    STAssertEquals(description, @"XBOX", @"Description doesn't match name");
+}
+
 @end

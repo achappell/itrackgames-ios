@@ -15,4 +15,17 @@
     return self.title;
 }
 
+-(id)copyWithZone:(NSZone *)zone
+{
+    TGGame *copy = [[[self class] alloc] init];
+    
+    copy.title = [self.title copy];
+    copy.developer = [self.developer copy];
+    copy.publisher = [self.publisher copy];
+    copy.overview = [self.overview copy];
+    copy.game_id = [self.game_id copy];
+    
+    return copy;
+}
+
 @end

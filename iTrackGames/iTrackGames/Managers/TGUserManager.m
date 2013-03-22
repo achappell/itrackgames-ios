@@ -35,24 +35,35 @@ static TGUserManager *_sharedManager;
     
 }
 
++ (void)setSharedManager:(TGUserManager *)sharedManager
+{
+    _sharedManager = sharedManager;
+}
+
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        self.dataManager = [[TGDataManager alloc] init];
+    }
+    return self;
+}
+
 - (NSString *)currentUserToken
 {
     return self.currentUser.token;
 }
 
-+(void)setSharedManager:(TGUserManager *)sharedManager
-{
-    _sharedManager = sharedManager;
-}
-
 -(void) loginWithUsername: (NSString *) username andPassword: (NSString *) password withCompletion:(TGUserManagerCompletionBlockType) completionBlock
 {
-     [[TGDataManager sharedManager] fetchUserTokenWithUsername:username andPassword:password withCompletion:^(id data, NSError *error) {
+     [self.dataManager fetchUserTokenWithUsername:username andPassword:password withCompletion:^(id data, NSError *error) {
         NSLog(@"hell's yeah!");
         
         if (error == nil) {
             TGUser *currentUser = [[TGUser alloc] init];
             currentUser.token = (NSString *)data;
+            
+            self.currentUser = currentUser;
         }
          
          if (completionBlock)

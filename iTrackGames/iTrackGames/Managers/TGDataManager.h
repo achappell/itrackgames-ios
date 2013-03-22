@@ -11,6 +11,7 @@
 typedef void(^TGDataManagerCompletionBlockType)(id data, NSError *error);
 
 @interface TGDataManager : NSObject
-+(TGDataManager *) sharedManager;
+
 -(NSString *) fetchUserTokenWithUsername: (NSString *) username andPassword: (NSString *) password withCompletion:(TGDataManagerCompletionBlockType) completionBlock;
+
 @end

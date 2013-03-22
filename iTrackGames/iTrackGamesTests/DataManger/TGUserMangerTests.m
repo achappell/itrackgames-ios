@@ -8,8 +8,8 @@
 
 #import "TGUserMangerTests.h"
 #import "TGUserManager.h"
+#import "TGDataManager.h"
 #import <OCMock/OCMock.h>
-#import "TGLoginViewController.h"
 
 @implementation TGUserManagerTests
 
@@ -29,30 +29,31 @@
 
 - (void)testThatMocksUserLogin
 {
-    id mockUserManager = [OCMockObject mockForClass:[TGUserManager class]];
+    id mockDataManager = [OCMockObject mockForClass:[TGDataManager class]];
  
-    [[[mockUserManager stub] andDo:^(NSInvocation *invocation) {
+    [[[mockDataManager stub] andDo:^(NSInvocation *invocation) {
         
-        void (^completionBlock)(NSError *error) = nil;
+        void (^completionBlock)(id data, NSError *error) = nil;
         [invocation getArgument:&completionBlock atIndex:4];
         
         NSError *error = nil;
         
-        completionBlock(error);
+        completionBlock(@"token", error);
         
-    }] loginWithUsername:@"achappell@me.com" andPassword:@"test123" withCompletion:[OCMArg any]];
+    }] fetchUserTokenWithUsername:@"achappell@me.com" andPassword:@"testtest" withCompletion:[OCMArg any]];
     
-    TGLoginViewController *loginViewController = [[TGLoginViewController alloc] init];
+    TGUserManager *userManager = [[TGUserManager alloc] init];
     
-    loginViewController.username = @"achappell@me.com";
-    loginViewController.password = @"test123";
-
     [TGUserManager sharedManager];
-    [TGUserManager setSharedManager:mockUserManager];
+    [TGUserManager setSharedManager:userManager];
     
-    [loginViewController loginUser];
+    userManager.dataManager = mockDataManager;
     
-    STAssertNotNil([TGUserManager sharedManager].currentUserToken, @"No Current User Token");
+    [[TGUserManager sharedManager] loginWithUsername:@"achappell@me.com" andPassword:@"testtest" withCompletion:^(NSError *error) {
+        
+        STAssertNotNil([TGUserManager sharedManager].currentUserToken, @"No Current User Token");
+        
+    }];
 }
 
 @end

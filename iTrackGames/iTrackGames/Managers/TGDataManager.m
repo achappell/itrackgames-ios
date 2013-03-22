@@ -9,22 +9,7 @@
 #import "TGDataManager.h"
 #import <RestKit/RestKit.h>
 
-static TGDataManager *_sharedManager;
-
 @implementation TGDataManager
-+(TGDataManager *) sharedManager
-{
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        if (!_sharedManager)
-        {
-            _sharedManager = [[TGDataManager alloc] init];
-        }
-    });
-    
-    return _sharedManager;
-    
-}
 
 -(NSString *)fetchUserTokenWithUsername:(NSString *)username andPassword:(NSString *)password withCompletion:(TGDataManagerCompletionBlockType)completionBlock
 {

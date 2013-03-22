@@ -39,17 +39,14 @@
 
 -(void)loginButtonTapped:(id)sender
 {
-    self.username = self.usernameTextField.text;
-    self.password = self.passwordTextField.text;
+    NSString *username, *password;
     
-    NSLog(@"%@ %@", self.username, self.password);
+    username = self.usernameTextField.text;
+    password = self.passwordTextField.text;
     
-    [self loginUser];
-}
-
-- (void)loginUser
-{
-    [[TGUserManager sharedManager] loginWithUsername:self.username andPassword:self.password withCompletion:^(NSError *error) {
+    NSLog(@"%@ %@", username, password);
+    
+    [[TGUserManager sharedManager] loginWithUsername:username andPassword:password withCompletion:^(NSError *error) {
         TGPlatformTableViewController *viewController = [[TGPlatformTableViewController alloc] initWithNibName:@"TGPlatformTableViewController_iPhone" bundle:nil];
         
         [self.navigationController pushViewController:viewController animated:YES];

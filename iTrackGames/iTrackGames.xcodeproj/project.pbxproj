@@ -25,13 +25,14 @@
 		C89229FD16DD46B7003B6A3C /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = C89229F916DD46B7003B6A3C /* release_notes.md */; };
 		C89229FF16DD485A003B6A3C /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C89229FE16DD485A003B6A3C /* libz.dylib */; };
 		C8AD3A3616FBB6C400A8CD79 /* TGPlatformTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C8AD3A3516FBB6C400A8CD79 /* TGPlatformTests.m */; };
-		C8AD3A3716FBB80700A8CD79 /* TGPlatform.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C29A37E16D18D83009524BE /* TGPlatform.m */; };
 		C8AD3A3816FBB80A00A8CD79 /* TGGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C29A38616D1A6F6009524BE /* TGGame.m */; };
 		C8AD3A3916FBB81300A8CD79 /* TGUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C52A1D016E41B130027979A /* TGUser.m */; };
 		C8AD3A3D16FBBBFA00A8CD79 /* TGUserMangerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C8AD3A3C16FBBBFA00A8CD79 /* TGUserMangerTests.m */; };
-		C8AD3A3E16FBBBFE00A8CD79 /* TGDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C52A1D316E431F30027979A /* TGDataManager.m */; };
 		C8AD3A4116FBBCE000A8CD79 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 71AF9A9C1D4C4D848FE30F72 /* libPods.a */; };
 		C8AD3A4216FBBD5C00A8CD79 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C89229FE16DD485A003B6A3C /* libz.dylib */; };
+		C8AD3A4316FC9C2E00A8CD79 /* TGUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C52A1CD16E41AFA0027979A /* TGUserManager.m */; };
+		C8AD3A4616FC9E6000A8CD79 /* TGGameTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C8AD3A4516FC9E6000A8CD79 /* TGGameTests.m */; };
+		E0668A9B16FC7ED400B52855 /* TGPlatform.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C29A37E16D18D83009524BE /* TGPlatform.m */; };
 		E0DAA60A16D180420066C7D2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0DAA60916D180420066C7D2 /* UIKit.framework */; };
 		E0DAA60C16D180420066C7D2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0DAA60B16D180420066C7D2 /* Foundation.framework */; };
 		E0DAA60E16D180420066C7D2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0DAA60D16D180420066C7D2 /* CoreGraphics.framework */; };
@@ -46,7 +47,6 @@
 		E0DAA63216D180430066C7D2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0DAA60916D180420066C7D2 /* UIKit.framework */; };
 		E0DAA63316D180430066C7D2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0DAA60B16D180420066C7D2 /* Foundation.framework */; };
 		E0DAA63B16D180430066C7D2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E0DAA63916D180430066C7D2 /* InfoPlist.strings */; };
-		E0DAA63E16D180430066C7D2 /* iTrackGamesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E0DAA63D16D180430066C7D2 /* iTrackGamesTests.m */; };
 		FDE645C1148E4FF38E62E963 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 71AF9A9C1D4C4D848FE30F72 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -93,6 +93,8 @@
 		C8AD3A3516FBB6C400A8CD79 /* TGPlatformTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGPlatformTests.m; sourceTree = "<group>"; };
 		C8AD3A3B16FBBBFA00A8CD79 /* TGUserMangerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGUserMangerTests.h; sourceTree = "<group>"; };
 		C8AD3A3C16FBBBFA00A8CD79 /* TGUserMangerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGUserMangerTests.m; sourceTree = "<group>"; };
+		C8AD3A4416FC9E6000A8CD79 /* TGGameTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGGameTests.h; sourceTree = "<group>"; };
+		C8AD3A4516FC9E6000A8CD79 /* TGGameTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGGameTests.m; sourceTree = "<group>"; };
 		E0DAA60616D180420066C7D2 /* iTrackGames.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTrackGames.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0DAA60916D180420066C7D2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E0DAA60B16D180420066C7D2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -112,8 +114,6 @@
 		E0DAA63016D180430066C7D2 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		E0DAA63816D180430066C7D2 /* iTrackGamesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iTrackGamesTests-Info.plist"; sourceTree = "<group>"; };
 		E0DAA63A16D180430066C7D2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		E0DAA63C16D180430066C7D2 /* iTrackGamesTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iTrackGamesTests.h; sourceTree = "<group>"; };
-		E0DAA63D16D180430066C7D2 /* iTrackGamesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iTrackGamesTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +220,8 @@
 			children = (
 				C8AD3A3416FBB6C400A8CD79 /* TGPlatformTests.h */,
 				C8AD3A3516FBB6C400A8CD79 /* TGPlatformTests.m */,
+				C8AD3A4416FC9E6000A8CD79 /* TGGameTests.h */,
+				C8AD3A4516FC9E6000A8CD79 /* TGGameTests.m */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
@@ -301,8 +303,6 @@
 			children = (
 				C8AD3A3A16FBBB6D00A8CD79 /* DataManager */,
 				C8AD3A3316FBB67D00A8CD79 /* DataModel */,
-				E0DAA63C16D180430066C7D2 /* iTrackGamesTests.h */,
-				E0DAA63D16D180430066C7D2 /* iTrackGamesTests.m */,
 				E0DAA63716D180430066C7D2 /* Supporting Files */,
 			);
 			path = iTrackGamesTests;
@@ -481,13 +481,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E0DAA63E16D180430066C7D2 /* iTrackGamesTests.m in Sources */,
+				E0668A9B16FC7ED400B52855 /* TGPlatform.m in Sources */,
 				C8AD3A3616FBB6C400A8CD79 /* TGPlatformTests.m in Sources */,
-				C8AD3A3716FBB80700A8CD79 /* TGPlatform.m in Sources */,
 				C8AD3A3816FBB80A00A8CD79 /* TGGame.m in Sources */,
 				C8AD3A3916FBB81300A8CD79 /* TGUser.m in Sources */,
 				C8AD3A3D16FBBBFA00A8CD79 /* TGUserMangerTests.m in Sources */,
-				C8AD3A3E16FBBBFE00A8CD79 /* TGDataManager.m in Sources */,
+				C8AD3A4316FC9C2E00A8CD79 /* TGUserManager.m in Sources */,
+				C8AD3A4616FC9E6000A8CD79 /* TGGameTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

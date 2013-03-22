@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface TGGame : NSObject
+@interface TGGame : NSObject <NSCopying>
 
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *developer;

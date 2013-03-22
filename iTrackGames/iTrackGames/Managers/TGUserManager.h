@@ -7,13 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "TGDataManager.h"
 
 typedef void(^TGUserManagerCompletionBlockType)(NSError *error);
 
 @interface TGUserManager : NSObject
-+(TGUserManager *) sharedManager;
--(void) loginWithUsername: (NSString *) username andPassword: (NSString *) password withCompletion: (TGUserManagerCompletionBlockType) completionBlock;
 
-+(void)setSharedManager:(TGUserManager *)sharedManager;
+@property (nonatomic, strong) TGDataManager *dataManager;
+
++(TGUserManager *) sharedManager;
++ (void)setSharedManager:(TGUserManager *)sharedManager;
+-(void) loginWithUsername: (NSString *) username andPassword: (NSString *) password withCompletion: (TGUserManagerCompletionBlockType) completionBlock;
 - (NSString *)currentUserToken;
+
 @end
