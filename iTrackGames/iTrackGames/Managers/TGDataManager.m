@@ -26,10 +26,8 @@
     AFJSONRequestOperation *loginOperation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
         NSLog(@"success %@", JSON);
         
-        token = [JSON objectForKey:@"token"];
-        
         if (completionBlock)
-            completionBlock(token, nil);
+            completionBlock(JSON, nil);
         
     } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
         NSLog(@"failure %@", [error description]);

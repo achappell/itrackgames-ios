@@ -38,9 +38,9 @@
         
         NSError *error = nil;
         
-        completionBlock(@"token", error);
+        completionBlock(@{@"token": @"sdfoiwe40823"}, error);
         
-    }] fetchUserTokenWithUsername:@"achappell@me.com" andPassword:@"testtest" withCompletion:[OCMArg any]];
+    }] fetchUserTokenWithUsername:[OCMArg any] andPassword:[OCMArg any] withCompletion:[OCMArg any]];
     
     TGUserManager *userManager = [[TGUserManager alloc] init];
     

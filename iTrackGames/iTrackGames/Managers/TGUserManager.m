@@ -60,8 +60,10 @@ static TGUserManager *_sharedManager;
         NSLog(@"hell's yeah!");
         
         if (error == nil) {
+            NSString *token = (NSString *)[data objectForKey:@"token"];
+            
             TGUser *currentUser = [[TGUser alloc] init];
-            currentUser.token = (NSString *)data;
+            currentUser.token = token;
             
             self.currentUser = currentUser;
         }
