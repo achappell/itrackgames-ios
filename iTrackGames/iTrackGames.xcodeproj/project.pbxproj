@@ -30,6 +30,8 @@
 		C8AD3A4316FC9C2E00A8CD79 /* TGUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C52A1CD16E41AFA0027979A /* TGUserManager.m */; };
 		C8AD3A4616FC9E6000A8CD79 /* TGGameTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C8AD3A4516FC9E6000A8CD79 /* TGGameTests.m */; };
 		E0668A9B16FC7ED400B52855 /* TGPlatform.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C29A37E16D18D83009524BE /* TGPlatform.m */; };
+		E0D97EFF16FD27B4008ABE8A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0D97EFE16FD27B4008ABE8A /* SystemConfiguration.framework */; };
+		E0D97F0116FD27CF008ABE8A /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0D97F0016FD27CF008ABE8A /* MobileCoreServices.framework */; };
 		E0DAA60A16D180420066C7D2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0DAA60916D180420066C7D2 /* UIKit.framework */; };
 		E0DAA60C16D180420066C7D2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0DAA60B16D180420066C7D2 /* Foundation.framework */; };
 		E0DAA60E16D180420066C7D2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0DAA60D16D180420066C7D2 /* CoreGraphics.framework */; };
@@ -88,6 +90,9 @@
 		C8AD3A3C16FBBBFA00A8CD79 /* TGUserMangerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGUserMangerTests.m; sourceTree = "<group>"; };
 		C8AD3A4416FC9E6000A8CD79 /* TGGameTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGGameTests.h; sourceTree = "<group>"; };
 		C8AD3A4516FC9E6000A8CD79 /* TGGameTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGGameTests.m; sourceTree = "<group>"; };
+		E0D97EFD16FD1EEF008ABE8A /* TGConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGConstants.h; sourceTree = "<group>"; };
+		E0D97EFE16FD27B4008ABE8A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		E0D97F0016FD27CF008ABE8A /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		E0DAA60616D180420066C7D2 /* iTrackGames.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTrackGames.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0DAA60916D180420066C7D2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E0DAA60B16D180420066C7D2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -114,6 +119,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0D97F0116FD27CF008ABE8A /* MobileCoreServices.framework in Frameworks */,
+				E0D97EFF16FD27B4008ABE8A /* SystemConfiguration.framework in Frameworks */,
 				C89229FF16DD485A003B6A3C /* libz.dylib in Frameworks */,
 				E0DAA60A16D180420066C7D2 /* UIKit.framework in Frameworks */,
 				E0DAA60C16D180420066C7D2 /* Foundation.framework in Frameworks */,
@@ -239,6 +246,8 @@
 		E0DAA60816D180420066C7D2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E0D97F0016FD27CF008ABE8A /* MobileCoreServices.framework */,
+				E0D97EFE16FD27B4008ABE8A /* SystemConfiguration.framework */,
 				C89229FE16DD485A003B6A3C /* libz.dylib */,
 				E0DAA60916D180420066C7D2 /* UIKit.framework */,
 				E0DAA60B16D180420066C7D2 /* Foundation.framework */,
@@ -259,6 +268,7 @@
 				1C29A37C16D18D20009524BE /* Models */,
 				E0DAA61816D180420066C7D2 /* TGAppDelegate.h */,
 				E0DAA61916D180420066C7D2 /* TGAppDelegate.m */,
+				E0D97EFD16FD1EEF008ABE8A /* TGConstants.h */,
 				E0DAA61016D180420066C7D2 /* Supporting Files */,
 			);
 			path = iTrackGames;
@@ -572,10 +582,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iTrackGames/iTrackGames-Prefix.pch";
 				INFOPLIST_FILE = "iTrackGames/iTrackGames-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/iTrackGames/TestFlightSDK\"",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
@@ -593,10 +600,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iTrackGames/iTrackGames-Prefix.pch";
 				INFOPLIST_FILE = "iTrackGames/iTrackGames-Info.plist";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SRCROOT)/iTrackGames/TestFlightSDK\"",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";

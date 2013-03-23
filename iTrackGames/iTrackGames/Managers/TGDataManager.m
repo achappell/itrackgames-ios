@@ -8,6 +8,7 @@
 
 #import "TGDataManager.h"
 #import <RestKit/RestKit.h>
+#import "TGConstants.h"
 
 @implementation TGDataManager
 
@@ -18,7 +19,7 @@
     __block NSString *token;
     
     
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://icheckgames.herokuapp.com/tokens.json"]];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://itrackgames.com/tokens.json"]];
     request.HTTPMethod = @"POST";
     [request addValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
     [request setHTTPBody:[loginInfo dataUsingEncoding:NSUTF8StringEncoding]];
@@ -34,8 +35,20 @@
         
         token = nil;
         
+        NSError *appError = error;
+        
+        // unauthorized
+        if (response.statusCode == 401)
+        {
+            appError = [NSError errorWithDomain:TGUserErrorDomain code:TGUserInvalidUsernamePasswordError userInfo:@{NSLocalizedDescriptionKey: @"Your username or password is invalid"}];
+        }
+        else
+        {
+            appError = [NSError errorWithDomain:TGUserErrorDomain code:TGUserUnkownLoginError userInfo:@{NSLocalizedDescriptionKey: @"Uh oh, something has gon awry. Check back later."}];
+        }
+        
         if (completionBlock)
-            completionBlock(nil, error);
+            completionBlock(nil, appError);
     }];
     
     [loginOperation start];

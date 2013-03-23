@@ -69,7 +69,7 @@
 
 - (void) initializeRestKit
 {
-    NSURL *baseURL = [NSURL URLWithString:@"http://icheckgames.herokuapp.com"];
+    NSURL *baseURL = [NSURL URLWithString:@"http://itrackgames.com"];
     AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:baseURL];
     
     [client setDefaultHeader:@"Accept" value:RKMIMETypeJSON];

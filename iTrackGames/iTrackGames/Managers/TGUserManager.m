@@ -12,6 +12,7 @@
 #import "TGDataManager.h"
 #import "TGUser.h"
 #import "TGPlatformTableViewController.h"
+#import "TGConstants.h"
 
 @interface TGUserManager ()
     @property (nonatomic, strong) TGUser *currentUser;
@@ -56,23 +57,31 @@ static TGUserManager *_sharedManager;
 
 -(void) loginWithUsername: (NSString *) username andPassword: (NSString *) password withCompletion:(TGUserManagerCompletionBlockType) completionBlock
 {
-     [self.dataManager fetchUserTokenWithUsername:username andPassword:password withCompletion:^(id data, NSError *error) {
-        NSLog(@"hell's yeah!");
+    if ([username isEqualToString:@""] || [password isEqualToString:@""])
+    {
+        NSError *error = [NSError errorWithDomain:TGUserErrorDomain code:TGUserInvalidUsernamePasswordError userInfo:@{NSLocalizedDescriptionKey: @"Your username or password is invalid"}];
         
-        if (error == nil) {
-            NSString *token = (NSString *)[data objectForKey:@"token"];
+        if (completionBlock)
+            completionBlock(error);
+    }
+    else
+    {
+        [self.dataManager fetchUserTokenWithUsername:username andPassword:password withCompletion:^(id data, NSError *error) {
             
-            TGUser *currentUser = [[TGUser alloc] init];
-            currentUser.token = token;
+            if (!error) {
+                NSString *token = (NSString *)[data objectForKey:@"token"];
+                
+                TGUser *currentUser = [[TGUser alloc] init];
+                currentUser.token = token;
+                
+                self.currentUser = currentUser;
+            }
             
-            self.currentUser = currentUser;
-        }
-         
-         if (completionBlock)
-             completionBlock(error);
+            if (completionBlock)
+                completionBlock(error);
 
-    }];
-    
+        }];
+    }
 }
 
 @end

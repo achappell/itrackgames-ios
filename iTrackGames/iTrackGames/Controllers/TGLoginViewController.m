@@ -47,9 +47,18 @@
     NSLog(@"%@ %@", username, password);
     
     [[TGUserManager sharedManager] loginWithUsername:username andPassword:password withCompletion:^(NSError *error) {
-        TGPlatformTableViewController *viewController = [[TGPlatformTableViewController alloc] initWithNibName:@"TGPlatformTableViewController_iPhone" bundle:nil];
         
-        [self.navigationController pushViewController:viewController animated:YES];
+        if (!error)
+        {
+            TGPlatformTableViewController *viewController = [[TGPlatformTableViewController alloc] initWithNibName:@"TGPlatformTableViewController_iPhone" bundle:nil];
+            
+            [self.navigationController pushViewController:viewController animated:YES];
+        }
+        else
+        {
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:error.localizedDescription delegate:nil cancelButtonTitle:@"ok" otherButtonTitles: nil];
+            [alertView show];
+        }
     }];
 }
 
