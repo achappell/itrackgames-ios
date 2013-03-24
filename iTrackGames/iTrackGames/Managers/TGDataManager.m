@@ -44,7 +44,7 @@
         }
         else
         {
-            appError = [NSError errorWithDomain:TGUserErrorDomain code:TGUserUnkownLoginError userInfo:@{NSLocalizedDescriptionKey: @"Uh oh, something has gon awry. Check back later."}];
+            appError = [NSError errorWithDomain:TGUserErrorDomain code:TGUserUnknownLoginError userInfo:@{NSLocalizedDescriptionKey: @"Uh oh, something has gon awry. Check back later."}];
         }
         
         if (completionBlock)

@@ -118,7 +118,7 @@
         void (^completionBlock)(id data, NSError *error) = nil;
         [invocation getArgument:&completionBlock atIndex:4];
         
-        NSError *error = [NSError errorWithDomain:TGUserErrorDomain code:TGUserUnkownLoginError userInfo:@{NSLocalizedDescriptionKey: @"Uh oh, something has gon awry. Check back later."}];
+        NSError *error = [NSError errorWithDomain:TGUserErrorDomain code:TGUserUnknownLoginError userInfo:@{NSLocalizedDescriptionKey: @"Uh oh, something has gon awry. Check back later."}];
         
         completionBlock(nil, error);
         
@@ -134,7 +134,7 @@
     [[TGUserManager sharedManager] loginWithUsername:@"badUser" andPassword:@"badPass" withCompletion:^(NSError *error) {
         
         STAssertNotNil(error, @"No Error Returned");
-        STAssertEquals(error.code, TGUserUnkownLoginError, @"Wrong error code");
+        STAssertEquals(error.code, TGUserUnknownLoginError, @"Wrong error code");
         
     }];
 }

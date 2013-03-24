@@ -11,4 +11,4 @@ static NSString *const TGUserErrorDomain = @"TGUserErrorDomain";
 
 // error codes
 static NSInteger const TGUserInvalidUsernamePasswordError = 10;
-static NSInteger const TGUserUnkownLoginError = 11;
+static NSInteger const TGUserUnknownLoginError = 11;
