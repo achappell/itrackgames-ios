@@ -20,6 +20,9 @@
 		1C52A1D416E431F30027979A /* TGDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C52A1D316E431F30027979A /* TGDataManager.m */; };
 		1C8235BA16DAD32500843D6A /* TGGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C8235B816DAD32500843D6A /* TGGameViewController.m */; };
 		1C8235BB16DAD32500843D6A /* TGGameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C8235B916DAD32500843D6A /* TGGameViewController.xib */; };
+		C83B1C1016FF9C250078878C /* TGViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = C83B1C0F16FF9C250078878C /* TGViewDataSource.m */; };
+		C83B1C1316FFA0270078878C /* TGPlatformsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = C83B1C1216FFA0270078878C /* TGPlatformsDataSource.m */; };
+		C83B1C1716FFA2390078878C /* TGPlatformDataSourceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C83B1C1616FFA2390078878C /* TGPlatformDataSourceTests.m */; };
 		C89229FF16DD485A003B6A3C /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C89229FE16DD485A003B6A3C /* libz.dylib */; };
 		C8AD3A3616FBB6C400A8CD79 /* TGPlatformTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C8AD3A3516FBB6C400A8CD79 /* TGPlatformTests.m */; };
 		C8AD3A3816FBB80A00A8CD79 /* TGGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C29A38616D1A6F6009524BE /* TGGame.m */; };
@@ -83,6 +86,12 @@
 		1C8235B916DAD32500843D6A /* TGGameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TGGameViewController.xib; sourceTree = "<group>"; };
 		71AF9A9C1D4C4D848FE30F72 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		86E86922B8094B7B87F618D1 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		C83B1C0E16FF9C250078878C /* TGViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGViewDataSource.h; sourceTree = "<group>"; };
+		C83B1C0F16FF9C250078878C /* TGViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGViewDataSource.m; sourceTree = "<group>"; };
+		C83B1C1116FFA0270078878C /* TGPlatformsDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGPlatformsDataSource.h; sourceTree = "<group>"; };
+		C83B1C1216FFA0270078878C /* TGPlatformsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGPlatformsDataSource.m; sourceTree = "<group>"; };
+		C83B1C1516FFA2390078878C /* TGPlatformDataSourceTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGPlatformDataSourceTests.h; sourceTree = "<group>"; };
+		C83B1C1616FFA2390078878C /* TGPlatformDataSourceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGPlatformDataSourceTests.m; sourceTree = "<group>"; };
 		C89229FE16DD485A003B6A3C /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		C8AD3A3416FBB6C400A8CD79 /* TGPlatformTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGPlatformTests.h; sourceTree = "<group>"; };
 		C8AD3A3516FBB6C400A8CD79 /* TGPlatformTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGPlatformTests.m; sourceTree = "<group>"; };
@@ -157,6 +166,41 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		C83B1C0C16FF9B880078878C /* Platforms */ = {
+			isa = PBXGroup;
+			children = (
+				E0DAA62116D180420066C7D2 /* TGPlatformTableViewController.h */,
+				E0DAA62216D180420066C7D2 /* TGPlatformTableViewController.m */,
+				1C52A1C816E40DC90027979A /* TGPlatformTableViewController_iPad.xib */,
+				1C52A1C916E40DC90027979A /* TGPlatformTableViewController_iPhone.xib */,
+				C83B1C1116FFA0270078878C /* TGPlatformsDataSource.h */,
+				C83B1C1216FFA0270078878C /* TGPlatformsDataSource.m */,
+			);
+			name = Platforms;
+			sourceTree = "<group>";
+		};
+		C83B1C0D16FF9B910078878C /* Games */ = {
+			isa = PBXGroup;
+			children = (
+				1C29A38816D1A766009524BE /* TGGameTableViewController.h */,
+				1C29A38916D1A766009524BE /* TGGameTableViewController.m */,
+				1C29A38A16D1A766009524BE /* TGGameTableViewController.xib */,
+				1C8235B716DAD32500843D6A /* TGGameViewController.h */,
+				1C8235B816DAD32500843D6A /* TGGameViewController.m */,
+				1C8235B916DAD32500843D6A /* TGGameViewController.xib */,
+			);
+			name = Games;
+			sourceTree = "<group>";
+		};
+		C83B1C1416FFA2140078878C /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				C83B1C1516FFA2390078878C /* TGPlatformDataSourceTests.h */,
+				C83B1C1616FFA2390078878C /* TGPlatformDataSourceTests.m */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
 		C89229F216DD4674003B6A3C /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
@@ -167,16 +211,8 @@
 		C89229F316DD467E003B6A3C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				1C29A38816D1A766009524BE /* TGGameTableViewController.h */,
-				1C29A38916D1A766009524BE /* TGGameTableViewController.m */,
-				1C29A38A16D1A766009524BE /* TGGameTableViewController.xib */,
-				E0DAA62116D180420066C7D2 /* TGPlatformTableViewController.h */,
-				E0DAA62216D180420066C7D2 /* TGPlatformTableViewController.m */,
-				1C52A1C816E40DC90027979A /* TGPlatformTableViewController_iPad.xib */,
-				1C52A1C916E40DC90027979A /* TGPlatformTableViewController_iPhone.xib */,
-				1C8235B716DAD32500843D6A /* TGGameViewController.h */,
-				1C8235B816DAD32500843D6A /* TGGameViewController.m */,
-				1C8235B916DAD32500843D6A /* TGGameViewController.xib */,
+				C83B1C0D16FF9B910078878C /* Games */,
+				C83B1C0C16FF9B880078878C /* Platforms */,
 				1C52A1C316E40C7B0027979A /* TGLoginViewController.h */,
 				1C52A1C416E40C7B0027979A /* TGLoginViewController.m */,
 				1C52A1C516E40C7B0027979A /* TGLoginViewController.xib */,
@@ -198,6 +234,8 @@
 				1C52A1CD16E41AFA0027979A /* TGUserManager.m */,
 				1C52A1D216E431F30027979A /* TGDataManager.h */,
 				1C52A1D316E431F30027979A /* TGDataManager.m */,
+				C83B1C0E16FF9C250078878C /* TGViewDataSource.h */,
+				C83B1C0F16FF9C250078878C /* TGViewDataSource.m */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -291,6 +329,7 @@
 		E0DAA63616D180430066C7D2 /* iTrackGamesTests */ = {
 			isa = PBXGroup;
 			children = (
+				C83B1C1416FFA2140078878C /* DataSource */,
 				C8AD3A3A16FBBB6D00A8CD79 /* DataManager */,
 				C8AD3A3316FBB67D00A8CD79 /* DataModel */,
 				E0DAA63716D180430066C7D2 /* Supporting Files */,
@@ -462,6 +501,8 @@
 				1C52A1CE16E41AFA0027979A /* TGUserManager.m in Sources */,
 				1C52A1D116E41B130027979A /* TGUser.m in Sources */,
 				1C52A1D416E431F30027979A /* TGDataManager.m in Sources */,
+				C83B1C1016FF9C250078878C /* TGViewDataSource.m in Sources */,
+				C83B1C1316FFA0270078878C /* TGPlatformsDataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,6 +517,7 @@
 				C8AD3A3D16FBBBFA00A8CD79 /* TGUserMangerTests.m in Sources */,
 				C8AD3A4316FC9C2E00A8CD79 /* TGUserManager.m in Sources */,
 				C8AD3A4616FC9E6000A8CD79 /* TGGameTests.m in Sources */,
+				C83B1C1716FFA2390078878C /* TGPlatformDataSourceTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

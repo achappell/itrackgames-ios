@@ -13,6 +13,8 @@
 
 @interface TGPlatformTableViewController ()
 
+@property (nonatomic, strong) TGPlatformsDataSource *dataSource;
+
 @end
 
 @implementation TGPlatformTableViewController
@@ -21,20 +23,16 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    [self fetchData];
+    
+    self.dataSource = [[TGPlatformsDataSource alloc] init];
+    self.dataSource.delegate = self;
+    
+    [self.dataSource reloadDataIfNeeded];
 }
 
--(void) fetchData
+- (NSArray *)platforms
 {
-    RKObjectManager *objectManager = [RKObjectManager sharedManager];
-    
-    [objectManager getObjectsAtPath:@"/platforms.json" parameters:nil success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-        NSArray *platforms = [mappingResult array];
-        NSLog(@"Loaded platforms: %@", platforms);
-        self.platforms = platforms;
-        [self.tableView reloadData];
-    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
-    }];
+    return [self.dataSource platforms];
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -50,7 +48,7 @@
     {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier];
     }
-    TGPlatform *platform = [_platforms objectAtIndex:indexPath.row];
+    TGPlatform *platform = [self.platforms objectAtIndex:indexPath.row];
     cell.textLabel.text = platform.name;
     
     return cell;
@@ -71,6 +69,19 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - TGViewDataSourceDelegate
+
+- (void)viewDataSourceDidUpdateContent:(id<TGViewDataSource>)dataSource
+{
+    [self.tableView reloadData];
+}
+
+- (void)viewDataSource:(id<TGViewDataSource>)dataSource didFailWithError:(NSError *)error
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:error.localizedDescription delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil];
+    [alert show];
 }
 
 @end

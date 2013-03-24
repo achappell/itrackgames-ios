@@ -12,7 +12,7 @@
 
 @implementation TGDataManager
 
--(NSString *)fetchUserTokenWithUsername:(NSString *)username andPassword:(NSString *)password withCompletion:(TGDataManagerCompletionBlockType)completionBlock
+-(void)fetchUserTokenWithUsername:(NSString *)username andPassword:(NSString *)password withCompletion:(TGDataManagerCompletionBlockType)completionBlock
 {
     NSString *loginInfo = [NSString stringWithFormat:@"email=%@&password=%@", username, password];
     
@@ -52,7 +52,25 @@
     }];
     
     [loginOperation start];
-    
-    return token;
 }
+
+- (void)fetchPlatformsWithCompletion:(TGDataManagerCompletionBlockType)completionBlock
+{
+    RKObjectManager *objectManager = [RKObjectManager sharedManager];
+    
+    [objectManager getObjectsAtPath:@"/platforms.json" parameters:nil success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+        
+        NSArray *platforms = [mappingResult array];
+        
+        if (completionBlock)
+            completionBlock(platforms, nil);
+        
+    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+        
+        if (completionBlock)
+            completionBlock(nil, error);
+        
+    }];
+}
+
 @end
