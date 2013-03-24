@@ -23,6 +23,8 @@
 		C83B1C1016FF9C250078878C /* TGViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = C83B1C0F16FF9C250078878C /* TGViewDataSource.m */; };
 		C83B1C1316FFA0270078878C /* TGPlatformsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = C83B1C1216FFA0270078878C /* TGPlatformsDataSource.m */; };
 		C83B1C1716FFA2390078878C /* TGPlatformDataSourceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C83B1C1616FFA2390078878C /* TGPlatformDataSourceTests.m */; };
+		C83B1C1816FFA8CE0078878C /* TGPlatformsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = C83B1C1216FFA0270078878C /* TGPlatformsDataSource.m */; };
+		C83B1C1916FFA8EB0078878C /* TGViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = C83B1C0F16FF9C250078878C /* TGViewDataSource.m */; };
 		C89229FF16DD485A003B6A3C /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C89229FE16DD485A003B6A3C /* libz.dylib */; };
 		C8AD3A3616FBB6C400A8CD79 /* TGPlatformTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C8AD3A3516FBB6C400A8CD79 /* TGPlatformTests.m */; };
 		C8AD3A3816FBB80A00A8CD79 /* TGGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C29A38616D1A6F6009524BE /* TGGame.m */; };
@@ -518,6 +520,8 @@
 				C8AD3A4316FC9C2E00A8CD79 /* TGUserManager.m in Sources */,
 				C8AD3A4616FC9E6000A8CD79 /* TGGameTests.m in Sources */,
 				C83B1C1716FFA2390078878C /* TGPlatformDataSourceTests.m in Sources */,
+				C83B1C1816FFA8CE0078878C /* TGPlatformsDataSource.m in Sources */,
+				C83B1C1916FFA8EB0078878C /* TGViewDataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
