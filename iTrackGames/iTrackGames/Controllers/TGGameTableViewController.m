@@ -13,6 +13,8 @@
 
 @interface TGGameTableViewController ()
 
+@property (nonatomic, strong) TGGamesDataSource *dataSource;
+
 @end
 
 @implementation TGGameTableViewController
@@ -30,21 +32,17 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    [self fetchData];
+    
+    self.dataSource = [[TGGamesDataSource alloc] initWithPlatform:self.platform];
+    self.dataSource.delegate = self;
+    
+    [self.dataSource reloadDataIfNeeded];
 }
 
--(void) fetchData
-{
-    RKObjectManager *objectManager = [RKObjectManager sharedManager];
+- (NSArray *) games {
     
-    [objectManager getObjectsAtPath:@"/games.json" parameters:@{@"platform_id": self.platform.platform_id} success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-        NSArray *games = [mappingResult array];
-        NSLog(@"Loaded games: %@", games);
-        self.games = games;
-        [self.tableView reloadData];
-    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
-        NSLog(@"Failed in fetchData.");
-    }];
+    return [self.dataSource games];
+
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -60,7 +58,7 @@
     {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier];
     }
-    TGGame *game = [_games objectAtIndex:indexPath.row];
+    TGGame *game = [self.games objectAtIndex:indexPath.row];
     cell.textLabel.text = game.title;
     
     return cell;
@@ -81,6 +79,19 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - TGViewDataSourceDelegate
+
+-(void)viewDataSourceDidUpdateContent:(id<TGViewDataSource>)dataSource
+{
+    [self.tableView reloadData];
+}
+
+-(void)viewDataSource:(id<TGViewDataSource>)dataSource didFailWithError:(NSError *)error
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:error.localizedDescription delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil];
+    [alert show];
 }
 
 @end

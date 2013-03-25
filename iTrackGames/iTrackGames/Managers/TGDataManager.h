@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "TGPlatform.h"
 
 typedef void(^TGDataManagerCompletionBlockType)(id data, NSError *error);
 
@@ -14,5 +15,6 @@ typedef void(^TGDataManagerCompletionBlockType)(id data, NSError *error);
 
 -(void) fetchUserTokenWithUsername: (NSString *) username andPassword: (NSString *) password withCompletion:(TGDataManagerCompletionBlockType) completionBlock;
 - (void)fetchPlatformsWithCompletion:(TGDataManagerCompletionBlockType)completionBlock;
+-(void) fetchGamesWithPlatform: (TGPlatform *) platform withCompletion: (TGDataManagerCompletionBlockType)completionBlock;
 
 @end

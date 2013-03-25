@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TGGamesDataSource.h"
 #import "TGPlatform.h"
 
-@interface TGGameTableViewController : UIViewController
+@interface TGGameTableViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, TGViewDataSourceDelegate>
 
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSArray *games;

@@ -73,4 +73,23 @@
     }];
 }
 
+-(void) fetchGamesWithPlatform:(TGPlatform *)platform withCompletion: (TGDataManagerCompletionBlockType)completionBlock
+{
+    RKObjectManager *objectManager = [RKObjectManager sharedManager];
+    
+    [objectManager getObjectsAtPath:@"/games.json" parameters:@{@"platform_id": platform.platform_id} success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+        
+        NSArray *games = [mappingResult array];
+        
+        if (completionBlock)
+            completionBlock(games, nil);
+        
+    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+        
+        if (completionBlock)
+            completionBlock(nil, error);
+        
+    }];
+}
+
 @end
