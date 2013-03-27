@@ -70,6 +70,7 @@
 - (void) initializeRestKit
 {
     NSURL *baseURL = [NSURL URLWithString:@"http://itrackgames.com"];
+    //NSURL *baseURL = [NSURL URLWithString:@"http://localhost:3000"];
     AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:baseURL];
     
     [client setDefaultHeader:@"Accept" value:RKMIMETypeJSON];
@@ -93,6 +94,15 @@
      @"publisher": @"publisher",
      @"overview": @"overview"
      }];
+    
+    RKObjectMapping *gameStashDatumMapping = [RKObjectMapping mappingForClass:[TGGameStashDatum class]];
+    [gameStashDatumMapping addAttributeMappingsFromDictionary:@{
+     @"has_played": @"hasPlayed",
+     @"rating": @"rating"
+     }];
+    
+    [gameMapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"platform" toKeyPath:@"platform" withMapping:platformMapping]];
+    [gameMapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"game_stash_datum" toKeyPath:@"gameStashDatum" withMapping:gameStashDatumMapping]];
     
     RKResponseDescriptor *responseDescriptorPlatform = [RKResponseDescriptor responseDescriptorWithMapping:platformMapping pathPattern:@"/platforms.json" keyPath:nil statusCodes:[NSIndexSet indexSetWithIndex:200]];
     

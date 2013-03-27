@@ -15,4 +15,7 @@
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSArray *games;
 @property (nonatomic, strong) TGPlatform *platform;
+
+- (IBAction)checkBoxButtonTapped:(id)sender;
+
 @end

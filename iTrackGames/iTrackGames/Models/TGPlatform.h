@@ -15,5 +15,6 @@
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *overview;
 @property (nonatomic, copy) NSString *rating;
+@property (nonatomic, copy) NSMutableArray *games;
 
 @end

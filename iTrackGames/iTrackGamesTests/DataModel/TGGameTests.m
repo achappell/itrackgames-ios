@@ -8,6 +8,8 @@
 
 #import "TGGameTests.h"
 #import "TGGame.h"
+#import "TGPlatformTests.h"
+#import "TGGameStashDatumTests.h"
 
 @interface TGGameTests()
 {
@@ -34,6 +36,8 @@
     game.publisher = @"UBISoft";
     game.overview = @"Great Game";
     game.game_id = [NSNumber numberWithInt:1];
+    game.platform = [TGPlatformTests platform];
+    game.gameStashDatum = [TGGameStashDatumTests gameStashDatum];
     
     return game;
 }
@@ -47,6 +51,17 @@
     STAssertEqualObjects(game.publisher, copy.publisher, @"Name wasn't copied");
     STAssertEqualObjects(game.overview, copy.overview, @"Overview wasn't copied");
     STAssertEqualObjects(game.game_id, copy.game_id, @"Rating wasn't copied");
+    
+    // platform
+    STAssertEqualObjects(game.platform.developer, copy.platform.developer, @"Platform Developer wasn't copied");
+    STAssertEqualObjects(game.platform.platform_id, copy.platform.platform_id, @"Platform Id wasn't copied");
+    STAssertEqualObjects(game.platform.name, copy.platform.name, @"Platform Name wasn't copied");
+    STAssertEqualObjects(game.platform.overview, copy.platform.overview, @"Platform Overview wasn't copied");
+    STAssertEqualObjects(game.platform.rating, copy.platform.rating, @"Platform Rating wasn't copied");
+    
+    // game stash datum
+    STAssertEqualObjects(game.gameStashDatum.hasPlayed, copy.gameStashDatum.hasPlayed, @"HasPlayed wasn't copied");
+    STAssertEqualObjects(game.gameStashDatum.rating, copy.gameStashDatum.rating, @"Rating wasn't copied");
 }
 
 - (void)testThatDescriptionIsCorrect

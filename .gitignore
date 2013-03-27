@@ -23,3 +23,5 @@ iTrackGames/iTrackGames.xcworkspace/xcuserdata/achappell.xcuserdatad/UserInterfa
 iTrackGames/Pods/Pods.xcodeproj/xcuserdata/tonimwhite.xcuserdatad/xcschemes/xcschememanagement.plist
 
 iTrackGames/iTrackGames.xcworkspace/xcuserdata/tonimwhite.xcuserdatad/xcdebugger/Breakpoints.xcbkptlist
+
+*.xcbkptlist

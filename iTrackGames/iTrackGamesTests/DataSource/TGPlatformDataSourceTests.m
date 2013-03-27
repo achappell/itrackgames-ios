@@ -9,6 +9,7 @@
 #import "TGPlatformDataSourceTests.h"
 #import "TGPlatformsDataSource.h"
 #import <OCMock/OCMock.h>
+#import "TGPlatformTableViewController.h"
 
 @implementation TGPlatformDataSourceTests
 
@@ -27,11 +28,16 @@
         
     }] fetchPlatformsWithCompletion:[OCMArg any]];
     
+    id delegate = [OCMockObject mockForClass:[TGPlatformTableViewController class]];
+    [[delegate expect] viewDataSourceDidUpdateContent:[OCMArg any]];
+    
     TGPlatformsDataSource *dataSource = [[TGPlatformsDataSource alloc] init];
     dataSource.dataManager = mockDataManager;
+    dataSource.delegate = delegate;
     [dataSource reloadDataIfNeeded];
     
     STAssertNotNil(dataSource.platforms, @"Platforms was populated");
+    [delegate verify];
 }
 
 @end

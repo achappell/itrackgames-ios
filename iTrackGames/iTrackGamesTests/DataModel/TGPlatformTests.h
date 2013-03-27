@@ -7,7 +7,10 @@
 //
 
 #import <SenTestingKit/SenTestingKit.h>
+#import "TGPlatform.h"
 
 @interface TGPlatformTests : SenTestCase
+
++ (TGPlatform *)platform;
 
 @end

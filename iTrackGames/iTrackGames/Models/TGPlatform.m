@@ -7,6 +7,7 @@
 //
 
 #import "TGPlatform.h"
+#import "TGGame.h"
 
 @implementation TGPlatform
 
@@ -24,6 +25,7 @@
     copy.name = [self.name copy];
     copy.overview = [self.overview copy];
     copy.rating = [self.rating copy];
+    copy.games = [self.games copy];
     
     return copy;
 }

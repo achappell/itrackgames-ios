@@ -10,6 +10,9 @@
 #import <RestKit/RestKit.h>
 #import "TGGame.h"
 #import "TGGameViewController.h"
+#import "TGGameTableViewCell.h"
+
+static NSString *reuseIdentifier = @"TGGameCell";
 
 @interface TGGameTableViewController ()
 
@@ -33,16 +36,34 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    UINib *nib = [UINib nibWithNibName:@"TGGameTableViewCell" bundle:nil];
+    [self.tableView registerNib:nib forCellReuseIdentifier:reuseIdentifier];
+    self.tableView.rowHeight = 80.0f;
+    
     self.dataSource = [[TGGamesDataSource alloc] initWithPlatform:self.platform];
     self.dataSource.delegate = self;
     
     [self.dataSource reloadDataIfNeeded];
 }
 
+#pragma mark - actions
+
+- (IBAction)checkBoxButtonTapped:(id)sender
+{
+    UIButton *checkButton = (UIButton *)sender;
+    
+    TGGame *game = [self.games objectAtIndex:checkButton.tag];
+    game.gameStashDatum.hasPlayed = [NSNumber numberWithBool:![game.gameStashDatum.hasPlayed boolValue]];
+    
+    [self.tableView reloadData];
+}
+
+#pragma mark - Table view data source
+
 - (NSArray *) games {
     
     return [self.dataSource games];
-
+    
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -52,14 +73,13 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString *reuseIdentifier = @"Platform Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
-    if (!cell)
-    {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier];
-    }
+    TGGameTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
+
     TGGame *game = [self.games objectAtIndex:indexPath.row];
-    cell.textLabel.text = game.title;
+    [cell setGame:game];
+    
+    cell.checkboxButton.tag = indexPath.row;
+    [cell.checkboxButton addTarget:self action:@selector(checkBoxButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
     
     return cell;
 }
@@ -71,6 +91,7 @@
     TGGameViewController *viewController = [[TGGameViewController alloc] initWithNibName:@"TGGameViewController" bundle:nil];
     
     viewController.game = [self.games objectAtIndex:indexPath.row];
+    
     
     [self.navigationController pushViewController:viewController animated:YES];
 }

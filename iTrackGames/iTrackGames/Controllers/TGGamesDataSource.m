@@ -34,7 +34,11 @@
     [self.dataManager fetchGamesWithPlatform: self.platform withCompletion:^(id data, NSError *error) {
         
         if (!error)
-            self.games = (NSArray *)data;
+        {
+            NSMutableArray *games = [NSMutableArray arrayWithArray:(NSArray *)data];
+            [games sortUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"title" ascending:YES]]];
+            self.games = games;
+        }
         
         [self endLoadingWithError:error];
     }];

@@ -7,7 +7,6 @@
 //
 
 #import "TGPlatformTests.h"
-#import "TGPlatform.h"
 
 @interface TGPlatformTests()
 {

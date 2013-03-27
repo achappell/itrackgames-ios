@@ -24,6 +24,8 @@
     copy.publisher = [self.publisher copy];
     copy.overview = [self.overview copy];
     copy.game_id = [self.game_id copy];
+    copy.platform = [self.platform copy];
+    copy.gameStashDatum = [self.gameStashDatum copy];
     
     return copy;
 }
