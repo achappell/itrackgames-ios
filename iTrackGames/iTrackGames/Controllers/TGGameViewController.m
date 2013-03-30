@@ -28,6 +28,20 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
+    flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+    
+    CGRect collectionViewFrame = CGRectMake(0.0f, CGRectGetMaxY(self.overviewTextView.frame) + 10, self.view.frame.size.width, self.view.frame.size.height - CGRectGetMaxY(self.overviewTextView.frame) - 20);
+    
+    self.collectionView = [[UICollectionView alloc] initWithFrame:collectionViewFrame collectionViewLayout:flowLayout];
+    self.collectionView.dataSource = self;
+    self.collectionView.delegate = self;
+    [self.collectionView setBackgroundColor:[UIColor blueColor]];
+    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"cell"];
+    
+    [self.view addSubview:self.collectionView];
+    
     [self fetchData];
 }
 
@@ -57,6 +71,31 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Collection View Data Source 
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return 1;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
+    
+    MACachedImageView *imageView = [[MACachedImageView alloc] initWithFrame:cell.contentView.bounds];
+    imageView.clipsToBounds = YES;
+    [imageView displayImageFromURL:[NSURL URLWithString:@"http://thegamesdb.net/banners/screenshots/thumb/2-1.jpg"]];
+    
+    [cell.contentView addSubview:imageView];
+    
+    return cell;
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    return CGSizeMake(100, collectionView.bounds.size.height);
 }
 
 @end

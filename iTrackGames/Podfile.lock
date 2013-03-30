@@ -1,6 +1,10 @@
 
 PODS:
 - AFNetworking (1.1.0)
+- MACachedImageView (1.1.0):
+  - AFNetworking (~> 1.1.0)
+  - MACircleProgressIndicator (~> 1.0.0)
+- MACircleProgressIndicator (1.0.0)
 - OCMock (2.0.1)
 - RestKit (0.20.0):
   - RestKit/Core (= 0.20.0)
@@ -21,6 +25,7 @@ PODS:
 - ViewDeck (2.2.7)
 
 DEPENDENCIES:
+- MACachedImageView
 - OCMock
 - RestKit
 - TestFlightSDK
@@ -28,6 +33,8 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AFNetworking: 761a418233d280c1e0580bcb76ff9cb4c3073d17
+  MACachedImageView: 8f1189a653bd72e9868ae3c62fcd429f76104cbe
+  MACircleProgressIndicator: dc497a2c68dd930d4aea837b1a732a56ce4bd6d8
   OCMock: 77a9c4c57af6bf258a537d34cf09abf422affede
   RestKit: 580771664a14eaaa40bf53cf83584f12fc141930
   RestKit/Core: 580771664a14eaaa40bf53cf83584f12fc141930

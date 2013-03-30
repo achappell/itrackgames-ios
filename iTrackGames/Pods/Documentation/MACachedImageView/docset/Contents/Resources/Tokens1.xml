@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/MACachedImageView.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/MACachedImageView</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>MACachedImageView.h</DeclaredIn>
+			
+			<NodeRef refid="1"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MACachedImageView/setUI_APPEARANCE_SELECTOR:</TokenIdentifier>
+			<Abstract type="html">If no image is loaded, this placeholder image gets displayed.</Abstract>
+			<DeclaredIn>MACachedImageView.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) UIImage *UI_APPEARANCE_SELECTOR</Declaration>
+			
+			
+			<Anchor>//api/name/UI_APPEARANCE_SELECTOR</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/MACachedImageView/UI_APPEARANCE_SELECTOR</TokenIdentifier>
+			<Abstract type="html">If no image is loaded, this placeholder image gets displayed.</Abstract>
+			<DeclaredIn>MACachedImageView.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, retain) UIImage *UI_APPEARANCE_SELECTOR</Declaration>
+			
+			
+			<Anchor>//api/name/UI_APPEARANCE_SELECTOR</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MACachedImageView/displayImageFromURL:</TokenIdentifier>
+			<Abstract type="html">Display an image from the given url. If the image was requested to display before and is avialable in the cache, it gets loaded from there. If not the image gets downloaded while showing a progress indicator.</Abstract>
+			<DeclaredIn>MACachedImageView.h</DeclaredIn>			
+			
+			<Declaration>- (void)displayImageFromURL:(NSURL *)url</Declaration>
+			
+			
+			<Anchor>//api/name/displayImageFromURL:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MACachedImageView/displayImageFromURL:forceRefreshingCache:</TokenIdentifier>
+			<Abstract type="html">Display an image from the given url. If the image was requested to display before and is avialable in the cache, it gets loaded from there. If not the image gets downloaded while showing a progress indicator. You can bypass the caching mechanism by passing YES for the forceRefreshingCache parameter. The cache gets refreshed then without checking it before.</Abstract>
+			<DeclaredIn>MACachedImageView.h</DeclaredIn>			
+			
+			<Declaration>- (void)displayImageFromURL:(NSURL *)url forceRefreshingCache:(BOOL)force</Declaration>
+			
+			
+			<Anchor>//api/name/displayImageFromURL:forceRefreshingCache:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/MACachedImageView/displayImage:</TokenIdentifier>
+			<Abstract type="html">Display any UIImage without using any caching mechanisms. Handy if you want to display some images from your resource bundle</Abstract>
+			<DeclaredIn>MACachedImageView.h</DeclaredIn>			
+			
+			<Declaration>- (void)displayImage:(UIImage *)image</Declaration>
+			
+			
+			<Anchor>//api/name/displayImage:</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>
