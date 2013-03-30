@@ -9,6 +9,7 @@
 #import "TGDataManager.h"
 #import <RestKit/RestKit.h>
 #import "TGConstants.h"
+#import "TGUserManager.h"
 
 @implementation TGDataManager
 
@@ -58,7 +59,15 @@
 {
     RKObjectManager *objectManager = [RKObjectManager sharedManager];
     
-    [objectManager getObjectsAtPath:@"/platforms.json" parameters:nil success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+    NSString *userToken = [TGUserManager sharedManager].currentUserToken;
+    
+    NSDictionary *parameters = nil;
+    
+    if (userToken != nil) {
+        parameters = @{@"auth_token": userToken};
+    }
+    
+    [objectManager getObjectsAtPath:@"/platforms.json" parameters:parameters success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
         
         NSArray *platforms = [mappingResult array];
         
@@ -77,7 +86,15 @@
 {
     RKObjectManager *objectManager = [RKObjectManager sharedManager];
     
-    [objectManager getObjectsAtPath:@"/games.json" parameters:@{@"platform_id": platform.platform_id} success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+    NSString *userToken = [TGUserManager sharedManager].currentUserToken;
+    
+    NSMutableDictionary *parameters = [NSMutableDictionary dictionaryWithDictionary:@{@"platform_id": platform.platform_id}];
+    
+    if (userToken != nil) {
+        [parameters setObject:userToken forKey:@"auth_token"];
+    }
+    
+    [objectManager getObjectsAtPath:@"/games.json" parameters:parameters success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
         
         NSArray *games = [mappingResult array];
         
