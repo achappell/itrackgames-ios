@@ -12,7 +12,15 @@
 #import "TGPlatform.h"
 #import "TGGame.h"
 #import "TestFlight.h"
+#import <ViewDeck/IIViewDeckController.h>
 #import "TGLoginViewController.h"
+#import "TGMenuViewController.h"
+
+@interface TGAppDelegate()
+
+@property (nonatomic, strong) IIViewDeckController *menuContainerViewController;
+
+@end
 
 @implementation TGAppDelegate
 
@@ -24,18 +32,9 @@
     [self initializeRestKit];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
-    {
-        self.viewController = [[TGLoginViewController alloc] initWithNibName:@"TGLoginViewController" bundle:nil];
-    } else
-    {
-        self.viewController = [[TGLoginViewController alloc] initWithNibName:@"TGLoginViewController" bundle:nil];
-    }
     
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:self.viewController];
+    self.window.rootViewController =  self.menuContainerViewController;
     
-    self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];
     return YES;
 }
@@ -115,6 +114,33 @@
     [objectManager addResponseDescriptor:responseDescriptorGame];
     
     [objectManager addResponseDescriptor:responseDescriptorIndivGame];
+}
+
+- (IIViewDeckController *)menuContainerViewController
+{
+    if (!_menuContainerViewController)
+    {
+        
+        // platforms
+        TGPlatformTableViewController *platformViewController = [[TGPlatformTableViewController alloc] initWithNibName:@"TGPlatformTableViewController" bundle:nil];
+        platformViewController.title = @"Platforms";
+        UINavigationController *platformsNavigationController = [[UINavigationController alloc] initWithRootViewController:platformViewController];
+        
+        TGLoginViewController *loginViewController = [[TGLoginViewController alloc] initWithNibName:@"TGLoginViewController" bundle:nil];
+        UINavigationController *loginNavigationController = [[UINavigationController alloc] initWithRootViewController:loginViewController];
+        
+        loginViewController.title = @"Login";
+
+        TGMenuViewController *menuViewController = [[TGMenuViewController alloc] initWithNibName:@"TGMenuViewController" bundle:nil];
+        menuViewController.viewControllers = @[ platformsNavigationController, loginNavigationController ];
+        
+        _menuContainerViewController = [[IIViewDeckController alloc] initWithCenterViewController:platformsNavigationController leftViewController:menuViewController];
+        menuViewController.viewDeckController = _menuContainerViewController;
+        platformViewController.viewDeckController = _menuContainerViewController;
+        loginViewController.viewDeckController = _menuContainerViewController;
+    }
+    
+    return _menuContainerViewController;
 }
 
 @end

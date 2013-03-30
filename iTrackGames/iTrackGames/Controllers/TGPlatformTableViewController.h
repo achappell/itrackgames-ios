@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "TGPlatformsDataSource.h"
 
-@interface TGPlatformTableViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, TGViewDataSourceDelegate>
+@interface TGPlatformTableViewController : TGViewController <UITableViewDelegate, UITableViewDataSource, TGViewDataSourceDelegate>
 
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSArray *platforms;

@@ -7,14 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TGLoginViewController.h"
 
 @class TGPlatformTableViewController;
 
 @interface TGAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
-@property (strong, nonatomic) TGLoginViewController *viewController;
 
 @end

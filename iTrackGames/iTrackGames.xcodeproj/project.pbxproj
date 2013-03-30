@@ -13,8 +13,8 @@
 		1C29A38C16D1A766009524BE /* TGGameTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C29A38A16D1A766009524BE /* TGGameTableViewController.xib */; };
 		1C52A1C616E40C7B0027979A /* TGLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C52A1C416E40C7B0027979A /* TGLoginViewController.m */; };
 		1C52A1C716E40C7B0027979A /* TGLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C52A1C516E40C7B0027979A /* TGLoginViewController.xib */; };
-		1C52A1CA16E40DC90027979A /* TGPlatformTableViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C52A1C816E40DC90027979A /* TGPlatformTableViewController_iPad.xib */; };
-		1C52A1CB16E40DC90027979A /* TGPlatformTableViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C52A1C916E40DC90027979A /* TGPlatformTableViewController_iPhone.xib */; };
+		1C52A1CA16E40DC90027979A /* TGPlatformTableViewController~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C52A1C816E40DC90027979A /* TGPlatformTableViewController~ipad.xib */; };
+		1C52A1CB16E40DC90027979A /* TGPlatformTableViewController~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C52A1C916E40DC90027979A /* TGPlatformTableViewController~iphone.xib */; };
 		1C52A1CE16E41AFA0027979A /* TGUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C52A1CD16E41AFA0027979A /* TGUserManager.m */; };
 		1C52A1D116E41B130027979A /* TGUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C52A1D016E41B130027979A /* TGUser.m */; };
 		1C52A1D416E431F30027979A /* TGDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C52A1D316E431F30027979A /* TGDataManager.m */; };
@@ -26,6 +26,10 @@
 		C83B1C1716FFA2390078878C /* TGPlatformDataSourceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C83B1C1616FFA2390078878C /* TGPlatformDataSourceTests.m */; };
 		C83B1C1816FFA8CE0078878C /* TGPlatformsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = C83B1C1216FFA0270078878C /* TGPlatformsDataSource.m */; };
 		C83B1C1916FFA8EB0078878C /* TGViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = C83B1C0F16FF9C250078878C /* TGViewDataSource.m */; };
+		C854401C17078E15003DA1B9 /* TGMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C854401A17078E15003DA1B9 /* TGMenuViewController.m */; };
+		C854401D17078E15003DA1B9 /* TGMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C854401B17078E15003DA1B9 /* TGMenuViewController.xib */; };
+		C854402117079B6A003DA1B9 /* TGNavigationItemFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = C854402017079B6A003DA1B9 /* TGNavigationItemFactory.m */; };
+		C854402417079BB7003DA1B9 /* TGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C854402317079BB7003DA1B9 /* TGViewController.m */; };
 		C89229FF16DD485A003B6A3C /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C89229FE16DD485A003B6A3C /* libz.dylib */; };
 		C8AD3A3616FBB6C400A8CD79 /* TGPlatformTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C8AD3A3516FBB6C400A8CD79 /* TGPlatformTests.m */; };
 		C8AD3A3816FBB80A00A8CD79 /* TGGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C29A38616D1A6F6009524BE /* TGGame.m */; };
@@ -83,8 +87,8 @@
 		1C52A1C316E40C7B0027979A /* TGLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGLoginViewController.h; sourceTree = "<group>"; };
 		1C52A1C416E40C7B0027979A /* TGLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGLoginViewController.m; sourceTree = "<group>"; };
 		1C52A1C516E40C7B0027979A /* TGLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TGLoginViewController.xib; sourceTree = "<group>"; };
-		1C52A1C816E40DC90027979A /* TGPlatformTableViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TGPlatformTableViewController_iPad.xib; sourceTree = "<group>"; };
-		1C52A1C916E40DC90027979A /* TGPlatformTableViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TGPlatformTableViewController_iPhone.xib; sourceTree = "<group>"; };
+		1C52A1C816E40DC90027979A /* TGPlatformTableViewController~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "TGPlatformTableViewController~ipad.xib"; sourceTree = "<group>"; };
+		1C52A1C916E40DC90027979A /* TGPlatformTableViewController~iphone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "TGPlatformTableViewController~iphone.xib"; sourceTree = "<group>"; };
 		1C52A1CC16E41AFA0027979A /* TGUserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGUserManager.h; sourceTree = "<group>"; };
 		1C52A1CD16E41AFA0027979A /* TGUserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGUserManager.m; sourceTree = "<group>"; };
 		1C52A1CF16E41B130027979A /* TGUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGUser.h; sourceTree = "<group>"; };
@@ -104,6 +108,13 @@
 		C83B1C1216FFA0270078878C /* TGPlatformsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGPlatformsDataSource.m; sourceTree = "<group>"; };
 		C83B1C1516FFA2390078878C /* TGPlatformDataSourceTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGPlatformDataSourceTests.h; sourceTree = "<group>"; };
 		C83B1C1616FFA2390078878C /* TGPlatformDataSourceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGPlatformDataSourceTests.m; sourceTree = "<group>"; };
+		C854401917078E15003DA1B9 /* TGMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGMenuViewController.h; sourceTree = "<group>"; };
+		C854401A17078E15003DA1B9 /* TGMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGMenuViewController.m; sourceTree = "<group>"; };
+		C854401B17078E15003DA1B9 /* TGMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TGMenuViewController.xib; sourceTree = "<group>"; };
+		C854401F17079B6A003DA1B9 /* TGNavigationItemFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGNavigationItemFactory.h; sourceTree = "<group>"; };
+		C854402017079B6A003DA1B9 /* TGNavigationItemFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGNavigationItemFactory.m; sourceTree = "<group>"; };
+		C854402217079BB7003DA1B9 /* TGViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGViewController.h; sourceTree = "<group>"; };
+		C854402317079BB7003DA1B9 /* TGViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGViewController.m; sourceTree = "<group>"; };
 		C89229FE16DD485A003B6A3C /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		C8AD3A3416FBB6C400A8CD79 /* TGPlatformTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGPlatformTests.h; sourceTree = "<group>"; };
 		C8AD3A3516FBB6C400A8CD79 /* TGPlatformTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGPlatformTests.m; sourceTree = "<group>"; };
@@ -194,8 +205,8 @@
 			children = (
 				E0DAA62116D180420066C7D2 /* TGPlatformTableViewController.h */,
 				E0DAA62216D180420066C7D2 /* TGPlatformTableViewController.m */,
-				1C52A1C816E40DC90027979A /* TGPlatformTableViewController_iPad.xib */,
-				1C52A1C916E40DC90027979A /* TGPlatformTableViewController_iPhone.xib */,
+				1C52A1C816E40DC90027979A /* TGPlatformTableViewController~ipad.xib */,
+				1C52A1C916E40DC90027979A /* TGPlatformTableViewController~iphone.xib */,
 				C83B1C1116FFA0270078878C /* TGPlatformsDataSource.h */,
 				C83B1C1216FFA0270078878C /* TGPlatformsDataSource.m */,
 			);
@@ -226,6 +237,15 @@
 			path = DataSource;
 			sourceTree = "<group>";
 		};
+		C854401E17079AB4003DA1B9 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				C854401F17079B6A003DA1B9 /* TGNavigationItemFactory.h */,
+				C854402017079B6A003DA1B9 /* TGNavigationItemFactory.m */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
 		C89229F216DD4674003B6A3C /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
@@ -241,6 +261,11 @@
 				1C52A1C316E40C7B0027979A /* TGLoginViewController.h */,
 				1C52A1C416E40C7B0027979A /* TGLoginViewController.m */,
 				1C52A1C516E40C7B0027979A /* TGLoginViewController.xib */,
+				C854401917078E15003DA1B9 /* TGMenuViewController.h */,
+				C854401A17078E15003DA1B9 /* TGMenuViewController.m */,
+				C854401B17078E15003DA1B9 /* TGMenuViewController.xib */,
+				C854402217079BB7003DA1B9 /* TGViewController.h */,
+				C854402317079BB7003DA1B9 /* TGViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -354,6 +379,7 @@
 		E0DAA60F16D180420066C7D2 /* iTrackGames */ = {
 			isa = PBXGroup;
 			children = (
+				C854401E17079AB4003DA1B9 /* Factory */,
 				E046FE8717027F95001636EB /* Resources */,
 				C89229F516DD4689003B6A3C /* Managers */,
 				C89229F416DD4686003B6A3C /* Views */,
@@ -483,11 +509,12 @@
 				1C29A38C16D1A766009524BE /* TGGameTableViewController.xib in Resources */,
 				1C8235BB16DAD32500843D6A /* TGGameViewController.xib in Resources */,
 				1C52A1C716E40C7B0027979A /* TGLoginViewController.xib in Resources */,
-				1C52A1CA16E40DC90027979A /* TGPlatformTableViewController_iPad.xib in Resources */,
-				1C52A1CB16E40DC90027979A /* TGPlatformTableViewController_iPhone.xib in Resources */,
+				1C52A1CA16E40DC90027979A /* TGPlatformTableViewController~ipad.xib in Resources */,
+				1C52A1CB16E40DC90027979A /* TGPlatformTableViewController~iphone.xib in Resources */,
 				E046FE8617027BE2001636EB /* TGGameTableViewCell~iphone.xib in Resources */,
 				E046FE8B17027FB8001636EB /* checkbox-checked.png in Resources */,
 				E046FE8C17027FB8001636EB /* checkbox.png in Resources */,
+				C854401D17078E15003DA1B9 /* TGMenuViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -565,6 +592,9 @@
 				1C9B256016FFABF90051C83F /* TGGamesDataSource.m in Sources */,
 				E046FE8417027B12001636EB /* TGGameTableViewCell.m in Sources */,
 				E046FE8F170295B2001636EB /* TGGameStashDatum.m in Sources */,
+				C854401C17078E15003DA1B9 /* TGMenuViewController.m in Sources */,
+				C854402117079B6A003DA1B9 /* TGNavigationItemFactory.m in Sources */,
+				C854402417079BB7003DA1B9 /* TGViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

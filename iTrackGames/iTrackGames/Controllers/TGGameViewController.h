@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "TGGame.h"
 
-@interface TGGameViewController : UIViewController
+@interface TGGameViewController : TGViewController
 
 @property (nonatomic, strong) TGGame *game;
 @property (nonatomic, weak) IBOutlet UILabel *titleLabel;

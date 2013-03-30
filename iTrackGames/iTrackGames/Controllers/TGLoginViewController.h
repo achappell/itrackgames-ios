@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TGLoginViewController : UIViewController <UITextFieldDelegate>
+@interface TGLoginViewController : TGViewController <UITextFieldDelegate>
 
 @property (nonatomic, weak) IBOutlet UITextField *usernameTextField;
 @property (nonatomic, weak) IBOutlet UITextField *passwordTextField;
