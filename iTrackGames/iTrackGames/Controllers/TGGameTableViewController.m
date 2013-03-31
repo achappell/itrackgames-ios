@@ -44,6 +44,8 @@ static NSString *reuseIdentifier = @"TGGameCell";
     self.dataSource.delegate = self;
     
     [self.dataSource reloadDataIfNeeded];
+    
+    
 }
 
 #pragma mark - actions
@@ -90,8 +92,7 @@ static NSString *reuseIdentifier = @"TGGameCell";
     
     TGGameViewController *viewController = [[TGGameViewController alloc] initWithNibName:@"TGGameViewController" bundle:nil];
     
-    viewController.game = [self.games objectAtIndex:indexPath.row];
-    
+    viewController.gameId = [(TGGame *)[self.games objectAtIndex:indexPath.row] game_id];
     
     [self.navigationController pushViewController:viewController animated:YES];
 }

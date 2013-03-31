@@ -20,6 +20,7 @@
 		1C52A1D416E431F30027979A /* TGDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C52A1D316E431F30027979A /* TGDataManager.m */; };
 		1C8235BA16DAD32500843D6A /* TGGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C8235B816DAD32500843D6A /* TGGameViewController.m */; };
 		1C8235BB16DAD32500843D6A /* TGGameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C8235B916DAD32500843D6A /* TGGameViewController.xib */; };
+		1C82D7B917079E410009C077 /* TGGameDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C82D7B817079E410009C077 /* TGGameDataSource.m */; };
 		1C9B256016FFABF90051C83F /* TGGamesDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C9B255F16FFABF90051C83F /* TGGamesDataSource.m */; };
 		C83B1C1016FF9C250078878C /* TGViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = C83B1C0F16FF9C250078878C /* TGViewDataSource.m */; };
 		C83B1C1316FFA0270078878C /* TGPlatformsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = C83B1C1216FFA0270078878C /* TGPlatformsDataSource.m */; };
@@ -98,6 +99,8 @@
 		1C8235B716DAD32500843D6A /* TGGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGGameViewController.h; sourceTree = "<group>"; };
 		1C8235B816DAD32500843D6A /* TGGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGGameViewController.m; sourceTree = "<group>"; };
 		1C8235B916DAD32500843D6A /* TGGameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TGGameViewController.xib; sourceTree = "<group>"; };
+		1C82D7B717079E410009C077 /* TGGameDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGGameDataSource.h; sourceTree = "<group>"; };
+		1C82D7B817079E410009C077 /* TGGameDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGGameDataSource.m; sourceTree = "<group>"; };
 		1C9B255E16FFABF80051C83F /* TGGamesDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGGamesDataSource.h; sourceTree = "<group>"; };
 		1C9B255F16FFABF90051C83F /* TGGamesDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGGamesDataSource.m; sourceTree = "<group>"; };
 		71AF9A9C1D4C4D848FE30F72 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -224,6 +227,8 @@
 				1C8235B916DAD32500843D6A /* TGGameViewController.xib */,
 				1C9B255E16FFABF80051C83F /* TGGamesDataSource.h */,
 				1C9B255F16FFABF90051C83F /* TGGamesDataSource.m */,
+				1C82D7B717079E410009C077 /* TGGameDataSource.h */,
+				1C82D7B817079E410009C077 /* TGGameDataSource.m */,
 			);
 			name = Games;
 			sourceTree = "<group>";
@@ -595,6 +600,7 @@
 				C854401C17078E15003DA1B9 /* TGMenuViewController.m in Sources */,
 				C854402117079B6A003DA1B9 /* TGNavigationItemFactory.m in Sources */,
 				C854402417079BB7003DA1B9 /* TGViewController.m in Sources */,
+				1C82D7B917079E410009C077 /* TGGameDataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

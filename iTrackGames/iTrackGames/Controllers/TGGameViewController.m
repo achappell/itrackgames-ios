@@ -8,8 +8,11 @@
 
 #import "TGGameViewController.h"
 #import <RestKit/RestKit.h>
+#import "TGGameDataSource.h"
 
 @interface TGGameViewController ()
+
+    @property (nonatomic, strong) TGGameDataSource *dataSource;
 
 @end
 
@@ -42,21 +45,17 @@
     
     [self.view addSubview:self.collectionView];
     
-    [self fetchData];
+    self.dataSource = [[TGGameDataSource alloc] initWithGameId:self.gameId];
+    self.dataSource.delegate = self;
+    
+    [self.dataSource reloadDataIfNeeded];
 }
 
--(void) fetchData
-{
-    RKObjectManager *objectManager = [RKObjectManager sharedManager];
+#pragma mark - Table view data source
+
+- (TGGame *) game {
     
-    NSString *path = [NSString stringWithFormat:@"/games/%i.json",[self.game.game_id intValue]];
-    
-    [objectManager getObjectsAtPath:path parameters:nil success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-        self.game = [mappingResult firstObject];
-        [self populateText];
-    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
-        NSLog(@"Failed in fetchData.");
-    }];
+    return [self.dataSource game];
 }
 
 -(void) populateText
@@ -96,6 +95,18 @@
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     return CGSizeMake(100, collectionView.bounds.size.height);
+}
+#pragma mark - TGViewDataSourceDelegate
+
+-(void)viewDataSourceDidUpdateContent:(id<TGViewDataSource>)dataSource
+{
+    [self populateText];
+}
+
+-(void)viewDataSource:(id<TGViewDataSource>)dataSource didFailWithError:(NSError *)error
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:error.localizedDescription delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil];
+    [alert show];
 }
 
 @end

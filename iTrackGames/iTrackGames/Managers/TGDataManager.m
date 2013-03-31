@@ -10,6 +10,7 @@
 #import <RestKit/RestKit.h>
 #import "TGConstants.h"
 #import "TGUserManager.h"
+#import "TGGame.h"
 
 @implementation TGDataManager
 
@@ -106,6 +107,25 @@
         if (completionBlock)
             completionBlock(nil, error);
         
+    }];
+}
+
+-(void) fetchGameData: (NSNumber *)gameId withCompletion: (TGDataManagerCompletionBlockType) completionBlock
+{
+    RKObjectManager *objectManager = [RKObjectManager sharedManager];
+    
+    NSString *path = [NSString stringWithFormat:@"/games/%i.json",[gameId intValue]];
+    
+    [objectManager getObjectsAtPath:path parameters:nil success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+        
+        TGGame *game = [mappingResult firstObject];
+        
+        if (completionBlock)
+            completionBlock(game, nil);
+        
+    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+        if (completionBlock)
+            completionBlock(nil, error);
     }];
 }
 

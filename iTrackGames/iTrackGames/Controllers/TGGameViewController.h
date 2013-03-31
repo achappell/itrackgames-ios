@@ -7,12 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TGGameDataSource.h"
 #import "TGGame.h"
 #import <MACachedImageView/MACachedImageView.h>
 
-@interface TGGameViewController : TGViewController <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
+
+@interface TGGameViewController : TGViewController <TGViewDataSourceDelegate,UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic, strong) TGGame *game;
+@property (nonatomic, strong) NSNumber *gameId;
 @property (nonatomic, weak) IBOutlet UILabel *titleLabel;
 @property (nonatomic, weak) IBOutlet UILabel *developerLabel;
 @property (nonatomic, weak) IBOutlet UILabel *publisherLabel;
