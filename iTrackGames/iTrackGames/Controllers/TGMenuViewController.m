@@ -29,6 +29,8 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -46,17 +48,20 @@
     if (!cell)
     {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+        cell.selectionStyle = UITableViewCellSelectionStyleGray;
     }
     
     UIViewController *viewController = [self.viewControllers objectAtIndex:indexPath.row];
     
     cell.textLabel.text = viewController.title;
+    [cell.textLabel setTextColor:[UIColor whiteColor]];
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     UIViewController *viewController = [self.viewControllers objectAtIndex:indexPath.row];
     
     self.viewDeckController.centerController = viewController;

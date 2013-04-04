@@ -30,6 +30,8 @@
 		C854401D17078E15003DA1B9 /* TGMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C854401B17078E15003DA1B9 /* TGMenuViewController.xib */; };
 		C854402117079B6A003DA1B9 /* TGNavigationItemFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = C854402017079B6A003DA1B9 /* TGNavigationItemFactory.m */; };
 		C854402417079BB7003DA1B9 /* TGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C854402317079BB7003DA1B9 /* TGViewController.m */; };
+		C89150A9170E04A700F2B080 /* GradientBG1_Ret.png in Resources */ = {isa = PBXBuildFile; fileRef = C89150A8170E04A700F2B080 /* GradientBG1_Ret.png */; };
+		C89150AB170E055400F2B080 /* GradientBG1_Ret@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C89150AA170E055400F2B080 /* GradientBG1_Ret@2x.png */; };
 		C89229FF16DD485A003B6A3C /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C89229FE16DD485A003B6A3C /* libz.dylib */; };
 		C8AD3A3616FBB6C400A8CD79 /* TGPlatformTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C8AD3A3516FBB6C400A8CD79 /* TGPlatformTests.m */; };
 		C8AD3A3816FBB80A00A8CD79 /* TGGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C29A38616D1A6F6009524BE /* TGGame.m */; };
@@ -115,6 +117,8 @@
 		C854402017079B6A003DA1B9 /* TGNavigationItemFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGNavigationItemFactory.m; sourceTree = "<group>"; };
 		C854402217079BB7003DA1B9 /* TGViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGViewController.h; sourceTree = "<group>"; };
 		C854402317079BB7003DA1B9 /* TGViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGViewController.m; sourceTree = "<group>"; };
+		C89150A8170E04A700F2B080 /* GradientBG1_Ret.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GradientBG1_Ret.png; sourceTree = "<group>"; };
+		C89150AA170E055400F2B080 /* GradientBG1_Ret@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GradientBG1_Ret@2x.png"; sourceTree = "<group>"; };
 		C89229FE16DD485A003B6A3C /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		C8AD3A3416FBB6C400A8CD79 /* TGPlatformTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGPlatformTests.h; sourceTree = "<group>"; };
 		C8AD3A3516FBB6C400A8CD79 /* TGPlatformTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGPlatformTests.m; sourceTree = "<group>"; };
@@ -327,6 +331,8 @@
 		E046FE8717027F95001636EB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C89150A8170E04A700F2B080 /* GradientBG1_Ret.png */,
+				C89150AA170E055400F2B080 /* GradientBG1_Ret@2x.png */,
 				E046FE8817027F9B001636EB /* Games */,
 			);
 			path = Resources;
@@ -515,6 +521,8 @@
 				E046FE8B17027FB8001636EB /* checkbox-checked.png in Resources */,
 				E046FE8C17027FB8001636EB /* checkbox.png in Resources */,
 				C854401D17078E15003DA1B9 /* TGMenuViewController.xib in Resources */,
+				C89150A9170E04A700F2B080 /* GradientBG1_Ret.png in Resources */,
+				C89150AB170E055400F2B080 /* GradientBG1_Ret@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
