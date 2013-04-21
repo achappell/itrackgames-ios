@@ -11,10 +11,12 @@
 #import <RestKit/RestKit.h>
 #import "TGPlatform.h"
 #import "TGGame.h"
+#import "TGImage.h"
 #import "TestFlight.h"
 #import <ViewDeck/IIViewDeckController.h>
 #import "TGLoginViewController.h"
 #import "TGMenuViewController.h"
+#import <CBIntrospect/CBIntrospect.h>
 
 @interface TGAppDelegate()
 
@@ -36,6 +38,9 @@
     self.window.rootViewController =  self.menuContainerViewController;
     
     [self.window makeKeyAndVisible];
+    
+    [[CBIntrospect sharedIntrospector] start];
+    
     return YES;
 }
 
@@ -91,7 +96,14 @@
      @"title": @"title",
      @"developer": @"developer",
      @"publisher": @"publisher",
-     @"overview": @"overview"
+     @"overview": @"overview",
+     }];
+    
+    RKObjectMapping *imageMapping = [RKObjectMapping mappingForClass:[TGImage class]];
+    [imageMapping addAttributeMappingsFromDictionary:@{
+     @"type": @"type",
+     @"location": @"location",
+     @"id": @"image_id",
      }];
     
     RKObjectMapping *gameStashDatumMapping = [RKObjectMapping mappingForClass:[TGGameStashDatum class]];
@@ -102,6 +114,7 @@
     
     [gameMapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"platform" toKeyPath:@"platform" withMapping:platformMapping]];
     [gameMapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"game_stash_datum" toKeyPath:@"gameStashDatum" withMapping:gameStashDatumMapping]];
+    [gameMapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"images" toKeyPath:@"images" withMapping:imageMapping]];
     
     RKResponseDescriptor *responseDescriptorPlatform = [RKResponseDescriptor responseDescriptorWithMapping:platformMapping pathPattern:@"/platforms.json" keyPath:nil statusCodes:[NSIndexSet indexSetWithIndex:200]];
     

@@ -26,6 +26,7 @@
     copy.game_id = [self.game_id copy];
     copy.platform = [self.platform copy];
     copy.gameStashDatum = [self.gameStashDatum copy];
+    copy.images = [self.images copy];
     
     return copy;
 }
