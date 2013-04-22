@@ -42,6 +42,8 @@
 		C8AD3A4216FBBD5C00A8CD79 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C89229FE16DD485A003B6A3C /* libz.dylib */; };
 		C8AD3A4316FC9C2E00A8CD79 /* TGUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C52A1CD16E41AFA0027979A /* TGUserManager.m */; };
 		C8AD3A4616FC9E6000A8CD79 /* TGGameTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C8AD3A4516FC9E6000A8CD79 /* TGGameTests.m */; };
+		E003D97C1724B54E00844C57 /* MainBackground2.png in Resources */ = {isa = PBXBuildFile; fileRef = E003D97A1724B54E00844C57 /* MainBackground2.png */; };
+		E003D97D1724B54E00844C57 /* MainBackground2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E003D97B1724B54E00844C57 /* MainBackground2@2x.png */; };
 		E046FE8417027B12001636EB /* TGGameTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E046FE8317027B12001636EB /* TGGameTableViewCell.m */; };
 		E046FE8617027BE2001636EB /* TGGameTableViewCell~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = E046FE8517027BE2001636EB /* TGGameTableViewCell~iphone.xib */; };
 		E046FE8B17027FB8001636EB /* checkbox-checked.png in Resources */ = {isa = PBXBuildFile; fileRef = E046FE8917027FB8001636EB /* checkbox-checked.png */; };
@@ -129,6 +131,8 @@
 		C8AD3A3C16FBBBFA00A8CD79 /* TGUserMangerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGUserMangerTests.m; sourceTree = "<group>"; };
 		C8AD3A4416FC9E6000A8CD79 /* TGGameTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGGameTests.h; sourceTree = "<group>"; };
 		C8AD3A4516FC9E6000A8CD79 /* TGGameTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGGameTests.m; sourceTree = "<group>"; };
+		E003D97A1724B54E00844C57 /* MainBackground2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MainBackground2.png; sourceTree = "<group>"; };
+		E003D97B1724B54E00844C57 /* MainBackground2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MainBackground2@2x.png"; sourceTree = "<group>"; };
 		E046FE8217027B12001636EB /* TGGameTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGGameTableViewCell.h; sourceTree = "<group>"; };
 		E046FE8317027B12001636EB /* TGGameTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGGameTableViewCell.m; sourceTree = "<group>"; };
 		E046FE8517027BE2001636EB /* TGGameTableViewCell~iphone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "TGGameTableViewCell~iphone.xib"; sourceTree = "<group>"; };
@@ -336,6 +340,8 @@
 		E046FE8717027F95001636EB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E003D97A1724B54E00844C57 /* MainBackground2.png */,
+				E003D97B1724B54E00844C57 /* MainBackground2@2x.png */,
 				C89150A8170E04A700F2B080 /* GradientBG1_Ret.png */,
 				C89150AA170E055400F2B080 /* GradientBG1_Ret@2x.png */,
 				E046FE8817027F9B001636EB /* Games */,
@@ -528,6 +534,8 @@
 				C854401D17078E15003DA1B9 /* TGMenuViewController.xib in Resources */,
 				C89150A9170E04A700F2B080 /* GradientBG1_Ret.png in Resources */,
 				C89150AB170E055400F2B080 /* GradientBG1_Ret@2x.png in Resources */,
+				E003D97C1724B54E00844C57 /* MainBackground2.png in Resources */,
+				E003D97D1724B54E00844C57 /* MainBackground2@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

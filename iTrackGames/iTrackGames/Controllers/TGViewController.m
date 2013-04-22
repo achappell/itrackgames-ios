@@ -23,12 +23,36 @@
     return self;
 }
 
+- (UIImageView *)backgroundImageView
+{
+    if(!_backgroundImageView)
+    {
+        _backgroundImageView = [[UIImageView alloc] initWithFrame:self.view.bounds];
+        _backgroundImageView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+        _backgroundImageView.contentMode = UIViewContentModeScaleAspectFill;
+        
+        [self.view addSubview:_backgroundImageView];
+        [self.view sendSubviewToBack:_backgroundImageView];
+    }
+    
+    return _backgroundImageView;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
     [TGNavigationItemFactory setupDefaultNavigationItemsForViewController:self];
+    
+    UIImage *backgroundImage = [UIImage imageNamed:@"MainBackground2"];
+    
+    [self.backgroundImageView setImage:backgroundImage];
+}
+
+- (void)setBackgroundImage:(UIImage *)backgroundImage
+{
+    [self.backgroundImageView setImage:backgroundImage];
 }
 
 - (void)didReceiveMemoryWarning

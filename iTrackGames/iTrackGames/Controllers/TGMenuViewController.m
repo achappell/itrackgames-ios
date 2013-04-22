@@ -30,7 +30,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    
+    [self setBackgroundImage:[UIImage imageNamed:@"GradientBG1_Ret"]];
 }
 
 - (void)didReceiveMemoryWarning
