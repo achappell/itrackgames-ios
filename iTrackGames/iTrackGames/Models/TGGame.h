@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "TGPlatform.h"
 #import "TGGameStashDatum.h"
+#import "TGImage.h"
 
 @interface TGGame : NSObject <NSCopying>
 
@@ -17,6 +18,7 @@
 @property (nonatomic, copy) NSString *publisher;
 @property (nonatomic, copy) NSString *overview;
 @property (nonatomic, copy) NSNumber *game_id;
+@property (nonatomic, copy) NSArray *images;
 @property (nonatomic, copy) TGPlatform *platform;
 @property (nonatomic, copy) TGGameStashDatum *gameStashDatum;
 

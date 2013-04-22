@@ -2,6 +2,8 @@
 #define __COCOA_PODS
 
 #define __POD_AFNetworking
+#define __POD_CBIntrospect
+#define __POD_JSONKit
 #define __POD_MACachedImageView
 #define __POD_MACircleProgressIndicator
 #define __POD_OCMock

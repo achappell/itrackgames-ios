@@ -34,12 +34,14 @@
     
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
     flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+    flowLayout.minimumLineSpacing = 5.0;
     
     CGRect collectionViewFrame = CGRectMake(0.0f, CGRectGetMaxY(self.overviewTextView.frame) + 10, self.view.frame.size.width, self.view.frame.size.height - CGRectGetMaxY(self.overviewTextView.frame) - 20);
     
     self.collectionView = [[UICollectionView alloc] initWithFrame:collectionViewFrame collectionViewLayout:flowLayout];
     self.collectionView.dataSource = self;
     self.collectionView.delegate = self;
+    self.collectionView.autoresizingMask = UIViewAutoresizingFlexibleHeight;
     [self.collectionView setBackgroundColor:[UIColor blueColor]];
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"cell"];
     
@@ -76,16 +78,19 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 1;
+    return [self.game.images count];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
+    
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
     
     MACachedImageView *imageView = [[MACachedImageView alloc] initWithFrame:cell.contentView.bounds];
     imageView.clipsToBounds = YES;
-    [imageView displayImageFromURL:[NSURL URLWithString:@"http://thegamesdb.net/banners/screenshots/thumb/2-1.jpg"]];
+    NSURL *imageURL = [NSURL URLWithString: [[self.game.images objectAtIndex:indexPath.row] location]];
+    [imageView displayImageFromURL:imageURL]; // testImageURLs
+    imageView.contentMode = UIViewContentModeScaleAspectFit;
     
     [cell.contentView addSubview:imageView];
     
@@ -101,6 +106,8 @@
 -(void)viewDataSourceDidUpdateContent:(id<TGViewDataSource>)dataSource
 {
     [self populateText];
+    [self.collectionView reloadData];
+    
 }
 
 -(void)viewDataSource:(id<TGViewDataSource>)dataSource didFailWithError:(NSError *)error

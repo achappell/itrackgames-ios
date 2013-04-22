@@ -10,6 +10,7 @@
 #import <RestKit/RestKit.h>
 #import "TGPlatform.h"
 #import "TGGameTableViewController.h"
+#import "TGPlatformViewController.h"
 
 @interface TGPlatformTableViewController ()
 
@@ -50,6 +51,7 @@
     }
     TGPlatform *platform = [self.platforms objectAtIndex:indexPath.row];
     cell.textLabel.text = platform.name;
+    cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
     
     return cell;
 }
@@ -61,6 +63,12 @@
     TGGameTableViewController *viewController = [[TGGameTableViewController alloc] initWithNibName:@"TGGameTableViewController" bundle:nil];
     
     viewController.platform = [self.platforms objectAtIndex:indexPath.row];
+    
+    [self.navigationController pushViewController:viewController animated:YES];
+}
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
+    TGPlatformViewController *viewController = [[TGPlatformViewController alloc] initWithNibName:@"TGPlatformViewController" bundle:nil];
+    viewController.platformId = [(TGPlatform *)[self.platforms objectAtIndex:indexPath.row] platform_id];
     
     [self.navigationController pushViewController:viewController animated:YES];
 }
