@@ -13,5 +13,8 @@
 @interface TGViewController : UIViewController <TGNavigationResponder>
 
 @property (nonatomic, weak) IIViewDeckController *viewDeckController;
+@property (nonatomic, strong) UIImageView *backgroundImageView;
+
+- (void)setBackgroundImage:(UIImage *)backgroundImage;
 
 @end
