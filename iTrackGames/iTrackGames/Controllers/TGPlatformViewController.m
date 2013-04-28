@@ -16,6 +16,8 @@
 
 @end
 
+static UIActivityIndicatorView *spinner;
+
 @implementation TGPlatformViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -46,7 +48,9 @@
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"cell"];
     
     [self.view addSubview:self.collectionView];
-
+    
+    //start activity indicator animation
+    [self beginLoadingData];
     
     self.dataSource = [[TGPlatformDataSource alloc] initWithPlatformId:self.platformId];
     self.dataSource.delegate = self;
@@ -120,6 +124,7 @@
 {
     [self populateText];
     [self.collectionView reloadData];
+    [self finishLoadingData];
     
 }
 
@@ -129,5 +134,30 @@
     [alert show];
 }
 
+#pragma mark - Activity Indicator methods
+
+-(void) beginLoadingData
+{
+    [self.nameLabel setHidden:YES];
+    [self.developerLabel setHidden:YES];
+    [self.overviewTextView setHidden:YES];
+    [self.collectionView setHidden: YES];
+    
+    spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    spinner.center = CGPointMake(self.view.bounds.size.width / 2.0f, self.view.bounds.size.height / 2.0f);
+    spinner.autoresizingMask = (UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleTopMargin);
+    spinner.hidesWhenStopped = YES;
+    [self.view addSubview:spinner];
+    [spinner startAnimating];
+}
+
+-(void) finishLoadingData
+{
+    [spinner stopAnimating];
+    [self.nameLabel setHidden:NO];
+    [self.developerLabel setHidden:NO];
+    [self.overviewTextView setHidden:NO];
+    [self.collectionView setHidden: NO];
+}
 
 @end

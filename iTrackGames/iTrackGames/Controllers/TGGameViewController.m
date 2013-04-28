@@ -17,6 +17,8 @@
 
 @end
 
+static UIActivityIndicatorView *spinner;
+
 @implementation TGGameViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -47,6 +49,9 @@
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"cell"];
     
     [self.view addSubview:self.collectionView];
+    
+    //start activity indicator animation
+    [self beginLoadingData];
     
     self.dataSource = [[TGGameDataSource alloc] initWithGameId:self.gameId];
     self.dataSource.delegate = self;
@@ -119,6 +124,7 @@
 {
     [self populateText];
     [self.collectionView reloadData];
+    [self finishLoadingData];
     
 }
 
@@ -126,6 +132,34 @@
 {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:error.localizedDescription delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil];
     [alert show];
+}
+
+#pragma mark - Activity Indicator methods
+
+-(void) beginLoadingData
+{
+    [self.titleLabel setHidden:YES];
+    [self.developerLabel setHidden:YES];
+    [self.publisherLabel setHidden:YES];
+    [self.overviewTextView setHidden:YES];
+    [self.collectionView setHidden: YES];
+    
+    spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    spinner.center = CGPointMake(self.view.bounds.size.width / 2.0f, self.view.bounds.size.height / 2.0f);
+    spinner.autoresizingMask = (UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleTopMargin);
+    spinner.hidesWhenStopped = YES;
+    [self.view addSubview:spinner];
+    [spinner startAnimating];
+}
+
+-(void) finishLoadingData
+{
+    [spinner stopAnimating];
+    [self.titleLabel setHidden:NO];
+    [self.developerLabel setHidden:NO];
+    [self.publisherLabel setHidden:NO];
+    [self.overviewTextView setHidden:NO];
+    [self.collectionView setHidden: NO];
 }
 
 @end
