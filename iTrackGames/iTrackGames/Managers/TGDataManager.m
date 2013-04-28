@@ -11,6 +11,7 @@
 #import "TGConstants.h"
 #import "TGUserManager.h"
 #import "TGGame.h"
+#import "TGPlatform.h"
 
 @implementation TGDataManager
 
@@ -122,6 +123,26 @@
         
         if (completionBlock)
             completionBlock(game, nil);
+        
+    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+        if (completionBlock)
+            completionBlock(nil, error);
+    }];
+}
+
+-(void) fetchPlatformData:(NSNumber *)platformId withCompletion:(TGDataManagerCompletionBlockType)completionBlock
+{
+    
+    RKObjectManager *objectManager = [RKObjectManager sharedManager];
+    
+    NSString *path = [NSString stringWithFormat:@"/platforms/%i.json",[platformId intValue]];
+    
+    [objectManager getObjectsAtPath:path parameters:nil success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+        
+        TGPlatform *platform = [mappingResult firstObject];
+        
+        if (completionBlock)
+            completionBlock(platform, nil);
         
     } failure:^(RKObjectRequestOperation *operation, NSError *error) {
         if (completionBlock)

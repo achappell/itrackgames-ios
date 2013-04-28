@@ -27,6 +27,8 @@
 		1CD1E66F1724A4CF00F9F893 /* TGPlatformViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CD1E66D1724A4CF00F9F893 /* TGPlatformViewController.m */; };
 		1CD1E6701724A4CF00F9F893 /* TGPlatformViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CD1E66E1724A4CF00F9F893 /* TGPlatformViewController.xib */; };
 		1CD1E6731724AA9400F9F893 /* TGPlatformDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CD1E6721724AA9400F9F893 /* TGPlatformDataSource.m */; };
+		1CD2DBAA172DB7E000A3B7DE /* TGImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CD2DBA8172DB7E000A3B7DE /* TGImageViewController.m */; };
+		1CD2DBAB172DB7E000A3B7DE /* TGImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CD2DBA9172DB7E000A3B7DE /* TGImageViewController.xib */; };
 		C83B1C1016FF9C250078878C /* TGViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = C83B1C0F16FF9C250078878C /* TGViewDataSource.m */; };
 		C83B1C1316FFA0270078878C /* TGPlatformsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = C83B1C1216FFA0270078878C /* TGPlatformsDataSource.m */; };
 		C83B1C1716FFA2390078878C /* TGPlatformDataSourceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C83B1C1616FFA2390078878C /* TGPlatformDataSourceTests.m */; };
@@ -118,6 +120,9 @@
 		1CD1E66E1724A4CF00F9F893 /* TGPlatformViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TGPlatformViewController.xib; sourceTree = "<group>"; };
 		1CD1E6711724AA9400F9F893 /* TGPlatformDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGPlatformDataSource.h; sourceTree = "<group>"; };
 		1CD1E6721724AA9400F9F893 /* TGPlatformDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGPlatformDataSource.m; sourceTree = "<group>"; };
+		1CD2DBA7172DB7E000A3B7DE /* TGImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGImageViewController.h; sourceTree = "<group>"; };
+		1CD2DBA8172DB7E000A3B7DE /* TGImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGImageViewController.m; sourceTree = "<group>"; };
+		1CD2DBA9172DB7E000A3B7DE /* TGImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TGImageViewController.xib; sourceTree = "<group>"; };
 		71AF9A9C1D4C4D848FE30F72 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		86E86922B8094B7B87F618D1 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		C83B1C0E16FF9C250078878C /* TGViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGViewDataSource.h; sourceTree = "<group>"; };
@@ -296,6 +301,9 @@
 				C854401B17078E15003DA1B9 /* TGMenuViewController.xib */,
 				C854402217079BB7003DA1B9 /* TGViewController.h */,
 				C854402317079BB7003DA1B9 /* TGViewController.m */,
+				1CD2DBA7172DB7E000A3B7DE /* TGImageViewController.h */,
+				1CD2DBA8172DB7E000A3B7DE /* TGImageViewController.m */,
+				1CD2DBA9172DB7E000A3B7DE /* TGImageViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -551,6 +559,7 @@
 				C89150A9170E04A700F2B080 /* GradientBG1_Ret.png in Resources */,
 				C89150AB170E055400F2B080 /* GradientBG1_Ret@2x.png in Resources */,
 				1CD1E6701724A4CF00F9F893 /* TGPlatformViewController.xib in Resources */,
+				1CD2DBAB172DB7E000A3B7DE /* TGImageViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -635,6 +644,7 @@
 				1CD1E66B17248D8500F9F893 /* TGImage.m in Sources */,
 				1CD1E66F1724A4CF00F9F893 /* TGPlatformViewController.m in Sources */,
 				1CD1E6731724AA9400F9F893 /* TGPlatformDataSource.m in Sources */,
+				1CD2DBAA172DB7E000A3B7DE /* TGImageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

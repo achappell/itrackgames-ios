@@ -22,17 +22,17 @@
 }
 
 - (void) reloadData {
-    /*[self startLoading];
+    [self startLoading];
     
-    [self.dataManager fetchGameData: self.gameId withCompletion:^(id data, NSError *error) {
+    [self.dataManager fetchPlatformData: self.platformId withCompletion:^(id data, NSError *error) {
         
         if (!error)
         {
-            self.game = data;
+            self.platform = data;
         }
         
         [self endLoadingWithError:error];
-    }];*/
+    }];
 }
 
 @end

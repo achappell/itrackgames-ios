@@ -115,6 +115,7 @@
     [gameMapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"platform" toKeyPath:@"platform" withMapping:platformMapping]];
     [gameMapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"game_stash_datum" toKeyPath:@"gameStashDatum" withMapping:gameStashDatumMapping]];
     [gameMapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"images" toKeyPath:@"images" withMapping:imageMapping]];
+    [platformMapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"images" toKeyPath:@"images" withMapping:imageMapping]];
     
     RKResponseDescriptor *responseDescriptorPlatform = [RKResponseDescriptor responseDescriptorWithMapping:platformMapping pathPattern:@"/platforms.json" keyPath:nil statusCodes:[NSIndexSet indexSetWithIndex:200]];
     
@@ -122,11 +123,15 @@
     
     RKResponseDescriptor *responseDescriptorIndivGame = [RKResponseDescriptor responseDescriptorWithMapping:gameMapping pathPattern:@"/games/:game_id.json" keyPath:nil statusCodes:[NSIndexSet indexSetWithIndex:200]];
     
+    RKResponseDescriptor *responseDescriptorIndivPlatform = [RKResponseDescriptor responseDescriptorWithMapping:platformMapping pathPattern:@"/platforms/:platform_id.json" keyPath:nil statusCodes:[NSIndexSet indexSetWithIndex:200]];
+    
     [objectManager addResponseDescriptor:responseDescriptorPlatform];
     
     [objectManager addResponseDescriptor:responseDescriptorGame];
     
     [objectManager addResponseDescriptor:responseDescriptorIndivGame];
+    
+    [objectManager addResponseDescriptor:responseDescriptorIndivPlatform];
 }
 
 - (IIViewDeckController *)menuContainerViewController

@@ -18,5 +18,6 @@ typedef void(^TGDataManagerCompletionBlockType)(id data, NSError *error);
 - (void)fetchPlatformsWithCompletion:(TGDataManagerCompletionBlockType)completionBlock;
 -(void) fetchGamesWithPlatform: (TGPlatform *) platform withCompletion: (TGDataManagerCompletionBlockType)completionBlock;
 -(void) fetchGameData: (NSNumber *)gameId withCompletion: (TGDataManagerCompletionBlockType) completionBlock;
+-(void) fetchPlatformData: (NSNumber *)platformId withCompletion: (TGDataManagerCompletionBlockType) completionBlock;
 
 @end

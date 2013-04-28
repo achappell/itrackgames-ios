@@ -26,6 +26,7 @@
     copy.overview = [self.overview copy];
     copy.rating = [self.rating copy];
     copy.games = [self.games copy];
+    copy.images = [self.images copy];
     
     return copy;
 }

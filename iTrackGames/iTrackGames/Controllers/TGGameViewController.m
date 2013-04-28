@@ -9,6 +9,7 @@
 #import "TGGameViewController.h"
 #import <RestKit/RestKit.h>
 #import "TGGameDataSource.h"
+#import "TGImageViewController.h"
 
 @interface TGGameViewController ()
 
@@ -100,6 +101,17 @@
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     return CGSizeMake(100, collectionView.bounds.size.height);
+}
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSURL *imageURL = [NSURL URLWithString: [[self.game.images objectAtIndex:indexPath.row] location]];
+    
+    TGImageViewController *viewController = [[TGImageViewController alloc] initWithNibName:@"TGImageViewController" bundle:nil];
+    
+    viewController.imageURL = imageURL;
+    
+    [self.navigationController pushViewController:viewController animated:YES];
 }
 #pragma mark - TGViewDataSourceDelegate
 
