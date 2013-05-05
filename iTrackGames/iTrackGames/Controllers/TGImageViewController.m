@@ -28,10 +28,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    self.imageView.contentMode = UIViewContentModeScaleAspectFit;
-    NSData *imageData = [NSData dataWithContentsOfURL:self.imageURL];
-    UIImage *image = [UIImage imageWithData:imageData];
-    self.imageView.image = image;
+    [self.imageView setImageContentMode:UIViewContentModeScaleAspectFit];
+    [self.imageView displayImageFromURL:self.imageURL];
 }
 
 - (void)didReceiveMemoryWarning

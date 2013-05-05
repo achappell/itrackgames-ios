@@ -7,6 +7,8 @@
 //
 
 #import "TGPlatformTests.h"
+#import "TGGame.h"
+#import "TGImage.h"
 
 @interface TGPlatformTests()
 {
@@ -33,6 +35,8 @@
     platform.name = @"XBOX";
     platform.overview = @"Great Platform";
     platform.rating = @"5";
+    platform.games = @[[[TGGame alloc] init], [[TGGame alloc] init]];
+    platform.images = @[[[TGImage alloc] init]];
     
     return platform;
 }
@@ -46,6 +50,8 @@
     STAssertEqualObjects(platform.name, copy.name, @"Name wasn't copied");
     STAssertEqualObjects(platform.overview, copy.overview, @"Overview wasn't copied");
     STAssertEqualObjects(platform.rating, copy.rating, @"Rating wasn't copied");
+    STAssertEquals(platform.games.count, copy.games.count, @"Games weren't copied");
+    STAssertEquals(platform.images.count, copy.images.count, @"Images weren't copied");
 }
 
 - (void)testThatDescriptionIsCorrect

@@ -117,21 +117,31 @@
     [gameMapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"images" toKeyPath:@"images" withMapping:imageMapping]];
     [platformMapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"images" toKeyPath:@"images" withMapping:imageMapping]];
     
-    RKResponseDescriptor *responseDescriptorPlatform = [RKResponseDescriptor responseDescriptorWithMapping:platformMapping pathPattern:@"/platforms.json" keyPath:nil statusCodes:[NSIndexSet indexSetWithIndex:200]];
+    RKResponseDescriptor *responseDescriptorPlatform = [RKResponseDescriptor responseDescriptorWithMapping:platformMapping pathPattern:@"/platforms.json" keyPath:nil statusCodes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(200, 99)]];
     
-    RKResponseDescriptor *responseDescriptorGame = [RKResponseDescriptor responseDescriptorWithMapping:gameMapping pathPattern:@"/games.json" keyPath:nil statusCodes:[NSIndexSet indexSetWithIndex:200]];
+    RKResponseDescriptor *responseDescriptorGame = [RKResponseDescriptor responseDescriptorWithMapping:gameMapping pathPattern:@"/games.json" keyPath:nil statusCodes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(200, 99)]];
     
-    RKResponseDescriptor *responseDescriptorIndivGame = [RKResponseDescriptor responseDescriptorWithMapping:gameMapping pathPattern:@"/games/:game_id.json" keyPath:nil statusCodes:[NSIndexSet indexSetWithIndex:200]];
+    RKResponseDescriptor *responseDescriptorIndivGame = [RKResponseDescriptor responseDescriptorWithMapping:gameMapping pathPattern:@"/games/:game_id.json" keyPath:nil statusCodes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(200, 99)]];
     
-    RKResponseDescriptor *responseDescriptorIndivPlatform = [RKResponseDescriptor responseDescriptorWithMapping:platformMapping pathPattern:@"/platforms/:platform_id.json" keyPath:nil statusCodes:[NSIndexSet indexSetWithIndex:200]];
+    RKResponseDescriptor *responseDescriptorIndivPlatform = [RKResponseDescriptor responseDescriptorWithMapping:platformMapping pathPattern:@"/platforms/:platform_id.json" keyPath:nil statusCodes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(200, 99)]];
+    
+    RKResponseDescriptor *responseDescriptorGameStashDatum = [RKResponseDescriptor responseDescriptorWithMapping:gameStashDatumMapping pathPattern:@"/game_stash_data.json" keyPath:nil statusCodes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(200, 99)]];
     
     [objectManager addResponseDescriptor:responseDescriptorPlatform];
-    
     [objectManager addResponseDescriptor:responseDescriptorGame];
-    
     [objectManager addResponseDescriptor:responseDescriptorIndivGame];
-    
     [objectManager addResponseDescriptor:responseDescriptorIndivPlatform];
+    [objectManager addResponseDescriptor:responseDescriptorGameStashDatum];
+    
+    RKObjectMapping *gameStashDatumRequestMapping = [RKObjectMapping requestMapping];
+    [gameStashDatumRequestMapping addAttributeMappingsFromDictionary:@{
+     @"hasPlayed": @"has_played",
+     @"rating": @"rating"
+     }];
+    
+    RKRequestDescriptor *requestDescriptorGameStashDatum = [RKRequestDescriptor requestDescriptorWithMapping:gameStashDatumRequestMapping objectClass:[TGGameStashDatum class] rootKeyPath:@"game_stash_datum"];
+    
+    [objectManager addRequestDescriptor:requestDescriptorGameStashDatum];
 }
 
 - (IIViewDeckController *)menuContainerViewController

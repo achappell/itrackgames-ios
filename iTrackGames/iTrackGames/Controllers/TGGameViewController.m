@@ -95,8 +95,8 @@ static UIActivityIndicatorView *spinner;
     MACachedImageView *imageView = [[MACachedImageView alloc] initWithFrame:cell.contentView.bounds];
     imageView.clipsToBounds = YES;
     NSURL *imageURL = [NSURL URLWithString: [[self.game.images objectAtIndex:indexPath.row] location]];
-    [imageView displayImageFromURL:imageURL]; // testImageURLs
-    imageView.contentMode = UIViewContentModeScaleAspectFit;
+    [imageView displayImageFromURL:imageURL];
+    [imageView setImageContentMode:UIViewContentModeScaleAspectFit];
     
     [cell.contentView addSubview:imageView];
     

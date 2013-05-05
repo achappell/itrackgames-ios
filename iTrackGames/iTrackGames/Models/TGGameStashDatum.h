@@ -8,9 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+@class TGGame;
+
 @interface TGGameStashDatum : NSObject <NSCopying>
 
 @property (nonatomic, copy) NSNumber *hasPlayed;
 @property (nonatomic, copy) NSNumber *rating;
+@property (nonatomic, copy) TGGame *game;
 
 @end

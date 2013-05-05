@@ -25,3 +25,4 @@ iTrackGames/Pods/Pods.xcodeproj/xcuserdata/tonimwhite.xcuserdatad/xcschemes/xcsc
 iTrackGames/iTrackGames.xcworkspace/xcuserdata/tonimwhite.xcuserdatad/xcdebugger/Breakpoints.xcbkptlist
 
 *.xcbkptlist
+env.sh

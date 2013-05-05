@@ -14,10 +14,11 @@ typedef void(^TGDataManagerCompletionBlockType)(id data, NSError *error);
 
 @interface TGDataManager : NSObject
 
--(void) fetchUserTokenWithUsername: (NSString *) username andPassword: (NSString *) password withCompletion:(TGDataManagerCompletionBlockType) completionBlock;
+- (void)fetchUserTokenWithUsername: (NSString *) username andPassword: (NSString *) password withCompletion:(TGDataManagerCompletionBlockType) completionBlock;
 - (void)fetchPlatformsWithCompletion:(TGDataManagerCompletionBlockType)completionBlock;
--(void) fetchGamesWithPlatform: (TGPlatform *) platform withCompletion: (TGDataManagerCompletionBlockType)completionBlock;
--(void) fetchGameData: (NSNumber *)gameId withCompletion: (TGDataManagerCompletionBlockType) completionBlock;
--(void) fetchPlatformData: (NSNumber *)platformId withCompletion: (TGDataManagerCompletionBlockType) completionBlock;
+- (void)fetchGamesWithPlatform: (TGPlatform *) platform withCompletion: (TGDataManagerCompletionBlockType)completionBlock;
+- (void)fetchGameData: (NSNumber *)gameId withCompletion: (TGDataManagerCompletionBlockType) completionBlock;
+- (void)fetchPlatformData: (NSNumber *)platformId withCompletion: (TGDataManagerCompletionBlockType) completionBlock;
+- (void)updateGameStashDatum:(TGGameStashDatum *)gameStashDatum withCompletion:(TGDataManagerCompletionBlockType)completionBlock;
 
 @end

@@ -7,10 +7,11 @@
 //
 
 #import "TGViewController.h"
+#import <MACachedImageView/MACachedImageView.h>
 
 @interface TGImageViewController : TGViewController
 
 @property (nonatomic, strong) NSURL *imageURL;
-@property (nonatomic, strong) IBOutlet UIImageView *imageView;
+@property (nonatomic, strong) IBOutlet MACachedImageView *imageView;
 
 @end

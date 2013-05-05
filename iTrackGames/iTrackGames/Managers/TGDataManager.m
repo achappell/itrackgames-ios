@@ -150,4 +150,34 @@
     }];
 }
 
+- (void)updateGameStashDatum:(TGGameStashDatum *)gameStashDatum withCompletion:(TGDataManagerCompletionBlockType)completionBlock
+{
+    NSAssert(gameStashDatum.game, @"Game Stash Datum should have a game");
+    
+    RKObjectManager *objectManager = [RKObjectManager sharedManager];
+    
+    NSString *path = @"/game_stash_data.json";
+    
+    NSString *userToken = [TGUserManager sharedManager].currentUserToken;
+    
+    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+    
+    if (userToken != nil) {
+        [parameters setObject:userToken forKey:@"auth_token"];
+    }
+    [parameters setObject:gameStashDatum.game.game_id forKey:@"game_id"];
+    
+    [objectManager postObject:gameStashDatum path:path parameters:parameters success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+        
+        TGGameStashDatum *gameStashDatum = [mappingResult firstObject];
+        
+        if (completionBlock)
+            completionBlock(gameStashDatum, nil);
+        
+    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+        if (completionBlock)
+            completionBlock(nil, error);
+    }];
+}
+
 @end

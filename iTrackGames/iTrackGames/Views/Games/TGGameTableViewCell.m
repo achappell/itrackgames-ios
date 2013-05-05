@@ -50,4 +50,9 @@
     }
 }
 
+- (void)displayRatingsView
+{
+    
+}
+
 @end

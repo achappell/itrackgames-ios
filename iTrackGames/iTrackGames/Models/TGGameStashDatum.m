@@ -7,6 +7,7 @@
 //
 
 #import "TGGameStashDatum.h"
+#import "TGGame.h"
 
 @implementation TGGameStashDatum
 
@@ -16,6 +17,7 @@
     
     copy.hasPlayed = [self.hasPlayed copy];
     copy.rating = [self.rating copy];
+    copy.game = [self.game copy];
     
     return copy;
 }
