@@ -6,7 +6,7 @@
 //  Copyright 2011 TestFlight. All rights reserved.
 
 #import <Foundation/Foundation.h>
-#define TESTFLIGHT_SDK_VERSION @"1.3.0-beta.2"
+#define TESTFLIGHT_SDK_VERSION @"1.3.0-beta.4"
 #undef TFLog
 
 #if __cplusplus
@@ -16,8 +16,9 @@ extern "C" {
      * Remote Logging
      * Note: All Logging is synchronous, see the README for more information.
      */
-    void TFLog(NSString *format, ...);
+    void TFLog(NSString *format, ...) __attribute__((format(__NSString__, 1, 2)));
     void TFLogv(NSString *format, va_list arg_list);
+    void TFLogPreFormatted(NSString *message);
 #if __cplusplus
 }
 #endif
@@ -30,7 +31,8 @@ extern "C" {
 
 /**
  * Add custom environment information
- * If you want to track custom information such as a user name from your application you can add it here
+ * If you want to track custom information such as a user name from your application you can add it here.
+ * NB: This information must be added before the session starts, it is recorded only on session start.
  * 
  * @param information A string containing the environment you are storing
  * @param key The key to store the information with
@@ -110,7 +112,7 @@ extern "C" {
  * The values should be NSNumber BOOLs (`[NSNumber numberWithBool:YES]` or `@YES`)
  */
 extern NSString *const TFOptionDisableInAppUpdates; // Defaults to @NO. Setting to @YES, disables the in app update screen shown in BETA apps when there is a new version available on TestFlight.
-extern NSString *const TFOptionFlushSecondsInterval; // Defaults to @60. Set to a number. @0 turns off the flush timer.
+extern NSString *const TFOptionFlushSecondsInterval; // Defaults to @60. Set to a number. @0 turns off the flush timer. 30 seconds is the minimum flush interval.
 extern NSString *const TFOptionLogOnCheckpoint; // Defaults to @YES. Because logging is synchronous, if you have a high preformance app, you might want to turn this off.
 extern NSString *const TFOptionLogToConsole; // Defaults to @YES. Prints remote logs to Apple System Log.
 extern NSString *const TFOptionLogToSTDERR; // Defaults to @YES. Sends remote logs to STDERR when debugger is attached.
