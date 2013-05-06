@@ -8,13 +8,25 @@
 
 #import <UIKit/UIKit.h>
 #import "TGGame.h"
+#import "TGRatingView.h"
 
-@interface TGGameTableViewCell : UITableViewCell
+@protocol TGGameTableViewCellDelegate;
+
+@interface TGGameTableViewCell : UITableViewCell <TGRatingDelegate>
 
 @property (nonatomic, weak) IBOutlet UILabel *titleLabel;
 @property (nonatomic, weak) IBOutlet UILabel *platformLabel;
 @property (nonatomic, weak) IBOutlet UIButton *checkboxButton;
+@property (nonatomic, weak) id<TGGameTableViewCellDelegate> delegate;
 
 - (void)setGame:(TGGame *)game;
+- (void)displayRatingsView;
+- (void)hideRatingsView;
+
+@end
+
+@protocol TGGameTableViewCellDelegate <NSObject>
+
+- (void)gameTableViewCell:(TGGameTableViewCell *)cell didTapRatingStar:(NSInteger)starIndex;
 
 @end

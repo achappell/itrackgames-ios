@@ -10,13 +10,14 @@
 #import <RestKit/RestKit.h>
 #import "TGGame.h"
 #import "TGGameViewController.h"
-#import "TGGameTableViewCell.h"
+#import "TGGameStashDatumMediator.h"
 
 static NSString *reuseIdentifier = @"TGGameCell";
 
 @interface TGGameTableViewController ()
 
 @property (nonatomic, strong) TGGamesDataSource *dataSource;
+@property (nonatomic, strong) TGGameStashDatumMediator *gameStashDatumMediator;
 
 @end
 
@@ -27,6 +28,8 @@ static NSString *reuseIdentifier = @"TGGameCell";
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        
+        self.gameStashDatumMediator = [[TGGameStashDatumMediator alloc] init];
     }
     return self;
 }
@@ -48,16 +51,29 @@ static NSString *reuseIdentifier = @"TGGameCell";
     
 }
 
+#pragma mark - TGGameTableViewCellDelegate
+
+- (void)gameTableViewCell:(TGGameTableViewCell *)cell didTapRatingStar:(NSInteger)starIndex
+{
+    [cell hideRatingsView];
+    
+    TGGame *game = [self.games objectAtIndex:[self.tableView indexPathForCell:cell].row];
+    
+    [self.gameStashDatumMediator updateGame:game withPlayStatus:YES rating:starIndex];
+    
+    [self.tableView reloadData];
+}
+
 #pragma mark - actions
 
 - (IBAction)checkBoxButtonTapped:(id)sender
 {
     UIButton *checkButton = (UIButton *)sender;
     
-    TGGame *game = [self.games objectAtIndex:checkButton.tag];
-    game.gameStashDatum.hasPlayed = [NSNumber numberWithBool:![game.gameStashDatum.hasPlayed boolValue]];
+    TGGameTableViewCell * cell = (TGGameTableViewCell *)[self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:checkButton.tag inSection:0]];
+    cell.delegate = self;
     
-    [self.tableView reloadData];
+    [cell displayRatingsView];
 }
 
 #pragma mark - Table view data source

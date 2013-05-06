@@ -132,7 +132,6 @@
 
 -(void) fetchPlatformData:(NSNumber *)platformId withCompletion:(TGDataManagerCompletionBlockType)completionBlock
 {
-    
     RKObjectManager *objectManager = [RKObjectManager sharedManager];
     
     NSString *path = [NSString stringWithFormat:@"/platforms/%i.json",[platformId intValue]];
@@ -150,14 +149,13 @@
     }];
 }
 
-- (void)updateGameStashDatum:(TGGameStashDatum *)gameStashDatum withCompletion:(TGDataManagerCompletionBlockType)completionBlock
+- (void)postGameStashDatum:(TGGameStashDatum *)gameStashDatum withCompletion:(TGDataManagerCompletionBlockType)completionBlock
 {
     NSAssert(gameStashDatum.game, @"Game Stash Datum should have a game");
     
     RKObjectManager *objectManager = [RKObjectManager sharedManager];
     
     NSString *path = @"/game_stash_data.json";
-    
     NSString *userToken = [TGUserManager sharedManager].currentUserToken;
     
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];

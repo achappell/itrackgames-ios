@@ -54,6 +54,9 @@
 		E046FE9317031406001636EB /* TGGameStashDatumTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E046FE9217031406001636EB /* TGGameStashDatumTests.m */; };
 		E0D97EFF16FD27B4008ABE8A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0D97EFE16FD27B4008ABE8A /* SystemConfiguration.framework */; };
 		E0D97F0116FD27CF008ABE8A /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0D97F0016FD27CF008ABE8A /* MobileCoreServices.framework */; };
+		E0DA2C8217371AA6001953C0 /* TGRatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = E0DA2C8117371AA6001953C0 /* TGRatingView.m */; };
+		E0DA2C84173723AE001953C0 /* star.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0DA2C83173723AE001953C0 /* star.gif */; };
+		E0DA2C88173725DD001953C0 /* TGGameStashDatumMediator.m in Sources */ = {isa = PBXBuildFile; fileRef = E0DA2C87173725DD001953C0 /* TGGameStashDatumMediator.m */; };
 		E0DAA60A16D180420066C7D2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0DAA60916D180420066C7D2 /* UIKit.framework */; };
 		E0DAA60C16D180420066C7D2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0DAA60B16D180420066C7D2 /* Foundation.framework */; };
 		E0DAA60E16D180420066C7D2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0DAA60D16D180420066C7D2 /* CoreGraphics.framework */; };
@@ -156,6 +159,11 @@
 		E0D97EFD16FD1EEF008ABE8A /* TGConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGConstants.h; sourceTree = "<group>"; };
 		E0D97EFE16FD27B4008ABE8A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		E0D97F0016FD27CF008ABE8A /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		E0DA2C8017371AA6001953C0 /* TGRatingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGRatingView.h; sourceTree = "<group>"; };
+		E0DA2C8117371AA6001953C0 /* TGRatingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGRatingView.m; sourceTree = "<group>"; };
+		E0DA2C83173723AE001953C0 /* star.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = star.gif; sourceTree = "<group>"; };
+		E0DA2C86173725DD001953C0 /* TGGameStashDatumMediator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGGameStashDatumMediator.h; sourceTree = "<group>"; };
+		E0DA2C87173725DD001953C0 /* TGGameStashDatumMediator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGGameStashDatumMediator.m; sourceTree = "<group>"; };
 		E0DAA60616D180420066C7D2 /* iTrackGames.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTrackGames.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0DAA60916D180420066C7D2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E0DAA60B16D180420066C7D2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -301,6 +309,8 @@
 			isa = PBXGroup;
 			children = (
 				E046FE8117027AED001636EB /* Games */,
+				E0DA2C8017371AA6001953C0 /* TGRatingView.h */,
+				E0DA2C8117371AA6001953C0 /* TGRatingView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -369,6 +379,7 @@
 		E046FE8717027F95001636EB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E0DA2C83173723AE001953C0 /* star.gif */,
 				E003D97A1724B54E00844C57 /* MainBackground2.png */,
 				E003D97B1724B54E00844C57 /* MainBackground2@2x.png */,
 				C89150A8170E04A700F2B080 /* GradientBG1_Ret.png */,
@@ -387,10 +398,18 @@
 			path = Games;
 			sourceTree = "<group>";
 		};
+		E0DA2C85173725B9001953C0 /* Mediators */ = {
+			isa = PBXGroup;
+			children = (
+				E0DA2C86173725DD001953C0 /* TGGameStashDatumMediator.h */,
+				E0DA2C87173725DD001953C0 /* TGGameStashDatumMediator.m */,
+			);
+			path = Mediators;
+			sourceTree = "<group>";
+		};
 		E0DAA5FD16D180420066C7D2 = {
 			isa = PBXGroup;
 			children = (
-				1CD1E6671724874600F9F893 /* QuartzCore.framework */,
 				E0DAA60F16D180420066C7D2 /* iTrackGames */,
 				E0DAA63616D180430066C7D2 /* iTrackGamesTests */,
 				E0DAA60816D180420066C7D2 /* Frameworks */,
@@ -411,6 +430,7 @@
 		E0DAA60816D180420066C7D2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1CD1E6671724874600F9F893 /* QuartzCore.framework */,
 				E0D97F0016FD27CF008ABE8A /* MobileCoreServices.framework */,
 				E0D97EFE16FD27B4008ABE8A /* SystemConfiguration.framework */,
 				C89229FE16DD485A003B6A3C /* libz.dylib */,
@@ -426,6 +446,7 @@
 		E0DAA60F16D180420066C7D2 /* iTrackGames */ = {
 			isa = PBXGroup;
 			children = (
+				E0DA2C85173725B9001953C0 /* Mediators */,
 				E02A80151736F7A600C45A0B /* DataSources */,
 				C854401E17079AB4003DA1B9 /* Factory */,
 				E046FE8717027F95001636EB /* Resources */,
@@ -569,6 +590,7 @@
 				E003D97D1724B54E00844C57 /* MainBackground2@2x.png in Resources */,
 				1CD1E6701724A4CF00F9F893 /* TGPlatformViewController.xib in Resources */,
 				1CD2DBAB172DB7E000A3B7DE /* TGImageViewController.xib in Resources */,
+				E0DA2C84173723AE001953C0 /* star.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -654,6 +676,8 @@
 				E02A801F1736F7DD00C45A0B /* TGGamesDataSource.m in Sources */,
 				E02A80201736F7DD00C45A0B /* TGPlatformDataSource.m in Sources */,
 				E02A80211736F7DD00C45A0B /* TGPlatformsDataSource.m in Sources */,
+				E0DA2C8217371AA6001953C0 /* TGRatingView.m in Sources */,
+				E0DA2C88173725DD001953C0 /* TGGameStashDatumMediator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
