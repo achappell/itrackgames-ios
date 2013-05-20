@@ -12,7 +12,7 @@
 	<body>
 		<header id="top_header">
 			<div id="library" class="hideInXcode">
-				<h1><a id="libraryTitle" href="../index.html">RestKit 0.20.0 </a></h1>
+				<h1><a id="libraryTitle" href="../index.html">RestKit 0.20.1 </a></h1>
 				<a id="developerHome" href="../index.html">Blake Watters</a>
 			</div>
 			
@@ -85,6 +85,8 @@
 	<option value="//api/name/initWithPersistentStoreCoordinator:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithPersistentStoreCoordinator:</option>
 	
 	<option value="//api/name/newChildManagedObjectContextWithConcurrencyType:">&nbsp;&nbsp;&nbsp;&nbsp;- newChildManagedObjectContextWithConcurrencyType:</option>
+	
+	<option value="//api/name/newChildManagedObjectContextWithConcurrencyType:tracksChanges:">&nbsp;&nbsp;&nbsp;&nbsp;- newChildManagedObjectContextWithConcurrencyType:tracksChanges:</option>
 	
 	<option value="//api/name/resetPersistentStores:">&nbsp;&nbsp;&nbsp;&nbsp;- resetPersistentStores:</option>
 	
@@ -178,6 +180,8 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/newChildManagedObjectContextWithConcurrencyType:">newChildManagedObjectContextWithConcurrencyType:</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/newChildManagedObjectContextWithConcurrencyType:tracksChanges:">newChildManagedObjectContextWithConcurrencyType:tracksChanges:</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/resetPersistentStores:">resetPersistentStores:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/startIndexingPersistentStoreManagedObjectContext">startIndexingPersistentStoreManagedObjectContext</a></span></li>
@@ -229,7 +233,7 @@
 
 <h2>Managed Object Contexts</h2>
 
-<p>The managed object store provides the application developer with a pair of managed object contexts with which to work with Core Data. The store configures a primary managed object context with the NSPrivateQueueConcurrencyType that is associated with the persistent store coordinator for handling Core Data persistence. A second context is also created with the NSMainQueueConcurrencyType that is a child of the primary managed object context for doing work on the main queue. Additional child contexts can be created directly or via a convenience method interface provided by the store (see <a href="#//api/name/newChildManagedObjectContextWithConcurrencyType:">newChildManagedObjectContextWithConcurrencyType:</a>).</p>
+<p>The managed object store provides the application developer with a pair of managed object contexts with which to work with Core Data. The store configures a primary managed object context with the NSPrivateQueueConcurrencyType that is associated with the persistent store coordinator for handling Core Data persistence. A second context is also created with the NSMainQueueConcurrencyType that is a child of the primary managed object context for doing work on the main queue. Additional child contexts can be created directly or via a convenience method interface provided by the store (see <a href="#//api/name/newChildManagedObjectContextWithConcurrencyType:tracksChanges:">newChildManagedObjectContextWithConcurrencyType:tracksChanges:</a>).</p>
 
 <p>The managed object context hierarchy is designed to isolate the main thread from disk I/O and avoid deadlocks. Because the primary context manages its own private queue, saving the main queue context will not result in the objects being saved to the persistent store. The primary context must be saved as well for objects to be persisted to disk.</p>
 
@@ -390,8 +394,15 @@
 	
 </li><li>
 	<span class="tooltip">
+		<code><a href="#//api/name/newChildManagedObjectContextWithConcurrencyType:tracksChanges:">&ndash;&nbsp;newChildManagedObjectContextWithConcurrencyType:tracksChanges:</a></code>
+		<span class="tooltip"><p>Creates a new child managed object context of the persistent store managed object context with a given concurrency type, optionally tracking changes saved to the parent context and merging them on save.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
 		<code><a href="#//api/name/newChildManagedObjectContextWithConcurrencyType:">&ndash;&nbsp;newChildManagedObjectContextWithConcurrencyType:</a></code>
-		<span class="tooltip"><p>Creates a new child managed object context of the persistent store managed object context with a given concurrency type.</p></span>
+		
 	</span>
 	
 	
@@ -1374,14 +1385,25 @@ RKManagedObjectStore *managedObjectStore = [[RKManagedObjectStore alloc] initWit
 	<h3 class="subsubtitle method-title">newChildManagedObjectContextWithConcurrencyType:</h3>
 	
 	
+
+	<div class="method-subsection method-declaration"><code>- (NSManagedObjectContext *)newChildManagedObjectContextWithConcurrencyType:(NSManagedObjectContextConcurrencyType)<em>concurrencyType</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/newChildManagedObjectContextWithConcurrencyType:tracksChanges:" title="newChildManagedObjectContextWithConcurrencyType:tracksChanges:"></a>
+	<h3 class="subsubtitle method-title">newChildManagedObjectContextWithConcurrencyType:tracksChanges:</h3>
+	
+	
 	
 	<div class="method-subsection brief-description">
-		<p>Creates a new child managed object context of the persistent store managed object context with a given concurrency type.</p>
+		<p>Creates a new child managed object context of the persistent store managed object context with a given concurrency type, optionally tracking changes saved to the parent context and merging them on save.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (NSManagedObjectContext *)newChildManagedObjectContextWithConcurrencyType:(NSManagedObjectContextConcurrencyType)<em>concurrencyType</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (NSManagedObjectContext *)newChildManagedObjectContextWithConcurrencyType:(NSManagedObjectContextConcurrencyType)<em>concurrencyType</em> tracksChanges:(BOOL)<em>tracksChanges</em></code></div>
 
     
 	
@@ -1391,6 +1413,11 @@ RKManagedObjectStore *managedObjectStore = [[RKManagedObjectStore alloc] initWit
 		<dl class="argument-def parameter-def">
 			<dt><em>concurrencyType</em></dt>
 			<dd><p>The desired concurrency type for the new context.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>tracksChanges</em></dt>
+			<dd><p>When <code>YES</code>, the new context will observe the <a href="#//api/name/persistentStoreManagedObjectContext"><code>persistentStoreManagedObjectContext</code></a> for save events and merge in any changes via <code>[NSManagedObjectContext mergeChangesFromContextDidSaveNotification:]</code>.</p></dd>
 		</dl>
 		
 	</div>
@@ -1408,7 +1435,7 @@ RKManagedObjectStore *managedObjectStore = [[RKManagedObjectStore alloc] initWit
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Creates a new child managed object context of the persistent store managed object context with a given concurrency type.</p>
+		<p>Creates a new child managed object context of the persistent store managed object context with a given concurrency type, optionally tracking changes saved to the parent context and merging them on save.</p>
 	</div>
 	
 	
@@ -1617,7 +1644,7 @@ RKManagedObjectStore *managedObjectStore = [[RKManagedObjectStore alloc] initWit
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2013 Blake Watters. All rights reserved. (Last updated: 2013-03-30)</span><br />
+						<p><span class="copyright">&copy; 2013 Blake Watters. All rights reserved. (Last updated: 2013-05-20)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
 						

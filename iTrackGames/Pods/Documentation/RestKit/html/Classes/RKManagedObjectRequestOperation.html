@@ -12,7 +12,7 @@
 	<body>
 		<header id="top_header">
 			<div id="library" class="hideInXcode">
-				<h1><a id="libraryTitle" href="../index.html">RestKit 0.20.0 </a></h1>
+				<h1><a id="libraryTitle" href="../index.html">RestKit 0.20.1 </a></h1>
 				<a id="developerHome" href="../index.html">Blake Watters</a>
 			</div>
 			
@@ -53,6 +53,11 @@
 	
 	
 	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/setWillSaveMappingContextBlock:">&nbsp;&nbsp;&nbsp;&nbsp;- setWillSaveMappingContextBlock:</option>
 	
 	
 	
@@ -97,6 +102,12 @@
 
 
 
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/setWillSaveMappingContextBlock:">setWillSaveMappingContextBlock:</a></span></li>
+	
+</ul></li>
 
 
 			</ul>
@@ -144,7 +155,7 @@
 <p>Every <code>RKManagedObjectRequestOperation</code> object must be assigned an <code>NSManagedObjectContext</code> in which to persist the results of the underlying object mapping operation. This context is used as the parent context for a new, private <code>NSManagedObjectContext</code> with a concurrency type of <code>NSPrivateQueueConcurrencyType</code> in which the object mapping is actually performed. The use of this parent context has a number of benefits:</p>
 
 <ol>
-<li>If the context that was assigned to the managed object request operation has a concurrency type of <code>NSMainQueueConcurrencyType</code>, then directly mapping into the context would block the execution of the main thread for the duration of the mapping process. The use of the private child context isolates the mapping process from the main thread entirely.</li>
+<li>If the context that was assigned to the managed object request operation has a concurrency type of <code>NSMainQueueConcurrencyType</code>, then directly mapping into the context would block the execution of the main thread for the duration of the mapping process. The use of the private child context isolates the mapping process from the main thread.</li>
 <li>In the event of an error, the private context can be discarded, leaving the state of the parent context unchanged. On successful completion, the private context is saved and &lsquo;pushes&rsquo; its changes up one level into the parent context.</li>
 </ol>
 
@@ -179,8 +190,7 @@
     if (match) {
         airportID = [argsDict objectForKey:@"airport_id"];
         NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Terminal"];
-        NSEntityDescription *entity = [NSEntityDescription entityForName:@"Airport" inManagedObjectContext:managedObjectStore.persistentStoreManagedObjectContext];
-        fetchRequest.predicate = [NSPredication predicateWithFormat:@"airportID = %@", @([airportID integerValue])]; // NOTE: Coerced from string to number
+        fetchRequest.predicate = [NSPredicate predicateWithFormat:@"airportID = %@", @([airportID integerValue])]; // NOTE: Coerced from string to number
         fetchRequest.sortDescriptors = @[ [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES] ];
         return fetchRequest;
     }
@@ -198,11 +208,11 @@ fetchRequest.predicate = [NSPredicate predicateWithFormat:@"airportID = 1234"];
 fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]];
 </code></pre>
 
-<p>Once configured and registered with the object manager, any <code>RKManagedObjectRequestOperation</code> created through the manager will automatically consult the fetch request blocks and perform orphaned object cleanup. No cleanup is performed if no block in the <code>fetchRequestBlocks</code> property is found to match the URL of the request.</p>
+<p>Once configured and registered with the object manager, any <code>RKManagedObjectRequestOperation</code> created through the manager will automatically consult the fetch request blocks and perform orphaned object cleanup. No cleanup is performed if no block in the <a href="#//api/name/fetchRequestBlocks"><code>fetchRequestBlocks</code></a> property is found to match the URL of the request.</p>
 
 <h2>Managed Object Context Save Behaviors</h2>
 
-<p>The results of the operation can either be &lsquo;pushed&rsquo; to the parent context or saved to the persistent store. Configuration is available via the <code>savesToPersistentStore</code> property. If an error is encountered while saving the managed object context, then the operation is considered to have failed and the <code>error</code> property will be set to the <code>NSError</code> object returned by the failed save.</p>
+<p>The results of the operation can either be &lsquo;pushed&rsquo; to the parent context or saved to the persistent store. Configuration is available via the <a href="#//api/name/savesToPersistentStore"><code>savesToPersistentStore</code></a> property. If an error is encountered while saving the managed object context, then the operation is considered to have failed and the <code>error</code> property will be set to the <code>NSError</code> object returned by the failed save.</p>
 
 <h2>304 &lsquo;Not Modified&rsquo; Responses</h2>
 
@@ -223,7 +233,7 @@ fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"name"
 
 <h2>Subclassing Notes</h2>
 
-<p>This class relies on the following <code>RKMapperOperationDelegate</code> method methods to do its work:</p>
+<p>This class relies on the following <a href="../Protocols/RKMapperOperationDelegate.html"><code>RKMapperOperationDelegate</code></a> method methods to do its work:</p>
 
 <ol>
 <li><code>mapperDidFinishMapping:</code></li>
@@ -236,7 +246,6 @@ fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"name"
 
 <ol>
 <li><code>RKManagedObjectRequestOperation</code> <strong>does NOT</strong> support object mapping that targets an <code>NSManagedObjectContext</code> with a <code>concurrencyType</code> of <code>NSConfinementConcurrencyType</code>.</li>
-<li><code>RKManagedObjectRequestOperation</code> can become deadlocked if configured to perform mapping onto an <code>NSManagedObjectContext</code> with the <code>NSMainQueueConcurrencyType</code> and is invoked synchronously from the main thread via <code>start</code> or an attempt is made to await completion of the operation via <code>waitUntilFinished</code>. This occurs because managed object contexts with the <code>NSMainQueueConcurrencyType</code> are dependent upon the execution of the main thread&rsquo;s run loop to perform their work and <code>waitUntilFinished</code> blocks the calling thread, leading to a deadlock when called from the main thread. Rather than awaiting completion of the operation via <code>waitUntilFinishes</code>, consider using a completion block, key-value observation, or spinning the run-loop via <code>[[NSRunLoop currentRunLoop] runUntilDate:]</code>.</li>
 </ol>
 
 					</div>
@@ -296,6 +305,13 @@ fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"name"
 		<span class="tooltip"><p>A Boolean value that determines if the operation saves the mapping results to the persistent store upon successful completion. If the network transport or mapping portions of the operation fail the operation then this option has no effect.</p></span>
 	</span>
 	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/setWillSaveMappingContextBlock:">&ndash;&nbsp;setWillSaveMappingContextBlock:</a></code>
+		<span class="tooltip"><p>Sets a block to be invoked just before the operation saves the private mapping context.</p></span>
+	</span>
+	
 	
 </li>
 						</ul>
@@ -537,6 +553,65 @@ fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"name"
 					
 					
 					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/setWillSaveMappingContextBlock:" title="setWillSaveMappingContextBlock:"></a>
+	<h3 class="subsubtitle method-title">setWillSaveMappingContextBlock:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Sets a block to be invoked just before the operation saves the private mapping context.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)setWillSaveMappingContextBlock:(void ( ^ ) ( NSManagedObjectContext *mappingContext ))<em>block</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>block</em></dt>
+			<dd><p>The block to execute just before the context is saved.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Sets a block to be invoked just before the operation saves the private mapping context.</p>
+
+<p>The mapping context is saved just before the object request operation completes its work and transitions into the finished state. All managed objects mapped during the operation will have permanent object ID&rsquo;s. The <code>mappingResult</code> will contain managed object instances local to the context yielded to the block. The block will be invoked synchronously on the private queue of the context. After the block is executed, the save operation will take place, optionally saving the mapping results back to the persistent store.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">RKManagedObjectRequestOperation.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
 					
 				</div>
 				<div class="main-navigation navigation-bottom">
@@ -548,7 +623,7 @@ fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"name"
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2013 Blake Watters. All rights reserved. (Last updated: 2013-03-30)</span><br />
+						<p><span class="copyright">&copy; 2013 Blake Watters. All rights reserved. (Last updated: 2013-05-20)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
 						

@@ -1,189 +1,240 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/RKSearchIndexer.html">
+	<File path="Classes/RKRouteSet.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/RKSearchIndexer</TokenIdentifier>
-			<Abstract type="html">The RKSearchIndexer class provides support for adding full text searching to Core Data entities and managing the indexing of managed object instances of searchable entities.</Abstract>
-			<DeclaredIn>RKSearchIndexer.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/RKRouteSet</TokenIdentifier>
+			<Abstract type="html">The RKRouteSet class provides for the storage and retrieval of RKRoute objects. Route objects are added and removed the route set to manipulate the routing table of the application.</Abstract>
+			<DeclaredIn>RKRouteSet.h</DeclaredIn>
 			
 			<NodeRef refid="48"/>
 		</Token>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/RKSearchIndexer/addSearchIndexingToEntity:onAttributes:</TokenIdentifier>
-			<Abstract type="html">Adds search indexing to the given entity for a given list of attributes identified by name. The entity will have a to-many relationship to the RKSearchWordEntity added and the list of searchable attributes stored into the user info dictionary.</Abstract>
-			<DeclaredIn>RKSearchIndexer.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/RKRouteSet/addRoute:</TokenIdentifier>
+			<Abstract type="html">Adds a route to the receiver.</Abstract>
+			<DeclaredIn>RKRouteSet.h</DeclaredIn>			
 			
-			<Declaration>+ (void)addSearchIndexingToEntity:(NSEntityDescription *)entity onAttributes:(NSArray *)attributes</Declaration>
+			<Declaration>- (void)addRoute:(RKRoute *)route</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>entity</Name>
-					<Abstract type="html">The entity to which search indexing support is to be added.</Abstract>
+					<Name>route</Name>
+					<Abstract type="html">The route to be added.
+@raises NSInvalidArgumentException Raised if the route already exists in the receiver or overlaps an existing name.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addRoute:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RKRouteSet/addRoutes:</TokenIdentifier>
+			<Abstract type="html">Adds all routes from the given array to the receiver. All objects within the given array must be an instance of RKRoute or else an NSInvalidArgumentException will be raised.</Abstract>
+			<DeclaredIn>RKRouteSet.h</DeclaredIn>			
+			
+			<Declaration>- (void)addRoutes:(NSArray *)routes</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>routes</Name>
+					<Abstract type="html">An array of RKRoute objects to be added to the receiver.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addRoutes:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RKRouteSet/removeRoute:</TokenIdentifier>
+			<Abstract type="html">Removes a route from the receiver.</Abstract>
+			<DeclaredIn>RKRouteSet.h</DeclaredIn>			
+			
+			<Declaration>- (void)removeRoute:(RKRoute *)route</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>route</Name>
+					<Abstract type="html">The route to be removed.
+@raises NSInvalidArgumentException Raised if the route does not exist in the receiver.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/removeRoute:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RKRouteSet/containsRoute:</TokenIdentifier>
+			<Abstract type="html">Determines if a given route exists within the receiver.</Abstract>
+			<DeclaredIn>RKRouteSet.h</DeclaredIn>			
+			
+			<Declaration>- (BOOL)containsRoute:(RKRoute *)route</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>route</Name>
+					<Abstract type="html">The route to be tested for containement.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">YES if the route is contained within the route set, else NO.</Abstract></ReturnValue>
+			<Anchor>//api/name/containsRoute:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RKRouteSet/allRoutes</TokenIdentifier>
+			<Abstract type="html">Returns all routes from the receiver in an array.</Abstract>
+			<DeclaredIn>RKRouteSet.h</DeclaredIn>			
+			
+			<Declaration>- (NSArray *)allRoutes</Declaration>
+			
+			<ReturnValue><Abstract type="html">An array containing all the routes in the receiver.</Abstract></ReturnValue>
+			<Anchor>//api/name/allRoutes</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RKRouteSet/namedRoutes</TokenIdentifier>
+			<Abstract type="html">Returns all named routes from the receiver in an array.</Abstract>
+			<DeclaredIn>RKRouteSet.h</DeclaredIn>			
+			
+			<Declaration>- (NSArray *)namedRoutes</Declaration>
+			
+			<ReturnValue><Abstract type="html">An array containing all the named routes in the receiver.</Abstract></ReturnValue>
+			<Anchor>//api/name/namedRoutes</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RKRouteSet/classRoutes</TokenIdentifier>
+			<Abstract type="html">Returns all class routes from the receiver in an array.</Abstract>
+			<DeclaredIn>RKRouteSet.h</DeclaredIn>			
+			
+			<Declaration>- (NSArray *)classRoutes</Declaration>
+			
+			<ReturnValue><Abstract type="html">An array containing all the class routes in the receiver.</Abstract></ReturnValue>
+			<Anchor>//api/name/classRoutes</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RKRouteSet/relationshipRoutes</TokenIdentifier>
+			<Abstract type="html">Returns all relationship routes from the receiver in an array.</Abstract>
+			<DeclaredIn>RKRouteSet.h</DeclaredIn>			
+			
+			<Declaration>- (NSArray *)relationshipRoutes</Declaration>
+			
+			<ReturnValue><Abstract type="html">An array containing all the relationship routes in the receiver.</Abstract></ReturnValue>
+			<Anchor>//api/name/relationshipRoutes</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RKRouteSet/routeForName:</TokenIdentifier>
+			<Abstract type="html">Retrieves a route with the given name.</Abstract>
+			<DeclaredIn>RKRouteSet.h</DeclaredIn>			
+			
+			<Declaration>- (RKRoute *)routeForName:(NSString *)name</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>name</Name>
+					<Abstract type="html">The name of the named route to be found.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">A route with the given name or nil if none was found.</Abstract></ReturnValue>
+			<Anchor>//api/name/routeForName:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RKRouteSet/routeForClass:method:</TokenIdentifier>
+			<Abstract type="html">Retrieves a route for the given object class and request method.</Abstract>
+			<DeclaredIn>RKRouteSet.h</DeclaredIn>			
+			
+			<Declaration>- (RKRoute *)routeForClass:(Class)objectClass method:(RKRequestMethod)method</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>objectClass</Name>
+					<Abstract type="html">The object class of the route to be retrieved.</Abstract>
 				</Parameter><Parameter>
-					<Name>attributes</Name>
-					<Abstract type="html">An array of NSAttributeDescription objects or NSString attribute names specifying the NSStringAttributeType attributes that are to be indexed for searching.</Abstract>
+					<Name>method</Name>
+					<Abstract type="html">The request method of the route to be retrieved.</Abstract>
 				</Parameter>
 			</Parameters>
-			
-			<Anchor>//api/name/addSearchIndexingToEntity:onAttributes:</Anchor>
+			<ReturnValue><Abstract type="html">A route with the given object class and method or nil if none was found.</Abstract></ReturnValue>
+			<Anchor>//api/name/routeForClass:method:</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/RKSearchIndexer/setStopWords:</TokenIdentifier>
-			<Abstract type="html">An optional set of stop words to be removed from the set of tokens used to create the search words for indexed entities.</Abstract>
-			<DeclaredIn>RKSearchIndexer.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/RKRouteSet/routeForRelationship:ofClass:method:</TokenIdentifier>
+			<Abstract type="html">Retrieves a route for a given relationship of a class with a given request method.</Abstract>
+			<DeclaredIn>RKRouteSet.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, strong) NSSet *stopWords</Declaration>
-			
-			
-			<Anchor>//api/name/stopWords</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/RKSearchIndexer/stopWords</TokenIdentifier>
-			<Abstract type="html">An optional set of stop words to be removed from the set of tokens used to create the search words for indexed entities.</Abstract>
-			<DeclaredIn>RKSearchIndexer.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, strong) NSSet *stopWords</Declaration>
-			
-			
-			<Anchor>//api/name/stopWords</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/RKSearchIndexer/setIndexingContext:</TokenIdentifier>
-			<Abstract type="html">An optional NSManagedObjectContext in which to perform indexing operations.</Abstract>
-			<DeclaredIn>RKSearchIndexer.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, strong) NSManagedObjectContext *indexingContext</Declaration>
-			
-			
-			<Anchor>//api/name/indexingContext</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/RKSearchIndexer/indexingContext</TokenIdentifier>
-			<Abstract type="html">An optional NSManagedObjectContext in which to perform indexing operations.</Abstract>
-			<DeclaredIn>RKSearchIndexer.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, strong) NSManagedObjectContext *indexingContext</Declaration>
-			
-			
-			<Anchor>//api/name/indexingContext</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/RKSearchIndexer/setDelegate:</TokenIdentifier>
-			<Abstract type="html">The delegate of the search indexer.</Abstract>
-			<DeclaredIn>RKSearchIndexer.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, weak) id&lt;RKSearchIndexerDelegate&gt; delegate</Declaration>
-			
-			
-			<Anchor>//api/name/delegate</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/RKSearchIndexer/delegate</TokenIdentifier>
-			<Abstract type="html">The delegate of the search indexer.</Abstract>
-			<DeclaredIn>RKSearchIndexer.h</DeclaredIn>			
-			
-			<Declaration>@property (nonatomic, weak) id&lt;RKSearchIndexerDelegate&gt; delegate</Declaration>
-			
-			
-			<Anchor>//api/name/delegate</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/RKSearchIndexer/startObservingManagedObjectContext:</TokenIdentifier>
-			<Abstract type="html">Tells the receiver to start monitoring the given managed object context for save notifications and to index any changed objects in response to the save.</Abstract>
-			<DeclaredIn>RKSearchIndexer.h</DeclaredIn>			
-			
-			<Declaration>- (void)startObservingManagedObjectContext:(NSManagedObjectContext *)managedObjectContext</Declaration>
+			<Declaration>- (RKRoute *)routeForRelationship:(NSString *)relationship ofClass:(Class)objectClass method:(RKRequestMethod)method</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>managedObjectContext</Name>
-					<Abstract type="html">The managed object context to be monitored for save notifications.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/startObservingManagedObjectContext:</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/RKSearchIndexer/stopObservingManagedObjectContext:</TokenIdentifier>
-			<Abstract type="html">Tells the receiver to stop monitoring the given managed object context for save notifications and cease indexing changed objects in response to the save.</Abstract>
-			<DeclaredIn>RKSearchIndexer.h</DeclaredIn>			
-			
-			<Declaration>- (void)stopObservingManagedObjectContext:(NSManagedObjectContext *)managedObjectContext</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>managedObjectContext</Name>
-					<Abstract type="html">The managed object context that is no longer to be monitored for save notifications.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/stopObservingManagedObjectContext:</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/RKSearchIndexer/indexChangedObjectsInManagedObjectContext:waitUntilFinished:</TokenIdentifier>
-			<Abstract type="html">Tells the receiver to build a list of all inserted or updated managed objects in the given context and index each one. Objects for entities that are not indexed are silently ignored.</Abstract>
-			<DeclaredIn>RKSearchIndexer.h</DeclaredIn>			
-			
-			<Declaration>- (void)indexChangedObjectsInManagedObjectContext:(NSManagedObjectContext *)managedObjectContext waitUntilFinished:(BOOL)wait</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>managedObjectContext</Name>
-					<Abstract type="html">The managed object context that is to be indexed.</Abstract>
+					<Name>relationship</Name>
+					<Abstract type="html">The name of the relationship of the route to be retrieved.</Abstract>
 				</Parameter><Parameter>
-					<Name>wait</Name>
-					<Abstract type="html">A Boolean value that determines if the current thread will be blocked until all indexing operations have completed.</Abstract>
+					<Name>method</Name>
+					<Abstract type="html">The request method of the route to be retrieved.</Abstract>
 				</Parameter>
 			</Parameters>
-			
-			<Anchor>//api/name/indexChangedObjectsInManagedObjectContext:waitUntilFinished:</Anchor>
+			<ReturnValue><Abstract type="html">A route with the given relationship name, object class and method or nil if none was found.</Abstract></ReturnValue>
+			<Anchor>//api/name/routeForRelationship:ofClass:method:</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/RKSearchIndexer/indexManagedObject:</TokenIdentifier>
-			<Abstract type="html">Tells the receiver to index a given managed object instance.</Abstract>
-			<DeclaredIn>RKSearchIndexer.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/RKRouteSet/routesForClass:</TokenIdentifier>
+			<Abstract type="html">Retrieves all class routes with a given object class.</Abstract>
+			<DeclaredIn>RKRouteSet.h</DeclaredIn>			
 			
-			<Declaration>- (NSUInteger)indexManagedObject:(NSManagedObject *)managedObject</Declaration>
+			<Declaration>- (NSArray *)routesForClass:(Class)objectClass</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>managedObject</Name>
-					<Abstract type="html">The managed object that is to be indexed.</Abstract>
+					<Name>objectClass</Name>
+					<Abstract type="html">The object class of the routes to be retrieved.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">A count of the number of search words that were indexed from the given object&apos;s searchable attributes.
-@raises NSInvalidArgumentException Raised if the given managed object is not for a searchable entity.</Abstract></ReturnValue>
-			<Anchor>//api/name/indexManagedObject:</Anchor>
+			<ReturnValue><Abstract type="html">An array containing all class routes with the given class.</Abstract></ReturnValue>
+			<Anchor>//api/name/routesForClass:</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/RKSearchIndexer/cancelAllIndexingOperations</TokenIdentifier>
-			<Abstract type="html">Tells the indexer to cancel all indexing operations in progress.</Abstract>
-			<DeclaredIn>RKSearchIndexer.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/RKRouteSet/routesForObject:</TokenIdentifier>
+			<Abstract type="html">Retrieves all object routes for a given object.</Abstract>
+			<DeclaredIn>RKRouteSet.h</DeclaredIn>			
 			
-			<Declaration>- (void)cancelAllIndexingOperations</Declaration>
-			
-			
-			<Anchor>//api/name/cancelAllIndexingOperations</Anchor>
+			<Declaration>- (NSArray *)routesForObject:(id)object</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>object</Name>
+					<Abstract type="html">An object for which all object routes are to be retrieved.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An array containing all object routes where the target class is included in the given object&apos;s class hierarchy.</Abstract></ReturnValue>
+			<Anchor>//api/name/routesForObject:</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/RKSearchIndexer/waitUntilAllIndexingOperationsAreFinished</TokenIdentifier>
-			<Abstract type="html">Blocks the current thread until all of the receiver’s queued and executing indexing operations finish executing.</Abstract>
-			<DeclaredIn>RKSearchIndexer.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/RKRouteSet/routesForRelationship:ofClass:</TokenIdentifier>
+			<Abstract type="html">Retrieves all routes for a given relationship name and object class.</Abstract>
+			<DeclaredIn>RKRouteSet.h</DeclaredIn>			
 			
-			<Declaration>- (void)waitUntilAllIndexingOperationsAreFinished</Declaration>
+			<Declaration>- (NSArray *)routesForRelationship:(NSString *)relationshipName ofClass:(Class)objectClass</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>relationshipName</Name>
+					<Abstract type="html">The name of the relationship of the routes to be retrieved.</Abstract>
+				</Parameter><Parameter>
+					<Name>objectClass</Name>
+					<Abstract type="html">The object class of the routes to be retrieved.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">An array containing all relationship routes with the given relationship name and object class.</Abstract></ReturnValue>
+			<Anchor>//api/name/routesForRelationship:ofClass:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RKRouteSet/routeForObject:method:</TokenIdentifier>
+			<Abstract type="html">Retrieves a route for a given object and request method.</Abstract>
+			<DeclaredIn>RKRouteSet.h</DeclaredIn>			
+			
+			<Declaration>- (RKRoute *)routeForObject:(id)object method:(RKRequestMethod)method</Declaration>
 			
 			
-			<Anchor>//api/name/waitUntilAllIndexingOperationsAreFinished</Anchor>
+			<Anchor>//api/name/routeForObject:method:</Anchor>
 		</Token>
 		
 	</File>

@@ -1,77 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/RKMappingOperationDataSource.html">
+	<File path="Protocols/RKManagedObjectCaching.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/RKMappingOperationDataSource</TokenIdentifier>
-			<Abstract type="html">An object that adopts the RKMappingOperationDataSource protocol is responsible for the retrieval or creation of target objects within an RKMapperOperation or RKMappingOperation. A data source is responsible for meeting the requirements of the underlying data store implementation and must return a key-value coding compliant object instance that can be used as the target object of a mapping operation. It is also responsible for commiting any changes necessary to the underlying data store once a mapping operation has completed its work.</Abstract>
-			<DeclaredIn>RKMappingOperationDataSource.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/intf/RKManagedObjectCaching</TokenIdentifier>
+			<Abstract type="html">Objects implementing the RKManagedObjectCaching provide support for retrieving managed object matching a set of attributes using an opaque caching strategy. The objects retrieved are not required to be in any particular order, but must exactly match the attribute values requested.</Abstract>
+			<DeclaredIn>RKManagedObjectCaching.h</DeclaredIn>
 			
 			<NodeRef refid="64"/>
 		</Token>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/RKMappingOperationDataSource/mappingOperation:targetObjectForRepresentation:withMapping:inRelationship:</TokenIdentifier>
-			<Abstract type="html">Asks the data source for the target object for an object mapping operation given an NSDictionary representation of the object&apos;s properties and the mapping object that will be used to perform the mapping.</Abstract>
-			<DeclaredIn>RKMappingOperationDataSource.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/intfm/RKManagedObjectCaching/managedObjectsWithEntity:attributeValues:inManagedObjectContext:</TokenIdentifier>
+			<Abstract type="html">Returns all managed objects for a given entity with attributes whose names and values match the given dictionary in a given context.</Abstract>
+			<DeclaredIn>RKManagedObjectCaching.h</DeclaredIn>			
 			
-			<Declaration>- (id)mappingOperation:(RKMappingOperation *)mappingOperation targetObjectForRepresentation:(NSDictionary *)representation withMapping:(RKObjectMapping *)mapping inRelationship:(RKRelationshipMapping *)relationshipMapping</Declaration>
+			<Declaration>- (NSSet *)managedObjectsWithEntity:(NSEntityDescription *)entity attributeValues:(NSDictionary *)attributeValues inManagedObjectContext:(NSManagedObjectContext *)managedObjectContext</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>mappingOperation</Name>
-					<Abstract type="html">The mapping operation requesting the target object.</Abstract>
+					<Name>entity</Name>
+					<Abstract type="html">The entity to retrieve managed objects for.</Abstract>
 				</Parameter><Parameter>
-					<Name>representation</Name>
-					<Abstract type="html">A dictionary representation of the properties to be mapped onto the retrieved target object.</Abstract>
+					<Name>attributeValues</Name>
+					<Abstract type="html">A dictionary specifying the attribute criteria for retrieving managed objects.</Abstract>
 				</Parameter><Parameter>
-					<Name>mapping</Name>
-					<Abstract type="html">The object mapping to be used to perform a mapping from the representation to the target object.</Abstract>
+					<Name>managedObjectContext</Name>
+					<Abstract type="html">The context to fetch the matching objects in.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">A key-value coding compliant object to perform the mapping on to.</Abstract></ReturnValue>
-			<Anchor>//api/name/mappingOperation:targetObjectForRepresentation:withMapping:inRelationship:</Anchor>
+			
+			<Anchor>//api/name/managedObjectsWithEntity:attributeValues:inManagedObjectContext:</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/RKMappingOperationDataSource/commitChangesForMappingOperation:error:</TokenIdentifier>
-			<Abstract type="html">Tells the data source to commit any changes to the underlying data store.</Abstract>
-			<DeclaredIn>RKMappingOperationDataSource.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/intfm/RKManagedObjectCaching/didFetchObject:</TokenIdentifier>
+			<Abstract type="html">Invoked to inform the receiver that an object was fetched and should be added to the cache.</Abstract>
+			<DeclaredIn>RKManagedObjectCaching.h</DeclaredIn>			
 			
-			<Declaration>- (BOOL)commitChangesForMappingOperation:(RKMappingOperation *)mappingOperation error:(NSError **)error</Declaration>
+			<Declaration>- (void)didFetchObject:(NSManagedObject *)object</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>mappingOperation</Name>
-					<Abstract type="html">The mapping operation that has completed its work.</Abstract>
-				</Parameter><Parameter>
-					<Name>error</Name>
-					<Abstract type="html">A pointer to an error to be set in the event that the mapping operation could not be committed.</Abstract>
+					<Name>object</Name>
+					<Abstract type="html">The object that was fetched from a managed object context.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">A Boolean value indicating if the changes for the mapping operation were committed successfully.</Abstract></ReturnValue>
-			<Anchor>//api/name/commitChangesForMappingOperation:error:</Anchor>
+			
+			<Anchor>//api/name/didFetchObject:</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/RKMappingOperationDataSource/mappingOperation:deleteExistingValueOfRelationshipWithMapping:error:</TokenIdentifier>
-			<Abstract type="html">Tells the data source to delete the existing value for a relationship that has been mapped with an assignment policy of RKReplaceAssignmentPolicy.</Abstract>
-			<DeclaredIn>RKMappingOperationDataSource.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/intfm/RKManagedObjectCaching/didCreateObject:</TokenIdentifier>
+			<Abstract type="html">Invoked to inform the receiver that an object was created and should be added to the cache.</Abstract>
+			<DeclaredIn>RKManagedObjectCaching.h</DeclaredIn>			
 			
-			<Declaration>- (BOOL)mappingOperation:(RKMappingOperation *)mappingOperation deleteExistingValueOfRelationshipWithMapping:(RKRelationshipMapping *)relationshipMapping error:(NSError **)error</Declaration>
+			<Declaration>- (void)didCreateObject:(NSManagedObject *)object</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>mappingOperation</Name>
-					<Abstract type="html">The mapping operation that is executing.</Abstract>
-				</Parameter><Parameter>
-					<Name>relationshipMapping</Name>
-					<Abstract type="html">The relationship mapping for which the existing value is being replaced.</Abstract>
-				</Parameter><Parameter>
-					<Name>error</Name>
-					<Abstract type="html">A pointer to an error to be set in the event that the deletion operation could not be completed.</Abstract>
+					<Name>object</Name>
+					<Abstract type="html">The object that was created in a managed object context.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">A Boolean value indicating if the existing objects for the relationship were successfully deleted.</Abstract></ReturnValue>
-			<Anchor>//api/name/mappingOperation:deleteExistingValueOfRelationshipWithMapping:error:</Anchor>
+			
+			<Anchor>//api/name/didCreateObject:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/RKManagedObjectCaching/didDeleteObject:</TokenIdentifier>
+			<Abstract type="html">Invoked to inform the receiver that an object was deleted and should be removed to the cache.</Abstract>
+			<DeclaredIn>RKManagedObjectCaching.h</DeclaredIn>			
+			
+			<Declaration>- (void)didDeleteObject:(NSManagedObject *)object</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>object</Name>
+					<Abstract type="html">The object that was deleted from a managed object context.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/didDeleteObject:</Anchor>
 		</Token>
 		
 	</File>

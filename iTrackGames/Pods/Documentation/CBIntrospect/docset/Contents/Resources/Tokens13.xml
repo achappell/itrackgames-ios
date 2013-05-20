@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Categories/UIView+Introspector.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cat/UIView(Introspector)</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>UIView+Introspector.h</DeclaredIn>
+			
+			<NodeRef refid="13"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UIView(Introspector)/setMemoryAddress:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>UIView+Introspector.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) NSString *memoryAddress</Declaration>
+			
+			
+			<Anchor>//api/name/memoryAddress</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/UIView(Introspector)/memoryAddress</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>UIView+Introspector.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, readonly) NSString *memoryAddress</Declaration>
+			
+			
+			<Anchor>//api/name/memoryAddress</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UIView(Introspector)/setIntrospectorName:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>UIView+Introspector.h</DeclaredIn>			
+			
+			<Declaration>@property (copy, nonatomic) NSString *introspectorName</Declaration>
+			
+			
+			<Anchor>//api/name/introspectorName</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfp/UIView(Introspector)/introspectorName</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>UIView+Introspector.h</DeclaredIn>			
+			
+			<Declaration>@property (copy, nonatomic) NSString *introspectorName</Declaration>
+			
+			
+			<Anchor>//api/name/introspectorName</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UIView(Introspector)/describeProperty:value:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>UIView+Introspector.h</DeclaredIn>			
+			
+			<Declaration>+ (NSString *)describeProperty:(NSString *)propertyName value:(id)value</Declaration>
+			
+			
+			<Anchor>//api/name/describeProperty:value:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UIView(Introspector)/storeView:</TokenIdentifier>
+			<Abstract type="html">Stores the specified view in the file store.</Abstract>
+			<DeclaredIn>UIView+Introspector.h</DeclaredIn>			
+			
+			<Declaration>+ (void)storeView:(UIView *)view</Declaration>
+			
+			
+			<Anchor>//api/name/storeView:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UIView(Introspector)/restoreView:</TokenIdentifier>
+			<Abstract type="html">Loads and updates the specified view from the file store.</Abstract>
+			<DeclaredIn>UIView+Introspector.h</DeclaredIn>			
+			
+			<Declaration>+ (void)restoreView:(UIView *)view</Declaration>
+			
+			
+			<Anchor>//api/name/restoreView:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UIView(Introspector)/unlinkView:</TokenIdentifier>
+			<Abstract type="html">Clears the file data for the specified view.</Abstract>
+			<DeclaredIn>UIView+Introspector.h</DeclaredIn>			
+			
+			<Declaration>+ (void)unlinkView:(UIView *)view</Declaration>
+			
+			
+			<Anchor>//api/name/unlinkView:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UIView(Introspector)/dictionaryRepresentation</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>UIView+Introspector.h</DeclaredIn>			
+			
+			<Declaration>- (NSDictionary *)dictionaryRepresentation</Declaration>
+			
+			
+			<Anchor>//api/name/dictionaryRepresentation</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UIView(Introspector)/JSONString</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>UIView+Introspector.h</DeclaredIn>			
+			
+			<Declaration>- (NSString *)JSONString</Declaration>
+			
+			
+			<Anchor>//api/name/JSONString</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UIView(Introspector)/updateWithJSON:</TokenIdentifier>
+			<Abstract type="html">Updates the current view using the values restored from the specified JSON object.</Abstract>
+			<DeclaredIn>UIView+Introspector.h</DeclaredIn>			
+			
+			<Declaration>- (BOOL)updateWithJSON:(NSDictionary *)jsonInfo</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if the JSON was successfully loaded, NO if the class or memory address for this view
+did not match what was stored.</Abstract></ReturnValue>
+			<Anchor>//api/name/updateWithJSON:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UIView(Introspector)/syncFilePath</TokenIdentifier>
+			<Abstract type="html">Returns the file path used to sync this view.</Abstract>
+			<DeclaredIn>UIView+Introspector.h</DeclaredIn>			
+			
+			<Declaration>- (NSString *)syncFilePath</Declaration>
+			
+			
+			<Anchor>//api/name/syncFilePath</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/UIView(Introspector)/viewDescription</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>UIView+Introspector.h</DeclaredIn>			
+			
+			<Declaration>- (NSString *)viewDescription</Declaration>
+			
+			
+			<Anchor>//api/name/viewDescription</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

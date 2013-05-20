@@ -12,7 +12,7 @@
 	<body>
 		<header id="top_header">
 			<div id="library" class="hideInXcode">
-				<h1><a id="libraryTitle" href="../index.html">RestKit 0.20.0 </a></h1>
+				<h1><a id="libraryTitle" href="../index.html">RestKit 0.20.1 </a></h1>
 				<a id="developerHome" href="../index.html">Blake Watters</a>
 			</div>
 			
@@ -59,6 +59,8 @@
 	<option value="//api/name/mappingOperation:didSelectObjectMapping:forDynamicMapping:">&nbsp;&nbsp;&nbsp;&nbsp;- mappingOperation:didSelectObjectMapping:forDynamicMapping:</option>
 	
 	<option value="//api/name/mappingOperation:didSetValue:forKeyPath:usingMapping:">&nbsp;&nbsp;&nbsp;&nbsp;- mappingOperation:didSetValue:forKeyPath:usingMapping:</option>
+	
+	<option value="//api/name/mappingOperation:shouldSetValue:forKeyPath:usingMapping:">&nbsp;&nbsp;&nbsp;&nbsp;- mappingOperation:shouldSetValue:forKeyPath:usingMapping:</option>
 	
 	
 	
@@ -107,6 +109,8 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mappingOperation:didSelectObjectMapping:forDynamicMapping:">mappingOperation:didSelectObjectMapping:forDynamicMapping:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mappingOperation:didSetValue:forKeyPath:usingMapping:">mappingOperation:didSetValue:forKeyPath:usingMapping:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mappingOperation:shouldSetValue:forKeyPath:usingMapping:">mappingOperation:shouldSetValue:forKeyPath:usingMapping:</a></span></li>
 	
 </ul></li>
 
@@ -172,6 +176,13 @@
 	<span class="tooltip">
 		<code><a href="#//api/name/mappingOperation:didNotFindValueForKeyPath:mapping:">&ndash;&nbsp;mappingOperation:didNotFindValueForKeyPath:mapping:</a></code>
 		<span class="tooltip"><p>Tells the delegate that no attribute or relationships mapping was found for a given key path within the data being mapped.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/mappingOperation:shouldSetValue:forKeyPath:usingMapping:">&ndash;&nbsp;mappingOperation:shouldSetValue:forKeyPath:usingMapping:</a></code>
+		<span class="tooltip"><p>Asks the delegate if the mapping operation should set a value for a given key path with an attribute or relationship mapping. This method is invoked before the value is set. If the delegate does not implement this method, then the mapping operation will determine if the value should be set by comparing the current property value with the new property value.</p></span>
 	</span>
 	
 	
@@ -759,6 +770,77 @@
 	
 </div>
 						
+						<div class="section-method">
+	<a name="//api/name/mappingOperation:shouldSetValue:forKeyPath:usingMapping:" title="mappingOperation:shouldSetValue:forKeyPath:usingMapping:"></a>
+	<h3 class="subsubtitle method-title">mappingOperation:shouldSetValue:forKeyPath:usingMapping:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Asks the delegate if the mapping operation should set a value for a given key path with an attribute or relationship mapping. This method is invoked before the value is set. If the delegate does not implement this method, then the mapping operation will determine if the value should be set by comparing the current property value with the new property value.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)mappingOperation:(RKMappingOperation *)<em>operation</em> shouldSetValue:(id)<em>value</em> forKeyPath:(NSString *)<em>keyPath</em> usingMapping:(RKPropertyMapping *)<em>propertyMapping</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>operation</em></dt>
+			<dd><p>The object mapping operation being performed.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>value</em></dt>
+			<dd><p>A new value that was set on the destination object.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>keyPath</em></dt>
+			<dd><p>The key path in the destination object for which a new value has been set.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>propertyMapping</em></dt>
+			<dd><p>The <a href="../Classes/RKAttributeMapping.html"><code>RKAttributeMapping</code></a> or <a href="../Classes/RKRelationshipMapping.html"><code>RKRelationshipMapping</code></a> found for the key path.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><code>YES</code> if the operation should set the proposed value for the key path, else <code>NO</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Asks the delegate if the mapping operation should set a value for a given key path with an attribute or relationship mapping. This method is invoked before the value is set. If the delegate does not implement this method, then the mapping operation will determine if the value should be set by comparing the current property value with the new property value.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">RKMappingOperation.h</code><br />
+	</div>				
+	
+	
+</div>
+						
 					</div>
 					
 					
@@ -772,7 +854,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2013 Blake Watters. All rights reserved. (Last updated: 2013-03-30)</span><br />
+						<p><span class="copyright">&copy; 2013 Blake Watters. All rights reserved. (Last updated: 2013-05-20)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
 						

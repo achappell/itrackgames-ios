@@ -9,7 +9,7 @@
 #import "UIView+Introspector.h"
 #import "CBMacros.h"
 #import "DCUtility.h"
-#import "JSONKit.h"
+#import "NSObject+JSON.h"
 #import "CBIntrospectConstants.h"
 #include <stdbool.h>
 #include <sys/types.h>
@@ -407,8 +407,8 @@
     [jsonInfo setObject:NSStringFromCGPoint(self.center) forKey:kUIViewCenterKey];
     [jsonInfo setObject:NSStringFromCGRect(self.frame) forKey:kUIViewFrameKey];
     
-    [jsonInfo setObject:[NSNumber numberWithFloat:self.alpha] forKey:kUIViewAlphaKey];
-    [jsonInfo setObject:[NSNumber numberWithBool:self.hidden] forKey:kUIViewHiddenKey];
+    [jsonInfo setObject:@(self.alpha) forKey:kUIViewAlphaKey];
+    [jsonInfo setObject:@(self.hidden) forKey:kUIViewHiddenKey];
     
     return jsonInfo;
 }
@@ -528,7 +528,7 @@
 		[outputString appendFormat:@"    userInteractionEnabled: %@ | ", NSStringFromBOOL(view.userInteractionEnabled)];
 		[outputString appendFormat:@"multipleTouchEnabled: %@\n", NSStringFromBOOL(view.multipleTouchEnabled)];
 		[outputString appendFormat:@"    gestureRecognizers: %@\n", (view.gestureRecognizers) ? [view.gestureRecognizers description] : @"nil"];
-        [outputString appendFormat:@"    superview: %@\n", view.superview];
+        [outputString appendFormat:@"    superview: %@\n", view.superview.description];
         
         // get subviews instance info
         NSMutableArray *subviewsArray = [NSMutableArray arrayWithCapacity:view.subviews.count];
@@ -539,13 +539,21 @@
         
         // ex: subviews: 3 views [<UIView: 0x23f434f>, <UIButton: 0x43f4ffe>]
         [outputString appendFormat:@"    subviews: %d view%@ [%@]\n", view.subviews.count, (view.subviews.count == 1 ? @"" : @"s"), [subviewsArray componentsJoinedByString:@", "]];
-		
 		[outputString appendString:@"\n"];
 	}
 	
 	[outputString appendFormat:@"  ** %@ properties **\n", objectClass];
 	
-	if (objectClass == UIScrollView.class || objectClass == UIButton.class)
+    // custom property descriptions
+    if ([self isKindOfClass:[UIScrollView class]])
+    {
+        UIScrollView *scrollView = (UIScrollView*) self;
+        [outputString appendFormat:@"    contentOffset: %@\n", NSStringFromCGPoint(scrollView.contentOffset)];
+        [outputString appendFormat:@"    contentSize: %@\n", NSStringFromCGSize(scrollView.contentSize)];
+    }
+	
+    // descriptions for dynamic property discovery
+	if (objectClass == UIButton.class)
 	{
 		[outputString appendString:@"    Logging properties not currently supported for this view.\n"];
 	}
@@ -566,7 +574,7 @@
 					NSString *returnType = [NSString stringWithUTF8String:[[self methodSignatureForSelector:sel] methodReturnType]];
 					id returnObject = [self valueForKey:propertyName];
 					if ([returnType isEqualToString:@"c"])
-						returnObject = [NSNumber numberWithBool:[returnObject intValue] != 0];
+						returnObject = @([returnObject intValue] != 0);
 					
 					propertyDescription = [UIView describeProperty:propertyName value:returnObject];
 				}
@@ -587,14 +595,14 @@
 		UIControl *control = (UIControl *)self;
 		UIControlEvents controlEvents = [control allControlEvents];
 		NSSet *allTargets = [control allTargets];
-		[allTargets enumerateObjectsUsingBlock:^(id target, BOOL *stop)
-		 {
-			 NSArray *actions = [control actionsForTarget:target forControlEvent:controlEvents];
-			 [actions enumerateObjectsUsingBlock:^(id action, NSUInteger idx, BOOL *stop2)
-			  {
-				  [outputString appendFormat:@"    target: %@ action: %@\n", target, action];
-			  }];
-		 }];
+        for (id target in allTargets)
+        {
+            NSArray *actions = [control actionsForTarget:target forControlEvent:controlEvents];
+            for (id action in actions)
+            {
+                [outputString appendFormat:@"    [%@ %@]\n", [target description], action];
+            }
+        }
 	}
 	
 	[outputString appendString:@"\n"];

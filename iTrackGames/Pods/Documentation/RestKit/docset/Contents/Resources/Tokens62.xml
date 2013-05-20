@@ -1,84 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Protocols/RKManagedObjectCaching.html">
+	<File path="Categories/NSManagedObject+RKAdditions.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intf/RKManagedObjectCaching</TokenIdentifier>
-			<Abstract type="html">Objects implementing the RKManagedObjectCaching provide support for retrieving managed object matching a set of attributes using an opaque caching strategy. The objects retrieved are not required to be in any particular order, but must exactly match the attribute values requested.</Abstract>
-			<DeclaredIn>RKManagedObjectCaching.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cat/NSManagedObject(RKAdditions)</TokenIdentifier>
+			<Abstract type="html">Provides extensions to NSManagedObject for various common tasks.</Abstract>
+			<DeclaredIn>NSManagedObject+RKAdditions.h</DeclaredIn>
 			
 			<NodeRef refid="62"/>
 		</Token>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/RKManagedObjectCaching/managedObjectsWithEntity:attributeValues:inManagedObjectContext:</TokenIdentifier>
-			<Abstract type="html">Returns all managed objects for a given entity with attributes whose names and values match the given dictionary in a given context.</Abstract>
-			<DeclaredIn>RKManagedObjectCaching.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/intfm/NSManagedObject(RKAdditions)/hasBeenDeleted</TokenIdentifier>
+			<Abstract type="html">Determines if the receiver has been deleted from the persistent store
+and removed from the object graph.</Abstract>
+			<DeclaredIn>NSManagedObject+RKAdditions.h</DeclaredIn>			
 			
-			<Declaration>- (NSSet *)managedObjectsWithEntity:(NSEntityDescription *)entity attributeValues:(NSDictionary *)attributeValues inManagedObjectContext:(NSManagedObjectContext *)managedObjectContext</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>entity</Name>
-					<Abstract type="html">The entity to retrieve managed objects for.</Abstract>
-				</Parameter><Parameter>
-					<Name>attributeValues</Name>
-					<Abstract type="html">A dictionary specifying the attribute criteria for retrieving managed objects.</Abstract>
-				</Parameter><Parameter>
-					<Name>managedObjectContext</Name>
-					<Abstract type="html">The context to fetch the matching objects in.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>- (BOOL)hasBeenDeleted</Declaration>
 			
-			<Anchor>//api/name/managedObjectsWithEntity:attributeValues:inManagedObjectContext:</Anchor>
+			<ReturnValue><Abstract type="html">YES if the object has been deleted from the persistent store, else NO.</Abstract></ReturnValue>
+			<Anchor>//api/name/hasBeenDeleted</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/RKManagedObjectCaching/didFetchObject:</TokenIdentifier>
-			<Abstract type="html">Invoked to inform the receiver that an object was fetched and should be added to the cache.</Abstract>
-			<DeclaredIn>RKManagedObjectCaching.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/intfm/NSManagedObject(RKAdditions)/isNew</TokenIdentifier>
+			<Abstract type="html">Returns YES when an object has not been saved to the managed object context yet</Abstract>
+			<DeclaredIn>NSManagedObject+RKAdditions.h</DeclaredIn>			
 			
-			<Declaration>- (void)didFetchObject:(NSManagedObject *)object</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>object</Name>
-					<Abstract type="html">The object that was fetched from a managed object context.</Abstract>
-				</Parameter>
-			</Parameters>
+			<Declaration>- (BOOL)isNew</Declaration>
 			
-			<Anchor>//api/name/didFetchObject:</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/RKManagedObjectCaching/didCreateObject:</TokenIdentifier>
-			<Abstract type="html">Invoked to inform the receiver that an object was created and should be added to the cache.</Abstract>
-			<DeclaredIn>RKManagedObjectCaching.h</DeclaredIn>			
 			
-			<Declaration>- (void)didCreateObject:(NSManagedObject *)object</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>object</Name>
-					<Abstract type="html">The object that was created in a managed object context.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/didCreateObject:</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/RKManagedObjectCaching/didDeleteObject:</TokenIdentifier>
-			<Abstract type="html">Invoked to inform the receiver that an object was deleted and should be removed to the cache.</Abstract>
-			<DeclaredIn>RKManagedObjectCaching.h</DeclaredIn>			
-			
-			<Declaration>- (void)didDeleteObject:(NSManagedObject *)object</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>object</Name>
-					<Abstract type="html">The object that was deleted from a managed object context.</Abstract>
-				</Parameter>
-			</Parameters>
-			
-			<Anchor>//api/name/didDeleteObject:</Anchor>
+			<Anchor>//api/name/isNew</Anchor>
 		</Token>
 		
 	</File>

@@ -121,5 +121,21 @@
 			<Anchor>//api/name/savesToPersistentStore</Anchor>
 		</Token>
 		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RKManagedObjectRequestOperation/setWillSaveMappingContextBlock:</TokenIdentifier>
+			<Abstract type="html">Sets a block to be invoked just before the operation saves the private mapping context.</Abstract>
+			<DeclaredIn>RKManagedObjectRequestOperation.h</DeclaredIn>			
+			
+			<Declaration>- (void)setWillSaveMappingContextBlock:(void ( ^ ) ( NSManagedObjectContext *mappingContext ))block</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>block</Name>
+					<Abstract type="html">The block to execute just before the context is saved.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/setWillSaveMappingContextBlock:</Anchor>
+		</Token>
+		
 	</File>
 </Tokens>

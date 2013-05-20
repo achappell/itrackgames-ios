@@ -274,18 +274,32 @@
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/RKManagedObjectStore/newChildManagedObjectContextWithConcurrencyType:</TokenIdentifier>
-			<Abstract type="html">Creates a new child managed object context of the persistent store managed object context with a given concurrency type.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instm/RKManagedObjectStore/newChildManagedObjectContextWithConcurrencyType:tracksChanges:</TokenIdentifier>
+			<Abstract type="html">Creates a new child managed object context of the persistent store managed object context with a given concurrency type, optionally tracking changes saved to the parent context and merging them on save.</Abstract>
 			<DeclaredIn>RKManagedObjectStore.h</DeclaredIn>			
 			
-			<Declaration>- (NSManagedObjectContext *)newChildManagedObjectContextWithConcurrencyType:(NSManagedObjectContextConcurrencyType)concurrencyType</Declaration>
+			<Declaration>- (NSManagedObjectContext *)newChildManagedObjectContextWithConcurrencyType:(NSManagedObjectContextConcurrencyType)concurrencyType tracksChanges:(BOOL)tracksChanges</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>concurrencyType</Name>
 					<Abstract type="html">The desired concurrency type for the new context.</Abstract>
+				</Parameter><Parameter>
+					<Name>tracksChanges</Name>
+					<Abstract type="html">When YES, the new context will observe the persistentStoreManagedObjectContext for save events and merge in any changes via [NSManagedObjectContext mergeChangesFromContextDidSaveNotification:].</Abstract>
 				</Parameter>
 			</Parameters>
 			<ReturnValue><Abstract type="html">A newly created managed object context with the given concurrency type whose parent is the persistentStoreManagedObjectContext.</Abstract></ReturnValue>
+			<Anchor>//api/name/newChildManagedObjectContextWithConcurrencyType:tracksChanges:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RKManagedObjectStore/newChildManagedObjectContextWithConcurrencyType:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>RKManagedObjectStore.h</DeclaredIn>			
+			
+			<Declaration>- (NSManagedObjectContext *)newChildManagedObjectContextWithConcurrencyType:(NSManagedObjectContextConcurrencyType)concurrencyType</Declaration>
+			
+			
 			<Anchor>//api/name/newChildManagedObjectContextWithConcurrencyType:</Anchor>
 		</Token>
 		

@@ -116,6 +116,50 @@ the managed object model of the given managed object store.</Abstract>
 		</Token>
 		
 		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RKEntityMapping/setModificationKey:</TokenIdentifier>
+			<Abstract type="html">An optional key on objects mapped with the receiver that identifies a property that can be used to detect modification to the instance. This is used to improve the performance of mapping operations by skipping the property mappings for a given object.</Abstract>
+			<DeclaredIn>RKEntityMapping.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, copy) NSString *modificationKey</Declaration>
+			
+			
+			<Anchor>//api/name/modificationKey</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/RKEntityMapping/modificationKey</TokenIdentifier>
+			<Abstract type="html">An optional key on objects mapped with the receiver that identifies a property that can be used to detect modification to the instance. This is used to improve the performance of mapping operations by skipping the property mappings for a given object.</Abstract>
+			<DeclaredIn>RKEntityMapping.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, copy) NSString *modificationKey</Declaration>
+			
+			
+			<Anchor>//api/name/modificationKey</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RKEntityMapping/setPersistentStore:</TokenIdentifier>
+			<Abstract type="html">The persistent store in which new object instances mapped with the receiver should be inserted.</Abstract>
+			<DeclaredIn>RKEntityMapping.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, weak) NSPersistentStore *persistentStore</Declaration>
+			
+			
+			<Anchor>//api/name/persistentStore</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/RKEntityMapping/persistentStore</TokenIdentifier>
+			<Abstract type="html">The persistent store in which new object instances mapped with the receiver should be inserted.</Abstract>
+			<DeclaredIn>RKEntityMapping.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, weak) NSPersistentStore *persistentStore</Declaration>
+			
+			
+			<Anchor>//api/name/persistentStore</Anchor>
+		</Token>
+		
+		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/RKEntityMapping/setConnections:</TokenIdentifier>
 			<Abstract type="html">Returns the array of RKConnectionDescripton objects configured for connecting relationships during object mapping.</Abstract>
 			<DeclaredIn>RKEntityMapping.h</DeclaredIn>			

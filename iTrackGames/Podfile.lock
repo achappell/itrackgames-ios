@@ -1,29 +1,29 @@
 PODS:
-  - AFNetworking (1.1.0)
-  - CBIntrospect (0.3.3):
-    - JSONKit (= 1.5pre)
-  - JSONKit (1.5pre)
-  - MACachedImageView (1.1.0):
-    - AFNetworking (~> 1.1.0)
+  - AFNetworking (1.2.1)
+  - CBIntrospect (0.4.1)
+  - MACachedImageView (1.1.1):
+    - AFNetworking (~> 1.2.1)
     - MACircleProgressIndicator (~> 1.0.0)
   - MACircleProgressIndicator (1.0.0)
   - OCMock (2.1.1)
-  - RestKit (0.20.0):
+  - RestKit (0.20.1):
     - RestKit/Core
-  - RestKit/Core (0.20.0):
+  - RestKit/Core (0.20.1):
     - RestKit/CoreData
     - RestKit/Network
     - RestKit/ObjectMapping
-  - RestKit/CoreData (0.20.0)
-  - RestKit/Network (0.20.0):
-    - AFNetworking (= 1.1.0)
+  - RestKit/CoreData (0.20.1)
+  - RestKit/Network (0.20.1):
+    - AFNetworking (~> 1.2.0)
     - RestKit/ObjectMapping
     - RestKit/Support
     - SOCKit
-  - RestKit/ObjectMapping (0.20.0)
-  - RestKit/Support (0.20.0)
+  - RestKit/ObjectMapping (0.20.1)
+  - RestKit/Support (0.20.1):
+    - TransitionKit (= 1.1.0)
   - SOCKit (1.1)
   - TestFlightSDK (1.3.0.beta4)
+  - TransitionKit (1.1.0)
   - ViewDeck (2.2.11)
 
 DEPENDENCIES:
@@ -40,15 +40,15 @@ EXTERNAL SOURCES:
     :git: https://github.com/RestKit/RestKit.git
 
 SPEC CHECKSUMS:
-  AFNetworking: 761a418233d280c1e0580bcb76ff9cb4c3073d17
-  CBIntrospect: 934641e8f05f61ec6868ae9adec6bac79558f037
-  JSONKit: 409734ab3407fce90ef7eaa95d7168f38d9a6601
-  MACachedImageView: 8f1189a653bd72e9868ae3c62fcd429f76104cbe
+  AFNetworking: a44069e3c9c89867544f6639482f155c7e5f9b41
+  CBIntrospect: 34f93a5cbb0c3db363cd4886ba6a85faefc4362b
+  MACachedImageView: 7d27db20d4d3e395d72f11c50673633680003219
   MACircleProgressIndicator: dc497a2c68dd930d4aea837b1a732a56ce4bd6d8
   OCMock: 79212e5e328378af5cfd6edb5feacfd6c49cd8a3
-  RestKit: 453f0a957f681ae382dd1f88a049963a95f6500f
+  RestKit: ceca63bc91172098c710c469facd2560e8a59164
   SOCKit: ed67aeeca4a697b63a933229e53f4670d5b9300f
   TestFlightSDK: 868307d9f94d3e978df579d15cc0a978ffe09958
+  TransitionKit: 1624e84f252d5cd26900be28ccb73c69fbe63f8a
   ViewDeck: b5eddc8559b0e47259ab7addbf2de6768061f139
 
-COCOAPODS: 0.18.1
+COCOAPODS: 0.19.1
