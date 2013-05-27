@@ -18,6 +18,7 @@
 #import "TGMenuViewController.h"
 #import <CBIntrospect/CBIntrospect.h>
 #import <Facebook-iOS-SDK/FacebookSDK/Facebook.h>
+#import "TGUserManager.h"
 
 @interface TGAppDelegate()
 
@@ -42,6 +43,7 @@
     
     [[CBIntrospect sharedIntrospector] start];
     
+
     NSArray *permissions =
     [NSArray arrayWithObjects:@"email", nil];
     
@@ -50,6 +52,10 @@
                                   completionHandler:^(FBSession *session, FBSessionState status, NSError *error) {
                                       /* handle success + failure in block */
                                   }];
+
+    //set token to value stored in NSUserDefaults
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [[TGUserManager sharedManager] authenticateWithToken:[defaults objectForKey:@"token"]];
     
     return YES;
 }

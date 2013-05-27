@@ -55,6 +55,11 @@ static TGUserManager *_sharedManager;
     return self.currentUser.token;
 }
 
+- (void)setCurrentUserToken:(NSString *)token
+{
+    self.currentUser.token = token;
+}
+
 -(void) loginWithUsername: (NSString *) username andPassword: (NSString *) password withCompletion:(TGUserManagerCompletionBlockType) completionBlock
 {
     if ([username isEqualToString:@""] || [password isEqualToString:@""])
@@ -75,6 +80,10 @@ static TGUserManager *_sharedManager;
                 currentUser.token = token;
                 
                 self.currentUser = currentUser;
+                
+                //store token in NSUserDefaults to save login info
+                NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+                [defaults setObject:token forKey:@"userLoginToken"];
             }
             
             if (completionBlock)
@@ -82,6 +91,22 @@ static TGUserManager *_sharedManager;
 
         }];
     }
+}
+
+- (void)authenticateWithToken:(NSString *)token
+{
+   
+    [self.dataManager validateToken:(NSString *) token withCompletion:^(id data, NSError *error) {
+        
+        if (!error) {
+            TGUser *currentUser = [[TGUser alloc] init];
+            self.currentUser = currentUser;
+            self.currentUser.token = token;
+        } else {
+            self.currentUser = nil;
+        }
+        
+    }];
 }
 
 @end
