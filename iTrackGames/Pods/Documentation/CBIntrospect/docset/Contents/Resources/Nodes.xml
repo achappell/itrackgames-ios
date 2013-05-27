@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DocSetNodes version="1.0">
+    <TOC>
+        <Node type="folder">
+            <Name>CBIntrospect 0.4.1</Name>
+            <Path>index.html</Path>
+			<Subnodes>
+                
+				
+				<Node type="folder">
+					<Name>Classes</Name>
+					<Path>index.html</Path>
+					<Subnodes>
+						<NodeRef refid="1"/>
+						<NodeRef refid="2"/>
+						<NodeRef refid="3"/>
+						<NodeRef refid="4"/>
+						<NodeRef refid="5"/>
+						<NodeRef refid="6"/>
+						<NodeRef refid="7"/>
+						<NodeRef refid="8"/>
+						<NodeRef refid="9"/>
+						
+					</Subnodes>
+				</Node>
+				
+				
+				<Node type="folder">
+					<Name>Categories</Name>
+					<Path>index.html</Path>
+					<Subnodes>
+						<NodeRef refid="10"/>
+						<NodeRef refid="11"/>
+						<NodeRef refid="12"/>
+						<NodeRef refid="13"/>
+						<NodeRef refid="14"/>
+						<NodeRef refid="15"/>
+						
+					</Subnodes>
+				</Node>
+				
+				
+				<Node type="folder">
+					<Name>Protocols</Name>
+					<Path>index.html</Path>
+					<Subnodes>
+						<NodeRef refid="16"/>
+						
+					</Subnodes>
+				</Node>
+				
+			</Subnodes>
+        </Node>
+    </TOC>
+	<Library>
+		
+		<Node id="1">
+			<Name>CBFileWatcher</Name>
+			<Path>Classes/CBFileWatcher.html</Path>
+		</Node>
+		<Node id="2">
+			<Name>CBIntrospect</Name>
+			<Path>Classes/CBIntrospect.html</Path>
+		</Node>
+		<Node id="3">
+			<Name>DCCrossHairView</Name>
+			<Path>Classes/DCCrossHairView.html</Path>
+		</Node>
+		<Node id="4">
+			<Name>DCFrameView</Name>
+			<Path>Classes/DCFrameView.html</Path>
+		</Node>
+		<Node id="5">
+			<Name>DCIntrospect</Name>
+			<Path>Classes/DCIntrospect.html</Path>
+		</Node>
+		<Node id="6">
+			<Name>DCStatusBarOverlay</Name>
+			<Path>Classes/DCStatusBarOverlay.html</Path>
+		</Node>
+		<Node id="7">
+			<Name>DCUtility</Name>
+			<Path>Classes/DCUtility.html</Path>
+		</Node>
+		<Node id="8">
+			<Name>DLInvocationResult</Name>
+			<Path>Classes/DLInvocationResult.html</Path>
+		</Node>
+		<Node id="9">
+			<Name>DLStatementParser</Name>
+			<Path>Classes/DLStatementParser.html</Path>
+		</Node>
+		
+		<Node id="10">
+			<Name>NSArray(JSON)</Name>
+			<Path>Categories/NSArray+JSON.html</Path>
+		</Node>
+		<Node id="11">
+			<Name>NSDictionary(JSON)</Name>
+			<Path>Categories/NSDictionary+JSON.html</Path>
+		</Node>
+		<Node id="12">
+			<Name>NSString(JSON)</Name>
+			<Path>Categories/NSString+JSON.html</Path>
+		</Node>
+		<Node id="13">
+			<Name>UIView(Introspector)</Name>
+			<Path>Categories/UIView+Introspector.html</Path>
+		</Node>
+		<Node id="14">
+			<Name>UIView(debug)</Name>
+			<Path>Categories/UIView+debug.html</Path>
+		</Node>
+		<Node id="15">
+			<Name>UIWindow(Introspector)</Name>
+			<Path>Categories/UIWindow+Introspector.html</Path>
+		</Node>
+		
+		<Node id="16">
+			<Name>DCFrameViewDelegate</Name>
+			<Path>Protocols/DCFrameViewDelegate.html</Path>
+		</Node>
+		
+	</Library>
+</DocSetNodes>

@@ -12,7 +12,7 @@
 	<body>
 		<header id="top_header">
 			<div id="library" class="hideInXcode">
-				<h1><a id="libraryTitle" href="../index.html">RestKit 0.20.0 </a></h1>
+				<h1><a id="libraryTitle" href="../index.html">RestKit 0.20.1 </a></h1>
 				<a id="developerHome" href="../index.html">Blake Watters</a>
 			</div>
 			
@@ -42,6 +42,8 @@
 	
 	<option value="//api/name/attributes">&nbsp;&nbsp;&nbsp;&nbsp;attributes</option>
 	
+	<option value="//api/name/callbackQueue">&nbsp;&nbsp;&nbsp;&nbsp;callbackQueue</option>
+	
 	<option value="//api/name/entity">&nbsp;&nbsp;&nbsp;&nbsp;entity</option>
 	
 	<option value="//api/name/managedObjectContext">&nbsp;&nbsp;&nbsp;&nbsp;managedObjectContext</option>
@@ -57,6 +59,8 @@
 	
 	<option value="//api/name/addObject:">&nbsp;&nbsp;&nbsp;&nbsp;- addObject:</option>
 	
+	<option value="//api/name/addObjects:completion:">&nbsp;&nbsp;&nbsp;&nbsp;- addObjects:completion:</option>
+	
 	<option value="//api/name/containsObject:">&nbsp;&nbsp;&nbsp;&nbsp;- containsObject:</option>
 	
 	<option value="//api/name/containsObjectWithAttributeValues:">&nbsp;&nbsp;&nbsp;&nbsp;- containsObjectWithAttributeValues:</option>
@@ -69,17 +73,23 @@
 	
 	<option value="//api/name/flush">&nbsp;&nbsp;&nbsp;&nbsp;- flush</option>
 	
+	<option value="//api/name/flush:">&nbsp;&nbsp;&nbsp;&nbsp;- flush:</option>
+	
 	<option value="//api/name/initWithEntity:attributes:managedObjectContext:">&nbsp;&nbsp;&nbsp;&nbsp;- initWithEntity:attributes:managedObjectContext:</option>
 	
 	<option value="//api/name/isLoaded">&nbsp;&nbsp;&nbsp;&nbsp;- isLoaded</option>
 	
 	<option value="//api/name/load">&nbsp;&nbsp;&nbsp;&nbsp;- load</option>
 	
+	<option value="//api/name/load:">&nbsp;&nbsp;&nbsp;&nbsp;- load:</option>
+	
 	<option value="//api/name/objectWithAttributeValues:inContext:">&nbsp;&nbsp;&nbsp;&nbsp;- objectWithAttributeValues:inContext:</option>
 	
 	<option value="//api/name/objectsWithAttributeValues:inContext:">&nbsp;&nbsp;&nbsp;&nbsp;- objectsWithAttributeValues:inContext:</option>
 	
 	<option value="//api/name/removeObject:">&nbsp;&nbsp;&nbsp;&nbsp;- removeObject:</option>
+	
+	<option value="//api/name/removeObjects:completion:">&nbsp;&nbsp;&nbsp;&nbsp;- removeObjects:completion:</option>
 	
 	
 	
@@ -107,6 +117,8 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Managing Cached Objects">Managing Cached Objects</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Deprecations Methods">Deprecations Methods</a></span></li>
+	
 </ul></li>
 
 
@@ -116,6 +128,8 @@
 <li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/attributes">attributes</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/callbackQueue">callbackQueue</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/entity">entity</a></span></li>
 	
@@ -133,6 +147,8 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addObject:">addObject:</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/addObjects:completion:">addObjects:completion:</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/containsObject:">containsObject:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/containsObjectWithAttributeValues:">containsObjectWithAttributeValues:</a></span></li>
@@ -145,17 +161,23 @@
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/flush">flush</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/flush:">flush:</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/initWithEntity:attributes:managedObjectContext:">initWithEntity:attributes:managedObjectContext:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isLoaded">isLoaded</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/load">load</a></span></li>
 	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/load:">load:</a></span></li>
+	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/objectWithAttributeValues:inContext:">objectWithAttributeValues:inContext:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/objectsWithAttributeValues:inContext:">objectsWithAttributeValues:inContext:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/removeObject:">removeObject:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/removeObjects:completion:">removeObjects:completion:</a></span></li>
 	
 </ul></li>
 
@@ -252,9 +274,8 @@
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/monitorsContextForChanges">&nbsp;&nbsp;monitorsContextForChanges</a></code>
-		<span class="tooltip"><p>A Boolean value determining if the receiever monitors the managed object context
-for changes and updates the cache entries using the notifications emitted.</p></span>
+		<code><a href="#//api/name/callbackQueue">&nbsp;&nbsp;callbackQueue</a></code>
+		<span class="tooltip"><p>The queue on which to dispatch callbacks for asynchronous operations. When <code>nil</code>, the main queue is used.</p></span>
 	</span>
 	<span class="task-item-suffix">property</span>
 	
@@ -268,7 +289,7 @@ for changes and updates the cache entries using the notifications emitted.</p></
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
-		<code><a href="#//api/name/load">&ndash;&nbsp;load</a></code>
+		<code><a href="#//api/name/load:">&ndash;&nbsp;load:</a></code>
 		<span class="tooltip"><p>Loads the cache by finding all instances of the configured <a href="#//api/name/entity">entity</a> and building
 an association between the value of the cached attribute&rsquo;s value and the
 managed object ID for the object.</p></span>
@@ -277,9 +298,8 @@ managed object ID for the object.</p></span>
 	
 </li><li>
 	<span class="tooltip">
-		<code><a href="#//api/name/flush">&ndash;&nbsp;flush</a></code>
-		<span class="tooltip"><p>Flushes the cache by releasing all cache attribute value to managed object ID
-associations.</p></span>
+		<code><a href="#//api/name/flush:">&ndash;&nbsp;flush:</a></code>
+		<span class="tooltip"><p>Flushes the cache by releasing all cache attribute value to managed object ID associations.</p></span>
 	</span>
 	
 	
@@ -359,17 +379,60 @@ in the cache with a given value of the cache key attribute.</p></span>
 						<ul class="task-list">
 							<li>
 	<span class="tooltip">
+		<code><a href="#//api/name/addObjects:completion:">&ndash;&nbsp;addObjects:completion:</a></code>
+		<span class="tooltip"><p>Asynchronously adds a managed object to the cache.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/removeObjects:completion:">&ndash;&nbsp;removeObjects:completion:</a></code>
+		<span class="tooltip"><p>Asynchronously removes a managed object from the cache.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Deprecations Methods" name="task_Deprecations Methods"></a>
+						<h3 class="subsubtitle task-title">Deprecations Methods</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/load">&ndash;&nbsp;load</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/flush">&ndash;&nbsp;flush</a></code>
+		
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
 		<code><a href="#//api/name/addObject:">&ndash;&nbsp;addObject:</a></code>
-		<span class="tooltip"><p>Adds a managed object to the cache.</p></span>
+		
 	</span>
 	
 	
 </li><li>
 	<span class="tooltip">
 		<code><a href="#//api/name/removeObject:">&ndash;&nbsp;removeObject:</a></code>
-		<span class="tooltip"><p>Removes a managed object from the cache.</p></span>
+		
 	</span>
 	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/monitorsContextForChanges">&nbsp;&nbsp;monitorsContextForChanges</a></code>
+		
+	</span>
+	<span class="task-item-suffix">property</span>
 	
 </li>
 						</ul>
@@ -409,6 +472,49 @@ in the cache with a given value of the cache key attribute.</p></span>
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
 		<p>An array of attribute names specifying attributes of the cached <a href="#//api/name/entity">entity</a> that act as the cache key.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">RKEntityByAttributeCache.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/callbackQueue" title="callbackQueue"></a>
+	<h3 class="subsubtitle method-title">callbackQueue</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The queue on which to dispatch callbacks for asynchronous operations. When <code>nil</code>, the main queue is used.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) dispatch_queue_t callbackQueue</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The queue on which to dispatch callbacks for asynchronous operations. When <code>nil</code>, the main queue is used.</p>
+
+<p><strong>Default</strong>: <code>nil</code></p>
 	</div>
 	
 	
@@ -512,42 +618,10 @@ in the cache with a given value of the cache key attribute.</p></span>
 	<h3 class="subsubtitle method-title">monitorsContextForChanges</h3>
 	
 	
-	
-	<div class="method-subsection brief-description">
-		<p>A Boolean value determining if the receiever monitors the managed object context
-for changes and updates the cache entries using the notifications emitted.</p>
-	</div>		
-	
-    
 
 	<div class="method-subsection method-declaration"><code>@property (nonatomic, assign) BOOL monitorsContextForChanges</code></div>
 
     
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection discussion-section">
-		<h4 class="method-subtitle">Discussion</h4>
-		<p>A Boolean value determining if the receiever monitors the managed object context
-for changes and updates the cache entries using the notifications emitted.</p>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	<div class="method-subsection declared-in-section">
-		<h4 class="method-subtitle">Declared In</h4>
-		<code class="declared-in-ref">RKEntityByAttributeCache.h</code><br />
-	</div>				
-	
-	
 </div>
 						
 					</div>
@@ -565,19 +639,35 @@ for changes and updates the cache entries using the notifications emitted.</p>
 	<h3 class="subsubtitle method-title">addObject:</h3>
 	
 	
+
+	<div class="method-subsection method-declaration"><code>- (void)addObject:(NSManagedObject *)<em>object</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/addObjects:completion:" title="addObjects:completion:"></a>
+	<h3 class="subsubtitle method-title">addObjects:completion:</h3>
+	
+	
 	
 	<div class="method-subsection brief-description">
-		<p>Adds a managed object to the cache.</p>
+		<p>Asynchronously adds a managed object to the cache.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)addObject:(NSManagedObject *)<em>object</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)addObjects:(NSSet *)<em>managedObjects</em> completion:(void ( ^ ) ( void ))<em>completion</em></code></div>
 
     
 	
 	<div class="method-subsection arguments-section parameters">
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completion</em></dt>
+			<dd><p>An optional block to execute once the object has been added to the cache.</p></dd>
+		</dl>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>object</em></dt>
@@ -594,7 +684,7 @@ for changes and updates the cache entries using the notifications emitted.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Adds a managed object to the cache.</p>
+		<p>Asynchronously adds a managed object to the cache.</p>
 
 <p>The object must be an instance of the cached <a href="#//api/name/entity">entity</a>.</p>
 	</div>
@@ -877,17 +967,37 @@ in the cache with a given value of the cache key attribute.</p>
 	<h3 class="subsubtitle method-title">flush</h3>
 	
 	
-	
-	<div class="method-subsection brief-description">
-		<p>Flushes the cache by releasing all cache attribute value to managed object ID
-associations.</p>
-	</div>		
-	
-    
 
 	<div class="method-subsection method-declaration"><code>- (void)flush</code></div>
 
     
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/flush:" title="flush:"></a>
+	<h3 class="subsubtitle method-title">flush:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Flushes the cache by releasing all cache attribute value to managed object ID associations.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (void)flush:(void ( ^ ) ( void ))<em>completion</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completion</em></dt>
+			<dd><p>A block to execute when the cache has finished flushing.</p></dd>
+		</dl>
+		
+	</div>
 	
 	
 	
@@ -897,8 +1007,7 @@ associations.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Flushes the cache by releasing all cache attribute value to managed object ID
-associations.</p>
+		<p>Flushes the cache by releasing all cache attribute value to managed object ID associations.</p>
 	</div>
 	
 	
@@ -1030,6 +1139,17 @@ associations.</p>
 	<h3 class="subsubtitle method-title">load</h3>
 	
 	
+
+	<div class="method-subsection method-declaration"><code>- (void)load</code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/load:" title="load:"></a>
+	<h3 class="subsubtitle method-title">load:</h3>
+	
+	
 	
 	<div class="method-subsection brief-description">
 		<p>Loads the cache by finding all instances of the configured <a href="#//api/name/entity">entity</a> and building
@@ -1039,9 +1159,19 @@ managed object ID for the object.</p>
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)load</code></div>
+	<div class="method-subsection method-declaration"><code>- (void)load:(void ( ^ ) ( void ))<em>completion</em></code></div>
 
     
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completion</em></dt>
+			<dd><p>A block to execute when the cache has finished loading.</p></dd>
+		</dl>
+		
+	</div>
 	
 	
 	
@@ -1197,19 +1327,35 @@ managed object ID for the object.</p>
 	<h3 class="subsubtitle method-title">removeObject:</h3>
 	
 	
+
+	<div class="method-subsection method-declaration"><code>- (void)removeObject:(NSManagedObject *)<em>object</em></code></div>
+
+    
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/removeObjects:completion:" title="removeObjects:completion:"></a>
+	<h3 class="subsubtitle method-title">removeObjects:completion:</h3>
+	
+	
 	
 	<div class="method-subsection brief-description">
-		<p>Removes a managed object from the cache.</p>
+		<p>Asynchronously removes a managed object from the cache.</p>
 	</div>		
 	
     
 
-	<div class="method-subsection method-declaration"><code>- (void)removeObject:(NSManagedObject *)<em>object</em></code></div>
+	<div class="method-subsection method-declaration"><code>- (void)removeObjects:(NSSet *)<em>managedObjects</em> completion:(void ( ^ ) ( void ))<em>completion</em></code></div>
 
     
 	
 	<div class="method-subsection arguments-section parameters">
 		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>completion</em></dt>
+			<dd><p>An optional block to execute once the object has been removed from the cache.</p></dd>
+		</dl>
 		
 		<dl class="argument-def parameter-def">
 			<dt><em>object</em></dt>
@@ -1226,7 +1372,7 @@ managed object ID for the object.</p>
 	
 	<div class="method-subsection discussion-section">
 		<h4 class="method-subtitle">Discussion</h4>
-		<p>Removes a managed object from the cache.</p>
+		<p>Asynchronously removes a managed object from the cache.</p>
 
 <p>The object must be an instance of the cached <a href="#//api/name/entity">entity</a>.</p>
 	</div>
@@ -1258,7 +1404,7 @@ managed object ID for the object.</p>
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2013 Blake Watters. All rights reserved. (Last updated: 2013-03-30)</span><br />
+						<p><span class="copyright">&copy; 2013 Blake Watters. All rights reserved. (Last updated: 2013-05-20)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
 						

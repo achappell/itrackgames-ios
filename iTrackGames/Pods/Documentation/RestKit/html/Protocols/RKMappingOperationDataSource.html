@@ -12,7 +12,7 @@
 	<body>
 		<header id="top_header">
 			<div id="library" class="hideInXcode">
-				<h1><a id="libraryTitle" href="../index.html">RestKit 0.20.0 </a></h1>
+				<h1><a id="libraryTitle" href="../index.html">RestKit 0.20.1 </a></h1>
 				<a id="developerHome" href="../index.html">Blake Watters</a>
 			</div>
 			
@@ -50,6 +50,10 @@
 	
 	<option value="//api/name/mappingOperation:targetObjectForRepresentation:withMapping:inRelationship:">&nbsp;&nbsp;&nbsp;&nbsp;- mappingOperation:targetObjectForRepresentation:withMapping:inRelationship:</option>
 	
+	<option value="//api/name/mappingOperationShouldSetUnchangedValues:">&nbsp;&nbsp;&nbsp;&nbsp;- mappingOperationShouldSetUnchangedValues:</option>
+	
+	<option value="//api/name/mappingOperationShouldSkipPropertyMapping:">&nbsp;&nbsp;&nbsp;&nbsp;- mappingOperationShouldSkipPropertyMapping:</option>
+	
 	
 	
 </select>
@@ -83,6 +87,10 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mappingOperation:deleteExistingValueOfRelationshipWithMapping:error:">mappingOperation:deleteExistingValueOfRelationshipWithMapping:error:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mappingOperation:targetObjectForRepresentation:withMapping:inRelationship:">mappingOperation:targetObjectForRepresentation:withMapping:inRelationship:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mappingOperationShouldSetUnchangedValues:">mappingOperationShouldSetUnchangedValues:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/mappingOperationShouldSkipPropertyMapping:">mappingOperationShouldSkipPropertyMapping:</a></span></li>
 	
 </ul></li>
 
@@ -157,6 +165,20 @@
 	<span class="tooltip">
 		<code><a href="#//api/name/mappingOperation:deleteExistingValueOfRelationshipWithMapping:error:">&ndash;&nbsp;mappingOperation:deleteExistingValueOfRelationshipWithMapping:error:</a></code>
 		<span class="tooltip"><p>Tells the data source to delete the existing value for a relationship that has been mapped with an assignment policy of <code>RKReplaceAssignmentPolicy</code>.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/mappingOperationShouldSetUnchangedValues:">&ndash;&nbsp;mappingOperationShouldSetUnchangedValues:</a></code>
+		<span class="tooltip"><p>Asks the data source if it should set values for properties without checking that the value has been changed. This method can result in a performance improvement during mapping as the mapping operation will not attempt to assess the change state of the property being mapped.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/mappingOperationShouldSkipPropertyMapping:">&ndash;&nbsp;mappingOperationShouldSkipPropertyMapping:</a></code>
+		
 	</span>
 	
 	
@@ -372,6 +394,75 @@
 	
 </div>
 						
+						<div class="section-method">
+	<a name="//api/name/mappingOperationShouldSetUnchangedValues:" title="mappingOperationShouldSetUnchangedValues:"></a>
+	<h3 class="subsubtitle method-title">mappingOperationShouldSetUnchangedValues:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Asks the data source if it should set values for properties without checking that the value has been changed. This method can result in a performance improvement during mapping as the mapping operation will not attempt to assess the change state of the property being mapped.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)mappingOperationShouldSetUnchangedValues:(RKMappingOperation *)<em>mappingOperation</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>mappingOperation</em></dt>
+			<dd><p>The mapping operation that is querying the data source.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p><code>YES</code> if the mapping operation should disregard property change status, else <code>NO</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Asks the data source if it should set values for properties without checking that the value has been changed. This method can result in a performance improvement during mapping as the mapping operation will not attempt to assess the change state of the property being mapped.</p>
+
+<p>If this method is not implemented by the data source, then the mapping operation defaults to <code>NO</code>.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">RKMappingOperationDataSource.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/mappingOperationShouldSkipPropertyMapping:" title="mappingOperationShouldSkipPropertyMapping:"></a>
+	<h3 class="subsubtitle method-title">mappingOperationShouldSkipPropertyMapping:</h3>
+	
+	
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)mappingOperationShouldSkipPropertyMapping:(RKMappingOperation *)<em>mappingOperation</em></code></div>
+
+    
+</div>
+						
 					</div>
 					
 					
@@ -385,7 +476,7 @@
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2013 Blake Watters. All rights reserved. (Last updated: 2013-03-30)</span><br />
+						<p><span class="copyright">&copy; 2013 Blake Watters. All rights reserved. (Last updated: 2013-05-20)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
 						

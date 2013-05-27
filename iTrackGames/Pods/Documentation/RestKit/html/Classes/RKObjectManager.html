@@ -12,7 +12,7 @@
 	<body>
 		<header id="top_header">
 			<div id="library" class="hideInXcode">
-				<h1><a id="libraryTitle" href="../index.html">RestKit 0.20.0 </a></h1>
+				<h1><a id="libraryTitle" href="../index.html">RestKit 0.20.1 </a></h1>
 				<a id="developerHome" href="../index.html">Blake Watters</a>
 			</div>
 			
@@ -99,6 +99,8 @@
 	<option value="//api/name/enqueueBatchOfObjectRequestOperationsWithRoute:objects:progress:completion:">&nbsp;&nbsp;&nbsp;&nbsp;- enqueueBatchOfObjectRequestOperationsWithRoute:objects:progress:completion:</option>
 	
 	<option value="//api/name/enqueueObjectRequestOperation:">&nbsp;&nbsp;&nbsp;&nbsp;- enqueueObjectRequestOperation:</option>
+	
+	<option value="//api/name/enqueuedObjectRequestOperationsWithMethod:matchingPathPattern:">&nbsp;&nbsp;&nbsp;&nbsp;- enqueuedObjectRequestOperationsWithMethod:matchingPathPattern:</option>
 	
 	<option value="//api/name/getObject:path:parameters:success:failure:">&nbsp;&nbsp;&nbsp;&nbsp;- getObject:path:parameters:success:failure:</option>
 	
@@ -251,6 +253,8 @@
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/enqueueBatchOfObjectRequestOperationsWithRoute:objects:progress:completion:">enqueueBatchOfObjectRequestOperationsWithRoute:objects:progress:completion:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/enqueueObjectRequestOperation:">enqueueObjectRequestOperation:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/enqueuedObjectRequestOperationsWithMethod:matchingPathPattern:">enqueuedObjectRequestOperationsWithMethod:matchingPathPattern:</a></span></li>
 	
 	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/getObject:path:parameters:success:failure:">getObject:path:parameters:success:failure:</a></span></li>
 	
@@ -758,6 +762,13 @@ user.userID = 1234;
 	<span class="tooltip">
 		<code><a href="#//api/name/enqueueObjectRequestOperation:">&ndash;&nbsp;enqueueObjectRequestOperation:</a></code>
 		<span class="tooltip"><p>Enqueues an <a href="../Classes/RKObjectRequestOperation.html"><code>RKObjectRequestOperation</code></a> to the object manager&rsquo;s operation queue.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/enqueuedObjectRequestOperationsWithMethod:matchingPathPattern:">&ndash;&nbsp;enqueuedObjectRequestOperationsWithMethod:matchingPathPattern:</a></code>
+		<span class="tooltip"><p>Returns an array of operations in the object manager&rsquo;s operation queue whose requests match the specified HTTP method and path pattern.</p></span>
 	</span>
 	
 	
@@ -2329,6 +2340,69 @@ user.userID = 1234;
 </div>
 						
 						<div class="section-method">
+	<a name="//api/name/enqueuedObjectRequestOperationsWithMethod:matchingPathPattern:" title="enqueuedObjectRequestOperationsWithMethod:matchingPathPattern:"></a>
+	<h3 class="subsubtitle method-title">enqueuedObjectRequestOperationsWithMethod:matchingPathPattern:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Returns an array of operations in the object manager&rsquo;s operation queue whose requests match the specified HTTP method and path pattern.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (NSArray *)enqueuedObjectRequestOperationsWithMethod:(RKRequestMethod)<em>method</em> matchingPathPattern:(NSString *)<em>pathPattern</em></code></div>
+
+    
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>method</em></dt>
+			<dd><p>The HTTP method to match for the cancelled requests, such as <code>RKRequestMethodGET</code>, <code>RKRequestMethodPOST</code>, <code>RKRequestMethodPUT</code>, <code>RKRequestMethodPatch</code>, or <code>RKRequestMethodDELETE</code>. If <code>RKRequestMethodAny</code>, all object request operations with URLs matching the given path pattern will be cancelled.</p></dd>
+		</dl>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>pathPattern</em></dt>
+			<dd><p>The pattern to match against the path of the request URL for executing object request operations considered for cancellation.</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>A new array containing all enqueued <a href="../Classes/RKObjectRequestOperation.html"><code>RKObjectRequestOperation</code></a> objects that match the given HTTP method and path pattern.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Returns an array of operations in the object manager&rsquo;s operation queue whose requests match the specified HTTP method and path pattern.</p>
+
+<p>Paths are matches against the <code>path</code> of the <code>NSURL</code> of the <code>NSURLRequest</code> of each <a href="../Classes/RKObjectRequestOperation.html"><code>RKObjectRequestOperation</code></a> contained in the receiver&rsquo;s operation queue using a <a href="../Classes/RKPathMatcher.html"><code>RKPathMatcher</code></a> object.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">RKObjectManager.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
 	<a name="//api/name/getObject:path:parameters:success:failure:" title="getObject:path:parameters:success:failure:"></a>
 	<h3 class="subsubtitle method-title">getObject:path:parameters:success:failure:</h3>
 	
@@ -3766,7 +3840,7 @@ user.userID = 1234;
 				<div id="footer">
 					<hr />
 					<div class="footer-copyright">
-						<p><span class="copyright">&copy; 2013 Blake Watters. All rights reserved. (Last updated: 2013-03-30)</span><br />
+						<p><span class="copyright">&copy; 2013 Blake Watters. All rights reserved. (Last updated: 2013-05-20)</span><br />
 						
 						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.0.5 (build 789)</a>.</span></p>
 						

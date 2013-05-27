@@ -1,37 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Categories/AFHTTPClient+.html">
+	<File path="Classes/RKURLEncodedSerialization.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cat/AFHTTPClient()</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>RKHTTPRequestOperation.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/RKURLEncodedSerialization</TokenIdentifier>
+			<Abstract type="html">The RKURLEncodedSerialization class conforms to the RKSerialization protocol and provides support for the serialization and deserialization of URL encoded data. URL encoding is used to replace certain characters in a string with equivalent percent escape sequences. The list of characters replaced by the implementation are designed as illegal URL characters by RFC 3986. URL encoded data is used for the submission of HTML forms with the MIME Type application/x-www-form-urlencoded.</Abstract>
+			<DeclaredIn>RKURLEncodedSerialization.h</DeclaredIn>
 			
 			<NodeRef refid="59"/>
 		</Token>
 		
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfm/AFHTTPClient()/setDefaultHeaders:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>RKHTTPRequestOperation.h</DeclaredIn>			
-			
-			<Declaration>@property (readonly, nonatomic) NSDictionary *defaultHeaders</Declaration>
-			
-			
-			<Anchor>//api/name/defaultHeaders</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/intfp/AFHTTPClient()/defaultHeaders</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>RKHTTPRequestOperation.h</DeclaredIn>			
-			
-			<Declaration>@property (readonly, nonatomic) NSDictionary *defaultHeaders</Declaration>
-			
-			
-			<Anchor>//api/name/defaultHeaders</Anchor>
-		</Token>
 		
 	</File>
 </Tokens>

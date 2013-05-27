@@ -1,156 +1,232 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/RKRouter.html">
+	<File path="Classes/RKRoute.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/RKRouter</TokenIdentifier>
-			<Abstract type="html">An RKRouter instance is responsible for generating NSURL objects with a given base URL and a route set. It is used to centralize the knowledge about the URL&apos;s that are used by the application.</Abstract>
-			<DeclaredIn>RKRouter.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/RKRoute</TokenIdentifier>
+			<Abstract type="html">The RKRoute class models a single routable path pattern in use by the application. A route can be combined with an NSURL base URL and interpolated with an object to produce a new fully hydrated URL object. Routes are always instantiated with a path pattern and metadata to provide for the subsequent identification of the defined route.</Abstract>
+			<DeclaredIn>RKRoute.h</DeclaredIn>
 			
+	<RelatedTokens>
+		<TokenIdentifier>//apple_ref/occ/cl/RKRouter</TokenIdentifier>
+		<TokenIdentifier>//apple_ref/occ/cl/RKRouteSet</TokenIdentifier>
+		
+	</RelatedTokens>
+	
 			<NodeRef refid="47"/>
 		</Token>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/RKRouter/initWithBaseURL:</TokenIdentifier>
-			<Abstract type="html">Initializes a router with a given base URL.</Abstract>
-			<DeclaredIn>RKRouter.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/clm/RKRoute/routeWithName:pathPattern:method:</TokenIdentifier>
+			<Abstract type="html">Creates and returns a new named route object with the given name, path pattern and method.</Abstract>
+			<DeclaredIn>RKRoute.h</DeclaredIn>			
 			
-			<Declaration>- (id)initWithBaseURL:(NSURL *)baseURL</Declaration>
+			<Declaration>+ (instancetype)routeWithName:(NSString *)name pathPattern:(NSString *)pathPattern method:(RKRequestMethod)method</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>baseURL</Name>
-					<Abstract type="html">The base URL with which to initialize the receiver.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">The receiver, initialized with the given base URL.</Abstract></ReturnValue>
-			<Anchor>//api/name/initWithBaseURL:</Anchor>
-		</Token>
-		
-		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/RKRouter/URLForRouteNamed:method:object:</TokenIdentifier>
-			<Abstract type="html">Generates a URL for the route with the given name.</Abstract>
-			<DeclaredIn>RKRouter.h</DeclaredIn>			
-			
-			<Declaration>- (NSURL *)URLForRouteNamed:(NSString *)routeName method:(out RKRequestMethod *)method object:(id)object</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>routeName</Name>
-					<Abstract type="html">The name of the route for which a URL is to be generated.</Abstract>
+					<Name>name</Name>
+					<Abstract type="html">A unique identifying name for the route.</Abstract>
+				</Parameter><Parameter>
+					<Name>pathPattern</Name>
+					<Abstract type="html">A SOCKit pattern describing the format of URL paths generated from the route.</Abstract>
 				</Parameter><Parameter>
 					<Name>method</Name>
-					<Abstract type="html">A pointer to an RKRequestMethod variable in which to store the HTTP method associated with the named route. May be nil.</Abstract>
-				</Parameter><Parameter>
-					<Name>object</Name>
-					<Abstract type="html">An optional object against which to interpolate the path pattern.</Abstract>
+					<Abstract type="html">The request method of the route.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">A new NSURL object constructed by appending the path pattern to the baseURL of the receiver and interpolating against a given object; or nil if no route was found with the given name.</Abstract></ReturnValue>
-			<Anchor>//api/name/URLForRouteNamed:method:object:</Anchor>
+			<ReturnValue><Abstract type="html">A new named route object with the given name, path pattern and request method.</Abstract></ReturnValue>
+			<Anchor>//api/name/routeWithName:pathPattern:method:</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/RKRouter/URLForObject:method:</TokenIdentifier>
-			<Abstract type="html">Generates a URL for a given object and HTTP method.</Abstract>
-			<DeclaredIn>RKRouter.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/clm/RKRoute/routeWithClass:pathPattern:method:</TokenIdentifier>
+			<Abstract type="html">Creates and returns a new class route object with the given object class, path pattern and method.</Abstract>
+			<DeclaredIn>RKRoute.h</DeclaredIn>			
 			
-			<Declaration>- (NSURL *)URLForObject:(id)object method:(RKRequestMethod)method</Declaration>
+			<Declaration>+ (instancetype)routeWithClass:(Class)objectClass pathPattern:(NSString *)pathPattern method:(RKRequestMethod)method</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>object</Name>
-					<Abstract type="html">The object for which a URL is to be generated.</Abstract>
+					<Name>objectClass</Name>
+					<Abstract type="html">The class that is represented by the route.</Abstract>
+				</Parameter><Parameter>
+					<Name>pathPattern</Name>
+					<Abstract type="html">A SOCKit pattern describing the format of URL paths generated from the route.</Abstract>
 				</Parameter><Parameter>
 					<Name>method</Name>
-					<Abstract type="html">The HTTP method for which the URL is to be generated.</Abstract>
+					<Abstract type="html">The request method of the route.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">A new URL object constructed by appending the path pattern of the route for the object an HTTP method to the baseURL of the receiver, interpolated against the routed object; or nil if no route was found for the given object and HTTP method.</Abstract></ReturnValue>
-			<Anchor>//api/name/URLForObject:method:</Anchor>
+			<ReturnValue><Abstract type="html">A new class route object with the given object class, path pattern and request method.</Abstract></ReturnValue>
+			<Anchor>//api/name/routeWithClass:pathPattern:method:</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/RKRouter/URLForRelationship:ofObject:method:</TokenIdentifier>
-			<Abstract type="html">Generates a URL for a relationship of a given object with a given HTTP method.</Abstract>
-			<DeclaredIn>RKRouter.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/clm/RKRoute/routeWithRelationshipName:objectClass:pathPattern:method:</TokenIdentifier>
+			<Abstract type="html">Creates and returns a new relationship route object with the given relationship name, object class, path pattern and method.</Abstract>
+			<DeclaredIn>RKRoute.h</DeclaredIn>			
 			
-			<Declaration>- (NSURL *)URLForRelationship:(NSString *)relationshipName ofObject:(id)object method:(RKRequestMethod)method</Declaration>
+			<Declaration>+ (instancetype)routeWithRelationshipName:(NSString *)name objectClass:(Class)objectClass pathPattern:(NSString *)pathPattern method:(RKRequestMethod)method</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>relationshipName</Name>
-					<Abstract type="html">The name of the relationship for which a URL is to be generated.</Abstract>
+					<Name>name</Name>
+					<Abstract type="html">The name of the relationship represented by the route.</Abstract>
 				</Parameter><Parameter>
-					<Name>object</Name>
-					<Abstract type="html">The object for which the URL is to be generated.</Abstract>
+					<Name>objectClass</Name>
+					<Abstract type="html">The class containing the relationship represented by the route.</Abstract>
+				</Parameter><Parameter>
+					<Name>pathPattern</Name>
+					<Abstract type="html">A SOCKit pattern describing the format of URL paths generated from the route.</Abstract>
 				</Parameter><Parameter>
 					<Name>method</Name>
-					<Abstract type="html">The HTTP method for which the URL is to be generated.</Abstract>
+					<Abstract type="html">The request method of the route.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">A new URL object constructed by appending the path pattern of the route for the given object&apos;s relationship and HTTP method to the baseURL of the receiver, interpolated against the routed object; or nil if no route was found for the given relationship, object and HTTP method.</Abstract></ReturnValue>
-			<Anchor>//api/name/URLForRelationship:ofObject:method:</Anchor>
+			<ReturnValue><Abstract type="html">A new class route object with the given object class, path pattern and request method.</Abstract></ReturnValue>
+			<Anchor>//api/name/routeWithRelationshipName:objectClass:pathPattern:method:</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/RKRouter/URLWithRoute:object:</TokenIdentifier>
-			<Abstract type="html">Generates a URL with a given route and object.</Abstract>
-			<DeclaredIn>RKRouter.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/RKRoute/setName:</TokenIdentifier>
+			<Abstract type="html">The name of the receiver.</Abstract>
+			<DeclaredIn>RKRoute.h</DeclaredIn>			
 			
-			<Declaration>- (NSURL *)URLWithRoute:(RKRoute *)route object:(id)object</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>route</Name>
-					<Abstract type="html">The route to generate the URL with.</Abstract>
-				</Parameter><Parameter>
-					<Name>object</Name>
-					<Abstract type="html">The object with which to interpolate the path pattern of the given route.</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">A new URL object constructed by interpolating the path pattern of the given route with the given object to construct a path and constructing an NSURL object relative to the baseURL of the receiver.</Abstract></ReturnValue>
-			<Anchor>//api/name/URLWithRoute:object:</Anchor>
+			<Declaration>@property (nonatomic, strong, readonly) NSString *name</Declaration>
+			
+			
+			<Anchor>//api/name/name</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/RKRouter/setBaseURL:</TokenIdentifier>
-			<Abstract type="html">The base URL that all URLs constructed by the receiver are relative to.</Abstract>
-			<DeclaredIn>RKRouter.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/RKRoute/name</TokenIdentifier>
+			<Abstract type="html">The name of the receiver.</Abstract>
+			<DeclaredIn>RKRoute.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, strong, readwrite) NSURL *baseURL</Declaration>
+			<Declaration>@property (nonatomic, strong, readonly) NSString *name</Declaration>
 			
 			
-			<Anchor>//api/name/baseURL</Anchor>
+			<Anchor>//api/name/name</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/RKRouter/baseURL</TokenIdentifier>
-			<Abstract type="html">The base URL that all URLs constructed by the receiver are relative to.</Abstract>
-			<DeclaredIn>RKRouter.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/RKRoute/setObjectClass:</TokenIdentifier>
+			<Abstract type="html">The object class of the receiver.</Abstract>
+			<DeclaredIn>RKRoute.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, strong, readwrite) NSURL *baseURL</Declaration>
+			<Declaration>@property (nonatomic, strong, readonly) Class objectClass</Declaration>
 			
 			
-			<Anchor>//api/name/baseURL</Anchor>
+			<Anchor>//api/name/objectClass</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/RKRouter/setRouteSet:</TokenIdentifier>
-			<Abstract type="html">A route set defining all the routes addressable through the receiver.</Abstract>
-			<DeclaredIn>RKRouter.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/RKRoute/objectClass</TokenIdentifier>
+			<Abstract type="html">The object class of the receiver.</Abstract>
+			<DeclaredIn>RKRoute.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, strong, readonly) RKRouteSet *routeSet</Declaration>
+			<Declaration>@property (nonatomic, strong, readonly) Class objectClass</Declaration>
 			
 			
-			<Anchor>//api/name/routeSet</Anchor>
+			<Anchor>//api/name/objectClass</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/RKRouter/routeSet</TokenIdentifier>
-			<Abstract type="html">A route set defining all the routes addressable through the receiver.</Abstract>
-			<DeclaredIn>RKRouter.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/RKRoute/setMethod:</TokenIdentifier>
+			<Abstract type="html">The request method of the receiver.</Abstract>
+			<DeclaredIn>RKRoute.h</DeclaredIn>			
 			
-			<Declaration>@property (nonatomic, strong, readonly) RKRouteSet *routeSet</Declaration>
+			<Declaration>@property (nonatomic, assign, readonly) RKRequestMethod method</Declaration>
 			
 			
-			<Anchor>//api/name/routeSet</Anchor>
+			<Anchor>//api/name/method</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/RKRoute/method</TokenIdentifier>
+			<Abstract type="html">The request method of the receiver.</Abstract>
+			<DeclaredIn>RKRoute.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, assign, readonly) RKRequestMethod method</Declaration>
+			
+			
+			<Anchor>//api/name/method</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RKRoute/setPathPattern:</TokenIdentifier>
+			<Abstract type="html">The path pattern of the receiver.</Abstract>
+			<DeclaredIn>RKRoute.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSString *pathPattern</Declaration>
+			
+			
+			<Anchor>//api/name/pathPattern</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/RKRoute/pathPattern</TokenIdentifier>
+			<Abstract type="html">The path pattern of the receiver.</Abstract>
+			<DeclaredIn>RKRoute.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong, readonly) NSString *pathPattern</Declaration>
+			
+			
+			<Anchor>//api/name/pathPattern</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RKRoute/setShouldEscapePath:</TokenIdentifier>
+			<Abstract type="html">A Boolean value that determines if the path pattern should be escaped when evaluated.</Abstract>
+			<DeclaredIn>RKRoute.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, assign) BOOL shouldEscapePath</Declaration>
+			
+			
+			<Anchor>//api/name/shouldEscapePath</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/RKRoute/shouldEscapePath</TokenIdentifier>
+			<Abstract type="html">A Boolean value that determines if the path pattern should be escaped when evaluated.</Abstract>
+			<DeclaredIn>RKRoute.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, assign) BOOL shouldEscapePath</Declaration>
+			
+			
+			<Anchor>//api/name/shouldEscapePath</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RKRoute/isNamedRoute</TokenIdentifier>
+			<Abstract type="html">Determines if the receiver is a named route.</Abstract>
+			<DeclaredIn>RKRoute.h</DeclaredIn>			
+			
+			<Declaration>- (BOOL)isNamedRoute</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if the receiver is a named route, else NO.</Abstract></ReturnValue>
+			<Anchor>//api/name/isNamedRoute</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RKRoute/isClassRoute</TokenIdentifier>
+			<Abstract type="html">Determines if the receiver is a class route.</Abstract>
+			<DeclaredIn>RKRoute.h</DeclaredIn>			
+			
+			<Declaration>- (BOOL)isClassRoute</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if the receiver is a class route, else NO.</Abstract></ReturnValue>
+			<Anchor>//api/name/isClassRoute</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RKRoute/isRelationshipRoute</TokenIdentifier>
+			<Abstract type="html">Determines if the receiver is a relationship route.</Abstract>
+			<DeclaredIn>RKRoute.h</DeclaredIn>			
+			
+			<Declaration>- (BOOL)isRelationshipRoute</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if the receiver is a relationship route, else NO.</Abstract></ReturnValue>
+			<Anchor>//api/name/isRelationshipRoute</Anchor>
 		</Token>
 		
 	</File>

@@ -1,134 +1,207 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Tokens version="1.0">
-	<File path="Classes/RKPathMatcher.html">
+	<File path="Classes/RKOperationStateMachine.html">
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/cl/RKPathMatcher</TokenIdentifier>
-			<Abstract type="html">The RKPathMatcher class performs pattern matching and parameter parsing of strings, typically representing the path portion of an NSURL object. It provides much of the necessary tools to map a given path to local objects (the inverse of RKRouter&apos;s function).  This makes it easier to implement the RKManagedObjectCaching protocol and generate NSFetchRequest objects from a given path.  There are two means of instantiating and using a matcher object in order to provide more flexibility in implementations, and to improve efficiency by eliminating repetitive and costly pattern initializations.</Abstract>
-			<DeclaredIn>RKPathMatcher.h</DeclaredIn>
+			<TokenIdentifier>//apple_ref/occ/cl/RKOperationStateMachine</TokenIdentifier>
+			<Abstract type="html">The RKOperationStateMachine class provides an implementation of a state machine that is suitable for implementing a concurrent NSOperation subclass via composition. The concurrency mechanism is a dispatch queue. The state machine takes care of correctly implementing all aspects of a concurrent NSOperation including:
+1. Asynchronous execution
+1. Locking
+1. Appropriate state transitions
+1. Cancellation
+1. State Instrospection</Abstract>
+			<DeclaredIn>RKOperationStateMachine.h</DeclaredIn>
 			
 			<NodeRef refid="36"/>
 		</Token>
 		
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/RKPathMatcher/pathMatcherWithPath:</TokenIdentifier>
-			<Abstract type="html">Creates a path match object starting from a path string.  This method should be followed by matchesPattern:tokenizeQueryStrings:parsedArguments:</Abstract>
-			<DeclaredIn>RKPathMatcher.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/RKOperationStateMachine/initWithOperation:dispatchQueue:</TokenIdentifier>
+			<Abstract type="html">Initializes a new state machine object with a given operation and dispatch queue.</Abstract>
+			<DeclaredIn>RKOperationStateMachine.h</DeclaredIn>			
 			
-			<Declaration>+ (instancetype)pathMatcherWithPath:(NSString *)pathString</Declaration>
+			<Declaration>- (id)initWithOperation:(NSOperation *)operation dispatchQueue:(dispatch_queue_t)dispatchQueue</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>pathString</Name>
-					<Abstract type="html">The string to evaluate and parse, such as /districts/tx/upper/?apikey=GC5512354</Abstract>
+					<Name>operation</Name>
+					<Abstract type="html">The operation that the receiver is modeling the concurrent lifecycle of.</Abstract>
+				</Parameter><Parameter>
+					<Name>dispatchQueue</Name>
+					<Abstract type="html">The dispatch queue on which the operation executes concurrently.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">An instantiated RKPathMatcher without an established pattern.</Abstract></ReturnValue>
-			<Anchor>//api/name/pathMatcherWithPath:</Anchor>
+			<ReturnValue><Abstract type="html">The receiver, initialized with the given operation and queue.</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithOperation:dispatchQueue:</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/RKPathMatcher/matchesPattern:tokenizeQueryStrings:parsedArguments:</TokenIdentifier>
-			<Abstract type="html">Determines if the path string matches the provided pattern, and yields a dictionary with the resulting matched key/value pairs.  Use of this method should be preceded by pathMatcherWithPath: Pattern strings should include encoded parameter keys, delimited by a single colon at the beginning of the key name.</Abstract>
-			<DeclaredIn>RKPathMatcher.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/RKOperationStateMachine/isReady</TokenIdentifier>
+			<Abstract type="html">Returns a Boolean value that indicates if the receiver is ready to be started.</Abstract>
+			<DeclaredIn>RKOperationStateMachine.h</DeclaredIn>			
 			
-			<Declaration>- (BOOL)matchesPattern:(NSString *)patternString tokenizeQueryStrings:(BOOL)shouldTokenize parsedArguments:(NSDictionary **)arguments</Declaration>
+			<Declaration>- (BOOL)isReady</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if the receiver is ready to be started, else NO.</Abstract></ReturnValue>
+			<Anchor>//api/name/isReady</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RKOperationStateMachine/isExecuting</TokenIdentifier>
+			<Abstract type="html">Returns a Boolean value that indicates if the receiver is executing.</Abstract>
+			<DeclaredIn>RKOperationStateMachine.h</DeclaredIn>			
+			
+			<Declaration>- (BOOL)isExecuting</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if the receiver is executing, else NO.</Abstract></ReturnValue>
+			<Anchor>//api/name/isExecuting</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RKOperationStateMachine/isCancelled</TokenIdentifier>
+			<Abstract type="html">Returns a Boolean value that indicates if the receiver has been cancelled.</Abstract>
+			<DeclaredIn>RKOperationStateMachine.h</DeclaredIn>			
+			
+			<Declaration>- (BOOL)isCancelled</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if the receiver has been cancelled, else NO.</Abstract></ReturnValue>
+			<Anchor>//api/name/isCancelled</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RKOperationStateMachine/isFinished</TokenIdentifier>
+			<Abstract type="html">Returns a Boolean value that indicates if the receiver has finished executing.</Abstract>
+			<DeclaredIn>RKOperationStateMachine.h</DeclaredIn>			
+			
+			<Declaration>- (BOOL)isFinished</Declaration>
+			
+			<ReturnValue><Abstract type="html">YES if the receiver is finished, else NO.</Abstract></ReturnValue>
+			<Anchor>//api/name/isFinished</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RKOperationStateMachine/start</TokenIdentifier>
+			<Abstract type="html">Starts the operation by transitioning into the executing state and asychronously invoking the execution block on the operation dispatch queue.</Abstract>
+			<DeclaredIn>RKOperationStateMachine.h</DeclaredIn>			
+			
+			<Declaration>- (void)start</Declaration>
+			
+			
+			<Anchor>//api/name/start</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RKOperationStateMachine/finish</TokenIdentifier>
+			<Abstract type="html">Finishes the operation by transitioning from the executing state to the finished state. The state transition is executed asynchronously on the operation dispatch queue. Invokes the finalization block just before the state changes from executing to finished.</Abstract>
+			<DeclaredIn>RKOperationStateMachine.h</DeclaredIn>			
+			
+			<Declaration>- (void)finish</Declaration>
+			
+			
+			<Anchor>//api/name/finish</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RKOperationStateMachine/cancel</TokenIdentifier>
+			<Abstract type="html">Marks the operation is being cancelled. Cancellation results in state transition because cancellation semantics can vary widely. Once the cancellation flag has been set (isCancelled return YES), the cancellation block is invoked asynchronously on the operation dispatch queue. The operation must be finished as soon as possible.</Abstract>
+			<DeclaredIn>RKOperationStateMachine.h</DeclaredIn>			
+			
+			<Declaration>- (void)cancel</Declaration>
+			
+			
+			<Anchor>//api/name/cancel</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RKOperationStateMachine/setExecutionBlock:</TokenIdentifier>
+			<Abstract type="html">Sets a block to be executed on the operation dispatch queue once the operation transitions to the executing state.</Abstract>
+			<DeclaredIn>RKOperationStateMachine.h</DeclaredIn>			
+			
+			<Declaration>- (void)setExecutionBlock:(void ( ^ ) ( void ))block</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>patternString</Name>
-					<Abstract type="html">The pattern to use for evaluating, such as /:entityName/:stateID/:chamber/</Abstract>
-				</Parameter><Parameter>
-					<Name>shouldTokenize</Name>
-					<Abstract type="html">If YES, any query parameters will be tokenized and inserted into the parsed argument dictionary.</Abstract>
-				</Parameter><Parameter>
-					<Name>arguments</Name>
-					<Abstract type="html">A pointer to a dictionary that contains the key/values from the pattern (and parameter) matching.</Abstract>
+					<Name>block</Name>
+					<Abstract type="html">The block to be executed.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">A boolean value indicating if the path string successfully matched the pattern.</Abstract></ReturnValue>
-			<Anchor>//api/name/matchesPattern:tokenizeQueryStrings:parsedArguments:</Anchor>
+			
+			<Anchor>//api/name/setExecutionBlock:</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/clm/RKPathMatcher/pathMatcherWithPattern:</TokenIdentifier>
-			<Abstract type="html">Creates a path matcher object starting from a pattern string.  This method should be followed by matchesPath:tokenizeQueryStrings:parsedArguments:.  Patterns should include encoded parameter keys, delimited by a single colon at the beginning of the key name.</Abstract>
-			<DeclaredIn>RKPathMatcher.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/RKOperationStateMachine/setCancellationBlock:</TokenIdentifier>
+			<Abstract type="html">Sets a block to be executed when the operation is cancelled. The block will be invoked on the operation dispatch queue. Cancellation does not trigger any state transition -- the operation must still be explicitly finished as soon as possible. If appropriate, the operation may be finished within the body of the cancellation block.</Abstract>
+			<DeclaredIn>RKOperationStateMachine.h</DeclaredIn>			
 			
-			<Declaration>+ (instancetype)pathMatcherWithPattern:(NSString *)patternString</Declaration>
+			<Declaration>- (void)setCancellationBlock:(void ( ^ ) ( void ))block</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>patternString</Name>
-					<Abstract type="html">The pattern to use for evaluating, such as /:entityName/:stateID/:chamber/</Abstract>
+					<Name>block</Name>
+					<Abstract type="html">The block to be executed.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">An instantiated RKPathMatcher with an established pattern.</Abstract></ReturnValue>
-			<Anchor>//api/name/pathMatcherWithPattern:</Anchor>
+			
+			<Anchor>//api/name/setCancellationBlock:</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/RKPathMatcher/matchesPath:tokenizeQueryStrings:parsedArguments:</TokenIdentifier>
-			<Abstract type="html">Determines if the given path string matches a pattern, and yields a dictionary with the resulting matched key/value pairs.  Use of this method should be preceded by pathMatcherWithPattern:.</Abstract>
-			<DeclaredIn>RKPathMatcher.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/RKOperationStateMachine/setFinalizationBlock:</TokenIdentifier>
+			<Abstract type="html">Sets a block to be executed when the operation is about to transition from executing to finished. This block is invoked regardless of the cancellation state. This block should be used to perform any last minute cleanup or preparation before the operation finishes.</Abstract>
+			<DeclaredIn>RKOperationStateMachine.h</DeclaredIn>			
 			
-			<Declaration>- (BOOL)matchesPath:(NSString *)pathString tokenizeQueryStrings:(BOOL)shouldTokenize parsedArguments:(NSDictionary **)arguments</Declaration>
+			<Declaration>- (void)setFinalizationBlock:(void ( ^ ) ( void ))block</Declaration>
 			<Parameters>
 				<Parameter>
-					<Name>pathString</Name>
-					<Abstract type="html">The string to evaluate and parse, such as /districts/tx/upper/?apikey=GC5512354</Abstract>
-				</Parameter><Parameter>
-					<Name>shouldTokenize</Name>
-					<Abstract type="html">If YES, any query parameters will be tokenized and inserted into the parsed argument dictionary.</Abstract>
-				</Parameter><Parameter>
-					<Name>arguments</Name>
-					<Abstract type="html">A pointer to a dictionary that contains the key/values from the pattern (and parameter) matching.</Abstract>
+					<Name>block</Name>
+					<Abstract type="html">The block to be executed.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">A boolean value indicating if the path string successfully matched the pattern.</Abstract></ReturnValue>
-			<Anchor>//api/name/matchesPath:tokenizeQueryStrings:parsedArguments:</Anchor>
+			
+			<Anchor>//api/name/setFinalizationBlock:</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/RKPathMatcher/pathFromObject:addingEscapes:interpolatedParameters:</TokenIdentifier>
-			<Abstract type="html">Generates a path by interpolating the properties of the &apos;object&apos; argument, assuming the existence of a previously specified pattern established via pathMatcherWithPattern:.  Otherwise, this method is identical in function to RKPathFromPatternWithObject (in fact it is a shortcut for this method).</Abstract>
-			<DeclaredIn>RKPathMatcher.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/RKOperationStateMachine/setOperation:</TokenIdentifier>
+			<Abstract type="html">The operation that the receiver is modeling the lifecycle of.</Abstract>
+			<DeclaredIn>RKOperationStateMachine.h</DeclaredIn>			
 			
-			<Declaration>- (NSString *)pathFromObject:(id)object addingEscapes:(BOOL)addEscapes interpolatedParameters:(NSDictionary **)interpolatedParameters</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>object</Name>
-					<Abstract type="html">The object containing the properties to interpolate.</Abstract>
-				</Parameter><Parameter>
-					<Name>addEscapes</Name>
-					<Abstract type="html">Conditionally add percent escapes to the interpolated property values</Abstract>
-				</Parameter><Parameter>
-					<Name>interpolatedParameters</Name>
-					<Abstract type="html">On input, a pointer for a dictionary object. When the path pattern of the receiver is interpolated, this pointer is set to a new dictionary object in which the keys correspond to the named parameters within the path pattern and the values are taken from the corresponding keypaths of the interpolated object .</Abstract>
-				</Parameter>
-			</Parameters>
-			<ReturnValue><Abstract type="html">A string with the object&apos;s interpolated property values inserted into the receiver&apos;s established pattern.</Abstract></ReturnValue>
-			<Anchor>//api/name/pathFromObject:addingEscapes:interpolatedParameters:</Anchor>
+			<Declaration>@property (nonatomic, weak, readonly) NSOperation *operation</Declaration>
+			
+			
+			<Anchor>//api/name/operation</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/RKPathMatcher/setQueryParameters:</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>RKPathMatcher.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instp/RKOperationStateMachine/operation</TokenIdentifier>
+			<Abstract type="html">The operation that the receiver is modeling the lifecycle of.</Abstract>
+			<DeclaredIn>RKOperationStateMachine.h</DeclaredIn>			
 			
-			<Declaration>@property (copy, readonly) NSDictionary *queryParameters</Declaration>
+			<Declaration>@property (nonatomic, weak, readonly) NSOperation *operation</Declaration>
 			
 			
-			<Anchor>//api/name/queryParameters</Anchor>
+			<Anchor>//api/name/operation</Anchor>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instp/RKPathMatcher/queryParameters</TokenIdentifier>
-			<Abstract type="html"></Abstract>
-			<DeclaredIn>RKPathMatcher.h</DeclaredIn>			
+			<TokenIdentifier>//apple_ref/occ/instm/RKOperationStateMachine/setDispatchQueue:</TokenIdentifier>
+			<Abstract type="html">The dispatch queue within which the state machine executes.</Abstract>
+			<DeclaredIn>RKOperationStateMachine.h</DeclaredIn>			
 			
-			<Declaration>@property (copy, readonly) NSDictionary *queryParameters</Declaration>
+			<Declaration>@property (nonatomic, assign, readonly) dispatch_queue_t dispatchQueue</Declaration>
 			
 			
-			<Anchor>//api/name/queryParameters</Anchor>
+			<Anchor>//api/name/dispatchQueue</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/RKOperationStateMachine/dispatchQueue</TokenIdentifier>
+			<Abstract type="html">The dispatch queue within which the state machine executes.</Abstract>
+			<DeclaredIn>RKOperationStateMachine.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, assign, readonly) dispatch_queue_t dispatchQueue</Declaration>
+			
+			
+			<Anchor>//api/name/dispatchQueue</Anchor>
 		</Token>
 		
 	</File>

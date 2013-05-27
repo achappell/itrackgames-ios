@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/DCUtility.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/DCUtility</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>DCUtility.h</DeclaredIn>
+			
+			<NodeRef refid="7"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/DCUtility/sharedInstance</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>DCUtility.h</DeclaredIn>			
+			
+			<Declaration>+ (DCUtility *)sharedInstance</Declaration>
+			
+			
+			<Anchor>//api/name/sharedInstance</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DCUtility/cacheDirectoryPath</TokenIdentifier>
+			<Abstract type="html">Returns the Libary/Caches directory path</Abstract>
+			<DeclaredIn>DCUtility.h</DeclaredIn>			
+			
+			<Declaration>- (NSString *)cacheDirectoryPath</Declaration>
+			
+			
+			<Anchor>//api/name/cacheDirectoryPath</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DCUtility/currentViewJSONFilePath</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>DCUtility.h</DeclaredIn>			
+			
+			<Declaration>- (NSString *)currentViewJSONFilePath</Declaration>
+			
+			
+			<Anchor>//api/name/currentViewJSONFilePath</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DCUtility/viewTreeJSONFilePath</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>DCUtility.h</DeclaredIn>			
+			
+			<Declaration>- (NSString *)viewTreeJSONFilePath</Declaration>
+			
+			
+			<Anchor>//api/name/viewTreeJSONFilePath</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DCUtility/viewMessageJSONFilePath</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>DCUtility.h</DeclaredIn>			
+			
+			<Declaration>- (NSString *)viewMessageJSONFilePath</Declaration>
+			
+			
+			<Anchor>//api/name/viewMessageJSONFilePath</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DCUtility/filePathForSelectedViewJSON</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>DCUtility.h</DeclaredIn>			
+			
+			<Declaration>- (NSString *)filePathForSelectedViewJSON</Declaration>
+			
+			
+			<Anchor>//api/name/filePathForSelectedViewJSON</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DCUtility/writeString:toPath:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>DCUtility.h</DeclaredIn>			
+			
+			<Declaration>- (BOOL)writeString:(NSString *)string toPath:(NSString *)path</Declaration>
+			
+			
+			<Anchor>//api/name/writeString:toPath:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DCUtility/describeColor:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>DCUtility.h</DeclaredIn>			
+			
+			<Declaration>- (NSString *)describeColor:(UIColor *)color</Declaration>
+			
+			
+			<Anchor>//api/name/describeColor:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DCUtility/IPAddressString</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>DCUtility.h</DeclaredIn>			
+			
+			<Declaration>- (NSString *)IPAddressString</Declaration>
+			
+			
+			<Anchor>//api/name/IPAddressString</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/DCUtility/showMessageWithString:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>DCUtility.h</DeclaredIn>			
+			
+			<Declaration>- (void)showMessageWithString:(NSString *)string</Declaration>
+			
+			
+			<Anchor>//api/name/showMessageWithString:</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

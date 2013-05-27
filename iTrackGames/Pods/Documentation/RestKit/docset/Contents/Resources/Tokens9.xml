@@ -4,13 +4,7 @@
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/cl/RKEntityCache</TokenIdentifier>
-			<Abstract type="html">Instances of RKInMemoryEntityCache provide an in-memory caching mechanism for
-objects in a Core Data managed object context. Managed objects can be cached by
-attribute for fast retrieval without repeatedly hitting the Core Data persistent store.
-This can provide a substantial speed advantage over issuing fetch requests
-in cases where repeated look-ups of the same data are performed using a small set
-of attributes as the query key. Internally, the cache entries are maintained as
-references to the NSManagedObjectID of corresponding cached objects.</Abstract>
+			<Abstract type="html">Instances of RKEntityCache provide an in-memory caching mechanism for objects in a Core Data managed object context. Managed objects can be cached by attribute for fast retrieval without repeatedly hitting the Core Data persistent store. This can provide a substantial speed advantage over issuing fetch requests in cases where repeated look-ups of the same data are performed using a small set of attributes as the query key. Internally, the cache entries are maintained as references to the NSManagedObjectID of corresponding cached objects.</Abstract>
 			<DeclaredIn>RKEntityCache.h</DeclaredIn>
 			
 			<NodeRef refid="9"/>
@@ -29,7 +23,7 @@ references to the NSManagedObjectID of corresponding cached objects.</Abstract>
 					<Abstract type="html">The managed object context containing objects to be cached.</Abstract>
 				</Parameter>
 			</Parameters>
-			<ReturnValue><Abstract type="html">self, initialized with context.</Abstract></ReturnValue>
+			<ReturnValue><Abstract type="html">The receiver, initialized with the given context.</Abstract></ReturnValue>
 			<Anchor>//api/name/initWithManagedObjectContext:</Anchor>
 		</Token>
 		
@@ -56,11 +50,33 @@ references to the NSManagedObjectID of corresponding cached objects.</Abstract>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/RKEntityCache/cacheObjectsForEntity:byAttributes:</TokenIdentifier>
+			<TokenIdentifier>//apple_ref/occ/instm/RKEntityCache/setCallbackQueue:</TokenIdentifier>
+			<Abstract type="html">The queue on which to dispatch callbacks for asynchronous operations. When nil, the main queue is used.</Abstract>
+			<DeclaredIn>RKEntityCache.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, assign) dispatch_queue_t callbackQueue</Declaration>
+			
+			
+			<Anchor>//api/name/callbackQueue</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/RKEntityCache/callbackQueue</TokenIdentifier>
+			<Abstract type="html">The queue on which to dispatch callbacks for asynchronous operations. When nil, the main queue is used.</Abstract>
+			<DeclaredIn>RKEntityCache.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, assign) dispatch_queue_t callbackQueue</Declaration>
+			
+			
+			<Anchor>//api/name/callbackQueue</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RKEntityCache/cacheObjectsForEntity:byAttributes:completion:</TokenIdentifier>
 			<Abstract type="html">Caches all instances of an entity using the value for an attribute as the cache key.</Abstract>
 			<DeclaredIn>RKEntityCache.h</DeclaredIn>			
 			
-			<Declaration>- (void)cacheObjectsForEntity:(NSEntityDescription *)entity byAttributes:(NSArray *)attributeNames</Declaration>
+			<Declaration>- (void)cacheObjectsForEntity:(NSEntityDescription *)entity byAttributes:(NSArray *)attributeNames completion:(void ( ^ ) ( void ))completion</Declaration>
 			<Parameters>
 				<Parameter>
 					<Name>entity</Name>
@@ -71,7 +87,7 @@ references to the NSManagedObjectID of corresponding cached objects.</Abstract>
 				</Parameter>
 			</Parameters>
 			
-			<Anchor>//api/name/cacheObjectsForEntity:byAttributes:</Anchor>
+			<Anchor>//api/name/cacheObjectsForEntity:byAttributes:completion:</Anchor>
 		</Token>
 		
 		<Token>
@@ -175,9 +191,8 @@ references to the NSManagedObjectID of corresponding cached objects.</Abstract>
 		</Token>
 		
 		<Token>
-			<TokenIdentifier>//apple_ref/occ/instm/RKEntityCache/flush</TokenIdentifier>
-			<Abstract type="html">Flushes the entity cache by sending a flush message to each entity attribute cache
-contained within the receiver.</Abstract>
+			<TokenIdentifier>//apple_ref/occ/instm/RKEntityCache/flush:</TokenIdentifier>
+			<Abstract type="html">Flushes the entity cache by sending a flush message to each entity attribute cache contained within the receiver.</Abstract>
 			<DeclaredIn>RKEntityCache.h</DeclaredIn>			
 			
 	<RelatedTokens>
@@ -185,42 +200,89 @@ contained within the receiver.</Abstract>
 		
 	</RelatedTokens>
 	
-			<Declaration>- (void)flush</Declaration>
+			<Declaration>- (void)flush:(void ( ^ ) ( void ))completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">An optional block to be executed when the flush has completed.</Abstract>
+				</Parameter>
+			</Parameters>
 			
+			<Anchor>//api/name/flush:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RKEntityCache/addObjects:completion:</TokenIdentifier>
+			<Abstract type="html">Adds the given set of objects to all entity attribute caches for the object&apos;s entity contained within the receiver.</Abstract>
+			<DeclaredIn>RKEntityCache.h</DeclaredIn>			
 			
-			<Anchor>//api/name/flush</Anchor>
+			<Declaration>- (void)addObjects:(NSSet *)objects completion:(void ( ^ ) ( void ))completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>objects</Name>
+					<Abstract type="html">The set of objects to add to the appropriate entity attribute caches.</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">An optional block to be executed when the object addition has completed.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/addObjects:completion:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RKEntityCache/removeObjects:completion:</TokenIdentifier>
+			<Abstract type="html">Removes the given set of objects from all entity attribute caches for the object&apos;s entity contained within the receiver.</Abstract>
+			<DeclaredIn>RKEntityCache.h</DeclaredIn>			
+			
+			<Declaration>- (void)removeObjects:(NSSet *)objects completion:(void ( ^ ) ( void ))completion</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>objects</Name>
+					<Abstract type="html">The set of objects to remove from the appropriate entity attribute caches.</Abstract>
+				</Parameter><Parameter>
+					<Name>completion</Name>
+					<Abstract type="html">An optional block to be executed when the object removal has completed.</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/removeObjects:completion:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RKEntityCache/containsObject:</TokenIdentifier>
+			<Abstract type="html">Returns a Boolean value that indicates if the receiver contains the given object in any of its attribute caches.</Abstract>
+			<DeclaredIn>RKEntityCache.h</DeclaredIn>			
+			
+			<Declaration>- (BOOL)containsObject:(NSManagedObject *)managedObject</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>managedObject</Name>
+					<Abstract type="html">The object to check for.</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">YES if the receiver contains the given object in one or more of its caches, else NO.</Abstract></ReturnValue>
+			<Anchor>//api/name/containsObject:</Anchor>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/RKEntityCache/addObject:</TokenIdentifier>
-			<Abstract type="html">Adds a given object to all entity attribute caches for the object&apos;s entity contained
-within the receiver.</Abstract>
+			<Abstract type="html"></Abstract>
 			<DeclaredIn>RKEntityCache.h</DeclaredIn>			
 			
 			<Declaration>- (void)addObject:(NSManagedObject *)object</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>object</Name>
-					<Abstract type="html">The object to add to the appropriate entity attribute caches.</Abstract>
-				</Parameter>
-			</Parameters>
+			
 			
 			<Anchor>//api/name/addObject:</Anchor>
 		</Token>
 		
 		<Token>
 			<TokenIdentifier>//apple_ref/occ/instm/RKEntityCache/removeObject:</TokenIdentifier>
-			<Abstract type="html">Removed a given object from all entity attribute caches for the object&apos;s entity contained
-within the receiver.</Abstract>
+			<Abstract type="html"></Abstract>
 			<DeclaredIn>RKEntityCache.h</DeclaredIn>			
 			
 			<Declaration>- (void)removeObject:(NSManagedObject *)object</Declaration>
-			<Parameters>
-				<Parameter>
-					<Name>object</Name>
-					<Abstract type="html">The object to remove from the appropriate entity attribute caches.</Abstract>
-				</Parameter>
-			</Parameters>
+			
 			
 			<Anchor>//api/name/removeObject:</Anchor>
 		</Token>

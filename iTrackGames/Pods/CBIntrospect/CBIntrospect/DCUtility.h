@@ -30,4 +30,9 @@ static inline NSString * NSStringFromBOOL(BOOL value)
 - (BOOL)writeString:(NSString *)string toPath:(NSString *)path;
 
 - (NSString *)describeColor:(UIColor *)color;
+
+- (NSString *)IPAddressString;
+
+- (void)showMessageWithString:(NSString *)string;
+
 @end
