@@ -90,6 +90,8 @@ After you have integrated the SDK into your application you need to upload your 
 
 View anonymous information about how often users use your app, how long they use it for, and when they use it. You can see what type of device the user is using, which OS, which language, etc.
 
+Sessions automatically start at app launch, app did become active, and app will enter foreground and end at app will resign active, app did enter background, or app will terminate. Sessions that start shortly after an end continue the session instead of starting a new one.
+
 For **beta** users, you can see who the users are if you are **setting the UDID**, they have a TestFlight account, and their device is registered to TestFlight. (See Setting the UDID for more information).
 
 
@@ -177,6 +179,11 @@ When passing a checkpoint, TestFlight logs the checkpoint synchronously (See Rem
 
 All logging is done synchronously. Every time the SDK logs, it must write data to a file. This is to ensure log integrity at crash time. Without this, we could not trust logs at crash time. If you have a high performance app, please email support@testflightapp.com for more options.
 
+### Advanced Session Control
+
+Continuing sessions: You can adjust the amount of time a user can leave the app for and still continue the same session when they come back by changing the `TFOptionSessionKeepAliveTimeout` option. Change it to 0 to turn the feature off.
+
+Manual Session Control: If your app is a music player that continues to play music in the background, a navigation app that continues to function in the background, or any app where a user is considered to be "using" the app even while the app is not active you should use Manual Session Control. Please only use manual session control if you know exactly what you are doing. There are many pitfalls which can result in bad session duration and counts. See `TestFlight+ManualSessions.h` for more information and instructions.
 
 ### Advanced Exception/Signal Handling
 

@@ -17,6 +17,7 @@
 #import "TGLoginViewController.h"
 #import "TGMenuViewController.h"
 #import <CBIntrospect/CBIntrospect.h>
+#import <Facebook-iOS-SDK/FacebookSDK/Facebook.h>
 
 @interface TGAppDelegate()
 
@@ -40,6 +41,15 @@
     [self.window makeKeyAndVisible];
     
     [[CBIntrospect sharedIntrospector] start];
+    
+    NSArray *permissions =
+    [NSArray arrayWithObjects:@"email", nil];
+    
+    [FBSession openActiveSessionWithReadPermissions:permissions
+                                       allowLoginUI:YES
+                                  completionHandler:^(FBSession *session, FBSessionState status, NSError *error) {
+                                      /* handle success + failure in block */
+                                  }];
     
     return YES;
 }
