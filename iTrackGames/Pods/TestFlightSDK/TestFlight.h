@@ -6,7 +6,7 @@
 //  Copyright 2011 TestFlight. All rights reserved.
 
 #import <Foundation/Foundation.h>
-#define TESTFLIGHT_SDK_VERSION @"1.3.0-beta.4"
+#define TESTFLIGHT_SDK_VERSION @"1.3.0-beta.5"
 #undef TFLog
 
 #if __cplusplus
@@ -117,5 +117,7 @@ extern NSString *const TFOptionLogOnCheckpoint; // Defaults to @YES. Because log
 extern NSString *const TFOptionLogToConsole; // Defaults to @YES. Prints remote logs to Apple System Log.
 extern NSString *const TFOptionLogToSTDERR; // Defaults to @YES. Sends remote logs to STDERR when debugger is attached.
 extern NSString *const TFOptionReinstallCrashHandlers; // If set to @YES: Reinstalls crash handlers, to be used if a third party library installs crash handlers overtop of the TestFlight Crash Handlers.
+extern NSString *const TFOptionReportCrashes; // Defaults to @YES. If set to @NO, crash handlers are never installed. Must be set **before** calling `takeOff:`.
 extern NSString *const TFOptionSendLogOnlyOnCrash; // Defaults to @NO. Setting to @YES stops remote logs from being sent when sessions end. They would only be sent in the event of a crash.
+extern NSString *const TFOptionSessionKeepAliveTimeout; // Defaults to @30. This is the amount of time a user can leave the app for and still continue the same session when they come back. If they are away from the app for longer, a new session is created when they come back. Must be a number. Change to @0 to turn off.
 
