@@ -17,6 +17,7 @@
 #import "TGLoginViewController.h"
 #import "TGMenuViewController.h"
 #import <CBIntrospect/CBIntrospect.h>
+#import "TGUserManager.h"
 
 @interface TGAppDelegate()
 
@@ -40,6 +41,10 @@
     [self.window makeKeyAndVisible];
     
     [[CBIntrospect sharedIntrospector] start];
+    
+    //set token to value stored in NSUserDefaults
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [[TGUserManager sharedManager] authenticateWithToken:[defaults objectForKey:@"token"]];
     
     return YES;
 }

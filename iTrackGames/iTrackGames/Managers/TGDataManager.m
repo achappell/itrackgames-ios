@@ -178,4 +178,42 @@
     }];
 }
 
+- (void)validateToken: (NSString *)token withCompletion:(TGDataManagerCompletionBlockType)completionBlock
+{
+    NSString *tokenString = [NSString stringWithFormat:@"auth_token=%@", token];
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://itrackgames.com/tokens/validate.json"]];
+    request.HTTPMethod = @"POST";
+    [request addValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    [request setHTTPBody:[tokenString dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    AFJSONRequestOperation *validateOperation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+        NSLog(@"success %@", JSON);
+        
+        if (completionBlock)
+            completionBlock(JSON, nil);
+        
+    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+        NSLog(@"failure %@", [error description]);
+        
+        NSError *appError = error;
+        
+        // unauthorized
+        if (response.statusCode == 401)
+        {
+            appError = [NSError errorWithDomain:TGUserErrorDomain code:TGUserInvalidToken userInfo:@{NSLocalizedDescriptionKey: @"Your token is invalid"}];
+        }
+        else
+        {
+            appError = [NSError errorWithDomain:TGUserErrorDomain code:TGUserUnknownValidateError userInfo:@{NSLocalizedDescriptionKey: @"Uh oh, something has gon awry. Check back later."}];
+        }
+        
+        if (completionBlock)
+            completionBlock(nil, appError);
+    }];
+    
+    [validateOperation start];
+
+}
+
 @end
