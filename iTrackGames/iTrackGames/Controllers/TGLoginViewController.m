@@ -9,6 +9,7 @@
 #import "TGLoginViewController.h"
 #import "TGUserManager.h"
 #import "TGPlatformTableViewController.h"
+#import <FacebookSDK/Facebook.h>
 
 @interface TGLoginViewController ()
 
@@ -50,9 +51,7 @@
         
         if (!error)
         {
-            TGPlatformTableViewController *viewController = [[TGPlatformTableViewController alloc] initWithNibName:@"TGPlatformTableViewController_iPhone" bundle:nil];
-            
-            [self.navigationController pushViewController:viewController animated:YES];
+            [self dismissViewControllerAnimated:YES completion:nil];
         }
         else
         {
@@ -67,6 +66,37 @@
 {
     [textField resignFirstResponder];
     return YES;
+}
+
+-(void)facebookLoginButtonTapped:(id)sender
+{
+    NSArray *permissions =
+    [NSArray arrayWithObjects:@"email", nil];
+    
+    [FBSession openActiveSessionWithReadPermissions:permissions
+                                       allowLoginUI:YES
+                                  completionHandler:^(FBSession *session, FBSessionState status, NSError *error) {
+                                      if (!error) {
+                                          NSString *fbToken = session.accessTokenData.accessToken;
+                                          [[TGUserManager sharedManager] loginWithFacebookToken:fbToken withCompletion:^(NSError *error) {
+                                              if (!error)
+                                              {
+                                                  [self dismissViewControllerAnimated:YES completion:nil];
+                                              }
+                                              else
+                                              {
+                                                  UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:error.localizedDescription delegate:nil cancelButtonTitle:@"ok" otherButtonTitles: nil];
+                                                  [alertView show];
+                                              }
+                                                  
+                                          }];
+                                      } else {
+                                          UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:error.localizedDescription delegate:nil cancelButtonTitle:@"ok" otherButtonTitles: nil];
+                                          [alertView show];
+                                      }
+     
+                                  }];
+   
 }
 
 @end

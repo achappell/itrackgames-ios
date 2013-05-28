@@ -15,5 +15,6 @@
 @property (nonatomic, weak) IBOutlet UIButton *loginButton;
 
 -(IBAction)loginButtonTapped:(id)sender;
+-(IBAction)facebookLoginButtonTapped:(id)sender;
 
 @end

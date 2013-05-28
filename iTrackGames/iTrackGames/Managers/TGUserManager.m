@@ -93,7 +93,7 @@ static TGUserManager *_sharedManager;
     }
 }
 
-- (void)authenticateWithToken:(NSString *)token
+- (void)authenticateWithToken:(NSString *)token withCompletion:(TGUserManagerCompletionBlockType)completionBlock
 {
    
     [self.dataManager validateToken:(NSString *) token withCompletion:^(id data, NSError *error) {
@@ -105,6 +105,33 @@ static TGUserManager *_sharedManager;
         } else {
             self.currentUser = nil;
         }
+        
+        if (completionBlock)
+            completionBlock(error);
+        
+    }];
+}
+
+-(void) loginWithFacebookToken:(NSString *)fbToken withCompletion:(TGUserManagerCompletionBlockType)completionBlock
+{
+
+    [self.dataManager fetchUserTokenWithFacebookToken:fbToken withCompletion:^(id data, NSError *error) {
+        
+        if (!error) {
+            NSString *token = (NSString *)[data objectForKey:@"token"];
+            
+            TGUser *currentUser = [[TGUser alloc] init];
+            currentUser.token = token;
+            
+            self.currentUser = currentUser;
+            
+            //store token in NSUserDefaults to save login info
+            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+            [defaults setObject:token forKey:@"userLoginToken"];
+        }
+        
+        if (completionBlock)
+            completionBlock(error);
         
     }];
 }

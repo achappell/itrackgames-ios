@@ -44,9 +44,17 @@
     
     [[CBIntrospect sharedIntrospector] start];
 
-    //set token to value stored in NSUserDefaults
+    //authenticate token stored in NSUserDefaults, if fails authentication show loginViewController
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [[TGUserManager sharedManager] authenticateWithToken:[defaults objectForKey:@"token"]];
+    [[TGUserManager sharedManager] authenticateWithToken:[defaults objectForKey:@"token"] withCompletion:^(NSError *error) {
+        if (error) {
+            TGLoginViewController *loginViewController = [[TGLoginViewController alloc] initWithNibName:@"TGLoginViewController" bundle:nil];
+            
+            loginViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+            
+            [self.window.rootViewController presentViewController:loginViewController animated:NO completion:nil];
+        }
+    }];
     
     return YES;
 }
@@ -164,21 +172,16 @@
         platformViewController.title = @"Platforms";
         UINavigationController *platformsNavigationController = [[UINavigationController alloc] initWithRootViewController:platformViewController];
         
-        TGLoginViewController *loginViewController = [[TGLoginViewController alloc] initWithNibName:@"TGLoginViewController" bundle:nil];
-        UINavigationController *loginNavigationController = [[UINavigationController alloc] initWithRootViewController:loginViewController];
-        
-        loginViewController.title = @"Login";
-        
         TGSearchViewController *searchViewController = [[TGSearchViewController alloc] initWithNibName:@"TGSearchViewController" bundle:nil];
 
         TGMenuViewController *menuViewController = [[TGMenuViewController alloc] initWithNibName:@"TGMenuViewController" bundle:nil];
-        menuViewController.viewControllers = @[ platformsNavigationController, loginNavigationController ];
+        menuViewController.viewControllers = @[ platformsNavigationController ]; //platformsNavigationController, loginNavigationController 
         
         _menuContainerViewController = [[IIViewDeckController alloc] initWithCenterViewController:platformsNavigationController leftViewController:menuViewController rightViewController:searchViewController];
         menuViewController.viewDeckController = _menuContainerViewController;
         platformViewController.viewDeckController = _menuContainerViewController;
-        loginViewController.viewDeckController = _menuContainerViewController;
         searchViewController.viewDeckController = _menuContainerViewController;
+
     }
     
     return _menuContainerViewController;
