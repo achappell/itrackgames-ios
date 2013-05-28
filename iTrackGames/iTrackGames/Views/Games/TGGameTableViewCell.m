@@ -86,4 +86,9 @@
     }];
 }
 
+- (void)prepareForReuse
+{
+    self.ratingView.alpha = 0.0f;
+}
+
 @end
