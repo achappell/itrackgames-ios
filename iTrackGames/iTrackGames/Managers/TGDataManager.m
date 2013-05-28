@@ -57,6 +57,44 @@
     [loginOperation start];
 }
 
+-(void)fetchUserTokenWithFacebookToken:(NSString *)fbToken withCompletion:(TGDataManagerCompletionBlockType)completionBlock
+{
+    __block NSString *token;
+    
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://itrackgames.com/users/auth/facebook_access_token/callback?access_token=%@", fbToken]]];
+    request.HTTPMethod = @"POST";
+    
+    AFJSONRequestOperation *loginOperation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+        NSLog(@"success %@", JSON);
+        
+        if (completionBlock)
+            completionBlock(JSON, nil);
+        
+    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON) {
+        NSLog(@"failure %@", [error description]);
+        
+        token = nil;
+        
+        NSError *appError = error;
+        
+        // unauthorized
+        if (response.statusCode == 401)
+        {
+            appError = [NSError errorWithDomain:TGUserErrorDomain code:TGUserInvalidToken userInfo:@{NSLocalizedDescriptionKey: @"Your facebook token is invalid"}];
+        }
+        else
+        {
+            appError = [NSError errorWithDomain:TGUserErrorDomain code:TGUserUnknownLoginError userInfo:@{NSLocalizedDescriptionKey: @"Uh oh, something has gon awry. Check back later."}];
+        }
+        
+        if (completionBlock)
+            completionBlock(nil, appError);
+    }];
+    
+    [loginOperation start];
+}
+
 - (void)fetchPlatformsWithCompletion:(TGDataManagerCompletionBlockType)completionBlock
 {
     RKObjectManager *objectManager = [RKObjectManager sharedManager];

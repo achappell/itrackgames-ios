@@ -43,19 +43,17 @@
     
     [[CBIntrospect sharedIntrospector] start];
     
-
-    NSArray *permissions =
-    [NSArray arrayWithObjects:@"email", nil];
-    
-    [FBSession openActiveSessionWithReadPermissions:permissions
-                                       allowLoginUI:YES
-                                  completionHandler:^(FBSession *session, FBSessionState status, NSError *error) {
-                                      /* handle success + failure in block */
-                                  }];
-
-    //set token to value stored in NSUserDefaults
+    //authenticate token stored in NSUserDefaults, if fails authentication show loginViewController
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [[TGUserManager sharedManager] authenticateWithToken:[defaults objectForKey:@"token"]];
+    [[TGUserManager sharedManager] authenticateWithToken:[defaults objectForKey:@"token"] withCompletion:^(NSError *error) {
+        if (error) {
+            TGLoginViewController *loginViewController = [[TGLoginViewController alloc] initWithNibName:@"TGLoginViewController" bundle:nil];
+            
+            loginViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+            
+            [self.window.rootViewController presentViewController:loginViewController animated:NO completion:nil];
+        }
+    }];
     
     return YES;
 }
@@ -170,18 +168,18 @@
         platformViewController.title = @"Platforms";
         UINavigationController *platformsNavigationController = [[UINavigationController alloc] initWithRootViewController:platformViewController];
         
-        TGLoginViewController *loginViewController = [[TGLoginViewController alloc] initWithNibName:@"TGLoginViewController" bundle:nil];
+        /*TGLoginViewController *loginViewController = [[TGLoginViewController alloc] initWithNibName:@"TGLoginViewController" bundle:nil];
         UINavigationController *loginNavigationController = [[UINavigationController alloc] initWithRootViewController:loginViewController];
         
-        loginViewController.title = @"Login";
+        loginViewController.title = @"Login";*/
 
         TGMenuViewController *menuViewController = [[TGMenuViewController alloc] initWithNibName:@"TGMenuViewController" bundle:nil];
-        menuViewController.viewControllers = @[ platformsNavigationController, loginNavigationController ];
+        menuViewController.viewControllers = @[ platformsNavigationController ]; //platformsNavigationController, loginNavigationController 
         
         _menuContainerViewController = [[IIViewDeckController alloc] initWithCenterViewController:platformsNavigationController leftViewController:menuViewController];
         menuViewController.viewDeckController = _menuContainerViewController;
         platformViewController.viewDeckController = _menuContainerViewController;
-        loginViewController.viewDeckController = _menuContainerViewController;
+        //loginViewController.viewDeckController = _menuContainerViewController;
     }
     
     return _menuContainerViewController;

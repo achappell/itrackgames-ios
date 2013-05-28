@@ -20,5 +20,6 @@ typedef void(^TGUserManagerCompletionBlockType)(NSError *error);
 -(void) loginWithUsername: (NSString *) username andPassword: (NSString *) password withCompletion: (TGUserManagerCompletionBlockType) completionBlock;
 - (NSString *)currentUserToken;
 - (void)setCurrentUserToken:(NSString *)token;
-- (void)authenticateWithToken:(NSString *)token;
+- (void)authenticateWithToken:(NSString *)token withCompletion: (TGUserManagerCompletionBlockType) completionBlock;
+-(void) loginWithFacebookToken: (NSString *) fbToken withCompletion: (TGUserManagerCompletionBlockType) completionBlock;
 @end

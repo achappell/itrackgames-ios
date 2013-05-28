@@ -73,4 +73,9 @@
     return self.viewControllers.count;
 }
 
+#pragma mark - login screen delegate
+- (void)didLogin {
+    NSLog(@"did login");
+}
+
 @end

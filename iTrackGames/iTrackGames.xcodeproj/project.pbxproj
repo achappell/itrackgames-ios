@@ -11,6 +11,7 @@
 		1C29A38716D1A6F6009524BE /* TGGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C29A38616D1A6F6009524BE /* TGGame.m */; };
 		1C29A38B16D1A766009524BE /* TGGameTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C29A38916D1A766009524BE /* TGGameTableViewController.m */; };
 		1C29A38C16D1A766009524BE /* TGGameTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C29A38A16D1A766009524BE /* TGGameTableViewController.xib */; };
+		1C3AF83F17541817001B3BE0 /* fb-login-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C3AF83E17541817001B3BE0 /* fb-login-button.png */; };
 		1C52A1C616E40C7B0027979A /* TGLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C52A1C416E40C7B0027979A /* TGLoginViewController.m */; };
 		1C52A1C716E40C7B0027979A /* TGLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C52A1C516E40C7B0027979A /* TGLoginViewController.xib */; };
 		1C52A1CA16E40DC90027979A /* TGPlatformTableViewController~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C52A1C816E40DC90027979A /* TGPlatformTableViewController~ipad.xib */; };
@@ -92,6 +93,7 @@
 		1C29A38816D1A766009524BE /* TGGameTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGGameTableViewController.h; sourceTree = "<group>"; };
 		1C29A38916D1A766009524BE /* TGGameTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGGameTableViewController.m; sourceTree = "<group>"; };
 		1C29A38A16D1A766009524BE /* TGGameTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TGGameTableViewController.xib; sourceTree = "<group>"; };
+		1C3AF83E17541817001B3BE0 /* fb-login-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fb-login-button.png"; sourceTree = "<group>"; };
 		1C52A1C316E40C7B0027979A /* TGLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGLoginViewController.h; sourceTree = "<group>"; };
 		1C52A1C416E40C7B0027979A /* TGLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGLoginViewController.m; sourceTree = "<group>"; };
 		1C52A1C516E40C7B0027979A /* TGLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TGLoginViewController.xib; sourceTree = "<group>"; };
@@ -379,6 +381,7 @@
 		E046FE8717027F95001636EB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				1C3AF83E17541817001B3BE0 /* fb-login-button.png */,
 				E0DA2C83173723AE001953C0 /* star.gif */,
 				E003D97A1724B54E00844C57 /* MainBackground2.png */,
 				E003D97B1724B54E00844C57 /* MainBackground2@2x.png */,
@@ -591,6 +594,7 @@
 				1CD1E6701724A4CF00F9F893 /* TGPlatformViewController.xib in Resources */,
 				1CD2DBAB172DB7E000A3B7DE /* TGImageViewController.xib in Resources */,
 				E0DA2C84173723AE001953C0 /* star.gif in Resources */,
+				1C3AF83F17541817001B3BE0 /* fb-login-button.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

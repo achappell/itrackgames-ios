@@ -15,6 +15,7 @@ typedef void(^TGDataManagerCompletionBlockType)(id data, NSError *error);
 @interface TGDataManager : NSObject
 
 - (void)fetchUserTokenWithUsername: (NSString *) username andPassword: (NSString *) password withCompletion:(TGDataManagerCompletionBlockType) completionBlock;
+- (void)fetchUserTokenWithFacebookToken: (NSString *) fbToken withCompletion:(TGDataManagerCompletionBlockType) completionBlock;
 - (void)fetchPlatformsWithCompletion:(TGDataManagerCompletionBlockType)completionBlock;
 - (void)fetchGamesWithPlatform: (TGPlatform *) platform withCompletion: (TGDataManagerCompletionBlockType)completionBlock;
 - (void)fetchGameData: (NSNumber *)gameId withCompletion: (TGDataManagerCompletionBlockType) completionBlock;
