@@ -19,6 +19,7 @@
 #import <CBIntrospect/CBIntrospect.h>
 #import <Facebook-iOS-SDK/FacebookSDK/Facebook.h>
 #import "TGUserManager.h"
+#import "TGSearchViewController.h"
 
 @interface TGAppDelegate()
 
@@ -42,16 +43,6 @@
     [self.window makeKeyAndVisible];
     
     [[CBIntrospect sharedIntrospector] start];
-    
-
-    NSArray *permissions =
-    [NSArray arrayWithObjects:@"email", nil];
-    
-    [FBSession openActiveSessionWithReadPermissions:permissions
-                                       allowLoginUI:YES
-                                  completionHandler:^(FBSession *session, FBSessionState status, NSError *error) {
-                                      /* handle success + failure in block */
-                                  }];
 
     //set token to value stored in NSUserDefaults
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -143,11 +134,14 @@
     
     RKResponseDescriptor *responseDescriptorGameStashDatum = [RKResponseDescriptor responseDescriptorWithMapping:gameStashDatumMapping pathPattern:@"/game_stash_data.json" keyPath:nil statusCodes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(200, 99)]];
     
+    RKResponseDescriptor *responseDescriptorSearch = [RKResponseDescriptor responseDescriptorWithMapping:gameMapping pathPattern:@"/search.json" keyPath:nil statusCodes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(200, 99)]];
+    
     [objectManager addResponseDescriptor:responseDescriptorPlatform];
     [objectManager addResponseDescriptor:responseDescriptorGame];
     [objectManager addResponseDescriptor:responseDescriptorIndivGame];
     [objectManager addResponseDescriptor:responseDescriptorIndivPlatform];
     [objectManager addResponseDescriptor:responseDescriptorGameStashDatum];
+    [objectManager addResponseDescriptor:responseDescriptorSearch];
     
     RKObjectMapping *gameStashDatumRequestMapping = [RKObjectMapping requestMapping];
     [gameStashDatumRequestMapping addAttributeMappingsFromDictionary:@{
@@ -174,14 +168,17 @@
         UINavigationController *loginNavigationController = [[UINavigationController alloc] initWithRootViewController:loginViewController];
         
         loginViewController.title = @"Login";
+        
+        TGSearchViewController *searchViewController = [[TGSearchViewController alloc] initWithNibName:@"TGSearchViewController" bundle:nil];
 
         TGMenuViewController *menuViewController = [[TGMenuViewController alloc] initWithNibName:@"TGMenuViewController" bundle:nil];
         menuViewController.viewControllers = @[ platformsNavigationController, loginNavigationController ];
         
-        _menuContainerViewController = [[IIViewDeckController alloc] initWithCenterViewController:platformsNavigationController leftViewController:menuViewController];
+        _menuContainerViewController = [[IIViewDeckController alloc] initWithCenterViewController:platformsNavigationController leftViewController:menuViewController rightViewController:searchViewController];
         menuViewController.viewDeckController = _menuContainerViewController;
         platformViewController.viewDeckController = _menuContainerViewController;
         loginViewController.viewDeckController = _menuContainerViewController;
+        searchViewController.viewDeckController = _menuContainerViewController;
     }
     
     return _menuContainerViewController;

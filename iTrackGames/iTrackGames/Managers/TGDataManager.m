@@ -216,4 +216,24 @@
 
 }
 
+-(void) fetchSearchResultsWithSearchTerm:(NSString *)searchTerm withCompletion:(TGDataManagerCompletionBlockType)completionBlock
+{
+    RKObjectManager *objectManager = [RKObjectManager sharedManager];
+    
+    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+    [parameters setObject:searchTerm forKey:@"search_term"];
+    
+    [objectManager getObjectsAtPath:@"/search.json" parameters:parameters success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+        
+        NSArray *games = [mappingResult array];
+        
+        if (completionBlock)
+            completionBlock(games, nil);
+        
+    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+        if (completionBlock)
+            completionBlock(nil, error);
+    }];
+}
+
 @end

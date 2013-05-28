@@ -22,10 +22,14 @@
 
 - (void)updateGame:(TGGame *)game withPlayStatus:(BOOL)status rating:(NSInteger)rating
 {
-    game.gameStashDatum.hasPlayed = [NSNumber numberWithBool:status];
-    game.gameStashDatum.rating = [NSNumber numberWithInt:rating + 1];
-#warning Maybe there is a better way to do this?
-    game.gameStashDatum.game = game;
+    if (!game.gameStashDatum)
+        game.gameStashDatum = [[TGGameStashDatum alloc] init];
+    
+    TGGameStashDatum *gameStashDatum = game.gameStashDatum;
+    
+    gameStashDatum.hasPlayed = [NSNumber numberWithBool:status];
+    gameStashDatum.rating = [NSNumber numberWithInt:rating + 1];
+    gameStashDatum.game = game;
     
     [self.dataManager postGameStashDatum:game.gameStashDatum withCompletion:^(id data, NSError *error) {
         if (!error)

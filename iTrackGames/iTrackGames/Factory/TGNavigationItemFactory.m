@@ -53,6 +53,9 @@
         
             [viewController.navigationItem setLeftBarButtonItem:menuBarButtonItem];
         }
+        
+        UIBarButtonItem *searchBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:viewController action:@selector(searchTapped)];
+        [viewController.navigationItem setRightBarButtonItem:searchBarButtonItem];
     }
 }
 

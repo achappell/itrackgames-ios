@@ -63,12 +63,12 @@
 
 -(void)menuTapped
 {
-    [self.viewDeckController openLeftViewAnimated:YES];
+    [self.viewDeckController toggleLeftViewAnimated:YES];
 }
 
 -(void)searchTapped
 {
-    [self.viewDeckController openRightViewAnimated:YES];
+    [self.viewDeckController toggleRightViewAnimated:YES];
 }
 
 @end

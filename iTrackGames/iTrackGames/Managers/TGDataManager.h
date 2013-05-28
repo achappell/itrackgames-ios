@@ -21,5 +21,6 @@ typedef void(^TGDataManagerCompletionBlockType)(id data, NSError *error);
 - (void)fetchPlatformData: (NSNumber *)platformId withCompletion: (TGDataManagerCompletionBlockType) completionBlock;
 - (void)postGameStashDatum:(TGGameStashDatum *)gameStashDatum withCompletion:(TGDataManagerCompletionBlockType)completionBlock;
 - (void)validateToken: (NSString *)token withCompletion:(TGDataManagerCompletionBlockType)completionBlock;
+-(void) fetchSearchResultsWithSearchTerm:(NSString *)searchTerm withCompletion:(TGDataManagerCompletionBlockType)completionBlock;
 
 @end
