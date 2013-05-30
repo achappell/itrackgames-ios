@@ -36,6 +36,7 @@
 		C88FB8FB1754261F00B5B4AD /* TGSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C88FB8F91754261F00B5B4AD /* TGSearchViewController.m */; };
 		C88FB8FC1754261F00B5B4AD /* TGSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C88FB8FA1754261F00B5B4AD /* TGSearchViewController.xib */; };
 		C88FB8FF1754271200B5B4AD /* TGSearchDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = C88FB8FE1754271200B5B4AD /* TGSearchDataSource.m */; };
+		C88FB90B1757D1B300B5B4AD /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C88FB90A1757D1B300B5B4AD /* Crashlytics.framework */; };
 		C89150A9170E04A700F2B080 /* GradientBG1_Ret.png in Resources */ = {isa = PBXBuildFile; fileRef = C89150A8170E04A700F2B080 /* GradientBG1_Ret.png */; };
 		C89150AB170E055400F2B080 /* GradientBG1_Ret@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C89150AA170E055400F2B080 /* GradientBG1_Ret@2x.png */; };
 		C89229FF16DD485A003B6A3C /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C89229FE16DD485A003B6A3C /* libz.dylib */; };
@@ -138,6 +139,7 @@
 		C88FB8FA1754261F00B5B4AD /* TGSearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TGSearchViewController.xib; sourceTree = "<group>"; };
 		C88FB8FD1754271200B5B4AD /* TGSearchDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGSearchDataSource.h; sourceTree = "<group>"; };
 		C88FB8FE1754271200B5B4AD /* TGSearchDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGSearchDataSource.m; sourceTree = "<group>"; };
+		C88FB90A1757D1B300B5B4AD /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		C89150A8170E04A700F2B080 /* GradientBG1_Ret.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GradientBG1_Ret.png; sourceTree = "<group>"; };
 		C89150AA170E055400F2B080 /* GradientBG1_Ret@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "GradientBG1_Ret@2x.png"; sourceTree = "<group>"; };
 		C89229FE16DD485A003B6A3C /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -208,6 +210,7 @@
 				E0DAA60C16D180420066C7D2 /* Foundation.framework in Frameworks */,
 				E0DAA60E16D180420066C7D2 /* CoreGraphics.framework in Frameworks */,
 				FDE645C1148E4FF38E62E963 /* libPods.a in Frameworks */,
+				C88FB90B1757D1B300B5B4AD /* Crashlytics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,6 +449,7 @@
 		E0DAA60816D180420066C7D2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C88FB90A1757D1B300B5B4AD /* Crashlytics.framework */,
 				1CD1E6671724874600F9F893 /* QuartzCore.framework */,
 				E0D97F0016FD27CF008ABE8A /* MobileCoreServices.framework */,
 				E0D97EFE16FD27B4008ABE8A /* SystemConfiguration.framework */,
@@ -525,6 +529,7 @@
 				E0DAA60416D180420066C7D2 /* Resources */,
 				A5D829948E794351B2013124 /* Copy Pods Resources */,
 				E02A80141736F61300C45A0B /* ShellScript */,
+				C88FB9091757D19700B5B4AD /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -636,6 +641,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+		C88FB9091757D19700B5B4AD /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Crashlytics.framework/run 50b0f9977ba1eaf060cb5a1c57e5e932defa1b77";
 		};
 		E02A80141736F61300C45A0B /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -813,6 +831,10 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iTrackGames/iTrackGames-Prefix.pch";
 				INFOPLIST_FILE = "iTrackGames/iTrackGames-Info.plist";
@@ -831,6 +853,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iTrackGames/iTrackGames-Prefix.pch";
 				INFOPLIST_FILE = "iTrackGames/iTrackGames-Info.plist";

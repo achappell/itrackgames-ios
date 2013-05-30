@@ -20,6 +20,7 @@
 #import <Facebook-iOS-SDK/FacebookSDK/Facebook.h>
 #import "TGUserManager.h"
 #import "TGSearchViewController.h"
+#import <Crashlytics/Crashlytics.h>
 
 @interface TGAppDelegate()
 
@@ -43,6 +44,7 @@
     [self.window makeKeyAndVisible];
     
     [[CBIntrospect sharedIntrospector] start];
+    [Crashlytics startWithAPIKey:@"50b0f9977ba1eaf060cb5a1c57e5e932defa1b77"];
 
     //authenticate token stored in NSUserDefaults, if fails authentication show loginViewController
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
