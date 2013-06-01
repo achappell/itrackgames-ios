@@ -57,6 +57,10 @@
 		E046FE8C17027FB8001636EB /* checkbox.png in Resources */ = {isa = PBXBuildFile; fileRef = E046FE8A17027FB8001636EB /* checkbox.png */; };
 		E046FE8F170295B2001636EB /* TGGameStashDatum.m in Sources */ = {isa = PBXBuildFile; fileRef = E046FE8E170295B2001636EB /* TGGameStashDatum.m */; };
 		E046FE9317031406001636EB /* TGGameStashDatumTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E046FE9217031406001636EB /* TGGameStashDatumTests.m */; };
+		E06589BD175A74510073E3DF /* feed_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E06589B9175A74510073E3DF /* feed_icon.png */; };
+		E06589BE175A74510073E3DF /* friends_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E06589BA175A74510073E3DF /* friends_icon.png */; };
+		E06589BF175A74510073E3DF /* games_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E06589BB175A74510073E3DF /* games_icon.png */; };
+		E06589C0175A74510073E3DF /* platform_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E06589BC175A74510073E3DF /* platform_icon.png */; };
 		E0D97EFF16FD27B4008ABE8A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0D97EFE16FD27B4008ABE8A /* SystemConfiguration.framework */; };
 		E0D97F0116FD27CF008ABE8A /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0D97F0016FD27CF008ABE8A /* MobileCoreServices.framework */; };
 		E0DA2C8217371AA6001953C0 /* TGRatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = E0DA2C8117371AA6001953C0 /* TGRatingView.m */; };
@@ -168,6 +172,10 @@
 		E046FE8E170295B2001636EB /* TGGameStashDatum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGGameStashDatum.m; sourceTree = "<group>"; };
 		E046FE9117031406001636EB /* TGGameStashDatumTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGGameStashDatumTests.h; sourceTree = "<group>"; };
 		E046FE9217031406001636EB /* TGGameStashDatumTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGGameStashDatumTests.m; sourceTree = "<group>"; };
+		E06589B9175A74510073E3DF /* feed_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = feed_icon.png; sourceTree = "<group>"; };
+		E06589BA175A74510073E3DF /* friends_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = friends_icon.png; sourceTree = "<group>"; };
+		E06589BB175A74510073E3DF /* games_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = games_icon.png; sourceTree = "<group>"; };
+		E06589BC175A74510073E3DF /* platform_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = platform_icon.png; sourceTree = "<group>"; };
 		E0D97EFD16FD1EEF008ABE8A /* TGConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGConstants.h; sourceTree = "<group>"; };
 		E0D97EFE16FD27B4008ABE8A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		E0D97F0016FD27CF008ABE8A /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
@@ -397,6 +405,10 @@
 		E046FE8717027F95001636EB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E06589B9175A74510073E3DF /* feed_icon.png */,
+				E06589BA175A74510073E3DF /* friends_icon.png */,
+				E06589BB175A74510073E3DF /* games_icon.png */,
+				E06589BC175A74510073E3DF /* platform_icon.png */,
 				1C3AF83E17541817001B3BE0 /* fb-login-button.png */,
 				E0DA2C83173723AE001953C0 /* star.gif */,
 				E003D97A1724B54E00844C57 /* MainBackground2.png */,
@@ -614,6 +626,10 @@
 				E0DA2C84173723AE001953C0 /* star.gif in Resources */,
 				C88FB8FC1754261F00B5B4AD /* TGSearchViewController.xib in Resources */,
 				1C3AF83F17541817001B3BE0 /* fb-login-button.png in Resources */,
+				E06589BD175A74510073E3DF /* feed_icon.png in Resources */,
+				E06589BE175A74510073E3DF /* friends_icon.png in Resources */,
+				E06589BF175A74510073E3DF /* games_icon.png in Resources */,
+				E06589C0175A74510073E3DF /* platform_icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

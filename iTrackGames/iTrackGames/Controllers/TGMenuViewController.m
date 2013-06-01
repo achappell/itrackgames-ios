@@ -55,6 +55,7 @@
     
     cell.textLabel.text = viewController.title;
     [cell.textLabel setTextColor:[UIColor whiteColor]];
+    [cell.imageView setImage:viewController.tabBarItem.image];
     
     return cell;
 }
