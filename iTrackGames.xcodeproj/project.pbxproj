@@ -52,6 +52,14 @@
 		E02A801F1736F7DD00C45A0B /* TGGamesDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = E02A80191736F7DD00C45A0B /* TGGamesDataSource.m */; };
 		E02A80201736F7DD00C45A0B /* TGPlatformDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = E02A801B1736F7DD00C45A0B /* TGPlatformDataSource.m */; };
 		E02A80211736F7DD00C45A0B /* TGPlatformsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = E02A801D1736F7DD00C45A0B /* TGPlatformsDataSource.m */; };
+		E04470DB1763CCC000684C12 /* check.png in Resources */ = {isa = PBXBuildFile; fileRef = E04470D31763CCC000684C12 /* check.png */; };
+		E04470DC1763CCC000684C12 /* check@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E04470D41763CCC000684C12 /* check@2x.png */; };
+		E04470DD1763CCC000684C12 /* clock.png in Resources */ = {isa = PBXBuildFile; fileRef = E04470D51763CCC000684C12 /* clock.png */; };
+		E04470DE1763CCC000684C12 /* clock@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E04470D61763CCC000684C12 /* clock@2x.png */; };
+		E04470DF1763CCC000684C12 /* cross.png in Resources */ = {isa = PBXBuildFile; fileRef = E04470D71763CCC000684C12 /* cross.png */; };
+		E04470E01763CCC000684C12 /* cross@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E04470D81763CCC000684C12 /* cross@2x.png */; };
+		E04470E11763CCC000684C12 /* list.png in Resources */ = {isa = PBXBuildFile; fileRef = E04470D91763CCC000684C12 /* list.png */; };
+		E04470E21763CCC000684C12 /* list@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E04470DA1763CCC000684C12 /* list@2x.png */; };
 		E046FE8417027B12001636EB /* TGGameTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E046FE8317027B12001636EB /* TGGameTableViewCell.m */; };
 		E046FE8617027BE2001636EB /* TGGameTableViewCell~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = E046FE8517027BE2001636EB /* TGGameTableViewCell~iphone.xib */; };
 		E046FE8B17027FB8001636EB /* checkbox-checked.png in Resources */ = {isa = PBXBuildFile; fileRef = E046FE8917027FB8001636EB /* checkbox-checked.png */; };
@@ -166,6 +174,14 @@
 		E02A801B1736F7DD00C45A0B /* TGPlatformDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGPlatformDataSource.m; sourceTree = "<group>"; };
 		E02A801C1736F7DD00C45A0B /* TGPlatformsDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGPlatformsDataSource.h; sourceTree = "<group>"; };
 		E02A801D1736F7DD00C45A0B /* TGPlatformsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGPlatformsDataSource.m; sourceTree = "<group>"; };
+		E04470D31763CCC000684C12 /* check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check.png; sourceTree = "<group>"; };
+		E04470D41763CCC000684C12 /* check@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "check@2x.png"; sourceTree = "<group>"; };
+		E04470D51763CCC000684C12 /* clock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clock.png; sourceTree = "<group>"; };
+		E04470D61763CCC000684C12 /* clock@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "clock@2x.png"; sourceTree = "<group>"; };
+		E04470D71763CCC000684C12 /* cross.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cross.png; sourceTree = "<group>"; };
+		E04470D81763CCC000684C12 /* cross@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cross@2x.png"; sourceTree = "<group>"; };
+		E04470D91763CCC000684C12 /* list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = list.png; sourceTree = "<group>"; };
+		E04470DA1763CCC000684C12 /* list@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "list@2x.png"; sourceTree = "<group>"; };
 		E046FE8217027B12001636EB /* TGGameTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGGameTableViewCell.h; sourceTree = "<group>"; };
 		E046FE8317027B12001636EB /* TGGameTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGGameTableViewCell.m; sourceTree = "<group>"; };
 		E046FE8517027BE2001636EB /* TGGameTableViewCell~iphone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "TGGameTableViewCell~iphone.xib"; sourceTree = "<group>"; };
@@ -428,6 +444,14 @@
 		E046FE8817027F9B001636EB /* Games */ = {
 			isa = PBXGroup;
 			children = (
+				E04470D31763CCC000684C12 /* check.png */,
+				E04470D41763CCC000684C12 /* check@2x.png */,
+				E04470D51763CCC000684C12 /* clock.png */,
+				E04470D61763CCC000684C12 /* clock@2x.png */,
+				E04470D71763CCC000684C12 /* cross.png */,
+				E04470D81763CCC000684C12 /* cross@2x.png */,
+				E04470D91763CCC000684C12 /* list.png */,
+				E04470DA1763CCC000684C12 /* list@2x.png */,
 				E046FE8917027FB8001636EB /* checkbox-checked.png */,
 				E046FE8A17027FB8001636EB /* checkbox.png */,
 			);
@@ -635,6 +659,14 @@
 				E06589BE175A74510073E3DF /* friends_icon.png in Resources */,
 				E06589BF175A74510073E3DF /* games_icon.png in Resources */,
 				E06589C0175A74510073E3DF /* platform_icon.png in Resources */,
+				E04470DB1763CCC000684C12 /* check.png in Resources */,
+				E04470DC1763CCC000684C12 /* check@2x.png in Resources */,
+				E04470DD1763CCC000684C12 /* clock.png in Resources */,
+				E04470DE1763CCC000684C12 /* clock@2x.png in Resources */,
+				E04470DF1763CCC000684C12 /* cross.png in Resources */,
+				E04470E01763CCC000684C12 /* cross@2x.png in Resources */,
+				E04470E11763CCC000684C12 /* list.png in Resources */,
+				E04470E21763CCC000684C12 /* list@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
