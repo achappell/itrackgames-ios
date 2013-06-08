@@ -59,6 +59,13 @@
 		E04470E01763CCC000684C12 /* cross@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E04470D81763CCC000684C12 /* cross@2x.png */; };
 		E04470E11763CCC000684C12 /* list.png in Resources */ = {isa = PBXBuildFile; fileRef = E04470D91763CCC000684C12 /* list.png */; };
 		E04470E21763CCC000684C12 /* list@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E04470DA1763CCC000684C12 /* list@2x.png */; };
+		E04470E51763DCBA00684C12 /* TGFriend.m in Sources */ = {isa = PBXBuildFile; fileRef = E04470E41763DCBA00684C12 /* TGFriend.m */; };
+		E04470E91763DECA00684C12 /* TGSocialManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E04470E81763DECA00684C12 /* TGSocialManager.m */; };
+		E04470EC1763DEE100684C12 /* TGSocialPlatform.m in Sources */ = {isa = PBXBuildFile; fileRef = E04470EB1763DEE100684C12 /* TGSocialPlatform.m */; };
+		E04470EF1763DF1500684C12 /* TGFacebookPlatform.m in Sources */ = {isa = PBXBuildFile; fileRef = E04470EE1763DF1500684C12 /* TGFacebookPlatform.m */; };
+		E04470F41763F0E600684C12 /* TGFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E04470F21763F0E600684C12 /* TGFriendsViewController.m */; };
+		E04470F51763F0E600684C12 /* TGFriendsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E04470F31763F0E600684C12 /* TGFriendsViewController.xib */; };
+		E04470F81763F39B00684C12 /* TGFriendsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = E04470F71763F39B00684C12 /* TGFriendsDataSource.m */; };
 		E046FE8417027B12001636EB /* TGGameTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E046FE8317027B12001636EB /* TGGameTableViewCell.m */; };
 		E046FE8617027BE2001636EB /* TGGameTableViewCell~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = E046FE8517027BE2001636EB /* TGGameTableViewCell~iphone.xib */; };
 		E046FE8B17027FB8001636EB /* checkbox-checked.png in Resources */ = {isa = PBXBuildFile; fileRef = E046FE8917027FB8001636EB /* checkbox-checked.png */; };
@@ -179,6 +186,19 @@
 		E04470D81763CCC000684C12 /* cross@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cross@2x.png"; sourceTree = "<group>"; };
 		E04470D91763CCC000684C12 /* list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = list.png; sourceTree = "<group>"; };
 		E04470DA1763CCC000684C12 /* list@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "list@2x.png"; sourceTree = "<group>"; };
+		E04470E31763DCBA00684C12 /* TGFriend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGFriend.h; sourceTree = "<group>"; };
+		E04470E41763DCBA00684C12 /* TGFriend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGFriend.m; sourceTree = "<group>"; };
+		E04470E71763DECA00684C12 /* TGSocialManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGSocialManager.h; sourceTree = "<group>"; };
+		E04470E81763DECA00684C12 /* TGSocialManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGSocialManager.m; sourceTree = "<group>"; };
+		E04470EA1763DEE100684C12 /* TGSocialPlatform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGSocialPlatform.h; sourceTree = "<group>"; };
+		E04470EB1763DEE100684C12 /* TGSocialPlatform.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGSocialPlatform.m; sourceTree = "<group>"; };
+		E04470ED1763DF1500684C12 /* TGFacebookPlatform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGFacebookPlatform.h; sourceTree = "<group>"; };
+		E04470EE1763DF1500684C12 /* TGFacebookPlatform.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGFacebookPlatform.m; sourceTree = "<group>"; };
+		E04470F11763F0E600684C12 /* TGFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TGFriendsViewController.h; path = Social/TGFriendsViewController.h; sourceTree = "<group>"; };
+		E04470F21763F0E600684C12 /* TGFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TGFriendsViewController.m; path = Social/TGFriendsViewController.m; sourceTree = "<group>"; };
+		E04470F31763F0E600684C12 /* TGFriendsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TGFriendsViewController.xib; path = Social/TGFriendsViewController.xib; sourceTree = "<group>"; };
+		E04470F61763F39B00684C12 /* TGFriendsDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGFriendsDataSource.h; sourceTree = "<group>"; };
+		E04470F71763F39B00684C12 /* TGFriendsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGFriendsDataSource.m; sourceTree = "<group>"; };
 		E046FE8217027B12001636EB /* TGGameTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGGameTableViewCell.h; sourceTree = "<group>"; };
 		E046FE8317027B12001636EB /* TGGameTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGGameTableViewCell.m; sourceTree = "<group>"; };
 		E046FE8517027BE2001636EB /* TGGameTableViewCell~iphone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "TGGameTableViewCell~iphone.xib"; sourceTree = "<group>"; };
@@ -266,6 +286,8 @@
 				E046FE8E170295B2001636EB /* TGGameStashDatum.m */,
 				1CD1E66917248D8500F9F893 /* TGImage.h */,
 				1CD1E66A17248D8500F9F893 /* TGImage.m */,
+				E04470E31763DCBA00684C12 /* TGFriend.h */,
+				E04470E41763DCBA00684C12 /* TGFriend.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -325,6 +347,7 @@
 		C89229F316DD467E003B6A3C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E04470F01763F0A200684C12 /* Social */,
 				C83B1C0D16FF9B910078878C /* Games */,
 				C83B1C0C16FF9B880078878C /* Platforms */,
 				1C52A1C316E40C7B0027979A /* TGLoginViewController.h */,
@@ -358,6 +381,7 @@
 		C89229F516DD4689003B6A3C /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				E04470E61763DE9800684C12 /* Social */,
 				1C52A1CC16E41AFA0027979A /* TGUserManager.h */,
 				1C52A1CD16E41AFA0027979A /* TGUserManager.m */,
 				1C52A1D216E431F30027979A /* TGDataManager.h */,
@@ -404,8 +428,33 @@
 				E02A801D1736F7DD00C45A0B /* TGPlatformsDataSource.m */,
 				C88FB8FD1754271200B5B4AD /* TGSearchDataSource.h */,
 				C88FB8FE1754271200B5B4AD /* TGSearchDataSource.m */,
+				E04470F61763F39B00684C12 /* TGFriendsDataSource.h */,
+				E04470F71763F39B00684C12 /* TGFriendsDataSource.m */,
 			);
 			path = DataSources;
+			sourceTree = "<group>";
+		};
+		E04470E61763DE9800684C12 /* Social */ = {
+			isa = PBXGroup;
+			children = (
+				E04470E71763DECA00684C12 /* TGSocialManager.h */,
+				E04470E81763DECA00684C12 /* TGSocialManager.m */,
+				E04470EA1763DEE100684C12 /* TGSocialPlatform.h */,
+				E04470EB1763DEE100684C12 /* TGSocialPlatform.m */,
+				E04470ED1763DF1500684C12 /* TGFacebookPlatform.h */,
+				E04470EE1763DF1500684C12 /* TGFacebookPlatform.m */,
+			);
+			path = Social;
+			sourceTree = "<group>";
+		};
+		E04470F01763F0A200684C12 /* Social */ = {
+			isa = PBXGroup;
+			children = (
+				E04470F11763F0E600684C12 /* TGFriendsViewController.h */,
+				E04470F21763F0E600684C12 /* TGFriendsViewController.m */,
+				E04470F31763F0E600684C12 /* TGFriendsViewController.xib */,
+			);
+			name = Social;
 			sourceTree = "<group>";
 		};
 		E046FE8117027AED001636EB /* Games */ = {
@@ -662,6 +711,7 @@
 				E04470E01763CCC000684C12 /* cross@2x.png in Resources */,
 				E04470E11763CCC000684C12 /* list.png in Resources */,
 				E04470E21763CCC000684C12 /* list@2x.png in Resources */,
+				E04470F51763F0E600684C12 /* TGFriendsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -764,6 +814,12 @@
 				E0DA2C88173725DD001953C0 /* TGGameStashDatumMediator.m in Sources */,
 				C88FB8FB1754261F00B5B4AD /* TGSearchViewController.m in Sources */,
 				C88FB8FF1754271200B5B4AD /* TGSearchDataSource.m in Sources */,
+				E04470E51763DCBA00684C12 /* TGFriend.m in Sources */,
+				E04470E91763DECA00684C12 /* TGSocialManager.m in Sources */,
+				E04470EC1763DEE100684C12 /* TGSocialPlatform.m in Sources */,
+				E04470EF1763DF1500684C12 /* TGFacebookPlatform.m in Sources */,
+				E04470F41763F0E600684C12 /* TGFriendsViewController.m in Sources */,
+				E04470F81763F39B00684C12 /* TGFriendsDataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
