@@ -9,14 +9,8 @@
 // AFNetworking
 #define COCOAPODS_POD_AVAILABLE_AFNetworking
 #define COCOAPODS_VERSION_MAJOR_AFNetworking 1
-#define COCOAPODS_VERSION_MINOR_AFNetworking 2
-#define COCOAPODS_VERSION_PATCH_AFNetworking 1
-
-// CBIntrospect
-#define COCOAPODS_POD_AVAILABLE_CBIntrospect
-#define COCOAPODS_VERSION_MAJOR_CBIntrospect 0
-#define COCOAPODS_VERSION_MINOR_CBIntrospect 4
-#define COCOAPODS_VERSION_PATCH_CBIntrospect 1
+#define COCOAPODS_VERSION_MINOR_AFNetworking 3
+#define COCOAPODS_VERSION_PATCH_AFNetworking 0
 
 // Facebook-iOS-SDK
 #define COCOAPODS_POD_AVAILABLE_Facebook_iOS_SDK
@@ -28,7 +22,7 @@
 #define COCOAPODS_POD_AVAILABLE_MACachedImageView
 #define COCOAPODS_VERSION_MAJOR_MACachedImageView 1
 #define COCOAPODS_VERSION_MINOR_MACachedImageView 1
-#define COCOAPODS_VERSION_PATCH_MACachedImageView 1
+#define COCOAPODS_VERSION_PATCH_MACachedImageView 0
 
 // MACircleProgressIndicator
 #define COCOAPODS_POD_AVAILABLE_MACircleProgressIndicator
@@ -46,37 +40,43 @@
 #define COCOAPODS_POD_AVAILABLE_RestKit
 #define COCOAPODS_VERSION_MAJOR_RestKit 0
 #define COCOAPODS_VERSION_MINOR_RestKit 20
-#define COCOAPODS_VERSION_PATCH_RestKit 1
+#define COCOAPODS_VERSION_PATCH_RestKit 2
 
 // RestKit/Core
 #define COCOAPODS_POD_AVAILABLE_RestKit_Core
 #define COCOAPODS_VERSION_MAJOR_RestKit_Core 0
 #define COCOAPODS_VERSION_MINOR_RestKit_Core 20
-#define COCOAPODS_VERSION_PATCH_RestKit_Core 1
+#define COCOAPODS_VERSION_PATCH_RestKit_Core 2
 
 // RestKit/CoreData
 #define COCOAPODS_POD_AVAILABLE_RestKit_CoreData
 #define COCOAPODS_VERSION_MAJOR_RestKit_CoreData 0
 #define COCOAPODS_VERSION_MINOR_RestKit_CoreData 20
-#define COCOAPODS_VERSION_PATCH_RestKit_CoreData 1
+#define COCOAPODS_VERSION_PATCH_RestKit_CoreData 2
 
 // RestKit/Network
 #define COCOAPODS_POD_AVAILABLE_RestKit_Network
 #define COCOAPODS_VERSION_MAJOR_RestKit_Network 0
 #define COCOAPODS_VERSION_MINOR_RestKit_Network 20
-#define COCOAPODS_VERSION_PATCH_RestKit_Network 1
+#define COCOAPODS_VERSION_PATCH_RestKit_Network 2
 
 // RestKit/ObjectMapping
 #define COCOAPODS_POD_AVAILABLE_RestKit_ObjectMapping
 #define COCOAPODS_VERSION_MAJOR_RestKit_ObjectMapping 0
 #define COCOAPODS_VERSION_MINOR_RestKit_ObjectMapping 20
-#define COCOAPODS_VERSION_PATCH_RestKit_ObjectMapping 1
+#define COCOAPODS_VERSION_PATCH_RestKit_ObjectMapping 2
 
 // RestKit/Support
 #define COCOAPODS_POD_AVAILABLE_RestKit_Support
 #define COCOAPODS_VERSION_MAJOR_RestKit_Support 0
 #define COCOAPODS_VERSION_MINOR_RestKit_Support 20
-#define COCOAPODS_VERSION_PATCH_RestKit_Support 1
+#define COCOAPODS_VERSION_PATCH_RestKit_Support 2
+
+// Reveal-iOS-SDK
+#define COCOAPODS_POD_AVAILABLE_Reveal_iOS_SDK
+#define COCOAPODS_VERSION_MAJOR_Reveal_iOS_SDK 0
+#define COCOAPODS_VERSION_MINOR_Reveal_iOS_SDK 8
+#define COCOAPODS_VERSION_PATCH_Reveal_iOS_SDK 1
 
 // SOCKit
 #define COCOAPODS_POD_AVAILABLE_SOCKit
@@ -94,11 +94,11 @@
 #define COCOAPODS_POD_AVAILABLE_TransitionKit
 #define COCOAPODS_VERSION_MAJOR_TransitionKit 1
 #define COCOAPODS_VERSION_MINOR_TransitionKit 1
-#define COCOAPODS_VERSION_PATCH_TransitionKit 0
+#define COCOAPODS_VERSION_PATCH_TransitionKit 1
 
 // ViewDeck
 #define COCOAPODS_POD_AVAILABLE_ViewDeck
 #define COCOAPODS_VERSION_MAJOR_ViewDeck 2
-#define COCOAPODS_VERSION_MINOR_ViewDeck 2
-#define COCOAPODS_VERSION_PATCH_ViewDeck 11
+#define COCOAPODS_VERSION_MINOR_ViewDeck 3
+#define COCOAPODS_VERSION_PATCH_ViewDeck 1
 

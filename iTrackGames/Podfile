@@ -4,6 +4,6 @@ pod 'RestKit', :git => 'https://github.com/RestKit/RestKit.git', :branch => 'mas
 pod 'OCMock'
 pod 'TestFlightSDK'
 pod 'ViewDeck'
-pod 'MACachedImageView'
-pod 'CBIntrospect'
+pod 'MACachedImageView', :git => 'https://github.com/achappell/MACachedImageView.git'
 pod 'Facebook-iOS-SDK'
+pod 'Reveal-iOS-SDK'
