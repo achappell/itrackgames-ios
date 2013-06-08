@@ -9,6 +9,7 @@
 #import "TGPlatformViewController.h"
 #import "TGPlatformDataSource.h"
 #import "TGImageViewController.h"
+#import <MACachedImageView/MACachedImageView.h>
 
 @interface TGPlatformViewController ()
 
