@@ -29,6 +29,8 @@
     self.dataSource.delegate = self;
     
     [self.dataSource reloadDataIfNeeded];
+    
+    self.tabBarItem.image = [UIImage imageNamed:@"platform_icon"];
 }
 
 - (NSArray *)platforms

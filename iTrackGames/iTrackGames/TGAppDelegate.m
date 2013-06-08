@@ -31,7 +31,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [TestFlight takeOff:@"53f379ff801a985db4f1ec8144086158_MTkxNzkwMjAxMy0wMi0yNiAxNDozOTo1Ny4wNzk2NzQ"];
+    [TestFlight takeOff:@"1d73c277-c17e-4d56-ac9a-44fde4a30468"];
     
     [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
     [self initializeRestKit];
@@ -46,7 +46,7 @@
 
     //authenticate token stored in NSUserDefaults, if fails authentication show loginViewController
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [[TGUserManager sharedManager] authenticateWithToken:[defaults objectForKey:@"token"] withCompletion:^(NSError *error) {
+    [[TGUserManager sharedManager] authenticateWithToken:[defaults objectForKey:@"userLoginToken"] withCompletion:^(NSError *error) {
         if (error) {
             TGLoginViewController *loginViewController = [[TGLoginViewController alloc] initWithNibName:@"TGLoginViewController" bundle:nil];
             
