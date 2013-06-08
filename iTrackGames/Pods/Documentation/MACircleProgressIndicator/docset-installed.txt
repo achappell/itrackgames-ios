@@ -1,4 +1,0 @@
-Documentation set was installed to Xcode!
-
-Path: /Users/amanda.chappell/Library/Developer/Shared/Documentation/DocSets/org.cocoapods.MACircleProgressIndicator-1.0.0.docset
-Time: 2013-03-30 23:09:49 +0000

@@ -1,4 +1,0 @@
-Documentation set was installed to Xcode!
-
-Path: /Users/amanda.chappell/Library/Developer/Shared/Documentation/DocSets/org.cocoapods.transitionkit.TransitionKit-1.1.0.docset
-Time: 2013-05-20 22:45:01 +0000

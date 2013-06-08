@@ -1,4 +1,0 @@
-Documentation set was installed to Xcode!
-
-Path: /Users/amanda.chappell/Library/Developer/Shared/Documentation/DocSets/org.cocoapods.ViewDeck-2.2.7.docset
-Time: 2013-03-30 21:05:19 +0000
