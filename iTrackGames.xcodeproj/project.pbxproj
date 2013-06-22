@@ -44,7 +44,6 @@
 		C8AD3A4216FBBD5C00A8CD79 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C89229FE16DD485A003B6A3C /* libz.dylib */; };
 		C8AD3A4616FC9E6000A8CD79 /* TGGameTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C8AD3A4516FC9E6000A8CD79 /* TGGameTests.m */; };
 		E002A42217760473008BC8E4 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E002A42117760473008BC8E4 /* Media.xcassets */; };
-		E002A424177609F1008BC8E4 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E002A423177609F1008BC8E4 /* XCTest.framework */; };
 		E02A801E1736F7DD00C45A0B /* TGGameDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = E02A80171736F7DD00C45A0B /* TGGameDataSource.m */; };
 		E02A801F1736F7DD00C45A0B /* TGGamesDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = E02A80191736F7DD00C45A0B /* TGGamesDataSource.m */; };
 		E02A80201736F7DD00C45A0B /* TGPlatformDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = E02A801B1736F7DD00C45A0B /* TGPlatformDataSource.m */; };
@@ -207,7 +206,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E002A424177609F1008BC8E4 /* XCTest.framework in Frameworks */,
 				1CD1E6681724874600F9F893 /* QuartzCore.framework in Frameworks */,
 				E0D97F0116FD27CF008ABE8A /* MobileCoreServices.framework in Frameworks */,
 				E0D97EFF16FD27B4008ABE8A /* SystemConfiguration.framework in Frameworks */,
