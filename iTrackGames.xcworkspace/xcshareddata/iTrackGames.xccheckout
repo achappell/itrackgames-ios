@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>A4B42FAA-0941-4092-8AC8-AB538C80BD6B</string>
+	<key>IDESourceControlProjectName</key>
+	<string>iTrackGames</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>80FD1D2F-D196-4FC6-9A5B-A0DE66096D0C</key>
+		<string>https://github.com/achappell/itrackgames-ios.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>iTrackGames.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>80FD1D2F-D196-4FC6-9A5B-A0DE66096D0C</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/achappell/itrackgames-ios.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>80FD1D2F-D196-4FC6-9A5B-A0DE66096D0C</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>80FD1D2F-D196-4FC6-9A5B-A0DE66096D0C</string>
+			<key>IDESourceControlWCCName</key>
+			<string>itrackgames-ios</string>
+		</dict>
+	</array>
+</dict>
+</plist>
