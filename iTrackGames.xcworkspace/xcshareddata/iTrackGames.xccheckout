@@ -3,36 +3,48 @@
 <plist version="1.0">
 <dict>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>A4B42FAA-0941-4092-8AC8-AB538C80BD6B</string>
+	<string>1389FCF1-AAA4-4844-86D9-02455FA472EE</string>
 	<key>IDESourceControlProjectName</key>
 	<string>iTrackGames</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>80FD1D2F-D196-4FC6-9A5B-A0DE66096D0C</key>
+		<key>D2BF5CD0-EC90-46F7-91A9-45F6A32DE702</key>
 		<string>https://github.com/achappell/itrackgames-ios.git</string>
+		<key>F8DE02DE-1436-45EC-AA4A-A2F8EFC06F6E</key>
+		<string>https://github.com/achappell/MCSwipeTableViewCell.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>iTrackGames.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>80FD1D2F-D196-4FC6-9A5B-A0DE66096D0C</key>
+		<key>D2BF5CD0-EC90-46F7-91A9-45F6A32DE702</key>
 		<string>..</string>
+		<key>F8DE02DE-1436-45EC-AA4A-A2F8EFC06F6E</key>
+		<string>../../ThirdParty/MCSwipeTableViewCell</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/achappell/itrackgames-ios.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>80FD1D2F-D196-4FC6-9A5B-A0DE66096D0C</string>
+	<string>D2BF5CD0-EC90-46F7-91A9-45F6A32DE702</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>80FD1D2F-D196-4FC6-9A5B-A0DE66096D0C</string>
+			<string>D2BF5CD0-EC90-46F7-91A9-45F6A32DE702</string>
 			<key>IDESourceControlWCCName</key>
 			<string>itrackgames-ios</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F8DE02DE-1436-45EC-AA4A-A2F8EFC06F6E</string>
+			<key>IDESourceControlWCCName</key>
+			<string>MCSwipeTableViewCell</string>
 		</dict>
 	</array>
 </dict>

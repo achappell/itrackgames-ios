@@ -7,17 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "TGSocialPlatform.h"
 
-@class TGSocialPlatform;
-
-typedef void(^TGSocialPlatformFriendsCompletionBlockType)(NSArray *friends, NSError *error);
+typedef void(^TGSocialManagerFriendsCompletionBlockType)(NSArray *friends, NSError *error);
 
 @interface TGSocialManager : NSObject
 
 @property (nonatomic, strong, readonly) NSArray *socialPlatforms;
 
 +(TGSocialManager *) sharedManager;
-- (void)addSocialPlatform:(TGSocialPlatform *)platform;
-- (void)fetchFriendsWithCompletion:(TGSocialPlatformFriendsCompletionBlockType)completionBlock;;
+- (void)addSocialPlatform:(id<TGSocialPlatform>)platform;
+- (void)fetchFriendsWithCompletion:(TGSocialManagerFriendsCompletionBlockType)completionBlock;;
 
 @end
