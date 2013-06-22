@@ -41,7 +41,7 @@ static TGSocialManager *_sharedManager;
     _sharedManager = sharedManager;
 }
 
-- (void)addSocialPlatform:(TGSocialPlatform *)platform
+- (void)addSocialPlatform:(id<TGSocialPlatform>)platform
 {
     if (!_socialPlatforms)
         _socialPlatforms = [[NSMutableArray alloc] init];
@@ -54,7 +54,7 @@ static TGSocialManager *_sharedManager;
     return [_socialPlatforms copy];
 }
 
-- (void)fetchFriendsWithCompletion:(TGSocialPlatformFriendsCompletionBlockType)completionBlock
+- (void)fetchFriendsWithCompletion:(TGSocialManagerFriendsCompletionBlockType)completionBlock
 {
     __block NSMutableArray *combinedFriends = [NSMutableArray array];
     

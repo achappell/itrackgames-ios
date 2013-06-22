@@ -22,6 +22,7 @@
 #import <Crashlytics/Crashlytics.h>
 #import "TGFacebookPlatform.h"
 #import "TGFriendsViewController.h"
+#import "TGSocialManager.h"
 
 @interface TGAppDelegate()
 

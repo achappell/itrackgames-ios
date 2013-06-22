@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "TGSocialManager.h"
+
+typedef void(^TGSocialPlatformFriendsCompletionBlockType)(NSArray *friends, NSError *error);
 
 @protocol TGSocialPlatform <NSObject>
 
