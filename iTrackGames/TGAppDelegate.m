@@ -20,6 +20,9 @@
 #import "TGUserManager.h"
 #import "TGSearchViewController.h"
 #import <Crashlytics/Crashlytics.h>
+#import "TGFacebookPlatform.h"
+#import "TGFriendsViewController.h"
+#import "TGSocialManager.h"
 
 @interface TGAppDelegate()
 
@@ -56,6 +59,8 @@
             [self.window.rootViewController presentViewController:loginViewController animated:NO completion:nil];
         }
     }];
+    
+    [[TGSocialManager sharedManager] addSocialPlatform:[[TGFacebookPlatform alloc] init]];
     
     return YES;
 }
@@ -173,15 +178,20 @@
         platformViewController.title = @"Platforms";
         UINavigationController *platformsNavigationController = [[UINavigationController alloc] initWithRootViewController:platformViewController];
         
+        TGFriendsViewController *friendsViewController = [[TGFriendsViewController alloc] initWithNibName:@"TGFriendsViewController" bundle:nil];
+        friendsViewController.title = @"Friends";
+        UINavigationController *friendsNavigationController = [[UINavigationController alloc] initWithRootViewController:friendsViewController];
+        
         TGSearchViewController *searchViewController = [[TGSearchViewController alloc] initWithNibName:@"TGSearchViewController" bundle:nil];
 
         TGMenuViewController *menuViewController = [[TGMenuViewController alloc] initWithNibName:@"TGMenuViewController" bundle:nil];
-        menuViewController.viewControllers = @[ platformsNavigationController ]; //platformsNavigationController, loginNavigationController 
+        menuViewController.viewControllers = @[ platformsNavigationController, friendsNavigationController ]; //platformsNavigationController, loginNavigationController
         
         _menuContainerViewController = [[IIViewDeckController alloc] initWithCenterViewController:platformsNavigationController leftViewController:menuViewController rightViewController:searchViewController];
         menuViewController.viewDeckController = _menuContainerViewController;
         platformViewController.viewDeckController = _menuContainerViewController;
         searchViewController.viewDeckController = _menuContainerViewController;
+        friendsViewController.viewDeckController = _menuContainerViewController;
 
     }
     

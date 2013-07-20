@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "TGViewController.h"
 #import "TGViewDataSource.h"
-#import <MACachedImageView/MACachedImageView.h>
 
 @interface TGPlatformViewController : TGViewController <TGViewDataSourceDelegate,UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
     @property (nonatomic, strong) TGPlatform *platform;

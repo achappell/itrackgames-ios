@@ -2,7 +2,7 @@
 //  TGPlatformDataSourceTests.h
 //  iTrackGames
 //
-//  Created by Amanda Chappell on 3/24/13.
+//  Created by Toni White on 6/8/13.
 //  Copyright (c) 2013 Amanda Chappell. All rights reserved.
 //
 

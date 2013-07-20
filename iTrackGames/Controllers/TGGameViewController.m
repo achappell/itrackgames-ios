@@ -94,7 +94,7 @@ static UIActivityIndicatorView *spinner;
     
     MACachedImageView *imageView = [[MACachedImageView alloc] initWithFrame:cell.contentView.bounds];
     imageView.clipsToBounds = YES;
-    NSURL *imageURL = [NSURL URLWithString: [[self.game.images objectAtIndex:indexPath.row] location]];
+    NSURL *imageURL = [NSURL URLWithString: [(TGImage *)[self.game.images objectAtIndex:indexPath.row] location]];
     [imageView displayImageFromURL:imageURL];
     [imageView setImageContentMode:UIViewContentModeScaleAspectFit];
     
@@ -110,7 +110,7 @@ static UIActivityIndicatorView *spinner;
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSURL *imageURL = [NSURL URLWithString: [[self.game.images objectAtIndex:indexPath.row] location]];
+    NSURL *imageURL = [NSURL URLWithString: [(TGImage *)[self.game.images objectAtIndex:indexPath.row] location]];
     
     TGImageViewController *viewController = [[TGImageViewController alloc] initWithNibName:@"TGImageViewController" bundle:nil];
     

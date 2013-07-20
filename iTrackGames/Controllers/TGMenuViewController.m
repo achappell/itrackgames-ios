@@ -28,9 +28,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-    
-   // [self setBackgroundImage:[UIImage imageNamed:@"GradientBG1_Ret"]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -54,7 +51,6 @@
     UIViewController *viewController = [self.viewControllers objectAtIndex:indexPath.row];
     
     cell.textLabel.text = viewController.title;
-    [cell.textLabel setTextColor:[UIColor colorWithRed:66/255.0f green:80/255.0f blue:144/255.0f alpha:1.0f]];
     [cell.imageView setImage:viewController.tabBarItem.image];
     
     return cell;

@@ -9,6 +9,7 @@
 #import "TGPlatformViewController.h"
 #import "TGPlatformDataSource.h"
 #import "TGImageViewController.h"
+#import <MACachedImageView/MACachedImageView.h>
 
 @interface TGPlatformViewController ()
 
@@ -93,7 +94,7 @@ static UIActivityIndicatorView *spinner;
     
     MACachedImageView *imageView = [[MACachedImageView alloc] initWithFrame:cell.contentView.bounds];
     imageView.clipsToBounds = YES;
-    NSURL *imageURL = [NSURL URLWithString: [[self.platform.images objectAtIndex:indexPath.row] location]];
+    NSURL *imageURL = [NSURL URLWithString: [(TGImage *)[self.platform.images objectAtIndex:indexPath.row] location]];
     [imageView displayImageFromURL:imageURL]; // testImageURLs
     imageView.contentMode = UIViewContentModeScaleAspectFit;
     
@@ -109,7 +110,7 @@ static UIActivityIndicatorView *spinner;
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSURL *imageURL = [NSURL URLWithString: [[self.platform.images objectAtIndex:indexPath.row] location]];
+    NSURL *imageURL = [NSURL URLWithString: [(TGImage *)[self.platform.images objectAtIndex:indexPath.row] location]];
     
     TGImageViewController *viewController = [[TGImageViewController alloc] initWithNibName:@"TGImageViewController" bundle:nil];
     

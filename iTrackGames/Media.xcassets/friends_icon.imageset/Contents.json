@@ -1,24 +1,9 @@
 {
   "images" : [
     {
-      "resizing" : {
-        "mode" : "3-part-vertical",
-        "center" : {
-          "mode" : "fill",
-          "height" : 1
-        },
-        "capInsets" : {
-          "top" : 17,
-          "bottom" : 18
-        }
-      },
       "idiom" : "universal",
-      "filename" : "friends_icon.png",
-      "scale" : "1x"
-    },
-    {
-      "idiom" : "universal",
-      "scale" : "2x"
+      "scale" : "1x",
+      "filename" : "friends_icon.png"
     }
   ],
   "info" : {

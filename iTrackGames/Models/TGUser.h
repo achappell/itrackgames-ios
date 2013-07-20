@@ -11,5 +11,7 @@
 @interface TGUser : NSObject
 
 @property (nonatomic, strong) NSString *token;
+@property (nonatomic, strong) NSString *firstName;
+@property (nonatomic, strong) NSString *lastName;
 
 @end

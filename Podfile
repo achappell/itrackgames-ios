@@ -4,6 +4,7 @@ pod 'RestKit', :git => 'https://github.com/RestKit/RestKit.git', :branch => 'mas
 pod 'OCMock'
 pod 'TestFlightSDK'
 pod 'ViewDeck'
-pod 'MACachedImageView', :git => 'https://github.com/achappell/MACachedImageView.git'
+pod 'MACachedImageView'
 pod 'Facebook-iOS-SDK'
 pod 'Reveal-iOS-SDK'
+pod 'MCSwipeTableViewCell', :git => 'https://github.com/achappell/MCSwipeTableViewCell.git' #:path => '/Users/achappell/Documents/Development/ThirdParty/MCSwipeTableViewCell/MCSwipeTableViewCell.podspec'

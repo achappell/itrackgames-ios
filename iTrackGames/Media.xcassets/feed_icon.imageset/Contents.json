@@ -1,27 +1,9 @@
 {
   "images" : [
     {
-      "resizing" : {
-        "mode" : "9-part",
-        "center" : {
-          "mode" : "fill",
-          "width" : 1,
-          "height" : 1
-        },
-        "capInsets" : {
-          "bottom" : 17,
-          "top" : 18,
-          "right" : 18,
-          "left" : 17
-        }
-      },
       "idiom" : "universal",
-      "filename" : "feed_icon.png",
-      "scale" : "1x"
-    },
-    {
-      "idiom" : "universal",
-      "scale" : "2x"
+      "scale" : "1x",
+      "filename" : "feed_icon.png"
     }
   ],
   "info" : {
