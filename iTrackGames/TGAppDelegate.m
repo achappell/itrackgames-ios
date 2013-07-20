@@ -138,17 +138,17 @@
     [gameMapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"images" toKeyPath:@"images" withMapping:imageMapping]];
     [platformMapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"images" toKeyPath:@"images" withMapping:imageMapping]];
     
-    RKResponseDescriptor *responseDescriptorPlatform = [RKResponseDescriptor responseDescriptorWithMapping:platformMapping pathPattern:@"/platforms.json" keyPath:nil statusCodes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(200, 99)]];
+    RKResponseDescriptor *responseDescriptorPlatform = [RKResponseDescriptor responseDescriptorWithMapping:platformMapping method:RKRequestMethodAny pathPattern:@"/platforms.json" keyPath:nil statusCodes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(200, 99)]];
     
-    RKResponseDescriptor *responseDescriptorGame = [RKResponseDescriptor responseDescriptorWithMapping:gameMapping pathPattern:@"/games.json" keyPath:nil statusCodes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(200, 99)]];
+    RKResponseDescriptor *responseDescriptorGame = [RKResponseDescriptor responseDescriptorWithMapping:gameMapping method:RKRequestMethodAny pathPattern:@"/games.json" keyPath:nil statusCodes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(200, 99)]];
     
-    RKResponseDescriptor *responseDescriptorIndivGame = [RKResponseDescriptor responseDescriptorWithMapping:gameMapping pathPattern:@"/games/:game_id.json" keyPath:nil statusCodes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(200, 99)]];
+    RKResponseDescriptor *responseDescriptorIndivGame = [RKResponseDescriptor responseDescriptorWithMapping:gameMapping method:RKRequestMethodAny pathPattern:@"/games/:game_id.json" keyPath:nil statusCodes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(200, 99)]];
     
-    RKResponseDescriptor *responseDescriptorIndivPlatform = [RKResponseDescriptor responseDescriptorWithMapping:platformMapping pathPattern:@"/platforms/:platform_id.json" keyPath:nil statusCodes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(200, 99)]];
+    RKResponseDescriptor *responseDescriptorIndivPlatform = [RKResponseDescriptor responseDescriptorWithMapping:platformMapping method:RKRequestMethodAny pathPattern:@"/platforms/:platform_id.json" keyPath:nil statusCodes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(200, 99)]];
     
-    RKResponseDescriptor *responseDescriptorGameStashDatum = [RKResponseDescriptor responseDescriptorWithMapping:gameStashDatumMapping pathPattern:@"/game_stash_data.json" keyPath:nil statusCodes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(200, 99)]];
+    RKResponseDescriptor *responseDescriptorGameStashDatum = [RKResponseDescriptor responseDescriptorWithMapping:gameStashDatumMapping method:RKRequestMethodAny pathPattern:@"/game_stash_data.json" keyPath:nil statusCodes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(200, 99)]];
     
-    RKResponseDescriptor *responseDescriptorSearch = [RKResponseDescriptor responseDescriptorWithMapping:gameMapping pathPattern:@"/search.json" keyPath:nil statusCodes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(200, 99)]];
+    RKResponseDescriptor *responseDescriptorSearch = [RKResponseDescriptor responseDescriptorWithMapping:gameMapping method:RKRequestMethodAny pathPattern:@"/search.json" keyPath:nil statusCodes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(200, 99)]];
     
     [objectManager addResponseDescriptor:responseDescriptorPlatform];
     [objectManager addResponseDescriptor:responseDescriptorGame];
@@ -163,7 +163,7 @@
      @"rating": @"rating"
      }];
     
-    RKRequestDescriptor *requestDescriptorGameStashDatum = [RKRequestDescriptor requestDescriptorWithMapping:gameStashDatumRequestMapping objectClass:[TGGameStashDatum class] rootKeyPath:@"game_stash_datum"];
+    RKRequestDescriptor *requestDescriptorGameStashDatum = [RKRequestDescriptor requestDescriptorWithMapping:gameStashDatumRequestMapping objectClass:[TGGameStashDatum class] rootKeyPath:@"game_stash_datum" method:RKRequestMethodAny];
     
     [objectManager addRequestDescriptor:requestDescriptorGameStashDatum];
 }
@@ -185,7 +185,7 @@
         TGSearchViewController *searchViewController = [[TGSearchViewController alloc] initWithNibName:@"TGSearchViewController" bundle:nil];
 
         TGMenuViewController *menuViewController = [[TGMenuViewController alloc] initWithNibName:@"TGMenuViewController" bundle:nil];
-        menuViewController.viewControllers = @[ platformsNavigationController, friendsNavigationController ]; //platformsNavigationController, loginNavigationController
+        menuViewController.viewControllers = @[ platformsNavigationController, friendsNavigationController ];
         
         _menuContainerViewController = [[IIViewDeckController alloc] initWithCenterViewController:platformsNavigationController leftViewController:menuViewController rightViewController:searchViewController];
         menuViewController.viewDeckController = _menuContainerViewController;

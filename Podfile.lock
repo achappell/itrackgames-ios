@@ -1,37 +1,37 @@
 PODS:
   - AFNetworking (1.3.1)
-  - Facebook-iOS-SDK (3.5.2)
+  - Facebook-iOS-SDK (3.5.3)
   - MACachedImageView (1.1.1):
     - AFNetworking (~> 1.3.0)
     - MACircleProgressIndicator (~> 1.0.0)
   - MACircleProgressIndicator (1.0.0)
-  - MCSwipeTableViewCell (1.0.0)
-  - OCMock (2.1.1)
-  - RestKit (0.20.2):
+  - MCSwipeTableViewCell (1.0.1)
+  - OCMock (2.2)
+  - RestKit (0.20.3):
     - RestKit/Core
-  - RestKit/Core (0.20.2):
+  - RestKit/Core (0.20.3):
     - RestKit/CoreData
     - RestKit/Network
     - RestKit/ObjectMapping
-  - RestKit/CoreData (0.20.2)
-  - RestKit/Network (0.20.2):
+  - RestKit/CoreData (0.20.3)
+  - RestKit/Network (0.20.3):
     - AFNetworking (~> 1.3.0)
     - RestKit/ObjectMapping
     - RestKit/Support
     - SOCKit
-  - RestKit/ObjectMapping (0.20.2)
-  - RestKit/Support (0.20.2):
+  - RestKit/ObjectMapping (0.20.3)
+  - RestKit/Support (0.20.3):
     - TransitionKit (= 1.1.1)
-  - Reveal-iOS-SDK (0.8.1)
+  - Reveal-iOS-SDK (0.8.3)
   - SOCKit (1.1)
-  - TestFlightSDK (1.3.0-beta.6)
+  - TestFlightSDK (1.3.0-beta.7)
   - TransitionKit (1.1.1)
   - ViewDeck (2.3.1)
 
 DEPENDENCIES:
   - Facebook-iOS-SDK
   - MACachedImageView
-  - MCSwipeTableViewCell (from `https://github.com/achappell/MCSwipeTableViewCell.git`)
+  - MCSwipeTableViewCell
   - OCMock
   - RestKit (from `https://github.com/RestKit/RestKit.git`, branch `master`)
   - Reveal-iOS-SDK
@@ -39,24 +39,22 @@ DEPENDENCIES:
   - ViewDeck
 
 EXTERNAL SOURCES:
-  MCSwipeTableViewCell:
-    :git: https://github.com/achappell/MCSwipeTableViewCell.git
   RestKit:
     :branch: master
     :git: https://github.com/RestKit/RestKit.git
 
 SPEC CHECKSUMS:
   AFNetworking: 9ec8aafb9269236a7630bd8d9838ce2ba30fa2a0
-  Facebook-iOS-SDK: 0690c15914d4e412f5f0ef0f8cce34fd0d39f7ce
+  Facebook-iOS-SDK: c11e851555d8cb8b55853ec2990b01d9e343d09e
   MACachedImageView: c73819a0190d5c06ca2283266d5a76698468aaf1
   MACircleProgressIndicator: dc497a2c68dd930d4aea837b1a732a56ce4bd6d8
-  MCSwipeTableViewCell: 3779b743bf5fa5a73f4f9e6eb0ddc907bffb829f
-  OCMock: 79212e5e328378af5cfd6edb5feacfd6c49cd8a3
-  RestKit: e511651e916245fa4becfb0e8f966a1fa021fcd4
-  Reveal-iOS-SDK: 9211abec2542455058411814d58d0c2e1a8030e4
+  MCSwipeTableViewCell: 4153c7818ed817ad7b9078c8d59a4335c194d92c
+  OCMock: 5300ae6b75398fc3ae6cbf9102191333d35f6852
+  RestKit: 1f181c180105a92f11ec4f6cd7de37625e516d83
+  Reveal-iOS-SDK: 0d58ea01260eb109b924a09631d9cc8dd96e12c4
   SOCKit: ed67aeeca4a697b63a933229e53f4670d5b9300f
-  TestFlightSDK: f3e516c64f61abedeb26a7b184101df54df3db09
+  TestFlightSDK: 3af0a385405725e36452a35ef63ba8b3f2ef3ffc
   TransitionKit: 3b3836af6887d16a0834fa35031028792d1d5c0c
   ViewDeck: 2cdc67c4b41a10cafc7556b982f028409e33604d
 
-COCOAPODS: 0.20.2
+COCOAPODS: 0.22.1
