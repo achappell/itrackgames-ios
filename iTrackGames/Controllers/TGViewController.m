@@ -45,9 +45,9 @@
     
     [TGNavigationItemFactory setupDefaultNavigationItemsForViewController:self];
     
-    UIImage *backgroundImage = [UIImage imageNamed:@"MainBackground2"];
-    
-    [self.backgroundImageView setImage:backgroundImage];
+//    UIImage *backgroundImage = [UIImage imageNamed:@"MainBackground2"];
+//    
+//    [self.backgroundImageView setImage:backgroundImage];
 }
 
 - (void)setBackgroundImage:(UIImage *)backgroundImage

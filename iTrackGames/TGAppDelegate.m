@@ -41,6 +41,7 @@
     self.window.rootViewController =  self.menuContainerViewController;
     
     [self.window makeKeyAndVisible];
+    self.window.tintColor = [UIColor colorWithRed:66/255.0f green:80/255.0f blue:144/255.0f alpha:1.0f];
     
     [Crashlytics startWithAPIKey:@"50b0f9977ba1eaf060cb5a1c57e5e932defa1b77"];
 
