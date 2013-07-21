@@ -23,6 +23,7 @@
 #import "TGFacebookPlatform.h"
 #import "TGFriendsViewController.h"
 #import "TGSocialManager.h"
+#import "TGNavigationController.h"
 
 @interface TGAppDelegate()
 
@@ -172,26 +173,41 @@
 {
     if (!_menuContainerViewController)
     {
+        TGNavigationItemFactory *navigationFactory = [[TGNavigationItemFactory alloc] init];
+        [TGNavigationItemFactory sharedNavFactory];
+        [TGNavigationItemFactory setSharedNavFactory:(TGNavigationItemFactory *)navigationFactory];
         
         // platforms
         TGPlatformTableViewController *platformViewController = [[TGPlatformTableViewController alloc] initWithNibName:@"TGPlatformTableViewController" bundle:nil];
         platformViewController.title = @"Platforms";
-        UINavigationController *platformsNavigationController = [[UINavigationController alloc] initWithRootViewController:platformViewController];
+        TGNavigationController *platformsNavigationController = [[TGNavigationController alloc] initWithRootViewController:platformViewController];
+        
+        
         
         TGFriendsViewController *friendsViewController = [[TGFriendsViewController alloc] initWithNibName:@"TGFriendsViewController" bundle:nil];
         friendsViewController.title = @"Friends";
-        UINavigationController *friendsNavigationController = [[UINavigationController alloc] initWithRootViewController:friendsViewController];
+        TGNavigationController *friendsNavigationController = [[TGNavigationController alloc] initWithRootViewController:friendsViewController];
         
         TGSearchViewController *searchViewController = [[TGSearchViewController alloc] initWithNibName:@"TGSearchViewController" bundle:nil];
 
         TGMenuViewController *menuViewController = [[TGMenuViewController alloc] initWithNibName:@"TGMenuViewController" bundle:nil];
         menuViewController.viewControllers = @[ platformsNavigationController, friendsNavigationController ];
         
+        [platformViewController.navigationItem setLeftBarButtonItem:[navigationFactory menuButton:platformViewController]];
+        [platformViewController.navigationItem setRightBarButtonItem:[navigationFactory searchButton:platformViewController]];
+        
+        [friendsViewController.navigationItem setLeftBarButtonItem:[navigationFactory menuButton:friendsViewController]];
+        [friendsViewController.navigationItem setRightBarButtonItem:[navigationFactory searchButton:friendsViewController]];
+        
+        
         _menuContainerViewController = [[IIViewDeckController alloc] initWithCenterViewController:platformsNavigationController leftViewController:menuViewController rightViewController:searchViewController];
         menuViewController.viewDeckController = _menuContainerViewController;
         platformViewController.viewDeckController = _menuContainerViewController;
         searchViewController.viewDeckController = _menuContainerViewController;
         friendsViewController.viewDeckController = _menuContainerViewController;
+        
+        
+        
 
     }
     

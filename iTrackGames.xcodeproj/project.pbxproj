@@ -58,6 +58,7 @@
 		E046FE8617027BE2001636EB /* TGGameTableViewCell~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = E046FE8517027BE2001636EB /* TGGameTableViewCell~iphone.xib */; };
 		E046FE8F170295B2001636EB /* TGGameStashDatum.m in Sources */ = {isa = PBXBuildFile; fileRef = E046FE8E170295B2001636EB /* TGGameStashDatum.m */; };
 		E046FE9317031406001636EB /* TGGameStashDatumTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E046FE9217031406001636EB /* TGGameStashDatumTests.m */; };
+		E090E354179B54510045D89D /* TGNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E061083D179B4EFD009818FE /* TGNavigationController.m */; };
 		E0D97EFF16FD27B4008ABE8A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0D97EFE16FD27B4008ABE8A /* SystemConfiguration.framework */; };
 		E0D97F0116FD27CF008ABE8A /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0D97F0016FD27CF008ABE8A /* MobileCoreServices.framework */; };
 		E0DA2C8217371AA6001953C0 /* TGRatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = E0DA2C8117371AA6001953C0 /* TGRatingView.m */; };
@@ -172,6 +173,8 @@
 		E046FE8E170295B2001636EB /* TGGameStashDatum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGGameStashDatum.m; sourceTree = "<group>"; };
 		E046FE9117031406001636EB /* TGGameStashDatumTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGGameStashDatumTests.h; sourceTree = "<group>"; };
 		E046FE9217031406001636EB /* TGGameStashDatumTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGGameStashDatumTests.m; sourceTree = "<group>"; };
+		E061083C179B4EFD009818FE /* TGNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TGNavigationController.h; sourceTree = "<group>"; };
+		E061083D179B4EFD009818FE /* TGNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TGNavigationController.m; sourceTree = "<group>"; };
 		E0D97EFD16FD1EEF008ABE8A /* TGConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGConstants.h; sourceTree = "<group>"; };
 		E0D97EFE16FD27B4008ABE8A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		E0D97F0016FD27CF008ABE8A /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
@@ -343,6 +346,8 @@
 				C88FB8F81754261F00B5B4AD /* TGSearchViewController.h */,
 				C88FB8F91754261F00B5B4AD /* TGSearchViewController.m */,
 				C88FB8FA1754261F00B5B4AD /* TGSearchViewController.xib */,
+				E061083C179B4EFD009818FE /* TGNavigationController.h */,
+				E061083D179B4EFD009818FE /* TGNavigationController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -710,6 +715,7 @@
 				E046FE8F170295B2001636EB /* TGGameStashDatum.m in Sources */,
 				C854401C17078E15003DA1B9 /* TGMenuViewController.m in Sources */,
 				C854402117079B6A003DA1B9 /* TGNavigationItemFactory.m in Sources */,
+				E090E354179B54510045D89D /* TGNavigationController.m in Sources */,
 				C854402417079BB7003DA1B9 /* TGViewController.m in Sources */,
 				1CD1E66B17248D8500F9F893 /* TGImage.m in Sources */,
 				1CD1E66F1724A4CF00F9F893 /* TGPlatformViewController.m in Sources */,
