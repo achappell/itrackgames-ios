@@ -43,7 +43,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    [TGNavigationItemFactory setupDefaultNavigationItemsForViewController:self];
+    //[TGNavigationItemFactory setupDefaultNavigationItemsForViewController:self];
 }
 
 - (void)setBackgroundImage:(UIImage *)backgroundImage

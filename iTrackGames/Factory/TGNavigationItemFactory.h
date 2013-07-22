@@ -18,6 +18,11 @@
 
 @interface TGNavigationItemFactory : NSObject
 
-+ (void)setupDefaultNavigationItemsForViewController:(UIViewController<TGNavigationResponder> *)viewController;
+//+ (void)setupDefaultNavigationItemsForViewController:(UIViewController<TGNavigationResponder> *)viewController;
 
++(TGNavigationItemFactory *) sharedNavFactory;
++ (void)setSharedNavFactory:(TGNavigationItemFactory *)sharedNavFactory;
+
+- (UIBarButtonItem *) menuButton:(UIViewController<TGNavigationResponder> *)viewController;
+- (UIBarButtonItem *) searchButton:(UIViewController<TGNavigationResponder> *)viewController;
 @end
