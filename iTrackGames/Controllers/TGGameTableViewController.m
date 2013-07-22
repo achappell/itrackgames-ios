@@ -39,6 +39,8 @@ static NSString *reuseIdentifier = @"TGGameCell";
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    [self.view setBackgroundColor:[UIColor magentaColor]];
+    
     UINib *nib = [UINib nibWithNibName:@"TGGameTableViewCell" bundle:nil];
     [self.tableView registerNib:nib forCellReuseIdentifier:reuseIdentifier];
     self.tableView.rowHeight = 80.0f;
@@ -47,8 +49,6 @@ static NSString *reuseIdentifier = @"TGGameCell";
     self.dataSource.delegate = self;
     
     [self.dataSource reloadDataIfNeeded];
-    
-    
 }
 
 #pragma mark - TGGameTableViewCellDelegate
@@ -130,6 +130,11 @@ static NSString *reuseIdentifier = @"TGGameCell";
 {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:error.localizedDescription delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil];
     [alert show];
+}
+
+-(void)dealloc
+{
+    
 }
 
 @end

@@ -11,10 +11,12 @@
 #import "TGPlatform.h"
 #import "TGGameTableViewController.h"
 #import "TGPlatformViewController.h"
+#import "TGSplitViewController.h"
 
 @interface TGPlatformTableViewController ()
 
 @property (nonatomic, strong) TGPlatformsDataSource *dataSource;
+@property (nonatomic, strong) TGSplitViewController *splitViewController;
 
 @end
 
@@ -62,12 +64,23 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    TGGameTableViewController *viewController = [[TGGameTableViewController alloc] initWithNibName:@"TGGameTableViewController" bundle:nil];
+    CGRect cellRect = [tableView rectForRowAtIndexPath:indexPath];
+    cellRect = [self.view convertRect:cellRect fromView:tableView];
     
+    self.splitViewController = [[TGSplitViewController alloc] init];
+    self.splitViewController.splitView = [self.view snapshotView];
+    self.splitViewController.splitPoint = CGPointMake(0.0f, CGRectGetMaxY(cellRect));
+    self.splitViewController.detailViewController = [[TGGameTableViewController alloc] initWithNibName:@"TGGameTableViewController" bundle:nil];
+    
+    TGGameTableViewController *viewController = (TGGameTableViewController *)self.splitViewController.detailViewController;
     viewController.platform = [self.platforms objectAtIndex:indexPath.row];
     
-    [self.navigationController pushViewController:viewController animated:YES];
+    [self.view addSubview:self.splitViewController.view];
+    
+    [self.splitViewController animateViewSplit];
+    
 }
+
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
     TGPlatformViewController *viewController = [[TGPlatformViewController alloc] initWithNibName:@"TGPlatformViewController" bundle:nil];
     viewController.platformId = [(TGPlatform *)[self.platforms objectAtIndex:indexPath.row] platform_id];

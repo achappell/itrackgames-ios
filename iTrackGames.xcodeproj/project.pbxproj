@@ -35,10 +35,10 @@
 		C84FAD3A179B246100C9D2B2 /* TGFriendsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C84FAD38179B246100C9D2B2 /* TGFriendsViewController.xib */; };
 		C84FAD3D179B24EF00C9D2B2 /* TGFriend.m in Sources */ = {isa = PBXBuildFile; fileRef = C84FAD3C179B24E500C9D2B2 /* TGFriend.m */; };
 		C84FAD40179B250200C9D2B2 /* TGFriendsDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = C84FAD3F179B250200C9D2B2 /* TGFriendsDataSource.m */; };
+		C84FAD65179B302100C9D2B2 /* TGSplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C84FAD64179B302100C9D2B2 /* TGSplitViewController.m */; };
 		C854401C17078E15003DA1B9 /* TGMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C854401A17078E15003DA1B9 /* TGMenuViewController.m */; };
 		C854401D17078E15003DA1B9 /* TGMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C854401B17078E15003DA1B9 /* TGMenuViewController.xib */; };
 		C854402117079B6A003DA1B9 /* TGNavigationItemFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = C854402017079B6A003DA1B9 /* TGNavigationItemFactory.m */; };
-		C854402417079BB7003DA1B9 /* TGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C854402317079BB7003DA1B9 /* TGViewController.m */; };
 		C88FB8FB1754261F00B5B4AD /* TGSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C88FB8F91754261F00B5B4AD /* TGSearchViewController.m */; };
 		C88FB8FC1754261F00B5B4AD /* TGSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C88FB8FA1754261F00B5B4AD /* TGSearchViewController.xib */; };
 		C88FB8FF1754271200B5B4AD /* TGSearchDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = C88FB8FE1754271200B5B4AD /* TGSearchDataSource.m */; };
@@ -50,6 +50,7 @@
 		C8AD3A4216FBBD5C00A8CD79 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C89229FE16DD485A003B6A3C /* libz.dylib */; };
 		C8AD3A4616FC9E6000A8CD79 /* TGGameTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C8AD3A4516FC9E6000A8CD79 /* TGGameTests.m */; };
 		C8E6A41E1772511C00F76560 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8E6A41D1772511C00F76560 /* Media.xcassets */; };
+		C8F58FB4179B52EA000EA3D8 /* TGViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8F58FB3179B52EA000EA3D8 /* TGViewController.m */; };
 		E02A801E1736F7DD00C45A0B /* TGGameDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = E02A80171736F7DD00C45A0B /* TGGameDataSource.m */; };
 		E02A801F1736F7DD00C45A0B /* TGGamesDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = E02A80191736F7DD00C45A0B /* TGGamesDataSource.m */; };
 		E02A80201736F7DD00C45A0B /* TGPlatformDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = E02A801B1736F7DD00C45A0B /* TGPlatformDataSource.m */; };
@@ -136,13 +137,13 @@
 		C84FAD3C179B24E500C9D2B2 /* TGFriend.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TGFriend.m; sourceTree = "<group>"; };
 		C84FAD3E179B250200C9D2B2 /* TGFriendsDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGFriendsDataSource.h; sourceTree = "<group>"; };
 		C84FAD3F179B250200C9D2B2 /* TGFriendsDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGFriendsDataSource.m; sourceTree = "<group>"; };
+		C84FAD63179B302100C9D2B2 /* TGSplitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGSplitViewController.h; sourceTree = "<group>"; };
+		C84FAD64179B302100C9D2B2 /* TGSplitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGSplitViewController.m; sourceTree = "<group>"; };
 		C854401917078E15003DA1B9 /* TGMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGMenuViewController.h; sourceTree = "<group>"; };
 		C854401A17078E15003DA1B9 /* TGMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGMenuViewController.m; sourceTree = "<group>"; };
 		C854401B17078E15003DA1B9 /* TGMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TGMenuViewController.xib; sourceTree = "<group>"; };
 		C854401F17079B6A003DA1B9 /* TGNavigationItemFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGNavigationItemFactory.h; sourceTree = "<group>"; };
 		C854402017079B6A003DA1B9 /* TGNavigationItemFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGNavigationItemFactory.m; sourceTree = "<group>"; };
-		C854402217079BB7003DA1B9 /* TGViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGViewController.h; sourceTree = "<group>"; };
-		C854402317079BB7003DA1B9 /* TGViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGViewController.m; sourceTree = "<group>"; };
 		C88FB8F81754261F00B5B4AD /* TGSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGSearchViewController.h; sourceTree = "<group>"; };
 		C88FB8F91754261F00B5B4AD /* TGSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGSearchViewController.m; sourceTree = "<group>"; };
 		C88FB8FA1754261F00B5B4AD /* TGSearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TGSearchViewController.xib; sourceTree = "<group>"; };
@@ -157,6 +158,8 @@
 		C8AD3A4416FC9E6000A8CD79 /* TGGameTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGGameTests.h; sourceTree = "<group>"; };
 		C8AD3A4516FC9E6000A8CD79 /* TGGameTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGGameTests.m; sourceTree = "<group>"; };
 		C8E6A41D1772511C00F76560 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Media.xcassets; path = iTrackGames/Media.xcassets; sourceTree = "<group>"; };
+		C8F58FB2179B52EA000EA3D8 /* TGViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGViewController.h; sourceTree = "<group>"; };
+		C8F58FB3179B52EA000EA3D8 /* TGViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGViewController.m; sourceTree = "<group>"; };
 		E02A80161736F7DD00C45A0B /* TGGameDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGGameDataSource.h; sourceTree = "<group>"; };
 		E02A80171736F7DD00C45A0B /* TGGameDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGGameDataSource.m; sourceTree = "<group>"; };
 		E02A80181736F7DD00C45A0B /* TGGamesDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGGamesDataSource.h; sourceTree = "<group>"; };
@@ -335,14 +338,16 @@
 				C854401917078E15003DA1B9 /* TGMenuViewController.h */,
 				C854401A17078E15003DA1B9 /* TGMenuViewController.m */,
 				C854401B17078E15003DA1B9 /* TGMenuViewController.xib */,
-				C854402217079BB7003DA1B9 /* TGViewController.h */,
-				C854402317079BB7003DA1B9 /* TGViewController.m */,
 				1CD2DBA7172DB7E000A3B7DE /* TGImageViewController.h */,
 				1CD2DBA8172DB7E000A3B7DE /* TGImageViewController.m */,
 				1CD2DBA9172DB7E000A3B7DE /* TGImageViewController.xib */,
 				C88FB8F81754261F00B5B4AD /* TGSearchViewController.h */,
 				C88FB8F91754261F00B5B4AD /* TGSearchViewController.m */,
 				C88FB8FA1754261F00B5B4AD /* TGSearchViewController.xib */,
+				C84FAD63179B302100C9D2B2 /* TGSplitViewController.h */,
+				C84FAD64179B302100C9D2B2 /* TGSplitViewController.m */,
+				C8F58FB2179B52EA000EA3D8 /* TGViewController.h */,
+				C8F58FB3179B52EA000EA3D8 /* TGViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -707,15 +712,16 @@
 				1C52A1D416E431F30027979A /* TGDataManager.m in Sources */,
 				C83B1C1016FF9C250078878C /* TGViewDataSource.m in Sources */,
 				E046FE8417027B12001636EB /* TGGameTableViewCell.m in Sources */,
+				C84FAD65179B302100C9D2B2 /* TGSplitViewController.m in Sources */,
 				E046FE8F170295B2001636EB /* TGGameStashDatum.m in Sources */,
 				C854401C17078E15003DA1B9 /* TGMenuViewController.m in Sources */,
 				C854402117079B6A003DA1B9 /* TGNavigationItemFactory.m in Sources */,
-				C854402417079BB7003DA1B9 /* TGViewController.m in Sources */,
 				1CD1E66B17248D8500F9F893 /* TGImage.m in Sources */,
 				1CD1E66F1724A4CF00F9F893 /* TGPlatformViewController.m in Sources */,
 				1CD2DBAA172DB7E000A3B7DE /* TGImageViewController.m in Sources */,
 				E02A801E1736F7DD00C45A0B /* TGGameDataSource.m in Sources */,
 				E02A801F1736F7DD00C45A0B /* TGGamesDataSource.m in Sources */,
+				C8F58FB4179B52EA000EA3D8 /* TGViewController.m in Sources */,
 				E02A80201736F7DD00C45A0B /* TGPlatformDataSource.m in Sources */,
 				C84FAD39179B246100C9D2B2 /* TGFriendsViewController.m in Sources */,
 				E02A80211736F7DD00C45A0B /* TGPlatformsDataSource.m in Sources */,
